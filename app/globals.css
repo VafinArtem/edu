@@ -20,11 +20,11 @@ body {
 body {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content;
-  grid-auto-rows: 1fr;
+  grid-template-rows: [header] min-content 10px [main] 1fr 40px [footer] min-content;
   margin: 0;
   font-weight: 300;
   font-size: 1.7rem;
+  background-color: var(--gray-100);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
