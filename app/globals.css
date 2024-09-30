@@ -22,8 +22,9 @@ body {
   grid-template-columns: 100%;
   grid-template-rows: [header] min-content 10px [main] 1fr 40px [footer] min-content;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.7rem;
+  color: var(--gray-950);
   background-color: var(--gray-100);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -62,27 +63,27 @@ textarea {
 
 .container {
   max-width: var(--max-width);
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
-@media (max-width: 1399px) {
+@media (max-width: 1499px) {
   .container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 
-@media (max-width: 1399px) {
-  .container {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

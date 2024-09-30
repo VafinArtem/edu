@@ -6,6 +6,9 @@
   --primary: #A13652;
   --primary-2: #084573;
 
+  --white: #fff;
+  --white-rgb: 255, 255, 255;
+
   /* Gray */
   --gray-25: #FCFCFD;
   --gray-50: #F9FAFB;
@@ -19,4 +22,12 @@
   --gray-800: #1D2939;
   --gray-900: #101828;
   --gray-950: #0C111D;
+
+  /* Components */
+
+  --button: #B83255;
+
+  --timer-text: #CADDFE;
+
+  --promo-text: #CADDFE;
 }

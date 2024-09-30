@@ -1,0 +1,23 @@
+.button {
+  padding: 23px 40px;
+  font-size: 1.8rem;
+  color: var(--white);
+  background-color: var(--button);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 1499px) {
+  .button {
+    padding: 18px 30px;
+    font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 530px) {
+  .button {
+    font-size: 1.4rem;
+  }
+}

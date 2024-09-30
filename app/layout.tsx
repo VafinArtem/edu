@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const InterFont = Inter({
-  weight: ["500", "400", "300"],
+  weight: ["600", "500", "400", "300"],
   style: ["italic", "normal"],
   subsets: ["cyrillic", "latin"],
 });

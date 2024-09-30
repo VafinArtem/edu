@@ -1,0 +1,66 @@
+.paragraph {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.fsDefault {
+  font-size: 2rem;
+}
+
+.fsSmall {
+  font-size: 1.8rem;
+}
+
+.fwNormal {
+  font-weight: 400;
+}
+
+.fwLight {
+  font-weight: 300;
+}
+
+.fStyleNormal {
+  font-style: normal;
+}
+
+.fStyleItalic {
+  font-style: italic;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+@media (max-width: 1499px) {
+  .fsDefault {
+    font-size: 1.8rem;
+  }
+
+  .fsSmall {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .fsDefault {
+    font-size: 1.6rem;
+  }
+
+  .fsSmall {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .fsDefault {
+    font-size: 1.4rem;
+  }
+
+  .fsSmall {
+    font-size: 1.4rem;
+  }
+}
