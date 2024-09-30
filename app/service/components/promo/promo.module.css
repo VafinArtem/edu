@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 35%;
   gap: 60px;
-  margin-left: 50px;
-  margin-right: 50px;
   padding: 15px 15px 15px 70px;
   background-color: var(--course-promo-color, var(--gray-25));
   border-radius: 50px;
@@ -157,8 +155,6 @@
 
 @media (max-width: 1499px) {
   .wrapper {
-    margin-left: 20px;
-    margin-right: 20px;
     padding: 10px 10px 10px 50px;
     border-radius: 40px;
   }
@@ -229,11 +225,6 @@
 }
 
 @media (max-width: 767px) {
-  .wrapper {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-
   .textContent {
     min-height: 315px;
   }
