@@ -1,0 +1,222 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 70px;
+  background-color: var(--white);
+  border-radius: 50px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tag,
+.duration {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.tag {
+  width: fit-content;
+  padding: 5px 8px;
+  font-weight: 500;
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.tag.theory {
+  background-color: var(--primary);
+}
+
+.tag.practice {
+  background-color: var(--primary-2);
+}
+
+.duration {
+  color: var(--gray-500);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
+  color: var(--gray-500);
+}
+
+.learnList,
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.learnList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  row-gap: 20px;
+  column-gap: 40px;
+}
+
+.list {
+  gap: 40px;
+  margin-bottom: -10px;
+  columns: 2;
+}
+
+.listItem {
+  font-size: 1.8rem;
+}
+
+.list .listItem {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: var(--gray-50);
+  border-radius: 15px;
+  break-inside: avoid;
+}
+
+.list .listItem::before {
+  position: relative;
+  top: 7px;
+  content: "";
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--gray-200);
+  border-radius: 50%;
+}
+
+.list.theory .listItem::before {
+  background-color: var(--primary);
+}
+
+.list.practice .listItem::before {
+  background-color: var(--primary-2);
+}
+
+.learnList .listItem {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.learnList .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: var(--gray-100);
+  border-radius: 15px;
+}
+
+.learnList.practice .icon {
+  color: var(--primary-2);
+}
+
+.learnList.theory .icon {
+  color: var(--primary);
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+    padding: 40px 40px 50px;
+    border-radius: 40px;
+  }
+
+  .learnList {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    row-gap: 30px;
+    column-gap: 40px;
+  }
+
+  .listItem {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .listItem {
+    font-size: 1.5rem;
+  }
+
+  .learnList {
+    gap: 25px;
+  }
+
+  .learnList .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .list {
+    columns: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    gap: 30px;
+    padding: 20px 15px;
+  }
+
+  .head {
+    gap: 12px;
+  }
+
+  .tag,
+  .duration {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .learnList {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+
+  .listItem {
+    font-size: 1.4rem;
+  }
+
+  .list .listItem {
+    width: auto;
+  }
+
+  .list .listItem::before {
+    top: 6px;
+  }
+}

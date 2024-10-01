@@ -2,6 +2,7 @@ import React, {ReactElement} from "react";
 import styles from "./page.module.css";
 import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
+import Program from "@/app/training/components/program/program";
 
 const ServicePage = async ():  Promise<ReactElement | null> => {
   return (
@@ -18,7 +19,7 @@ const ServicePage = async ():  Promise<ReactElement | null> => {
         />
         <Advantages />
       </div>
-
+      <Program className={`container`} courseTypeName={`мастер-классе`} />
     </>
   );
 };
