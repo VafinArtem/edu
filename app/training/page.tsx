@@ -3,6 +3,65 @@ import styles from "./page.module.css";
 import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
+import Speakers from "@/app/training/components/speakers/speakers";
+import {Speaker} from "@/interfaces/training";
+
+const speakers: Speaker[] = [
+  {
+    name: `Волкова Юлия Валерьевна`,
+    video: `#`,
+    id: `1`,
+    photo: `/img/components/speaker/video-poster.png`,
+    position: `Стоматолог-хирург, пародонтолог. Главврач клиники Мегаполис Дент`,
+    workExperience: `более 25 лет`,
+    edu: [
+      {
+        name: `Диплом «Санкт-Петербургский медицинский университет им. академика И.П. Павлова» 1993 г.`,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-1.jpg`
+      },
+      {
+        name: `Сертификат «Стоматология хирургическая» `,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-2.jpg`
+      },
+      {
+        name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-3.jpg`
+      }
+    ]
+  },
+  {
+    name: `Щербаков Николай Андреевич`,
+    id: `1`,
+    photo: `/img/components/speaker/speaker-1.png`,
+    position: `Стоматолог-хирург, пародонтолог. Главврач клиники Мегаполис Дент`,
+    workExperience: `более 25 лет`,
+    edu: [
+      {
+        name: `Диплом «Санкт-Петербургский медицинский университет им. академика И.П. Павлова» 1993 г.`,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-1.jpg`
+      },
+      {
+        name: `Сертификат «Стоматология хирургическая» `,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-2.jpg`
+      },
+      {
+        name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-3.jpg`
+      },
+      {
+        name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
+        url: `#`,
+        previewImg: `/img/components/speaker/cert-3.jpg`
+      }
+    ]
+  }
+]
 
 const ServicePage = async ():  Promise<ReactElement | null> => {
   return (
@@ -20,6 +79,7 @@ const ServicePage = async ():  Promise<ReactElement | null> => {
         <Advantages />
       </div>
       <Program className={`container`} courseTypeName={`мастер-классе`} />
+      <Speakers className={`container`} speakers={speakers} />
     </>
   );
 };

@@ -1,0 +1,34 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.link::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/common/external-link-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (max-width: 1499px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
