@@ -1,3 +1,5 @@
+import {ProgramType, ScheduleType} from "@/helpers/contants";
+
 export interface Edu {
   name: string;
   previewImg: string;
@@ -12,4 +14,18 @@ export interface Speaker {
   position: string;
   workExperience: string;
   edu: Edu[]
+}
+
+export interface DailySchedule {
+  id: string;
+  name: string;
+  time: string;
+  type: keyof typeof ProgramType;
+  list: ScheduleItem[];
+}
+
+export interface ScheduleItem {
+  type: keyof typeof ScheduleType;
+  name: string;
+  time: string;
 }

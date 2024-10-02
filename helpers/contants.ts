@@ -21,3 +21,17 @@ export const ProgramThemeName: {
   THEORY: `Темы лекции`,
   PRACTICE: `Темы практики`,
 }
+
+export const ScheduleType: {
+  REGISTRATION: `REGISTRATION`,
+  PRACTICE: `PRACTICE`,
+  LECTURE: `LECTURE`,
+  DINNER: `DINNER`,
+  COFFEE: `COFFEE`,
+} = {
+  REGISTRATION: `REGISTRATION`,
+  PRACTICE: `PRACTICE`,
+  LECTURE: `LECTURE`,
+  DINNER: `DINNER`,
+  COFFEE: `COFFEE`,
+}

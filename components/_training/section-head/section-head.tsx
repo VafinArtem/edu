@@ -9,7 +9,7 @@ const SectionHead = ({title, text, children}: SectionHeadProps): ReactElement | 
     <div className={styles.wrapper}>
       <div className={styles.textContent}>
         <Heading tag={`h2`}>{title}</Heading>
-        <Paragraph>{text}</Paragraph>
+        {text && <Paragraph dangerouslySetInnerHTML={{__html: text}} />}
       </div>
 			{children}
     </div>

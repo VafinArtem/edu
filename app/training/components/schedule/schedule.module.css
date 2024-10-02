@@ -1,0 +1,25 @@
+.downloadLink {
+  align-self: end;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 1499px) {
+  .list {
+	gap: 20px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .list {
+	grid-template-columns: 100%;
+  }
+}

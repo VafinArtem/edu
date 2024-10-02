@@ -1,0 +1,136 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  background-color: var(--white);
+  border-radius: 50px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.3rem;
+}
+
+.time {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  color: var(--gray-500);
+}
+
+.time.black {
+  color: var(--gray-900);
+}
+
+.time.right {
+  margin-left: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  box-shadow: 1px 0 0 0 var(--gray-200) inset;
+  list-style: none;
+}
+
+.list.manyItems {
+  position: relative;
+  max-height: 265px;
+  overflow: hidden;
+  transition: max-height 0.2s;
+}
+
+.list.manyItems::before {
+  position: absolute;
+  content: "";
+  bottom: -53px;
+  left: -1px;
+  width: calc(100% + 1px);
+  height: 174px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) -8.11%, #FFFFFF 63.64%);
+  pointer-events: none;
+  touch-action: none;
+  transition: opacity 0.2s;
+}
+
+.list.manyItems.show {
+  max-height: none;
+}
+
+.list.manyItems.show::before {
+  opacity: 0;
+}
+
+.list.theory {
+  box-shadow: 1px 0 0 0 var(--primary-light) inset;
+}
+
+.list.practice {
+  box-shadow: 1px 0 0 0 var(--primary-2-light) inset;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: var(--gray-200);
+  border-radius: 0 15px 15px 0;
+}
+
+.item.theory {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.item.practice {
+  color: var(--primary-2);
+  background-color: var(--primary-2-light);
+}
+
+.button {
+  margin-top: -10px;
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	padding: 40px;
+	border-radius: 40px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+	gap: 23px;
+	padding: 30px 20px 20px;
+	border-radius: 20px;
+  }
+
+  .head {
+	justify-content: space-between;
+  }
+
+  .title {
+	font-size: 1.6rem;
+  }
+
+  .item {
+	padding: 10px 15px 10px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	border-radius: 20px;
+  }
+}

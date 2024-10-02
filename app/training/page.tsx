@@ -4,8 +4,10 @@ import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
 import Speakers from "@/app/training/components/speakers/speakers";
-import {Speaker} from "@/interfaces/training";
+import {DailySchedule, Speaker} from "@/interfaces/training";
 import RecordForm from "@/app/training/components/record-form/record-form";
+import Schedule from "@/app/training/components/schedule/schedule";
+import {ProgramType, ScheduleType} from "@/helpers/contants";
 
 const speakers: Speaker[] = [
   {
@@ -19,19 +21,19 @@ const speakers: Speaker[] = [
       {
         name: `Диплом «Санкт-Петербургский медицинский университет им. академика И.П. Павлова» 1993 г.`,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-1.jpg`
+        previewImg: `/img/components/speaker/cert-1.jpg`,
       },
       {
         name: `Сертификат «Стоматология хирургическая» `,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-2.jpg`
+        previewImg: `/img/components/speaker/cert-2.jpg`,
       },
       {
         name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-3.jpg`
-      }
-    ]
+        previewImg: `/img/components/speaker/cert-3.jpg`,
+      },
+    ],
   },
   {
     name: `Щербаков Николай Андреевич`,
@@ -43,28 +45,63 @@ const speakers: Speaker[] = [
       {
         name: `Диплом «Санкт-Петербургский медицинский университет им. академика И.П. Павлова» 1993 г.`,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-1.jpg`
+        previewImg: `/img/components/speaker/cert-1.jpg`,
       },
       {
         name: `Сертификат «Стоматология хирургическая» `,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-2.jpg`
+        previewImg: `/img/components/speaker/cert-2.jpg`,
       },
       {
         name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-3.jpg`
+        previewImg: `/img/components/speaker/cert-3.jpg`,
       },
       {
         name: `Сертификат «Организация здравоохранения и общественное здоровье»`,
         url: `#`,
-        previewImg: `/img/components/speaker/cert-3.jpg`
-      }
-    ]
-  }
-]
+        previewImg: `/img/components/speaker/cert-3.jpg`,
+      },
+    ],
+  },
+];
 
-const ServicePage = async ():  Promise<ReactElement | null> => {
+const schedule: DailySchedule[] = [
+  {
+    id: `1`,
+    name: `1 день — лекция`,
+    time: `с 10:00 до 18:00`,
+    type: ProgramType.THEORY,
+    list: [
+      {name: `Регистрация`, type: ScheduleType.REGISTRATION, time: `09:30 — 10:00`},
+      {name: `Лекция`, type: ScheduleType.LECTURE, time: `10:00 — 11:30`},
+      {name: `Кофе-брейк`, type: ScheduleType.COFFEE, time: `11:30 — 11:45`},
+      {name: `Лекция`, type: ScheduleType.LECTURE, time: `11:45 — 13:15`},
+      {name: `Обед`, type: ScheduleType.DINNER, time: `13:15 — 14:00`},
+      {name: `Лекция`, type: ScheduleType.LECTURE, time: `14:00 — 15:30`},
+      {name: `Кофе-брейк`, type: ScheduleType.COFFEE, time: `15:30 — 15:45`},
+      {name: `Лекция`, type: ScheduleType.LECTURE, time: `15:45 — 16:15`},
+    ],
+  },
+  {
+    id: `2`,
+    name: `2 день — практика`,
+    time: `с 10:00 до 18:00`,
+    type: ProgramType.PRACTICE,
+    list: [
+      {name: `Регистрация`, type: ScheduleType.REGISTRATION, time: `09:30 — 10:00`},
+      {name: `Практика`, type: ScheduleType.PRACTICE, time: `10:00 — 11:30`},
+      {name: `Кофе-брейк`, type: ScheduleType.COFFEE, time: `11:30 — 11:45`},
+      {name: `Практика`, type: ScheduleType.PRACTICE, time: `11:45 — 13:15`},
+      {name: `Обед`, type: ScheduleType.DINNER, time: `13:15 — 14:00`},
+      {name: `Практика`, type: ScheduleType.PRACTICE, time: `14:00 — 15:30`},
+      {name: `Кофе-брейк`, type: ScheduleType.COFFEE, time: `15:30 — 15:45`},
+      {name: `Практика`, type: ScheduleType.PRACTICE, time: `15:45 — 16:15`},
+    ],
+  },
+];
+
+const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <>
       <div className={styles.head}>
@@ -77,13 +114,19 @@ const ServicePage = async ():  Promise<ReactElement | null> => {
           </svg>`}
           courseTypeName={`Мастер-класс`}
         />
+
         <Advantages />
       </div>
+
       <Program className={`container`} courseTypeName={`мастер-классе`} />
+
       <Speakers className={`container`} speakers={speakers} />
+
       <div className="container">
         <RecordForm />
       </div>
+
+      <Schedule schedule={schedule} className={`container`} />
     </>
   );
 };
