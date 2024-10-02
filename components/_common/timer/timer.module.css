@@ -60,6 +60,30 @@
   color: var(--white);
 }
 
+@media (min-width: 1500px) {
+  .desc.hiddenDesktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .desc.hiddenLaptop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .desc.hiddenTablet {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desc.hiddenMobile {
+    display: none;
+  }
+}
+
 @media (max-width: 1499px) {
   .count {
     min-height: 42px;
@@ -75,6 +99,10 @@
   .desc {
     max-width: 11rem;
     font-size: 1.4rem;
+  }
+
+  .desc.hiddenTablet {
+    display: none;
   }
 }
 

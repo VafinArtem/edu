@@ -87,3 +87,9 @@ textarea {
     padding-right: 15px;
   }
 }
+
+@media (min-width: 768px) {
+  .only-mobile {
+    display: none;
+  }
+}

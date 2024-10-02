@@ -1,0 +1,45 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  height: 74px;
+  padding: 0 30px;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  font-family: inherit;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--gray-400);
+}
+
+@media (max-width: 1499px) {
+  .inputWrapper {
+    height: 55px;
+    padding: 0 20px;
+  }
+
+  .input {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .input {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .input {
+    font-size: 1.4rem;
+  }
+}

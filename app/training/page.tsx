@@ -5,6 +5,7 @@ import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
 import Speakers from "@/app/training/components/speakers/speakers";
 import {Speaker} from "@/interfaces/training";
+import RecordForm from "@/app/training/components/record-form/record-form";
 
 const speakers: Speaker[] = [
   {
@@ -80,6 +81,9 @@ const ServicePage = async ():  Promise<ReactElement | null> => {
       </div>
       <Program className={`container`} courseTypeName={`мастер-классе`} />
       <Speakers className={`container`} speakers={speakers} />
+      <div className="container">
+        <RecordForm />
+      </div>
     </>
   );
 };
