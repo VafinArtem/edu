@@ -11,6 +11,10 @@
   font-size: 1.8rem;
 }
 
+.fwMedium {
+  font-weight: 500;
+}
+
 .fwNormal {
   font-weight: 400;
 }
@@ -37,30 +41,30 @@
 
 @media (max-width: 1499px) {
   .fsDefault {
-    font-size: 1.8rem;
+	font-size: 1.8rem;
   }
 
   .fsSmall {
-    font-size: 1.7rem;
+	font-size: 1.7rem;
   }
 }
 
 @media (max-width: 1199px) {
   .fsDefault {
-    font-size: 1.6rem;
+	font-size: 1.6rem;
   }
 
   .fsSmall {
-    font-size: 1.6rem;
+	font-size: 1.6rem;
   }
 }
 
 @media (max-width: 767px) {
   .fsDefault {
-    font-size: 1.4rem;
+	font-size: 1.4rem;
   }
 
   .fsSmall {
-    font-size: 1.4rem;
+	font-size: 1.4rem;
   }
 }

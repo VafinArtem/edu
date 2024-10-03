@@ -1,6 +1,12 @@
 :root {
   --max-width: 2100px;
 
+  /* Paddings */
+  --container-desktop-padding: 80px;
+  --container-laptop-padding: 50px;
+  --container-tablet-padding: 20px;
+  --container-mobile-padding: 15px;
+
   /* Colors */
 
   --primary: #A13652;

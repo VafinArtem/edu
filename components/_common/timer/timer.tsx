@@ -3,12 +3,14 @@ import {TimerProps} from "./timer.props";
 import styles from "./timer.module.css";
 import clsx from "clsx";
 
-const Timer = ({className, text, withoutTextOptions = {
-  desktop: false,
-  laptop: false,
-  tablet: false,
-  mobile: false,
-}}: TimerProps): ReactElement | null => {
+const Timer = ({
+  className, text, withoutTextOptions = {
+    desktop: false,
+    laptop: false,
+    tablet: false,
+    mobile: false,
+  },
+}: TimerProps): ReactElement | null => {
   return (
     <p className={clsx(className, styles.wrapper)}>
 			<span className={styles.digits}>
@@ -25,15 +27,15 @@ const Timer = ({className, text, withoutTextOptions = {
           <span className={styles.text}>минут</span>
         </span>
       </span>
-      <span className={clsx(styles.desc, {
+      {text && <span className={clsx(styles.desc, {
         [styles.hiddenDesktop]: withoutTextOptions.desktop,
         [styles.hiddenLaptop]: withoutTextOptions.laptop,
         [styles.hiddenTablet]: withoutTextOptions.tablet,
         [styles.hiddenMobile]: withoutTextOptions.mobile,
       })}>
         {text}
-      </span>
-		</p>
+      </span>}
+    </p>
   );
 };
 

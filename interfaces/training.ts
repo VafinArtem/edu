@@ -13,7 +13,7 @@ export interface Speaker {
   name: string;
   position: string;
   workExperience: string;
-  edu: Edu[]
+  edu: Edu[];
 }
 
 export interface DailySchedule {
@@ -28,4 +28,15 @@ export interface ScheduleItem {
   type: keyof typeof ScheduleType;
   name: string;
   time: string;
+}
+
+export interface TariffInfo {
+  id: string;
+  name: string;
+  description: string;
+  prices: {
+    current: number;
+    old?: number;
+  };
+  includes?: string[];
 }

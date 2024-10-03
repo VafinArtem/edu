@@ -10,28 +10,28 @@ import Button from "@/components/_buttons/button/button";
 
 const RecordForm = ({}: RecordFormProps): ReactElement | null => {
   return (
-    <section className={styles.wrapper} style={{
-			'--course-form-color': `#254885`,
-			'--course-form-blur': `#3A68B7`
-		} as React.CSSProperties}>
-			<div className={styles.textContent}>
-				<Heading tag={`h2`} fontSize={`mid`} className={styles.title}>Успейте записаться по&nbsp;минимальной стоимости</Heading>
-				<Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет увеличиваться.</Paragraph>
-				<div className={styles.footer}>
-					<Price oldPrice={35000} price={32000} />
-					<Timer text={`До повышения стоимости`} withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />
-				</div>
-			</div>
-			<form action="#" className={styles.form}>
-				<Input name={`name`} placeholder={`Ваше имя*`} labelName={`Ваше имя`} />
-				<Input name={`contact`} placeholder={`Номер телефона или email*`} labelName={`Номер телефона или email`} />
-				<div className={styles.formFooter}>
-					<Button className={styles.submit}>
-						Записаться <span className="only-mobile">на мастер-класс</span>
-					</Button>
-					<p className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <a target={`_blank`} href={`#`}>персональных данных</a></p>
-				</div>
-			</form>
+    <section className={styles.wrapper}>
+      <div className={styles.textContent}>
+        <Heading tag={`h2`} fontSize={`mid`} className={styles.title}>Успейте записаться по&nbsp;минимальной
+          стоимости</Heading>
+        <Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет
+          увеличиваться.</Paragraph>
+        <div className={styles.footer}>
+          <Price oldPrice={35000} price={32000} />
+          <Timer text={`До повышения стоимости`} withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />
+        </div>
+      </div>
+      <form action="#" className={styles.form}>
+        <Input name={`name`} placeholder={`Ваше имя*`} labelName={`Ваше имя`} />
+        <Input name={`contact`} placeholder={`Номер телефона или email*`} labelName={`Номер телефона или email`} />
+        <div className={styles.formFooter}>
+          <Button className={styles.submit}>
+            Записаться <span className="only-mobile">на мастер-класс</span>
+          </Button>
+          <p className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <a
+            target={`_blank`} href={`#`}>персональных данных</a></p>
+        </div>
+      </form>
     </section>
   );
 };

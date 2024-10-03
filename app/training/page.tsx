@@ -4,10 +4,11 @@ import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
 import Speakers from "@/app/training/components/speakers/speakers";
-import {DailySchedule, Speaker} from "@/interfaces/training";
+import {DailySchedule, Speaker, TariffInfo} from "@/interfaces/training";
 import RecordForm from "@/app/training/components/record-form/record-form";
 import Schedule from "@/app/training/components/schedule/schedule";
 import {ProgramType, ScheduleType} from "@/helpers/contants";
+import Price from "@/app/training/components/price/price";
 
 const speakers: Speaker[] = [
   {
@@ -101,10 +102,46 @@ const schedule: DailySchedule[] = [
   },
 ];
 
+const tariffs: TariffInfo[] = [
+  {
+    id: `1`,
+    name: `Только лекция`,
+    description: `Глубокое погружение в&nbsp;лечение пародонтологических пациентов`,
+    prices: {
+      current: 16000,
+      old: 20000,
+    },
+    includes: [`Кофе-брейки и обед`, `Сертификат участника`],
+  },
+  {
+    id: `2`,
+    name: `Лекция + практика`,
+    description: `Глубокое погружение в&nbsp;теоретическую часть  + отработка методов на&nbsp;практике`,
+    prices: {
+      current: 32000,
+      old: 35000,
+    },
+    includes: [`Кофе-брейки и обед`, `Сертификат полного прохождения интенсива`, `+ Практическая часть`, `+ Раздаточные материалы`],
+  },
+  {
+    id: `3`,
+    name: `Свободный слушатель`,
+    description: `Глубокое погружение в&nbsp;теоретическую и&nbsp;практическую часть`,
+    prices: {
+      current: 20000,
+      old: 23000,
+    },
+    includes: [`Кофе-брейки и обед`, `Сертификат полного прохождения интенсива`, `Практическая часть проходит в формате наблюдения за другими учениками`],
+  },
+];
+
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <>
-      <div className={styles.head}>
+      <div className={styles.head} style={{
+        "--course-color": `#254885`,
+        "--course-blur": `#3A68B7`,
+      } as React.CSSProperties}>
         <Promo
           icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
             fill="none">
@@ -122,11 +159,19 @@ const ServicePage = async (): Promise<ReactElement | null> => {
 
       <Speakers className={`container`} speakers={speakers} />
 
-      <div className="container">
+      <div className="container" style={{
+        "--course-color": `#254885`,
+        "--course-blur": `#3A68B7`,
+      } as React.CSSProperties}>
         <RecordForm />
       </div>
 
       <Schedule schedule={schedule} className={`container`} />
+
+      <Price tariffs={tariffs} style={{
+        "--course-color": `#254885`,
+        "--course-blur": `#3A68B7`,
+      } as React.CSSProperties} />
     </>
   );
 };

@@ -6,7 +6,7 @@ import styles from "./pargraph.module.css";
 const Paragraph = ({
   children,
   className,
-  fontWeight = 'light',
+  fontWeight = "light",
   fontSize = "default",
   fontStyle = "normal",
   align = "left",
@@ -19,6 +19,7 @@ const Paragraph = ({
         [styles.fsSmall]: fontSize === "small",
         [styles.fwLight]: fontWeight === "light",
         [styles.fwNormal]: fontWeight === "normal",
+        [styles.fwMedium]: fontWeight === "medium",
         [styles.fStyleNormal]: fontStyle === "normal",
         [styles.fStyleItalic]: fontStyle === "italic",
         [styles.alignCenter]: align === "center",

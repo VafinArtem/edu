@@ -4,7 +4,7 @@
   gap: 40px;
   padding: 70px;
   background-image: url("/img/common/smile.svg");
-  background-color: var(--course-form-color, var(--gray-25));
+  background-color: var(--course-color, var(--gray-25));
   background-repeat: no-repeat;
   background-position: calc(100% - 26px) calc(100% - 86px);
   background-size: 1071px 426px;
@@ -48,7 +48,7 @@
   display: block;
   width: 535px;
   height: 182px;
-  background-color: var(--course-form-blur);
+  background-color: var(--course-blur);
   filter: blur(146px);
 }
 
@@ -84,100 +84,100 @@
 
 @media (max-width: 1499px) {
   .wrapper {
-    grid-template-columns: 1fr 0.9fr;
-    gap: 115px;
-    padding: 60px;
-    background-position: calc(100% + 37px) calc(100% - 135px);
-    background-size: 718px 286px;
-    border-radius: 40px;
+	grid-template-columns: 1fr 0.9fr;
+	gap: 115px;
+	padding: 60px;
+	background-position: calc(100% + 37px) calc(100% - 135px);
+	background-size: 718px 286px;
+	border-radius: 40px;
   }
 
   .textContent {
-    gap: 15px;
+	gap: 15px;
   }
 
   .footer {
-    margin-top: 5px;
+	margin-top: 5px;
   }
 
   .form {
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 15px;
-    margin-top: 10px;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 15px;
+	margin-top: 10px;
   }
 }
 
 @media (max-width: 1199px) {
   .wrapper {
-    grid-template-columns: 100%;
-    gap: 40px;
-    padding: 40px;
-    background-position: calc(50% - 25px) calc(100% - 219px);
+	grid-template-columns: 100%;
+	gap: 40px;
+	padding: 40px;
+	background-position: calc(50% - 25px) calc(100% - 219px);
   }
 
   .textContent {
-    gap: 10px;
+	gap: 10px;
   }
 
   .footer {
-    margin-top: 15px;
+	margin-top: 15px;
   }
 
   .footer::before {
-    left: -34px;
-    top: 14px;
-    width: 359px;
-    height: 122px;
+	left: -34px;
+	top: 14px;
+	width: 359px;
+	height: 122px;
   }
 
   .form {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
-    row-gap: 20px;
-    margin-top: 0;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 10px;
+	row-gap: 20px;
+	margin-top: 0;
   }
 }
 
 @media (max-width: 767px) {
   .wrapper {
-    grid-template-columns: 100%;
-    gap: 40px;
-    padding: 40px 20px;
-    background-position: calc(50% - 25px) calc(100% - 219px);
+	grid-template-columns: 100%;
+	gap: 40px;
+	padding: 40px 20px;
+	background-position: calc(50% - 25px) calc(100% - 219px);
   }
 
   .textContent {
-    text-align: center;
+	text-align: center;
   }
 
   .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
   }
 
   .form {
-    grid-template-columns: 100%;
-    gap: 10px;
+	grid-template-columns: 100%;
+	gap: 10px;
   }
 
   .formFooter {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
   }
 
   .footNote {
-    max-width: none;
-    font-size: 1.2rem;
-    text-align: center;
+	max-width: none;
+	font-size: 1.2rem;
+	text-align: center;
   }
 
   .submit {
-    width: 100%;
+	width: 100%;
   }
 }
 

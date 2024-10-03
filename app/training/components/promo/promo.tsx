@@ -11,47 +11,44 @@ import Button from "@/components/_buttons/button/button";
 import Timer from "@/components/_common/timer/timer";
 
 const Promo = ({className, icon, courseTypeName}: PromoProps): ReactElement | null => {
-  const common = { alt: '',  quality: 95,}
+  const common = {alt: "", quality: 95};
   const {
-    props: { srcSet: desktop, ...rest },
+    props: {srcSet: desktop, ...rest},
   } = getImageProps({
     ...common,
     width: 645,
     height: 660,
     priority: true,
-    src: '/img/components/promo/author-desktop.jpg',
+    src: "/img/components/promo/author-desktop.jpg",
   });
   const {
-    props: { srcSet: laptop },
+    props: {srcSet: laptop},
   } = getImageProps({
     ...common,
     width: 440,
     height: 510,
-    src: '/img/components/promo/author-laptop.jpg',
+    src: "/img/components/promo/author-laptop.jpg",
   });
   const {
-    props: { srcSet: tablet },
+    props: {srcSet: tablet},
   } = getImageProps({
     ...common,
     width: 708,
     height: 200,
-    src: '/img/components/promo/author-tablet.jpg',
+    src: "/img/components/promo/author-tablet.jpg",
   });
   const {
-    props: { srcSet: mobile },
+    props: {srcSet: mobile},
   } = getImageProps({
     ...common,
     width: 310,
     height: 150,
-    src: '/img/components/promo/author-mobile.jpg',
+    src: "/img/components/promo/author-mobile.jpg",
   });
 
   return (
-    <section className={clsx(className, styles.wrapper)} style={{
-      '--course-promo-color': `#254885`,
-      '--course-promo-blur': `#3A68B7`
-    } as React.CSSProperties}>
-			<div className={styles.textContent}>
+    <section className={clsx(className, styles.wrapper)}>
+      <div className={styles.textContent}>
         <div className={styles.head}>
           <p className={styles.type}>
             {icon && <span className={styles.iconType} dangerouslySetInnerHTML={{__html: icon}}></span>}

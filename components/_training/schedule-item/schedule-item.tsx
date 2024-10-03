@@ -37,7 +37,7 @@ const ScheduleItem = ({schedule}: ScheduleItemProps): ReactElement | null => {
   return (
     <li className={clsx(styles.wrapper)}>
       <div className={styles.head}>
-        <Heading fontSize={"undefined"} fontWeight={`medium`} tag={`h3`}
+        <Heading fontSize={"none"} fontWeight={`medium`} tag={`h3`}
           className={styles.title}>{schedule.name}</Heading>
         <p className={styles.time}>{schedule.time}</p>
       </div>
