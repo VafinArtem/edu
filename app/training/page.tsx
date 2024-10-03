@@ -9,6 +9,7 @@ import RecordForm from "@/app/training/components/record-form/record-form";
 import Schedule from "@/app/training/components/schedule/schedule";
 import {ProgramType, ScheduleType} from "@/helpers/contants";
 import Price from "@/app/training/components/price/price";
+import Certificate from "@/components/_common/certificate/certificate";
 
 const speakers: Speaker[] = [
   {
@@ -172,6 +173,10 @@ const ServicePage = async (): Promise<ReactElement | null> => {
         "--course-color": `#254885`,
         "--course-blur": `#3A68B7`,
       } as React.CSSProperties} />
+
+      <div className="container">
+        <Certificate />
+      </div>
     </>
   );
 };

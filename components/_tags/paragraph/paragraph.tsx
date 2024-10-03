@@ -6,7 +6,7 @@ import styles from "./pargraph.module.css";
 const Paragraph = ({
   children,
   className,
-  fontWeight = "light",
+  fontWeight = "normal",
   fontSize = "default",
   fontStyle = "normal",
   align = "left",
