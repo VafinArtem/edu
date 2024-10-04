@@ -10,6 +10,7 @@ import Schedule from "@/app/training/components/schedule/schedule";
 import {ProgramType, ScheduleType} from "@/helpers/contants";
 import Price from "@/app/training/components/price/price";
 import Certificate from "@/components/_common/certificate/certificate";
+import Gallery from "@/app/training/components/gallery/gallery";
 
 const speakers: Speaker[] = [
   {
@@ -177,6 +178,16 @@ const ServicePage = async (): Promise<ReactElement | null> => {
       <div className="container">
         <Certificate />
       </div>
+
+      <Gallery
+        photos={[
+          `/img/components/gallery/img-1.png`,
+          `/img/components/gallery/img-2.png`,
+          `/img/components/gallery/img-3.png`,
+          `/img/components/gallery/img-4.png`,
+          `/img/components/gallery/img-5.png`,
+          `/img/components/gallery/img-6.png`,
+        ]} />
     </>
   );
 };

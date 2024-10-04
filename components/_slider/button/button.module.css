@@ -1,0 +1,61 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 15px;
+}
+
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+}
+
+.mini {
+  width: 45px;
+  height: 38px;
+}
+
+.mini .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.default {
+  width: 53px;
+  height: 46px;
+}
+
+.default .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.prev .icon {
+  transform: rotate(-180deg);
+}
+
+.bgWhite {
+  background-color: var(--white);
+}
+
+.bgPrimary {
+  background-color: var(--primary-light);
+}
+
+@media (max-width: 1499px) {
+  .default {
+	width: 45px;
+	height: 38px;
+  }
+
+  .default .icon {
+	width: 20px;
+	height: 20px;
+  }
+}

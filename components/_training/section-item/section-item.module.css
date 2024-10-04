@@ -6,6 +6,16 @@
 
 @media (max-width: 1499px) {
   .wrapper {
-    gap: 40px;
+	gap: 40px;
   }
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+	gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
 }
