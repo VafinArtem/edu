@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./variables.css";
 import "./globals.css";
 import {Inter} from "next/font/google";
 import Header from "@/layout/header/header";
 import Footer from "@/layout/footer/footer";
 import Main from "@/layout/main/main";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,13 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body style={InterFont.style}>
-        <Header />
-        <Main>
-          {children}
-        </Main>
-        <Footer />
-      </body>
+    <body style={InterFont.style}>
+    <Header />
+    <Main>
+      {children}
+    </Main>
+    <Footer />
+    </body>
     </html>
   );
 }

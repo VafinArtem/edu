@@ -4,13 +4,16 @@ import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
 import Speakers from "@/app/training/components/speakers/speakers";
-import {DailySchedule, Speaker, TariffInfo} from "@/interfaces/training";
+import {DailySchedule, Place, Speaker, TariffInfo} from "@/interfaces/training";
 import RecordForm from "@/app/training/components/record-form/record-form";
 import Schedule from "@/app/training/components/schedule/schedule";
 import {ProgramType, ScheduleType} from "@/helpers/contants";
 import Price from "@/app/training/components/price/price";
 import Certificate from "@/components/_common/certificate/certificate";
 import Gallery from "@/app/training/components/gallery/gallery";
+import ContainerWhite from "@/components/_training/container-white/container-white";
+import Location from "@/app/training/components/location/location";
+import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
 
 const speakers: Speaker[] = [
   {
@@ -137,6 +140,21 @@ const tariffs: TariffInfo[] = [
   },
 ];
 
+const place: Place = {
+  id: `1`,
+  city: `Санкт-Петербург`,
+  metro: {
+    icon: `/img/components/location/metro.svg`,
+    station: `Московская`,
+  },
+  desc: `Учебный центр оснащён всем необходимым оборудованием для практических занятий и лекций. В перерывах можно отдохнуть и пообедать в уютной комнате отдыха.`,
+  address: `Московский проспект, дом 183-185, Учебный центр Амрита, помещение 800-H`,
+  phone: `8-800-550-05-24`,
+  email: `edu@amrita-dent.ru`,
+  position: [59.856994, 30.317404],
+  photos: [`/img/components/location/img-1.png`, `/img/components/location/img-2.png`, `/img/components/location/img-3.png`, `/img/components/location/img-4.png`],
+};
+
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <>
@@ -188,6 +206,11 @@ const ServicePage = async (): Promise<ReactElement | null> => {
           `/img/components/gallery/img-5.png`,
           `/img/components/gallery/img-6.png`,
         ]} />
+
+      <ContainerWhite>
+        <YaMapLoader />
+        <Location className={`container`} place={place} />
+      </ContainerWhite>
     </>
   );
 };

@@ -40,3 +40,18 @@ export interface TariffInfo {
   };
   includes?: string[];
 }
+
+export interface Place {
+  id: string;
+  city: string;
+  address: string;
+  phone?: string;
+  email?: string;
+  desc?: string;
+  metro?: {
+    station: string;
+    icon: string;
+  };
+  position: [number, number];
+  photos?: string[];
+}
