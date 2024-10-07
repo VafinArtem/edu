@@ -4,7 +4,7 @@ import Promo from "@/app/training/components/promo/promo";
 import Advantages from "@/app/training/components/advantages/advantages";
 import Program from "@/app/training/components/program/program";
 import Speakers from "@/app/training/components/speakers/speakers";
-import {DailySchedule, Place, Speaker, TariffInfo} from "@/interfaces/training";
+import {DailySchedule, Place, QAItem, Speaker, TariffInfo} from "@/interfaces/training";
 import RecordForm from "@/app/training/components/record-form/record-form";
 import Schedule from "@/app/training/components/schedule/schedule";
 import {ProgramType, ScheduleType} from "@/helpers/contants";
@@ -14,6 +14,7 @@ import Gallery from "@/app/training/components/gallery/gallery";
 import ContainerWhite from "@/components/_training/container-white/container-white";
 import Location from "@/app/training/components/location/location";
 import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
+import Faq from "@/app/training/components/faq/faq";
 
 const speakers: Speaker[] = [
   {
@@ -155,6 +156,24 @@ const place: Place = {
   photos: [`/img/components/location/img-1.png`, `/img/components/location/img-2.png`, `/img/components/location/img-3.png`, `/img/components/location/img-4.png`],
 };
 
+const qa: QAItem[] = [
+  {
+    id: `1`,
+    question: `Кому подходит интенсив?`,
+    answer: `<p>Да, работодатель может оплатить интенсив полностью или разделить оплату с&nbsp;вами: например, поделить сумму 50/50 или 75/25. Такая оплата пройдёт по&nbsp;счёту или двустороннему договору, а&nbsp;ИП могут оплатить с&nbsp;бизнес-счёта. Если работодатель купит обучение сразу 10&nbsp;и&nbsp;больше сотрудникам, сделаем скидку&nbsp;10%.</p><p>Условия предоставления услуг для юридических лиц могут отличаться&nbsp;&mdash; чтобы узнать подробнее, <a href="#">оставьте заявку</a> или уточните у&nbsp;вашего менеджера.</p>`,
+  },
+  {
+    id: `2`,
+    question: `Кому подходит интенсив?`,
+    answer: `<p>Да, работодатель может оплатить интенсив полностью или разделить оплату с&nbsp;вами: например, поделить сумму 50/50 или 75/25. Такая оплата пройдёт по&nbsp;счёту или двустороннему договору, а&nbsp;ИП могут оплатить с&nbsp;бизнес-счёта. Если работодатель купит обучение сразу 10&nbsp;и&nbsp;больше сотрудникам, сделаем скидку&nbsp;10%.</p><p>Условия предоставления услуг для юридических лиц могут отличаться&nbsp;&mdash; чтобы узнать подробнее, <a href="#">оставьте заявку</a> или уточните у&nbsp;вашего менеджера.</p>`,
+  },
+  {
+    id: `3`,
+    question: `Что если я не смогу прийти на первый день интенсива?`,
+    answer: `<p>Да, работодатель может оплатить интенсив полностью или разделить оплату с&nbsp;вами: например, поделить сумму 50/50 или 75/25. Такая оплата пройдёт по&nbsp;счёту или двустороннему договору, а&nbsp;ИП могут оплатить с&nbsp;бизнес-счёта. Если работодатель купит обучение сразу 10&nbsp;и&nbsp;больше сотрудникам, сделаем скидку&nbsp;10%.</p><p>Условия предоставления услуг для юридических лиц могут отличаться&nbsp;&mdash; чтобы узнать подробнее, <a href="#">оставьте заявку</a> или уточните у&nbsp;вашего менеджера.</p>`,
+  },
+];
+
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <>
@@ -210,6 +229,7 @@ const ServicePage = async (): Promise<ReactElement | null> => {
       <ContainerWhite>
         <YaMapLoader />
         <Location className={`container`} place={place} />
+        <Faq qa={qa} className={`container`} />
       </ContainerWhite>
     </>
   );

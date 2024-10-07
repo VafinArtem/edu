@@ -55,3 +55,9 @@ export interface Place {
   position: [number, number];
   photos?: string[];
 }
+
+export interface QAItem {
+  id: string;
+  question: string;
+  answer: string;
+}
