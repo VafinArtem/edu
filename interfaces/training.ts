@@ -16,6 +16,12 @@ export interface Speaker {
   edu: Edu[];
 }
 
+export interface SpeakerShort {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
 export interface DailySchedule {
   id: string;
   name: string;
@@ -60,4 +66,14 @@ export interface QAItem {
   id: string;
   question: string;
   answer: string;
+}
+
+export interface CourseShort {
+  id: string;
+  name: string;
+  icon?: string;
+  courseTypeName: string;
+  date?: string;
+  location?: string;
+  price: number;
 }
