@@ -71,9 +71,11 @@ export interface QAItem {
 export interface CourseShort {
   id: string;
   name: string;
-  icon?: string;
   courseTypeName: string;
+  price: number;
+  icon?: string;
   date?: string;
   location?: string;
-  price: number;
+  photo?: string;
+  speakers?: string[];
 }
