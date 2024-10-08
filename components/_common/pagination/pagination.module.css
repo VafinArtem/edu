@@ -1,0 +1,64 @@
+.wrapper {
+  margin-bottom: -120px;
+}
+
+.wrapper,
+.link {
+  display: flex;
+  gap: 5px;
+  font-size: 1.4rem;
+  color: var(--gray-500);
+}
+
+.link {
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.link:not(:last-child)::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/components/pagination/arrow.svg");
+  background-size: contain;
+  background-position: center;
+}
+
+.text {
+  max-width: 275px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	margin-bottom: -100px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+	margin-bottom: -50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	margin-bottom: -45px;
+	padding-left: var(--container-mobile-padding);
+	padding-right: var(--container-mobile-padding);
+	margin-left: calc(0 - var(--container-mobile-padding));
+	margin-right: calc(0 - var(--container-mobile-padding));
+	overflow-y: auto;
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+	  width: 0;
+	  height: 0;
+	  background-color: transparent;
+	}
+  }
+}

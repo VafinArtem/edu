@@ -17,10 +17,15 @@ import SpeakerCourses from "@/app/training/components/speaker-courses/speaker-co
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import SimilarCourses from "@/app/training/components/similar-courses/similar-courses";
 import {courses, place, qa, schedule, shortSpeakers, similarCourses, speakers, tariffs} from "@/mocs/training";
+import Pagination from "@/components/_common/pagination/pagination";
+import {Route} from "@/helpers/route";
 
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <>
+      <Pagination className={`container`} pagination={[{name: `Курсы`, link: Route.TRAINING}, {
+        name: `Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов`,
+      }]} />
       <div className={styles.head} style={{
         "--course-color": `#254885`,
         "--course-blur": `#3A68B7`,

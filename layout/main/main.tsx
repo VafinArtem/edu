@@ -1,7 +1,7 @@
 import React, {ReactElement} from "react";
 import clsx from "clsx";
 import {MainProps} from "@/layout/main/main.props";
-import styles from './main.module.css';
+import styles from "./main.module.css";
 
 const Main = ({children, ...props}: MainProps): ReactElement | null => {
   return (
