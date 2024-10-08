@@ -16,6 +16,7 @@ import Location from "@/app/training/components/location/location";
 import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
 import Faq from "@/app/training/components/faq/faq";
 import SpeakerCourses from "@/app/training/components/speaker-courses/speaker-courses";
+import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 
 const speakers: Speaker[] = [
   {
@@ -382,6 +383,10 @@ const ServicePage = async (): Promise<ReactElement | null> => {
         </div>
 
         <SpeakerCourses className={`container`} courses={courses} speakers={shortSpeakers} />
+
+        <div className="container">
+          <PromoRegistration />
+        </div>
       </ContainerWhite>
     </>
   );
