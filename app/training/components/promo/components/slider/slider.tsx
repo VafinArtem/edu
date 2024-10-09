@@ -24,7 +24,6 @@ const Slider = ({className}: SliderProps): ReactElement | null => {
       }}
       spaceBetween={1}
       slidesPerView={1}
-      onSlideChange={() => console.log("slide change")}
       onAutoplayTimeLeft={function (swiper, timeLeft, percentage) {
         const activeBullet = swiper.pagination.bullets[swiper.activeIndex];
 
