@@ -18,7 +18,7 @@ const Price = ({tariffs, ...props}: PriceProps): ReactElement | null => {
             <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.hotText}><IconFire
               className={styles.hotIcon} width={40}
               heigth={40} />Успейте купить курс<br /> до&nbsp;повышения цены</Paragraph>
-            <Timer />
+            <Timer timestampToEnd={1731118486} />
           </div>
         </div>
         {(tariffs && tariffs.length > 0) && <div className={styles.list}>

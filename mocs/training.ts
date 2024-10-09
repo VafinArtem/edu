@@ -29,7 +29,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: `Щербаков Николай Андреевич`,
-    id: `1`,
+    id: `2`,
     photo: `/img/components/speaker/speaker-1.png`,
     position: `Стоматолог-хирург, пародонтолог. Главврач клиники Мегаполис Дент`,
     workExperience: `более 25 лет`,

@@ -32,7 +32,7 @@ const Promo = ({className, icon, courseTypeName}: PromoProps): ReactElement | nu
         <div className={styles.footer}>
           <Button onClick={() => {
           }}>Записаться на {courseTypeName.toLowerCase()}</Button>
-          <Timer text={`До повышения стоимости`} />
+          <Timer timestampToEnd={1731118486} text={`До повышения стоимости`} />
         </div>
       </div>
       <Slider className={styles.sliderWrapper} />

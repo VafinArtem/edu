@@ -18,7 +18,8 @@ const RecordForm = ({}: RecordFormProps): ReactElement | null => {
           увеличиваться.</Paragraph>
         <div className={styles.footer}>
           <Price oldPrice={35000} price={32000} />
-          <Timer text={`До повышения стоимости`} withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />
+          <Timer timestampToEnd={1731118486} text={`До повышения стоимости`}
+            withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />
         </div>
       </div>
       <form action="#" className={styles.form}>
