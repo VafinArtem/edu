@@ -1,0 +1,33 @@
+.wrapper,
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  gap: 15px;
+}
+
+.list {
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+@media (max-width: 1499px) {
+  .title {
+	font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+	font-size: 1.6rem;
+  }
+}

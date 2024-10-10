@@ -1,0 +1,28 @@
+.link {
+  width: fit-content;
+  font-size: 1.8rem;
+}
+
+.blue {
+  color: var(--other-prj-blue);
+}
+
+.green {
+  color: var(--other-prj-green);
+}
+
+.purple {
+  color: var(--other-prj-purple);
+}
+
+@media (max-width: 1499px) {
+  .link {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .link {
+	font-size: 1.4rem;
+  }
+}

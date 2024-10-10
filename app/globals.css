@@ -62,7 +62,9 @@ textarea {
 }
 
 .container {
+  width: 100%;
   max-width: var(--max-width);
+  margin: 0 auto;
   padding-left: var(--container-desktop-padding);
   padding-right: var(--container-desktop-padding);
 }

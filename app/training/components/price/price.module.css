@@ -120,8 +120,8 @@
 	max-width: 100vw;
 	padding-left: var(--container-tablet-padding);
 	padding-right: var(--container-tablet-padding);
-	margin-left: calc(0 - var(--container-tablet-padding));
-	margin-right: calc(0 - var(--container-tablet-padding));
+	margin-left: calc(0px - var(--container-tablet-padding));
+	margin-right: calc(0px - var(--container-tablet-padding));
 	overflow-y: auto;
 	scrollbar-color: transparent transparent;
 	scrollbar-width: none;
@@ -164,8 +164,8 @@
 	gap: 10px;
 	padding-left: var(--container-mobile-padding);
 	padding-right: var(--container-mobile-padding);
-	margin-left: calc(0 - var(--container-mobile-padding));
-	margin-right: calc(0 - var(--container-mobile-padding));
+	margin-left: calc(0px - var(--container-mobile-padding));
+	margin-right: calc(0px - var(--container-mobile-padding));
   }
 
   .container {

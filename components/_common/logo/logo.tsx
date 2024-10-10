@@ -28,7 +28,7 @@ const Logo = ({className, position, iconClassName, color = "black"}: LogoProps):
           <IconLogoMini className={clsx(className, styles.logoMini, classNameOptions)} />
         </> :
         <Link className={clsx(className, styles.link)} href={Route.MAIN}>
-          <IconLogo className={clsx(classNameOptions)} />
+          <IconLogo width={142} heigth={42} className={clsx(classNameOptions)} />
           <IconLogoMini className={clsx(classNameOptions, styles.logoMini)} />
         </Link>}
     </React.Fragment>
