@@ -21,6 +21,13 @@
   gap: 20px;
 }
 
+.bottom {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo,
 .phone,
 .social {
@@ -77,6 +84,23 @@
   flex-shrink: 0;
 }
 
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+}
+
+.copyrightText {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.payment {
+  max-width: 411px;
+}
+
 @media (max-width: 1499px) {
   .footer {
 	padding-top: 52px;
@@ -122,6 +146,19 @@
   .navigation {
 	grid-column: 6/-1;
   }
+
+  .copyright {
+	font-size: 1.4rem;
+  }
+
+  .copyrightText {
+	flex-direction: column;
+	gap: 2px;
+  }
+
+  .payment {
+	max-width: 323px;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -132,6 +169,10 @@
 }
 
 @media (max-width: 1099px) {
+  .wrapper {
+	gap: 40px;
+  }
+
   .top {
 	grid-template-columns: repeat(8, 1fr);
 	column-gap: 8px;
@@ -180,6 +221,22 @@
 
   .eagle {
 	width: 38px;
+  }
+
+  .copyright {
+	gap: 5px;
+	align-items: flex-start;
+	font-size: 1.2rem;
+	line-height: 1.1;
+  }
+
+  .copyrightText {
+	gap: 0;
+  }
+
+  .copyrightIcon {
+	width: 15px;
+	height: 15px;
   }
 }
 
@@ -230,5 +287,30 @@
 
   .eagle {
 	width: 34px;
+  }
+
+  .bottom {
+	flex-direction: column;
+	gap: 10px;
+  }
+
+  .payment {
+	order: 0;
+	margin-bottom: 10px;
+  }
+
+  .copyright {
+	order: 1;
+	align-items: center;
+  }
+
+  .copyrightText {
+	flex-direction: row;
+	gap: 2px;
+  }
+
+  .copyrightIcon {
+	width: 17px;
+	height: 17px;
   }
 }

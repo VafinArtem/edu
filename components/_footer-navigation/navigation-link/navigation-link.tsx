@@ -14,4 +14,4 @@ function NavigationLink<C extends BaseButtonComponent = "button">({
   );
 }
 
-export {NavigationLink};
+export default NavigationLink;
