@@ -20,7 +20,7 @@ body {
 body {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: [header] min-content 10px [main] 1fr 40px [footer] min-content;
+  grid-template-rows: [header] min-content 20px [main] 1fr 40px [footer] min-content;
   margin: 0;
   font-weight: 400;
   font-size: 1.7rem;

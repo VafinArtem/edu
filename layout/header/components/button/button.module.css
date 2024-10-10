@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+}
+
+.button.gray {
+  background-color: var(--gray-100);
+}
+
+.button.gray:hover,
+.button.gray:focus-visible {
+  background-color: var(--gray-200);
+}
+
+.button.primary {
+  background-color: var(--primary);
+}
+
+@media (max-width: 1499px) {
+  .button {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .button:not(.primary) {
+	padding: 8px;
+  }
+
+  .button.primary {
+	padding-left: 17px;
+	padding-right: 17px;
+  }
+}
+
+@media (max-width: 380px) {
+  .button {
+	height: 38px;
+  }
+}

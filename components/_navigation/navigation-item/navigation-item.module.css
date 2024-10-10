@@ -1,0 +1,36 @@
+.item {
+  font-size: 1.8rem;
+  letter-spacing: -0.019em;
+  cursor: pointer;
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px 10px 20px;
+  margin-right: 10px;
+  border: 1px solid var(--gray-200);
+  border-radius: 50px;
+}
+
+.catalog.active {
+  background-color: var(--gray-200);
+}
+
+@media (max-width: 1499px) {
+  .item {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .item {
+	font-size: 1.3rem;
+  }
+
+  .catalog {
+	margin-right: 0;
+	padding: 15px 15px 15px 50px;
+  }
+}

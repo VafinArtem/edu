@@ -1,4 +1,5 @@
 "use client";
+
 import React, {ReactElement} from "react";
 import ReactDOM from "react-dom";
 import {YaMapProps} from "./ya-map.props";
