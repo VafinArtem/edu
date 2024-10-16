@@ -21,6 +21,13 @@
   padding: 25px 30px;
   background-color: var(--white);
   border-radius: 50px;
+}
+
+.header.white .wrapper {
+  border: 1px solid var(--gray-200);
+}
+
+.header.gray .wrapper {
   box-shadow: 0 8px 30px 0 rgba(229, 235, 243, 0.51);
 }
 

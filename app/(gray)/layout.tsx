@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
     <body style={InterFont.style}>
-    <Header />
+    <Header type={"gray"} />
     <Main>
       {children}
     </Main>

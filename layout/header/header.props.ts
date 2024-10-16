@@ -1,3 +1,5 @@
-import {DetailedHTMLProps, HTMLAttributes} from 'react';
+import {DetailedHTMLProps, HTMLAttributes} from "react";
 
-export type HeaderProps = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
+export type HeaderProps = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
+  type?: "white" | "gray";
+}

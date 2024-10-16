@@ -15,10 +15,13 @@ import IconMortarboard from "./mortarboard.svg";
 import IconBurger from "./burger.svg";
 import Catalog from "@/layout/header/components/catalog/catalog";
 
-const Header = ({...props}: HeaderProps): ReactElement | null => {
+const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null => {
 
   return (
-    <header className={clsx(styles.header)}  {...props}>
+    <header className={clsx(styles.header, {
+      [styles.white]: type === "white",
+      [styles.gray]: type === "gray",
+    })}  {...props}>
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.wrapper)}>
           <div className={styles.left}>
