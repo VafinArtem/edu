@@ -8,7 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import Button from "@/components/_buttons/button/button";
 import Timer from "@/components/_common/timer/timer";
-import Slider from "@/app/training/components/promo/components/slider/slider";
+import Slider from "@/app/(gray)/training/components/promo/components/slider/slider";
 
 const Promo = ({className, icon, courseTypeName}: PromoProps): ReactElement | null => {
 

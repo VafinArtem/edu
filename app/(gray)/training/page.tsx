@@ -1,24 +1,24 @@
 import React, {ReactElement} from "react";
 import styles from "./page.module.css";
-import Promo from "@/app/training/components/promo/promo";
-import Advantages from "@/app/training/components/advantages/advantages";
-import Program from "@/app/training/components/program/program";
-import Speakers from "@/app/training/components/speakers/speakers";
-import RecordForm from "@/app/training/components/record-form/record-form";
-import Schedule from "@/app/training/components/schedule/schedule";
-import Price from "@/app/training/components/price/price";
-import Certificate from "@/components/_common/certificate/certificate";
-import Gallery from "@/app/training/components/gallery/gallery";
-import ContainerWhite from "@/components/_training/container-white/container-white";
-import Location from "@/app/training/components/location/location";
-import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
-import Faq from "@/app/training/components/faq/faq";
-import SpeakerCourses from "@/app/training/components/speaker-courses/speaker-courses";
-import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
-import SimilarCourses from "@/app/training/components/similar-courses/similar-courses";
 import {courses, place, qa, schedule, shortSpeakers, similarCourses, speakers, tariffs} from "@/mocs/training";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
+import Promo from "@/app/(gray)/training/components/promo/promo";
+import Advantages from "@/app/(gray)/training/components/advantages/advantages";
+import Program from "@/app/(gray)/training/components/program/program";
+import Speakers from "@/app/(gray)/training/components/speakers/speakers";
+import RecordForm from "@/app/(gray)/training/components/record-form/record-form";
+import Schedule from "@/app/(gray)/training/components/schedule/schedule";
+import Price from "@/app/(gray)/training/components/price/price";
+import Certificate from "@/components/_common/certificate/certificate";
+import Gallery from "@/app/(gray)/training/components/gallery/gallery";
+import ContainerWhite from "@/components/_training/container-white/container-white";
+import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
+import Faq from "@/app/(gray)/training/components/faq/faq";
+import SpeakerCourses from "@/app/(gray)/training/components/speaker-courses/speaker-courses";
+import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
+import SimilarCourses from "@/app/(gray)/training/components/similar-courses/similar-courses";
+import Location from "@/app/(gray)/training/components/location/location";
 
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
@@ -77,7 +77,9 @@ const ServicePage = async (): Promise<ReactElement | null> => {
 
       <ContainerWhite>
         <YaMapLoader />
+        
         <Location className={`container`} place={place} />
+
         <Faq qa={qa} className={`container`} />
 
         <div className="container" style={{

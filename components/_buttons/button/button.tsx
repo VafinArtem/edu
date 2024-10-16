@@ -2,22 +2,17 @@ import React, {ReactElement} from "react";
 import {ButtonProps} from "./button.props";
 import styles from "./button.module.css";
 import clsx from "clsx";
+import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-const Button = ({
+const Button = <C extends BaseButtonComponent = "button">({
   className,
   size = "default",
-  type = 'button',
-  children,
   ...props
-}: ButtonProps): ReactElement | null => {
+}: ButtonProps<C>): ReactElement | null => {
   return (
-    <button
-      className={clsx(styles.button, className, {
-        [styles.wide]: size === "wide",
-      })}
-      type={type}
-      {...props}
-    >{children}</button>
+    <BaseButton<C> className={clsx(styles.button, className, {
+      [styles.wide]: size === "wide",
+    })} {...(props as BaseButtonProps<C>)} />
   );
 };
 

@@ -4,8 +4,9 @@ import styles from "./similar-courses.module.css";
 import SectionItem from "@/components/_training/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
-import Button from "@/components/_links/button/button";
 import IconArrow from "./arrow-mid-right.svg";
+import Button from "@/components/_buttons/button/button";
+import Link from "next/link";
 
 const SimilarCourses = ({className, courses}: SimilarCoursesProps): ReactElement | null => {
   return (
@@ -19,7 +20,7 @@ const SimilarCourses = ({className, courses}: SimilarCoursesProps): ReactElement
           withPhoto={true}
           key={course.id} />)}
       </ul>
-      <Button className={styles.link} href={`#`}>Смотреть все 129 курсов в
+      <Button component={Link} className={styles.link} href={`#`}>Смотреть все 129 курсов в
         каталоге <IconArrow className={styles.icon} width={16} height={16} /></Button>
     </SectionItem>
   );

@@ -1,5 +1,6 @@
-import {ButtonHTMLAttributes, DetailedHTMLProps} from "react";
+import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export type ButtonProps<C extends BaseButtonComponent = "button"> =
+  BaseButtonProps<C> & {
   size?: "default" | "wide";
 }

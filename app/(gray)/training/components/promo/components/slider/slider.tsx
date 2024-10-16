@@ -4,7 +4,7 @@ import styles from "./slider.module.css";
 import {Autoplay, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import clsx from "clsx";
-import Slide from "@/app/training/components/promo/components/slide/slide";
+import Slide from "@/app/(gray)/training/components/promo/components/slide/slide";
 
 const Slider = ({className}: SliderProps): ReactElement | null => {
   return (
