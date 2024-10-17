@@ -16,3 +16,18 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.wrapper.white .name,
+.wrapper.white .link {
+  color: var(--white);
+}
+
+@media (max-width: 767px) {
+  .img {
+	height: 80px;
+  }
+
+  .content {
+	gap: 10px;
+  }
+}

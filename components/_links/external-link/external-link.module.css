@@ -26,24 +26,28 @@
   background-position: center;
 }
 
+.link.white::after {
+  background-image: url("/img/common/external-link-arrow-white.svg");
+}
+
 @media (max-width: 1499px) {
   .link {
-    font-size: 1.7rem;
+	font-size: 1.7rem;
   }
 
   .link::after {
-    width: 16px;
-    height: 16px;
+	width: 16px;
+	height: 16px;
   }
 }
 
 @media (max-width: 1199px) {
   .link {
-    font-size: 1.4rem;
+	font-size: 1.4rem;
   }
 
   .link::after {
-    width: 14px;
-    height: 15px;
+	width: 14px;
+	height: 15px;
   }
 }
