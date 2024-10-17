@@ -106,8 +106,14 @@
   }
 
   .textContent {
+	align-items: center;
 	padding-left: 10px;
 	padding-right: 10px;
+	text-align: center;
+  }
+
+  .positions {
+	justify-content: center;
   }
 
   .position {
@@ -116,5 +122,9 @@
 
   .picture {
 	border-radius: 15px;
+  }
+
+  .button {
+	width: 100%;
   }
 }
