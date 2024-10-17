@@ -3,12 +3,17 @@
   gap: 20px;
 }
 
+.wrapper:has(.link:hover, .link:focus-visible) .img {
+  transform: translateY(-10px);
+}
+
 .img {
   flex-shrink: 0;
   height: 103px;
   width: auto;
   object-fit: contain;
   border-radius: 5px;
+  transition: transform 0.2s ease-in;
 }
 
 .content {

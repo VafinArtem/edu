@@ -8,11 +8,17 @@
   font-size: 1.8rem;
   line-height: 1;
   border-bottom: 1px solid #B8667C;
+  transition: border-color 0.2s ease-in;
 }
 
 .link:hover,
 .link:focus-visible {
   border-color: transparent;
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  transform: scale(1.2);
 }
 
 .link::after {
@@ -24,6 +30,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: transform 0.2s ease-in;
+  transform-origin: left bottom;
 }
 
 .link.white::after {
