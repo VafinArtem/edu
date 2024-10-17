@@ -1,24 +1,24 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 140px;
+  gap: 100px;
   grid-row: main;
 }
 
 @media (max-width: 1499px) {
   .main {
-    gap: 120px;
+	gap: 80px;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1099px) {
   .main {
-    gap: 70px;
+	gap: 60px;
   }
 }
 
 @media (max-width: 767px) {
   .main {
-    gap: 60px;
+	gap: 60px;
   }
 }
