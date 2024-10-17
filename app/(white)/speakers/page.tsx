@@ -4,6 +4,7 @@ import {Route} from "@/helpers/route";
 import styles from "./page.module.css";
 import Promo from "@/app/(white)/speakers/components/promo/promo";
 import Navigation from "@/app/(white)/speakers/components/navigation/navigation";
+import About from "@/app/(white)/speakers/components/about/about";
 
 const SpeakerPage = async (): Promise<ReactElement | null> => {
   return (
@@ -17,6 +18,10 @@ const SpeakerPage = async (): Promise<ReactElement | null> => {
         <Navigation />
       </div>
 
+      <About content={`<p>Опытный клиницист. С&nbsp;2016 основатель и&nbsp;главный врач стоматологической клиники &laquo;Мегаполис Дент&raquo;, г.&nbsp;Санкт-Петербург.</p>
+        <p>Проводит хирургическую реабилитацию с&nbsp;использованием дентальных имплантатов и&nbsp;аугментации костной ткани пациентам с&nbsp;заболеваниями пародонта.</p>
+        <p>Преподаватель курса пародонтологии кафедры стоматологии общей практики СПбИНСТОМ. Является автором курсов по&nbsp;терапевтической и&nbsp;хирургической пародонтологии с&nbsp;2005&nbsp;г.</p>
+      `} />
     </>
   );
 };
