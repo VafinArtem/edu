@@ -7,7 +7,7 @@ import NavigationItem from "@/components/_page-navigation/navigation-item/naviga
 const Navigation = ({}: NavigationProps): ReactElement | null => {
   return (
     <NavigationList className={styles.list}>
-      <NavigationItem href={`#about`}>О преподавателе</NavigationItem>
+      <NavigationItem isActive href={`#about`}>О преподавателе</NavigationItem>
       <NavigationItem href={`#education`}>Образование</NavigationItem>
       <NavigationItem href={`#examples`}>Рабочие кейсы</NavigationItem>
       <NavigationItem href={`#courses`}>Курсы</NavigationItem>
