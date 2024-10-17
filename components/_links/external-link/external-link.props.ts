@@ -1,6 +1,6 @@
-import {AnchorHTMLAttributes, DetailedHTMLProps} from "react";
+import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-export interface ExternalLinkProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
-  isExternal?: boolean;
+export type ExternalLinkProps<C extends BaseButtonComponent = "button"> =
+  BaseButtonProps<C> & {
   color?: "white" | "primary";
 }

@@ -2,27 +2,20 @@ import React, {ReactElement} from "react";
 import {ExternalLinkProps} from "./external-link.props";
 import styles from "./external-link.module.css";
 import clsx from "clsx";
-import Link from "next/link";
+import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-const ExternalLink = ({
-  isExternal,
-  href,
+const ExternalLink = <C extends BaseButtonComponent = "button">({
   className,
   color = "primary",
-  children,
   ...props
-}: ExternalLinkProps): ReactElement | null => {
+}: ExternalLinkProps<C>): ReactElement | null => {
   const classNameOptions = [className, styles.link, {
     [styles.primary]: color === "primary",
     [styles.white]: color === "white",
   }];
 
   return (
-    <>
-      {isExternal && <a href={href} className={clsx(classNameOptions)} target="_blank"
-        rel="noopener noreferrer" {...props}>{children}</a>}
-      {!isExternal && <Link className={clsx(classNameOptions)} href={href ?? ``} {...props}>{children}</Link>}
-    </>
+    <BaseButton<C> className={clsx(classNameOptions)} {...(props as BaseButtonProps<C>)} />
   );
 };
 
