@@ -7,6 +7,8 @@ import Navigation from "@/app/(white)/speakers/components/navigation/navigation"
 import About from "@/app/(white)/speakers/components/about/about";
 import Edu from "@/app/(white)/speakers/components/edu/edu";
 import {speakers} from "@/mocs/training";
+import Examples from "@/app/(white)/speakers/components/examples/examples";
+import {examples} from "@/mocs/speaker";
 
 const SpeakerPage = async (): Promise<ReactElement | null> => {
   return (
@@ -28,6 +30,8 @@ const SpeakerPage = async (): Promise<ReactElement | null> => {
       {speakers[0].edu.length > 0 && <div className="container">
         <Edu edu={speakers[0].edu} />
       </div>}
+
+      <Examples examples={examples} />
     </>
   );
 };

@@ -6,8 +6,8 @@ function useOpenModal<T extends HTMLElement>() {
 
   useEffect(() => {
     if (showModal) {
-      const onClick = (evt: any) => {
-        if (ref.current && !ref.current.contains(evt.target)) {
+      const onClick = (evt: MouseEvent) => {
+        if (ref.current && !ref.current.contains(evt.target as HTMLElement)) {
           setShowModal(false);
         }
       };

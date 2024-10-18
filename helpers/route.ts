@@ -4,7 +4,7 @@ export const Route = {
   RESTORE: "/restore",
   PROFILE: "/profile",
   TRAINING: "/training",
-  SPEAKER: "/speaker",
+  SPEAKER: "/speakers",
   NEWS: "/news",
   REVIEWS: "/reviews",
   CONTACTS: "/contacts",

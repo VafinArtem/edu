@@ -7,6 +7,9 @@ export default function Home() {
       <li>
         <Link href={Route.TRAINING} style={{textDecoration: `underline`}}>Один курс</Link>
       </li>
+      <li>
+        <Link href={Route.SPEAKER} style={{textDecoration: `underline`}}>Один преподаватель</Link>
+      </li>
     </ul>
   );
 }
