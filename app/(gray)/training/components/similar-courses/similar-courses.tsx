@@ -12,14 +12,14 @@ const SimilarCourses = ({className, courses}: SimilarCoursesProps): ReactElement
   return (
     <SectionItem className={className}>
       <Heading tag={`h2`}>Может заинтересовать</Heading>
-      <ul className={styles.list}>
+      <div className={styles.list}>
         {courses.map((course) => <CourseShortItem
           className={styles.item}
           course={course}
           background={`white`}
           withPhoto={true}
           key={course.id} />)}
-      </ul>
+      </div>
       <Button component={Link} className={styles.link} href={`#`}>Смотреть все 129 курсов в
         каталоге <IconArrow className={styles.icon} width={16} height={16} /></Button>
     </SectionItem>

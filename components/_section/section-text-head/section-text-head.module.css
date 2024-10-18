@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 870px;
+}
+
+@media (max-width: 767px) {
+  .textContent {
+    gap: 15px;
+  }
+}

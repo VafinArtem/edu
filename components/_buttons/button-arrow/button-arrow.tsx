@@ -5,25 +5,28 @@ import clsx from "clsx";
 import IconMidRight from "./arrow-mid-right.svg";
 import IconBottomRight from "./arrow-bottom-right.svg";
 import IconTopRight from "./arrow-top-right.svg";
+import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-const ButtonArrow = ({
+const ButtonArrow = <C extends BaseButtonComponent = "button">({
   className,
-  type = "button",
   children,
   iconDirection,
   color,
+  size = "middle",
   ...props
-}: ButtonArrowProps): ReactElement | null => {
+}: ButtonArrowProps<C>): ReactElement | null => {
   return (
-    <button type={type} className={clsx(className, styles.button, {
+    <BaseButton<C> className={clsx(className, styles.button, {
       [styles.primary]: color === "primary",
       [styles.primary2]: color === "primary-2",
-    })} {...props}>
+      [styles.middle]: size === "middle",
+      [styles.small]: size === "small",
+    })} {...(props as BaseButtonProps<C>)}>
       {children}
       {iconDirection === "bottom-right" && <IconBottomRight />}
       {iconDirection === "mid-right" && <IconMidRight />}
       {iconDirection === "top-right" && <IconTopRight />}
-    </button>
+    </BaseButton>
   );
 };
 

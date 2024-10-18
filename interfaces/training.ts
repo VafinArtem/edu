@@ -77,5 +77,6 @@ export interface CourseShort {
   date?: string;
   location?: string;
   photo?: string;
+  photoMobile?: string;
   speakers?: string[];
 }

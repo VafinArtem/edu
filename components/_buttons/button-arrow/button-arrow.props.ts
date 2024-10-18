@@ -1,6 +1,8 @@
-import {ButtonHTMLAttributes, DetailedHTMLProps} from "react";
+import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 
-export interface ButtonArrowProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export type ButtonArrowProps<C extends BaseButtonComponent = "button"> =
+  BaseButtonProps<C> & {
   iconDirection: "bottom-right" | "mid-right" | "top-right";
   color: "primary" | "primary-2";
+  size?: "middle" | "small";
 }
