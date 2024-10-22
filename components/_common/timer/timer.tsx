@@ -39,7 +39,7 @@ const Timer = ({
   });
 
   return (
-    <p className={clsx(className, styles.wrapper)}>
+    <p className={clsx(className, styles.wrapper)} suppressHydrationWarning>
 			<span className={styles.digits}>
         <span className={styles.digit}>
           <span className={styles.count}>{days}</span>
