@@ -13,6 +13,7 @@ export interface Speaker {
   name: string;
   position: string;
   workExperience: string;
+  cite?: string;
   edu: Edu[];
 }
 

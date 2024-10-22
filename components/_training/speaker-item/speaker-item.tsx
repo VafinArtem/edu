@@ -23,6 +23,7 @@ const SpeakerItem = ({
   workExperience,
   edu,
   id,
+  cite,
 }: SpeakerItemProps): ReactElement | null => {
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const [isBeginning, setIsBeginning] = useState<boolean>(false);
@@ -92,6 +93,7 @@ const SpeakerItem = ({
           </div>
         </div>
       </div>
+      {cite && <blockquote className={styles.cite}>{cite}</blockquote>}
       <div className={styles.edu}>
         <div className={styles.eduHead}>
           <Heading tag={`h4`} fontSize={`mini`}>Образование и&nbsp;награды</Heading>
