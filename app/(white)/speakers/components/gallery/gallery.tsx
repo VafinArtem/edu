@@ -12,11 +12,11 @@ import Button from "@/components/_slider/button/button";
 import {Navigation} from "swiper/modules";
 import Image from "next/image";
 
-const Gallery = ({photos, speakerName, className}: GalleryProps): ReactElement | null => {
+const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): ReactElement | null => {
   const swiperRef = useRef<SwiperCore>();
 
   return (
-    <SectionItem className={className} style={{overflow: "hidden"}}>
+    <SectionItem className={className} style={{overflow: "hidden"}} {...props}>
       <Heading tag={`h2`} className={`container`}>Фото с {speakerName}</Heading>
       <div className={styles.container}>
         <Swiper

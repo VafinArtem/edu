@@ -10,7 +10,7 @@ import Button from "@/components/_buttons/button/button";
 import clsx from "clsx";
 import useIsResolution from "@/hooks/useIsResolution";
 
-const Examples = ({examples}: ExamplesProps): ReactElement | null => {
+const Examples = ({examples, ...props}: ExamplesProps): ReactElement | null => {
   const isLaptop = useIsResolution({min: 1024, max: 1499});
   const isTablet = useIsResolution({min: 680, max: 1023});
   const isMobile = useIsResolution({min: 0, max: 679});
@@ -36,7 +36,7 @@ const Examples = ({examples}: ExamplesProps): ReactElement | null => {
   return (
     <div className={clsx(styles.wrapper, {
       [styles.show]: showAll,
-    })}>
+    })} {...props}>
       <SectionItem className={clsx(`container`, styles.inner)}>
         <Heading tag={`h2`}>Рабочие кейсы</Heading>
         <div className={styles.list}>

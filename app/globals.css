@@ -29,6 +29,10 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+html *[id] {
+  scroll-margin-top: 25px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
