@@ -1,5 +1,13 @@
 import {ProgramType, ScheduleType} from "@/helpers/contants";
 
+export interface TrainingPageModel {
+  alias: string;
+  name: string;
+  id: string;
+  _id: string;
+  metaTitle: string;
+}
+
 export interface Edu {
   name: string;
   previewImg: string;

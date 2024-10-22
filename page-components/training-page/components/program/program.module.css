@@ -1,0 +1,30 @@
+.downloadLink {
+  align-self: end;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (max-width: 1499px) {
+  .list {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .list {
+    gap: 30px;
+  }
+}

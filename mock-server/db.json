@@ -1,0 +1,18 @@
+{
+  "trainings": [
+    {
+      "id": "klinicheskaya-paradantalogya",
+      "_id": "1",
+      "alias": "klinicheskaya-paradantalogya",
+      "name": "Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
+      "metaTitle": "Макстер-класс: Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов"
+    },
+    {
+      "id": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
+      "_id": "2",
+      "alias": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
+      "name": "Базовый курс по имплантологии (хирурнический и ортопедический этапы)",
+      "metaTitle": "Курс: Базовый курс по имплантологии (хирурнический и ортопедический этапы)"
+    }
+  ]
+}
