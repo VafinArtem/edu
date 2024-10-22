@@ -1,4 +1,4 @@
-import {ExampleItem} from "@/interfaces/speaker";
+import {ExampleItem, GalleryItem} from "@/interfaces/speaker";
 import {CourseShort} from "@/interfaces/training";
 
 export const examples: ExampleItem[] = [
@@ -107,5 +107,22 @@ export const courses: CourseShort[] = [
     speakers: [`Волкова Юлия Валерьевна`],
     photo: `/img/speaker-page/courses/img.png`,
     photoMobile: `/img/speaker-page/courses/img-mobile.png`,
+  },
+];
+
+export const gallery: GalleryItem[] = [
+  {
+    id: `1`,
+    img: `/img/speaker-page/gallery/image-1.png`,
+    description: `Поездка на курс в бернский университет`,
+  },
+  {
+    id: `2`,
+    img: `/img/speaker-page/gallery/image-2.png`,
+    description: `Поездка на курс в бернский университет`,
+  },
+  {
+    id: `3`,
+    img: `/img/speaker-page/gallery/image-3.png`,
   },
 ];

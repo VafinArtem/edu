@@ -6,7 +6,6 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
 import {GalleryProps} from "./gallery.props";
 import "swiper/css";
-import "swiper/css/navigation";
 import styles from "./gallery.module.css";
 import SectionItem from "@/components/_training/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";

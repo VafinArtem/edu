@@ -8,8 +8,9 @@ import About from "@/app/(white)/speakers/components/about/about";
 import Edu from "@/app/(white)/speakers/components/edu/edu";
 import {speakers} from "@/mocs/training";
 import Examples from "@/app/(white)/speakers/components/examples/examples";
-import {courses, examples} from "@/mocs/speaker";
+import {courses, examples, gallery} from "@/mocs/speaker";
 import Courses from "@/app/(white)/speakers/components/courses/courses";
+import Gallery from "@/app/(white)/speakers/components/gallery/gallery";
 
 const SpeakerPage = async (): Promise<ReactElement | null> => {
   return (
@@ -35,6 +36,8 @@ const SpeakerPage = async (): Promise<ReactElement | null> => {
       <Examples examples={examples} />
 
       <Courses className={`container`} courses={courses} />
+
+      <Gallery speakerName={`Юлией`} photos={gallery} />
     </>
   );
 };
