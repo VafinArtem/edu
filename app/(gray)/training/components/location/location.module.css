@@ -258,12 +258,12 @@
 	overflow-y: auto;
 	scrollbar-color: transparent transparent;
 	scrollbar-width: none;
+  }
 
-	&::-webkit-scrollbar {
-	  width: 0;
-	  height: 0;
-	  background-color: transparent;
-	}
+  .photos::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: transparent;
   }
 
   .photo:nth-child(n + 4) {

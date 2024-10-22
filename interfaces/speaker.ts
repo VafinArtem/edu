@@ -2,6 +2,8 @@ export interface ExampleItem {
   id: number;
   name: string;
   image: string;
+  description: string;
+  images?: string[];
 }
 
 export interface GalleryItem {

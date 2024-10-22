@@ -125,12 +125,12 @@
 	overflow-y: auto;
 	scrollbar-color: transparent transparent;
 	scrollbar-width: none;
+  }
 
-	&::-webkit-scrollbar {
-	  width: 0;
-	  height: 0;
-	  background-color: transparent;
-	}
+  .list::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: transparent;
   }
 
   .head {

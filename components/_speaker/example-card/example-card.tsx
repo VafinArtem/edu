@@ -1,25 +1,52 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect} from "react";
 import {ExampleCardProps} from "./example-card.props";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import styles from "./example-card.module.css";
 import clsx from "clsx";
 import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
 import Image from "next/image";
+import ModalWrapper from "@/components/_modal/modal-wrapper/modal-wrapper";
+import useOpenModal from "@/hooks/useOpenModal";
 
 const ExampleCard = <C extends BaseButtonComponent = "button">({
   example,
   className,
   ...props
 }: ExampleCardProps<C>): ReactElement | null => {
-  const {image, name} = example;
+  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
+  const {image, name, description, images} = example;
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = `auto`;
+    }
+  }, [showModal]);
 
   return (
-    <article className={clsx(styles.item, className)}>
-      <BaseButton<C> className={clsx(styles.inner)} {...(props as BaseButtonProps<C>)}>
-        <Image src={image} alt={``} width={417} height={319} className={styles.image} quality={95} priority={true} />
-        <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
-      </BaseButton>
-    </article>
+    <>
+      <article className={clsx(styles.item, className)}>
+        <BaseButton<C> className={clsx(styles.inner)} {...(props as BaseButtonProps<C>)}
+          onClick={() => changeModalActivityStatus(true)}>
+          <Image src={image} alt={``} width={417} height={319} className={styles.image} quality={95} priority={true} />
+          <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
+        </BaseButton>
+      </article>
+      {showModal &&
+        <ModalWrapper setShowModal={changeModalActivityStatus} showModal={showModal} className={styles.modal} ref={ref}>
+          <div className={styles.scroll}>
+            <div className={styles.modalInner}>
+              <Paragraph className={styles.modalName}>{name}</Paragraph>
+              <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
+              {images && <div className={styles.images}>
+                {images.map((image, index) => <Image key={index} src={image} alt={``} width={347} height={347}
+                  quality={95} className={styles.modalImage} />)}
+              </div>}
+            </div>
+          </div>
+        </ModalWrapper>}
+    </>
   );
 };
 
