@@ -13,16 +13,28 @@ const QaItem = ({qa, className, parentRef}: QaItemProps): ReactElement | null =>
 
   useEffect(() => {
     if (isOpen) {
+      let refValue = null;
+
+      if (parentRef.current) {
+        refValue = parentRef.current;
+      }
+
       const onClick = (evt: Event) => {
         if (ref.current && !ref.current.contains(evt.target as HTMLElement)) {
           setIsOpen(false);
         }
       };
 
-      parentRef.current.addEventListener(`click`, onClick);
-      return () => parentRef.current.removeEventListener(`click`, onClick);
+      if (refValue) {
+        refValue.addEventListener(`click`, onClick);
+      }
+      return () => {
+        if (refValue) {
+          refValue.removeEventListener(`click`, onClick);
+        }
+      };
     }
-  }, [isOpen]);
+  }, [isOpen, parentRef]);
 
   return (
     <article className={clsx(styles.wrapper, className, {

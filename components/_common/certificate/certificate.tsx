@@ -48,7 +48,7 @@ const Certificate = ({}: CertificateProps): ReactElement | null => {
         <source media="(max-width: 530px)" srcSet={mobile} />
         <source media="(max-width: 1099px)" srcSet={tablet} />
         <source media="(max-width: 1499px)" srcSet={laptop} />
-        <img {...rest} width={290} height={179} className={styles.image} />
+        <img {...rest} width={290} height={179} alt={``} className={styles.image} />
       </picture>
       <div className={styles.content}>
         <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончанию интенсива

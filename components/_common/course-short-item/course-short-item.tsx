@@ -52,7 +52,7 @@ const CourseShortItem = ({
           <picture className={styles.picture}>
             <source media="(min-width: 768px)" srcSet={desktop} />
             {positionPhoto === `left` && <source media="(max-width: 767px)" srcSet={mobile} />}
-            <img {...rest} width={positionPhoto !== "left" ? 426 : 175}
+            <img {...rest} width={positionPhoto !== "left" ? 426 : 175} alt={``}
               height={positionPhoto !== "left" ? 204 : 208} className={styles.image} />
           </picture>
         </div>

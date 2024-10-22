@@ -63,7 +63,7 @@ const Promo = ({className}: PromoProps): ReactElement | null => {
         <source media="(max-width: 530px)" srcSet={mobile} />
         <source media="(max-width: 1099px)" srcSet={tablet} />
         <source media="(max-width: 1499px)" srcSet={laptop} />
-        <img {...rest} width={440} height={510} className={styles.image} />
+        <img {...rest} width={440} height={510} alt={``} className={styles.image} />
       </picture>
     </section>
   );
