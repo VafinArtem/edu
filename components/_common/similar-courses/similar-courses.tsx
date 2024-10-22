@@ -8,15 +8,15 @@ import IconArrow from "./arrow-mid-right.svg";
 import Button from "@/components/_buttons/button/button";
 import Link from "next/link";
 
-const SimilarCourses = ({className, courses}: SimilarCoursesProps): ReactElement | null => {
+const SimilarCourses = ({className, courses, title, cardColor}: SimilarCoursesProps): ReactElement | null => {
   return (
     <SectionItem className={className}>
-      <Heading tag={`h2`}>Может заинтересовать</Heading>
+      <Heading tag={`h2`}>{title}</Heading>
       <div className={styles.list}>
         {courses.map((course) => <CourseShortItem
           className={styles.item}
           course={course}
-          background={`white`}
+          background={cardColor}
           withPhoto={true}
           key={course.id} />)}
       </div>

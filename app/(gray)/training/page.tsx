@@ -17,8 +17,8 @@ import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
 import Faq from "@/app/(gray)/training/components/faq/faq";
 import SpeakerCourses from "@/app/(gray)/training/components/speaker-courses/speaker-courses";
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
-import SimilarCourses from "@/app/(gray)/training/components/similar-courses/similar-courses";
 import Location from "@/app/(gray)/training/components/location/location";
+import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 
 const ServicePage = async (): Promise<ReactElement | null> => {
   return (
@@ -77,7 +77,7 @@ const ServicePage = async (): Promise<ReactElement | null> => {
 
       <ContainerWhite>
         <YaMapLoader />
-        
+
         <Location className={`container`} place={place} />
 
         <Faq qa={qa} className={`container`} />
@@ -96,7 +96,8 @@ const ServicePage = async (): Promise<ReactElement | null> => {
         </div>
       </ContainerWhite>
 
-      <SimilarCourses className={`container`} courses={similarCourses} />
+      <SimilarCourses className={`container`} title={`Может заинтересовать`} cardColor={`white`}
+        courses={similarCourses} />
     </>
   );
 };
