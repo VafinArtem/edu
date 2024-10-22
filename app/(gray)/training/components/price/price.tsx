@@ -2,11 +2,15 @@ import React, {ReactElement} from "react";
 import {PriceProps} from "./price.props";
 import styles from "./price.module.css";
 import Heading from "@/components/_tags/heading/heading";
-import Timer from "@/components/_common/timer/timer";
 import clsx from "clsx";
 import TariffInfo from "@/components/_training/tariff-info/tariff-info";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import IconFire from "./fire.svg";
+import dynamic from "next/dynamic";
+
+const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
+  ssr: false,
+});
 
 const Price = ({tariffs, ...props}: PriceProps): ReactElement | null => {
   return (

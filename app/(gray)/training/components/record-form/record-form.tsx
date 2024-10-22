@@ -3,10 +3,14 @@ import {RecordFormProps} from "./record-form.props";
 import styles from "./record-form.module.css";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import Timer from "@/components/_common/timer/timer";
 import Price from "@/components/_common/price/price";
 import {Input} from "@/components/_form/input/input";
 import Button from "@/components/_buttons/button/button";
+import dynamic from "next/dynamic";
+
+const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
+  ssr: false,
+});
 
 const RecordForm = ({}: RecordFormProps): ReactElement | null => {
   return (
