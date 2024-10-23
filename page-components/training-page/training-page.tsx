@@ -3,11 +3,10 @@ import {TrainingPageProps} from "./training-page.props";
 import styles from "./training-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses, place, qa, schedule, shortSpeakers, similarCourses, speakers, tariffs} from "@/mocs/training";
+import {courses, place, qa, schedule, shortSpeakers, similarCourses, tariffs} from "@/mocs/training";
 import Promo from "@/page-components/training-page/components/promo/promo";
 import Advantages from "@/page-components/training-page/components/advantages/advantages";
 import Program from "@/page-components/training-page/components/program/program";
-import Speakers from "@/page-components/training-page/components/speakers/speakers";
 import RecordForm from "@/page-components/training-page/components/record-form/record-form";
 import Schedule from "@/page-components/training-page/components/schedule/schedule";
 import Price from "@/page-components/training-page/components/price/price";
@@ -20,34 +19,57 @@ import SpeakerCourses from "@/page-components/training-page/components/speaker-c
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import Location from "@/page-components/training-page/components/location/location";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
+import {convertTrainingDates} from "@/helpers/helpers";
 
 const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
+  const {
+    name,
+    colors,
+    typeName,
+    typeIcon,
+    promoDescription,
+    saleTimestamp,
+    dates,
+    city,
+    speakers,
+    advantages,
+  } = training;
+
+  console.log(colors);
+
   return (
     <>
       <Pagination className={`container`} pagination={[{name: `Курсы`, link: Route.TRAINING}, {
-        name: training.name,
+        name,
       }]} />
-      
+
       <div className={styles.head} style={{
-        "--course-color": `#254885`,
-        "--course-blur": `#3A68B7`,
+        "--course-color": colors.common,
+        "--course-blur": saleTimestamp ? colors.blur : ``,
+        "--course-text": colors.text,
       } as React.CSSProperties}>
         <Promo
-          icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-            fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M9.49744 4.38521C9.02976 4.10239 8.48723 3.9231 7.85731 3.9231C5.2986 3.9231 3.64625 5.99696 4.76721 10.3038C5.17799 11.8821 6.48729 16.077 7.85731 16.077C8.22597 16.077 8.35826 15.5856 8.52653 14.9607C8.81226 13.8995 9.2017 12.4532 11.0285 12.3736C11.1351 13.5463 11.5674 16.077 12.335 16.077C13.2945 16.077 15.001 12.5 15.626 8.75003C16.2449 5.03635 13.1862 2.54858 10.3545 4.92879C9.97319 5.33693 9.66735 5.78313 9.51463 6.2413C9.4273 6.50327 9.14414 6.64485 8.88217 6.55753C8.6202 6.4702 8.47862 6.18704 8.56594 5.92507C8.75656 5.35322 9.10116 4.83451 9.49744 4.38521Z"
-              fill="currentColor" />
-          </svg>`}
-          courseTypeName={`Мастер-класс`}
+          icon={typeIcon}
+          courseTypeName={typeName.nominative}
+          date={convertTrainingDates(dates)}
+          description={promoDescription}
+          name={name}
+          city={city.name}
+          saleTimestamp={saleTimestamp}
+          speakers={speakers.map(({id, name, patronymic, surname, position, promoPhotos}) => ({
+            name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+            position,
+            photos: promoPhotos,
+            id,
+          }))}
         />
 
-        <Advantages />
+        {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
 
       <Program className={`container`} courseTypeName={`мастер-классе`} />
 
-      <Speakers className={`container`} speakers={speakers} />
+      {/*<Speakers className={`container`} speakers={speakers} />*/}
 
       <div className="container" style={{
         "--course-color": `#254885`,

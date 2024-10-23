@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import clsx from "clsx";
 import Slide from "@/app/(gray)/training/components/promo/components/slide/slide";
 
-const Slider = ({className}: SliderProps): ReactElement | null => {
+const Slider = ({className, speakers}: SliderProps): ReactElement | null => {
   return (
     <Swiper
       className={className}
@@ -34,12 +34,9 @@ const Slider = ({className}: SliderProps): ReactElement | null => {
         }%`;
       }}
     >
-      <SwiperSlide>
-        <Slide />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide />
-      </SwiperSlide>
+      {speakers.map((speaker) => <SwiperSlide key={speaker.id}>
+        <Slide speaker={speaker} />
+      </SwiperSlide>)}
       <div className={clsx(styles.pagination)}></div>
     </Swiper>
   );

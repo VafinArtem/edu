@@ -3,7 +3,9 @@ import {getImageProps} from "next/image";
 import {SlideProps} from "./slide.props";
 import styles from "./slide.module.css";
 
-const Slide = ({}: SlideProps): ReactElement | null => {
+const Slide = ({speaker}: SlideProps): ReactElement | null => {
+  const {name, photos, position} = speaker;
+
   const common = {alt: "", quality: 95};
   const {
     props: {srcSet: desktop, ...rest},
@@ -12,7 +14,7 @@ const Slide = ({}: SlideProps): ReactElement | null => {
     width: 645,
     height: 660,
     priority: true,
-    src: "/img/components/promo/author-desktop.jpg",
+    src: photos.desktop,
   });
   const {
     props: {srcSet: laptop},
@@ -20,7 +22,7 @@ const Slide = ({}: SlideProps): ReactElement | null => {
     ...common,
     width: 440,
     height: 510,
-    src: "/img/components/promo/author-laptop.jpg",
+    src: photos.laptop,
   });
   const {
     props: {srcSet: tablet},
@@ -28,7 +30,7 @@ const Slide = ({}: SlideProps): ReactElement | null => {
     ...common,
     width: 708,
     height: 200,
-    src: "/img/components/promo/author-tablet.jpg",
+    src: photos.tablet,
   });
   const {
     props: {srcSet: mobile},
@@ -36,7 +38,7 @@ const Slide = ({}: SlideProps): ReactElement | null => {
     ...common,
     width: 310,
     height: 150,
-    src: "/img/components/promo/author-mobile.jpg",
+    src: photos.mobile,
   });
 
   return (
@@ -49,8 +51,8 @@ const Slide = ({}: SlideProps): ReactElement | null => {
         <img {...rest} width={440} height={510} alt={``} className={styles.image} />
       </picture>
       <p className={styles.speaker}>
-        <span className={styles.name}>Волкова Юлия Валерьевна</span>
-        <span className={styles.position}>Стоматолог-хирург, пародонтолог</span>
+        <span className={styles.name}>{name}</span>
+        <span className={styles.position}>{position}</span>
       </p>
     </div>
   );

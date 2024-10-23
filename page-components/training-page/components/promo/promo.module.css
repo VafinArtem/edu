@@ -91,7 +91,7 @@
 
 .text {
   line-height: 1.1;
-  color: var(--promo-text);
+  color: var(--course-text);
 }
 
 .footer {

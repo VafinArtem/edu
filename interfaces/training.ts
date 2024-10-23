@@ -3,9 +3,47 @@ import {ProgramType, ScheduleType} from "@/helpers/contants";
 export interface TrainingPageModel {
   alias: string;
   name: string;
+  promoDescription: string;
   id: string;
   _id: string;
   metaTitle: string;
+  colors: {
+    common: string;
+    blur: string;
+    text: string;
+  };
+  typeIcon: string;
+  typeName: {
+    nominative: string;
+    genitive: string;
+    prepositional: string;
+  };
+  dates: {
+    start: number,
+    end?: number,
+  };
+  saleTimestamp?: number;
+  city: {
+    name: string;
+  };
+  speakers: {
+    id: number;
+    surname: string,
+    name: {
+      nominative: string;
+    },
+    patronymic: {
+      nominative: string;
+    },
+    promoPhotos: {
+      desktop: string;
+      laptop: string;
+      tablet: string;
+      mobile: string;
+    };
+    position: string;
+  }[];
+  advantages?: string[];
 }
 
 export interface Edu {
@@ -29,6 +67,18 @@ export interface SpeakerShort {
   id: string;
   name: string;
   avatar: string;
+}
+
+export interface SpeakerPromo {
+  "id": number,
+  "name": string;
+  "position": string;
+  "photos": {
+    desktop: string;
+    laptop: string;
+    tablet: string;
+    mobile: string;
+  };
 }
 
 export interface DailySchedule {

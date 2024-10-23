@@ -14,7 +14,17 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const Promo = ({className, icon, courseTypeName}: PromoProps): ReactElement | null => {
+const Promo = ({
+  name,
+  description,
+  icon,
+  courseTypeName,
+  saleTimestamp,
+  city,
+  className,
+  date,
+  speakers,
+}: PromoProps): ReactElement | null => {
 
   return (
     <section className={clsx(className, styles.wrapper)}>
@@ -24,22 +34,20 @@ const Promo = ({className, icon, courseTypeName}: PromoProps): ReactElement | nu
             {icon && <span className={styles.iconType} dangerouslySetInnerHTML={{__html: icon}}></span>}
             {courseTypeName}
           </p>
-          <p className={styles.date}>с 11 по 12 июля</p>
-          <p className={styles.location}>Санкт-Петербург</p>
+          <p className={styles.date}>{date}</p>
+          {city && <p className={styles.location}>{city}</p>}
         </div>
         <div className={styles.main}>
-          <Heading tag={`h1`} className={styles.title}>Клиническая парадонтология. Междисциплинарный подход
-            в лечении парадонтологических пациентов</Heading>
-          <Paragraph className={styles.text}>Лекция и практика для пародонтологов, стоматологов-терапевтов,
-            стоматологов-хирургов, гигиенистов.</Paragraph>
+          <Heading tag={`h1`} className={styles.title}>{name}</Heading>
+          <Paragraph className={styles.text}>{description}</Paragraph>
         </div>
         <div className={styles.footer}>
           <Button onClick={() => {
           }}>Записаться на {courseTypeName.toLowerCase()}</Button>
-          <Timer timestampToEnd={1731118486} text={`До повышения стоимости`} />
+          {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`} />}
         </div>
       </div>
-      <Slider className={styles.sliderWrapper} />
+      <Slider speakers={speakers} className={styles.sliderWrapper} />
     </section>
   );
 };
