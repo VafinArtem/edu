@@ -44,6 +44,7 @@ export interface TrainingPageModel {
     position: string;
   }[];
   advantages?: string[];
+  program: TrainingProgram;
 }
 
 export interface Edu {
@@ -78,6 +79,21 @@ export interface SpeakerPromo {
     laptop: string;
     tablet: string;
     mobile: string;
+  };
+}
+
+export interface TrainingProgram {
+  text: string;
+  pdfLink?: string;
+  theory: {
+    duration: number;
+    learnList?: string[];
+    themeList?: string[];
+  };
+  practice: {
+    duration: number;
+    learnList?: string[];
+    themeList?: string[];
   };
 }
 

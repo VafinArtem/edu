@@ -33,9 +33,8 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
     city,
     speakers,
     advantages,
+    program,
   } = training;
-
-  console.log(colors);
 
   return (
     <>
@@ -67,7 +66,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
 
-      <Program className={`container`} courseTypeName={`мастер-классе`} />
+      <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />
 
       {/*<Speakers className={`container`} speakers={speakers} />*/}
 
