@@ -36,12 +36,11 @@
           "patronymic": {
             "nominative": "Валерьевна"
           },
-          "position": "Стоматолог-хирург, пародонтолог",
+          "position": "Главврач клиники Мегаполис Дент",
+          "specialization": "Стоматолог-хирург, пародонтолог",
           "promoPhotos": {
-            "desktop": "/img/components/promo/author-desktop.jpg",
-            "laptop": "/img/components/promo/author-laptop.jpg",
-            "tablet": "/img/components/promo/author-tablet.jpg",
-            "mobile": "/img/components/promo/author-mobile.jpg"
+            "desktop": "/img/components/promo/speaker-desktop.png",
+            "mobile": "/img/components/promo/speaker-tablet.png"
           }
         }
       ],
@@ -116,12 +115,11 @@
           "patronymic": {
             "nominative": "Валерьевна"
           },
-          "position": "Стоматолог-хирург, пародонтолог",
+          "position": "Главврач клиники Мегаполис Дент",
+          "specialization": "Стоматолог-хирург, пародонтолог",
           "promoPhotos": {
-            "desktop": "/img/components/promo/author-desktop.jpg",
-            "laptop": "/img/components/promo/author-laptop.jpg",
-            "tablet": "/img/components/promo/author-tablet.jpg",
-            "mobile": "/img/components/promo/author-mobile.jpg"
+            "desktop": "/img/components/promo/speaker-desktop.png",
+            "mobile": "/img/components/promo/speaker-tablet.png"
           }
         }
       ],

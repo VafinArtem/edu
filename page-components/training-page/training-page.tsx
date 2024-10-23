@@ -55,9 +55,9 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
           name={name}
           city={city.name}
           saleTimestamp={saleTimestamp}
-          speakers={speakers.map(({id, name, patronymic, surname, position, promoPhotos}) => ({
+          speakers={speakers.map(({id, name, patronymic, surname, specialization, promoPhotos}) => ({
             name: `${surname} ${name.nominative} ${patronymic.nominative}`,
-            position,
+            specialization,
             photos: promoPhotos,
             id,
           }))}

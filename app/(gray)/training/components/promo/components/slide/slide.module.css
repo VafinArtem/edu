@@ -7,13 +7,15 @@
 
 .picture {
   display: flex;
+  justify-content: center;
   height: 100%;
 }
 
 .image {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
   object-fit: cover;
+  object-position: bottom center;
 }
 
 .speaker {
@@ -65,11 +67,31 @@
 	text-align: left;
 	transform: none;
   }
+
+  .picture {
+	justify-content: flex-end;
+	padding-right: 70px;
+  }
+
+  .image {
+	object-fit: contain;
+	object-position: bottom right;
+  }
+}
+
+@media (max-width: 767px) {
+  .picture {
+	padding-right: 30px;
+  }
 }
 
 @media (max-width: 530px) {
   .slide {
 	border-radius: 15px;
+  }
+
+  .picture {
+	padding-right: 0;
   }
 
   .speaker {
