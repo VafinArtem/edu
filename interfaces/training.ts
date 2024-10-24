@@ -59,6 +59,7 @@ export interface TrainingPageModel {
     position: [number, number];
     photos?: string[];
   };
+  qa?: QAItem[];
 }
 
 export interface DailySchedule {

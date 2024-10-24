@@ -3,7 +3,7 @@ import {TrainingPageProps} from "./training-page.props";
 import styles from "./training-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses, qa, shortSpeakers, similarCourses} from "@/mocs/training";
+import {courses, shortSpeakers, similarCourses} from "@/mocs/training";
 import Promo from "@/page-components/training-page/components/promo/promo";
 import Advantages from "@/page-components/training-page/components/advantages/advantages";
 import Program from "@/page-components/training-page/components/program/program";
@@ -39,6 +39,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
     schedule,
     photos,
     place,
+    qa,
   } = training;
 
   return (
@@ -134,7 +135,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
           address: place.address,
         }} />}
 
-        <Faq qa={qa} className={`container`} />
+        {qa && qa.length > 0 && <Faq qa={qa} className={`container`} />}
 
         <div className="container">
           <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
