@@ -3,7 +3,7 @@ import {TrainingPageProps} from "./training-page.props";
 import styles from "./training-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses, place, qa, schedule, shortSpeakers, similarCourses} from "@/mocs/training";
+import {courses, place, qa, shortSpeakers, similarCourses} from "@/mocs/training";
 import Promo from "@/page-components/training-page/components/promo/promo";
 import Advantages from "@/page-components/training-page/components/advantages/advantages";
 import Program from "@/page-components/training-page/components/program/program";
@@ -36,6 +36,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
     advantages,
     program,
     tariffs,
+    schedule,
   } = training;
 
   return (
@@ -97,7 +98,12 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
         <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
       </div>
 
-      <Schedule schedule={schedule} className={`container`} />
+      <Schedule
+        courseTypeName={typeName.genitive.toLowerCase()}
+        schedule={schedule.days}
+        text={schedule.description}
+        className={`container`}
+      />
 
       <Price tariffs={tariffs} style={{
         "--course-color": `#254885`,

@@ -25,7 +25,6 @@ const Promo = ({
   date,
   speakers,
 }: PromoProps): ReactElement | null => {
-
   return (
     <section className={clsx(className, styles.wrapper)}>
       <div className={styles.textContent}>

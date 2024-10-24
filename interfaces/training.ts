@@ -1,5 +1,3 @@
-import {ProgramType, ScheduleType} from "@/helpers/contants";
-
 export interface TrainingPageModel {
   alias: string;
   name: string;
@@ -48,6 +46,31 @@ export interface TrainingPageModel {
   }[];
   advantages?: string[];
   program: TrainingProgram;
+  schedule: {
+    description: string;
+    days: DailySchedule[];
+  };
+}
+
+export interface DailySchedule {
+  id: number;
+  name: string;
+  color: "red" | "blue";
+  times: {
+    start: string;
+    end: string;
+  };
+  list: ScheduleItem[];
+}
+
+export interface ScheduleItem {
+  id: number;
+  name: string;
+  icon: string;
+  times: {
+    start: string;
+    end: string;
+  };
 }
 
 export interface Edu {
@@ -98,20 +121,6 @@ export interface TrainingProgram {
     learnList?: string[];
     themeList?: string[];
   };
-}
-
-export interface DailySchedule {
-  id: string;
-  name: string;
-  time: string;
-  type: keyof typeof ProgramType;
-  list: ScheduleItem[];
-}
-
-export interface ScheduleItem {
-  type: keyof typeof ScheduleType;
-  name: string;
-  time: string;
 }
 
 export interface TariffInfo {
