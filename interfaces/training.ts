@@ -23,6 +23,7 @@ export interface TrainingPageModel {
   saleTimestamp?: number;
   city: {
     name: string;
+    metroIcon?: string;
   };
   tariffs: TariffInfo[];
   speakers: {
@@ -49,6 +50,14 @@ export interface TrainingPageModel {
   schedule: {
     description: string;
     days: DailySchedule[];
+  };
+  photos?: string[];
+  place?: {
+    address: string;
+    desc?: string;
+    metro?: string;
+    position: [number, number];
+    photos?: string[];
   };
 }
 
@@ -135,15 +144,12 @@ export interface TariffInfo {
 }
 
 export interface Place {
-  id: string;
   city: string;
   address: string;
-  phone?: string;
-  email?: string;
   desc?: string;
-  metro?: {
-    station: string;
-    icon: string;
+  metro: {
+    station?: string;
+    icon?: string;
   };
   position: [number, number];
   photos?: string[];

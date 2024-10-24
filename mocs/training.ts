@@ -265,7 +265,6 @@ export const tariffs: TariffInfo[] = [
 ];
 
 export const place: Place = {
-  id: `1`,
   city: `Санкт-Петербург`,
   metro: {
     icon: `/img/components/location/metro.svg`,
@@ -273,8 +272,6 @@ export const place: Place = {
   },
   desc: `Учебный центр оснащён всем необходимым оборудованием для практических занятий и лекций. В перерывах можно отдохнуть и пообедать в уютной комнате отдыха.`,
   address: `Московский проспект, дом 183-185, Учебный центр Амрита, помещение 800-H`,
-  phone: `8-800-550-05-24`,
-  email: `edu@amrita-dent.ru`,
   position: [59.856994, 30.317404],
   photos: [`/img/components/location/img-1.png`, `/img/components/location/img-2.png`, `/img/components/location/img-3.png`, `/img/components/location/img-4.png`],
 };

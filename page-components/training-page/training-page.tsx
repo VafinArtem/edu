@@ -3,7 +3,7 @@ import {TrainingPageProps} from "./training-page.props";
 import styles from "./training-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses, place, qa, shortSpeakers, similarCourses} from "@/mocs/training";
+import {courses, qa, shortSpeakers, similarCourses} from "@/mocs/training";
 import Promo from "@/page-components/training-page/components/promo/promo";
 import Advantages from "@/page-components/training-page/components/advantages/advantages";
 import Program from "@/page-components/training-page/components/program/program";
@@ -37,6 +37,8 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
     program,
     tariffs,
     schedule,
+    photos,
+    place,
   } = training;
 
   return (
@@ -115,20 +117,22 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
         <Certificate courseTypeName={typeName.genitive.toLowerCase()} />
       </div>
 
-      <Gallery
-        photos={[
-          `/img/components/gallery/img-1.png`,
-          `/img/components/gallery/img-2.png`,
-          `/img/components/gallery/img-3.png`,
-          `/img/components/gallery/img-4.png`,
-          `/img/components/gallery/img-5.png`,
-          `/img/components/gallery/img-6.png`,
-        ]} />
+      {photos && photos.length > 0 && <Gallery photos={photos} />}
 
       <ContainerWhite>
         <YaMapLoader />
 
-        <Location className={`container`} place={place} />
+        {place && <Location className={`container`} place={{
+          position: place.position,
+          city: city.name,
+          metro: {
+            station: place.metro,
+            icon: city.metroIcon,
+          },
+          photos: place.photos,
+          desc: place.desc,
+          address: place.address,
+        }} />}
 
         <Faq qa={qa} className={`container`} />
 

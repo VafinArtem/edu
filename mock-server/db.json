@@ -19,7 +19,23 @@
         "prepositional": "Мастер-классе"
       },
       "city": {
-        "name": "Санкт-Петербург"
+        "name": "Санкт-Петербург",
+        "metroIcon": "/img/components/location/metro.svg"
+      },
+      "place": {
+        "metro": "Московская",
+        "desc": "Учебный центр оснащён всем необходимым оборудованием для практических занятий и лекций. В перерывах можно отдохнуть и пообедать в уютной комнате отдыха.",
+        "address": "Московский проспект, дом 183-185, Учебный центр Амрита, помещение 800-H",
+        "position": [
+          59.856994,
+          30.317404
+        ],
+        "photos": [
+          "/img/components/location/img-1.png",
+          "/img/components/location/img-2.png",
+          "/img/components/location/img-3.png",
+          "/img/components/location/img-4.png"
+        ]
       },
       "tariffs": [
         {
@@ -316,7 +332,15 @@
             ]
           }
         ]
-      }
+      },
+      "photos": [
+        "/img/components/gallery/img-1.png",
+        "/img/components/gallery/img-2.png",
+        "/img/components/gallery/img-3.png",
+        "/img/components/gallery/img-4.png",
+        "/img/components/gallery/img-5.png",
+        "/img/components/gallery/img-6.png"
+      ]
     },
     {
       "id": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
@@ -631,7 +655,15 @@
             ]
           }
         ]
-      }
+      },
+      "photos": [
+        "/img/components/gallery/img-1.png",
+        "/img/components/gallery/img-2.png",
+        "/img/components/gallery/img-3.png",
+        "/img/components/gallery/img-4.png",
+        "/img/components/gallery/img-5.png",
+        "/img/components/gallery/img-6.png"
+      ]
     }
   ]
 }
