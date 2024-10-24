@@ -31,7 +31,7 @@ export const getDeclension = (number: number, titles: [string, string, string]) 
     ];
 };
 
-export const convertTrainingDates = ({start, end}: {start: number, end?: number}) => {
+export const convertCourseDates = ({start, end}: {start: number, end?: number}) => {
   const now = dayjs();
 
   const startDate = dayjs(start * 1000);
@@ -42,6 +42,14 @@ export const convertTrainingDates = ({start, end}: {start: number, end?: number}
   }
 
   return `c ${startDate.format(`D${startDate.month() !== endDate?.month() ? " MMMM" : ""}${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)} по ${endDate!.format(`D MMMM${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)}`;
+};
+
+export const convertShortCourseDate = (date: number) => {
+  const now = dayjs();
+
+  const dayjsDate = dayjs(date * 1000);
+
+  return `${dayjsDate.format(`D MMMM${now.year() !== dayjsDate.year() ? " YYYY" : ""}`)}`;
 };
 
 export const getMinTariffPrice = (tariffs: TariffInfo[]) => {

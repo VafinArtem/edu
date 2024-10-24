@@ -6,11 +6,12 @@ import styles from "./speaker-courses.module.css";
 import SectionItem from "@/components/_training/section-item/section-item";
 import SectionCenterHead from "@/components/_training/section-center-head/section-center-head";
 import Heading from "@/components/_tags/heading/heading";
-import LinkArrow from "@/components/_links/link-arrow/link-arrow";
 import {Route} from "@/helpers/route";
 import Image from "next/image";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import clsx from "clsx";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
+import Link from "next/link";
 
 const getTitle = (names: string[]) => {
   return names.map((item, index) => {
@@ -47,14 +48,14 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
           align={`center`}
           className={styles.title}
           dangerouslySetInnerHTML={{__html: `Курсы ${getTitle(speakers.map((item) => item.name))}`}} />
-        <LinkArrow
+        <ButtonArrow
+          component={Link}
           href={Route.TRAINING}
           iconDirection={"mid-right"}
           color={"primary"}
           className={styles.link}
           borderRadius={"small"}
-        >Все курсы учебного
-          центра</LinkArrow>
+        >Все курсы учебного центра</ButtonArrow>
       </SectionCenterHead>
       <div className={clsx(styles.list, {
         [styles.show]: showItems,

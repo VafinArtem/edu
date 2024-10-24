@@ -4,5 +4,7 @@ export type ButtonArrowProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
   iconDirection: "bottom-right" | "mid-right" | "top-right";
   color: "primary" | "primary-2";
-  size?: "middle" | "small";
+  size?: "small" | "medium" | "large";
+  borderRadius?: "small" | "medium" | "large";
+  withBackground?: boolean;
 }

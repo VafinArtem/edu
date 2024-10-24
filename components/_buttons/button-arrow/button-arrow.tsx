@@ -12,15 +12,20 @@ const ButtonArrow = <C extends BaseButtonComponent = "button">({
   children,
   iconDirection,
   color,
-  size = "middle",
+  withBackground,
+  size = "medium",
+  borderRadius = "medium",
   ...props
 }: ButtonArrowProps<C>): ReactElement | null => {
   return (
     <BaseButton<C> className={clsx(className, styles.button, {
+      [styles.bg]: withBackground,
       [styles.primary]: color === "primary",
       [styles.primary2]: color === "primary-2",
-      [styles.middle]: size === "middle",
       [styles.small]: size === "small",
+      [styles.medium]: size === "medium",
+      [styles.brSmall]: borderRadius === "small",
+      [styles.brMedium]: borderRadius === "medium",
     })} {...(props as BaseButtonProps<C>)}>
       {children}
       {iconDirection === "bottom-right" && <IconBottomRight />}

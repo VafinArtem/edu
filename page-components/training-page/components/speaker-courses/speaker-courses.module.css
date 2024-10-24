@@ -1,11 +1,18 @@
 .avatars {
   display: flex;
+}
+
+.avatars:not(.oneSpeaker) {
   margin-left: -37px;
+
 }
 
 .avatar {
   flex-shrink: 0;
   border-radius: 50%;
+}
+
+.avatar:not(.oneSpeaker) {
   margin-right: -37px;
 }
 
@@ -71,13 +78,16 @@
 }
 
 @media (max-width: 1199px) {
-  .avatars {
-	margin-left: -20px;
-  }
-
   .avatar {
 	width: 110px;
 	height: 110px;
+  }
+
+  .avatars:not(.oneSpeaker) {
+	margin-left: -20px;
+  }
+
+  .avatar:not(.oneSpeaker) {
 	margin-right: -20px;
   }
 

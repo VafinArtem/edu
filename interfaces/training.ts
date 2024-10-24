@@ -31,6 +31,7 @@ export interface TrainingPageModel {
     surname: string,
     name: {
       nominative: string;
+      genitive: string;
     },
     patronymic: {
       nominative: string;
@@ -39,6 +40,7 @@ export interface TrainingPageModel {
       desktop: string;
       mobile: string;
     };
+    avatar: string;
     edu: Edu[];
     position: string;
     specialization: string;
@@ -60,6 +62,7 @@ export interface TrainingPageModel {
     photos?: string[];
   };
   qa?: QAItem[];
+  speakersCourses?: CourseShort[];
 }
 
 export interface DailySchedule {
@@ -103,7 +106,7 @@ export interface Speaker {
 }
 
 export interface SpeakerShort {
-  id: string;
+  id: number;
   name: string;
   avatar: string;
 }
@@ -164,11 +167,16 @@ export interface QAItem {
 
 export interface CourseShort {
   id: string;
+  alias: string;
   name: string;
-  courseTypeName: string;
+  courseType: {
+    name: string
+    color: string;
+    background: string;
+  };
   price: number;
   icon?: string;
-  date?: string;
+  date?: number;
   location?: string;
   photo?: string;
   photoMobile?: string;
