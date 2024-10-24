@@ -6,7 +6,7 @@
   padding-top: 120px;
   padding-bottom: 130px;
   background-image: url("/img/common/smile.svg");
-  background-color: var(--course-color);
+  background-color: var(--primary-2);
   background-repeat: no-repeat;
   background-position: center -128px;
   background-size: 1468px 584px;
@@ -22,10 +22,10 @@
   left: 50%;
   width: 880px;
   height: 598px;
-  background-color: var(--course-blur);
+  background-color: var(--prices-blur);
   border-radius: 50%;
   transform: translateX(-50%);
-  filter: blur(100px);
+  filter: blur(170px);
 }
 
 .wrapper > * {

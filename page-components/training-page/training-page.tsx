@@ -105,10 +105,11 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
         className={`container`}
       />
 
-      <Price tariffs={tariffs} style={{
-        "--course-color": `#254885`,
-        "--course-blur": `#3A68B7`,
-      } as React.CSSProperties} />
+      <Price
+        tariffs={tariffs}
+        saleTimestamp={saleTimestamp}
+        courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
+      />
 
       <div className="container">
         <Certificate />

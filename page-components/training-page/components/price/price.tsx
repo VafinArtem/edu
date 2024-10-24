@@ -12,18 +12,18 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const Price = ({tariffs, ...props}: PriceProps): ReactElement | null => {
+const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): ReactElement | null => {
   return (
     <section className={styles.wrapper} {...props}>
       <div className={clsx(styles.container, `container`)}>
         <div className={styles.head}>
-          <Heading tag={`h2`} className={styles.title}>Стоимость курса</Heading>
-          <div className={styles.timer}>
+          <Heading tag={`h2`} className={styles.title}>Стоимость {courseTypeName.genitive}</Heading>
+          {saleTimestamp && <div className={styles.timer}>
             <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.hotText}><IconFire
               className={styles.hotIcon} width={40}
-              heigth={40} />Успейте купить курс<br /> до&nbsp;повышения цены</Paragraph>
-            <Timer timestampToEnd={1731118486} />
-          </div>
+              heigth={40} />Успейте купить {courseTypeName.nominative}<br /> до&nbsp;повышения цены</Paragraph>
+            <Timer timestampToEnd={saleTimestamp} />
+          </div>}
         </div>
         {(tariffs && tariffs.length > 0) && <div className={styles.list}>
           {tariffs.map((tariff) => <TariffInfo tariff={tariff} key={tariff.id} />)}
