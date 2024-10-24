@@ -26,6 +26,7 @@ export interface TrainingPageModel {
   city: {
     name: string;
   };
+  tariffs: TariffInfo[];
   speakers: {
     id: number;
     surname: string,

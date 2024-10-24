@@ -4,7 +4,7 @@
   gap: 40px;
   padding: 70px;
   background-image: url("/img/common/smile.svg");
-  background-color: var(--course-color, var(--gray-25));
+  background-color: var(--primary-2);
   background-repeat: no-repeat;
   background-position: calc(100% - 26px) calc(100% - 86px);
   background-size: 1071px 426px;
@@ -48,7 +48,7 @@
   display: block;
   width: 535px;
   height: 182px;
-  background-color: var(--course-blur);
+  background-color: var(--record-form-blur);
   filter: blur(146px);
 }
 

@@ -12,7 +12,7 @@
   --primary: #A13652;
   --primary-rgb: 161, 54, 82;
   --primary-light: #F9F1F3;
-  --primary-2: #084573;
+  --primary-2: #254885;
   --primary-2-light: #F0F9FF;
 
   --white: #fff;
@@ -40,6 +40,8 @@
   --button: #B83255;
 
   --timer-text: #CADDFE;
+
+  --record-form-blur: #3059A0;
 
   --promo-registration: #3998A2;
 

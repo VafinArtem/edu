@@ -3,7 +3,7 @@ import {TrainingPageProps} from "./training-page.props";
 import styles from "./training-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses, place, qa, schedule, shortSpeakers, similarCourses, tariffs} from "@/mocs/training";
+import {courses, place, qa, schedule, shortSpeakers, similarCourses} from "@/mocs/training";
 import Promo from "@/page-components/training-page/components/promo/promo";
 import Advantages from "@/page-components/training-page/components/advantages/advantages";
 import Program from "@/page-components/training-page/components/program/program";
@@ -19,7 +19,7 @@ import SpeakerCourses from "@/page-components/training-page/components/speaker-c
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import Location from "@/page-components/training-page/components/location/location";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import {convertTrainingDates} from "@/helpers/helpers";
+import {convertTrainingDates, getMinTariffPrice} from "@/helpers/helpers";
 import Speakers from "@/page-components/training-page/components/speakers/speakers";
 
 const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
@@ -35,6 +35,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
     speakers,
     advantages,
     program,
+    tariffs,
   } = training;
 
   return (
@@ -92,11 +93,8 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
           aboutSlides,
         }))} />
 
-      <div className="container" style={{
-        "--course-color": `#254885`,
-        "--course-blur": `#3A68B7`,
-      } as React.CSSProperties}>
-        <RecordForm />
+      <div className="container">
+        <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
       </div>
 
       <Schedule schedule={schedule} className={`container`} />
@@ -127,11 +125,8 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
 
         <Faq qa={qa} className={`container`} />
 
-        <div className="container" style={{
-          "--course-color": `#254885`,
-          "--course-blur": `#3A68B7`,
-        } as React.CSSProperties}>
-          <RecordForm />
+        <div className="container">
+          <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
         </div>
 
         <SpeakerCourses className={`container`} courses={courses} speakers={shortSpeakers} />

@@ -12,7 +12,7 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const RecordForm = ({}: RecordFormProps): ReactElement | null => {
+const RecordForm = ({prices, saleTimestamp}: RecordFormProps): ReactElement | null => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.textContent}>
@@ -21,9 +21,9 @@ const RecordForm = ({}: RecordFormProps): ReactElement | null => {
         <Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет
           увеличиваться.</Paragraph>
         <div className={styles.footer}>
-          <Price oldPrice={35000} price={32000} />
-          <Timer timestampToEnd={1731118486} text={`До повышения стоимости`}
-            withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />
+          <Price oldPrice={prices.old} price={prices.current} />
+          {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`}
+            withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />}
         </div>
       </div>
       <form action="#" className={styles.form}>

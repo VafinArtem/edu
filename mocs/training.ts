@@ -5,7 +5,7 @@ export const speakers: Speaker[] = [
   {
     name: `Волкова Юлия Валерьевна`,
     video: `#`,
-    id: `1`,
+    id: 1,
     photo: `/img/components/speaker/video-poster.png`,
     specialization: `Стоматолог-хирург, пародонтолог`,
     position: `Главврач клиники Мегаполис Дент`,
@@ -28,10 +28,11 @@ export const speakers: Speaker[] = [
         previewImg: `/img/components/speaker/cert-3.jpg`,
       },
     ],
+    aboutSlides: [],
   },
   {
     name: `Щербаков Николай Андреевич`,
-    id: `2`,
+    id: 2,
     photo: `/img/components/speaker/speaker-1.png`,
     specialization: `Стоматолог-хирург, пародонтолог`,
     position: `Главврач клиники Мегаполис Дент`,
@@ -58,6 +59,7 @@ export const speakers: Speaker[] = [
         previewImg: `/img/components/speaker/cert-3.jpg`,
       },
     ],
+    aboutSlides: [],
   },
 ];
 

@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
+import {TariffInfo} from "@/interfaces/training";
 
 dayjs.locale("ru");
 dayjs.extend(localizedFormat);
@@ -41,4 +42,26 @@ export const convertTrainingDates = ({start, end}: {start: number, end?: number}
   }
 
   return `c ${startDate.format(`D${startDate.month() !== endDate?.month() ? " MMMM" : ""}${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)} по ${endDate!.format(`D MMMM${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)}`;
+};
+
+export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
+  return tariffs.reduce((previousValue, tariff, currentIndex) => {
+    if (currentIndex === 0) {
+      return {
+        current: tariff.prices.current,
+        old: tariff.prices.old,
+      };
+    }
+
+    if (tariff.prices.current < previousValue.current) {
+      return {
+        current: tariff.prices.current,
+        old: tariff.prices.old,
+      };
+    }
+
+    return previousValue;
+  }, {
+    current: 0,
+  } as {current: number, old?: number});
 };
