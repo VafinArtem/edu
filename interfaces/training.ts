@@ -37,11 +37,13 @@ export interface TrainingPageModel {
     },
     promoPhotos: {
       desktop: string;
-      laptop: string;
-      tablet: string;
       mobile: string;
     };
+    edu: Edu[];
     position: string;
+    specialization: string;
+    workExperience: number;
+    aboutSlides: string[];
   }[];
   advantages?: string[];
   program: TrainingProgram;
@@ -55,13 +57,15 @@ export interface Edu {
 
 export interface Speaker {
   video?: string;
-  id: string;
+  id: number;
   photo: string;
   name: string;
   position: string;
-  workExperience: string;
+  specialization: string;
+  workExperience: number;
   cite?: string;
   edu: Edu[];
+  aboutSlides: string[];
 }
 
 export interface SpeakerShort {
@@ -71,13 +75,11 @@ export interface SpeakerShort {
 }
 
 export interface SpeakerPromo {
-  "id": number,
-  "name": string;
-  "position": string;
-  "photos": {
+  id: number;
+  name: string;
+  specialization: string;
+  photos: {
     desktop: string;
-    laptop: string;
-    tablet: string;
     mobile: string;
   };
 }

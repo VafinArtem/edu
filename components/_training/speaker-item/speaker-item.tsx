@@ -9,7 +9,6 @@ import ExternalBgLink from "@/components/_links/external-bg-link/external-bg-lin
 import EduItem from "@/components/_training/edu-item/edu-item";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {Route} from "@/helpers/route";
-import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
 import Button from "@/components/_slider/button/button";
@@ -18,12 +17,14 @@ import clsx from "clsx";
 const SpeakerItem = ({
   name,
   position,
+  specialization,
   photo,
   video,
   workExperience,
   edu,
   id,
   cite,
+  aboutSlides,
 }: SpeakerItemProps): ReactElement | null => {
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const [isBeginning, setIsBeginning] = useState<boolean>(false);
@@ -36,15 +37,18 @@ const SpeakerItem = ({
           {video && <video className={styles.video} poster={photo}>
             <source srcSet={video} type="video/mp4" />
           </video>}
-          {!video && <Image src={photo} alt={``} width={1330} height={648} className={styles.img} quality={95} />}
+          {!video && <picture className={styles.picture} style={{backgroundColor: `#D7E3ED`}}>
+            <Image src={photo} alt={``} width={1330} height={648} className={styles.img} quality={95} />
+          </picture>}
         </div>
         <div className={styles.content}>
           <div className={styles.head}>
             <Heading tag={`h3`} fontSize={`mini`} fontWeight={`medium`} className={styles.name}>{name}</Heading>
-            <Paragraph className={styles.position} fontSize={`small`}>{position}</Paragraph>
+            <Paragraph className={styles.position} fontSize={`small`}>{specialization}. {position}</Paragraph>
           </div>
+          <Paragraph className={styles.workExperience} fontWeight={"light"} fontSize={`none`}>Стаж
+            работы {workExperience}</Paragraph>
           <Swiper
-            modules={[Navigation, Pagination]}
             className={styles.slider}
             spaceBetween={1}
             slidesPerView={1}
@@ -60,20 +64,9 @@ const SpeakerItem = ({
               setIsEnd(swiper.isEnd);
             }}
           >
-            <SwiperSlide className={styles.slide}>
-              <p className={styles.workExperience}>Стаж работы {workExperience}</p>
-              <p>Специализация: пародонтальная терапия, пластика рецессий в области зубов и имплантатов с использованием
-                микрохирургических техник.</p>
-              <p>Опытный клиницист. С 2016 основатель и главный врач стоматологической клиники «Мегаполис Дент»,
-                г.Санкт-Петербург.</p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.slide}>
-              <p className={styles.workExperience}>Стаж работы {workExperience}</p>
-              <p>Специализация: пародонтальная терапия, пластика рецессий в области зубов и имплантатов с использованием
-                микрохирургических техник.</p>
-              <p>Опытный клиницист. С 2016 основатель и главный врач стоматологической клиники «Мегаполис Дент»,
-                г.Санкт-Петербург.</p>
-            </SwiperSlide>
+            {aboutSlides.map((text, index) => <SwiperSlide key={index} className={styles.slide}>
+              <div className={styles.slideContent} dangerouslySetInnerHTML={{__html: text}}></div>
+            </SwiperSlide>)}
           </Swiper>
           <div className={styles.buttons}>
             <Button disabled={isBeginning} direction={"prev"} background={"primary"} size={"mini"}

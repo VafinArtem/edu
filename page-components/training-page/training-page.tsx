@@ -20,6 +20,7 @@ import PromoRegistration from "@/components/_common/promo-registration/promo-reg
 import Location from "@/page-components/training-page/components/location/location";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import {convertTrainingDates} from "@/helpers/helpers";
+import Speakers from "@/page-components/training-page/components/speakers/speakers";
 
 const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
   const {
@@ -68,7 +69,28 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
 
       <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />
 
-      {/*<Speakers className={`container`} speakers={speakers} />*/}
+      <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
+        speakers={speakers.map(({
+          position,
+          surname,
+          name,
+          patronymic,
+          specialization,
+          edu,
+          id,
+          workExperience,
+          promoPhotos,
+          aboutSlides,
+        }) => ({
+          name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+          position,
+          specialization,
+          edu,
+          id,
+          workExperience,
+          photo: promoPhotos.desktop,
+          aboutSlides,
+        }))} />
 
       <div className="container" style={{
         "--course-color": `#254885`,
