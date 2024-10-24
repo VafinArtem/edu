@@ -112,7 +112,7 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
       />
 
       <div className="container">
-        <Certificate />
+        <Certificate courseTypeName={typeName.genitive.toLowerCase()} />
       </div>
 
       <Gallery

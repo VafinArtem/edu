@@ -4,7 +4,7 @@ import styles from "./certificate.module.css";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {getImageProps} from "next/image";
 
-const Certificate = ({}: CertificateProps): ReactElement | null => {
+const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
   const {
     props: {srcSet: desktop, ...rest},
@@ -51,10 +51,8 @@ const Certificate = ({}: CertificateProps): ReactElement | null => {
         <img {...rest} width={290} height={179} alt={``} className={styles.image} />
       </picture>
       <div className={styles.content}>
-        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончанию интенсива
-          вы&nbsp;получите удостоверение
-          государственного
-          образца</Paragraph>
+        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончанию {courseTypeName} вы&nbsp;получите
+          удостоверение государственного образца</Paragraph>
         <Paragraph fontSize={"small"} className={styles.text}>Данные в&nbsp;нём будут внесены в&nbsp;&laquo;Федеральный
           реестр сведений
           о&nbsp;документах об&nbsp;образовании и&nbsp;квалификации&raquo;</Paragraph>
