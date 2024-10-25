@@ -7,6 +7,7 @@ export interface CoursePageModel extends CommonPageModel {
     common: string;
     blur: string;
     text: string;
+    photoBackground: string;
   };
   typeIcon: string;
   typeName: {
@@ -99,6 +100,7 @@ export interface Speaker {
   position: string;
   specialization: string;
   workExperience: number;
+  photoBackground: string;
   cite?: string;
   edu: Edu[];
   aboutSlides: string[];
@@ -114,6 +116,7 @@ export interface SpeakerPromo {
   id: number;
   name: string;
   specialization: string;
+  photoBackground: string;
   photos: {
     desktop: string;
     mobile: string;

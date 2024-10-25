@@ -8,4 +8,5 @@ export interface PromoProps {
     desktop: string;
     mobile: string;
   };
+  photoBackground: string;
 }

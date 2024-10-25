@@ -27,6 +27,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
     examples,
     courses,
     photos,
+    colors,
   } = speaker;
 
   const getNavigationLinks = () => {
@@ -83,6 +84,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
           workExperience={workExperience}
           photos={promoPhotos}
           specializationFull={specializationFull}
+          photoBackground={colors.photoBackground}
         />
         <Navigation links={getNavigationLinks()} />
       </div>

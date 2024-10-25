@@ -16,6 +16,9 @@ export const speaker: SpeakerPageModel = {
     "nominative": "Валерьевна",
     "genitive": "Валерьевны",
   },
+  "colors": {
+    "photoBackground": "#DDDAE3",
+  },
   "position": "Главврач клиники Мегаполис Дент",
   "specialization": "Стоматолог-хирург, пародонтолог",
   "specializationFull": "Пародонтальная терапия, пластика рецессий в области зубов и имплантатов \nс использованием микрохирургических техник.",

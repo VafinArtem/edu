@@ -26,6 +26,7 @@ const SpeakerItem = ({
   id,
   cite,
   aboutSlides,
+  photoBackground,
 }: SpeakerItemProps): ReactElement | null => {
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const [isBeginning, setIsBeginning] = useState<boolean>(false);
@@ -38,7 +39,7 @@ const SpeakerItem = ({
           {video && <video className={styles.video} poster={photo}>
             <source srcSet={video} type="video/mp4" />
           </video>}
-          {!video && <picture className={styles.picture} style={{backgroundColor: `#D7E3ED`}}>
+          {!video && <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
             <Image src={photo} alt={``} width={1330} height={648} className={styles.img} quality={95} />
           </picture>}
         </div>

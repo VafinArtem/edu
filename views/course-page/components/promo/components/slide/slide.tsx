@@ -4,7 +4,7 @@ import {SlideProps} from "./slide.props";
 import styles from "./slide.module.css";
 
 const Slide = ({speaker}: SlideProps): ReactElement | null => {
-  const {name, photos, specialization} = speaker;
+  const {name, photos, specialization, photoBackground} = speaker;
 
   const common = {alt: "", quality: 95};
   const {
@@ -43,7 +43,7 @@ const Slide = ({speaker}: SlideProps): ReactElement | null => {
 
   return (
     <div className={styles.slide}>
-      <picture className={styles.picture} style={{backgroundColor: `#DDDAE3`}}>
+      <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
         <source media="(min-width: 1500px)" srcSet={desktop} />
         <source media="(max-width: 530px)" srcSet={mobile} />
         <source media="(max-width: 1099px)" srcSet={tablet} />

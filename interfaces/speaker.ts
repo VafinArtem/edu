@@ -16,6 +16,9 @@ export interface SpeakerPageModel extends CommonPageModel {
     desktop: string;
     mobile: string;
   };
+  colors: {
+    photoBackground: string;
+  };
   position: string;
   workExperience: number;
   specialization: string;

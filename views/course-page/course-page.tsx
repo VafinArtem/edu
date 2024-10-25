@@ -66,6 +66,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             specialization,
             photos: promoPhotos,
             id,
+            photoBackground: colors.photoBackground,
           }))}
         />
 
@@ -95,6 +96,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           workExperience,
           photo: promoPhotos.desktop,
           aboutSlides,
+          photoBackground: colors.photoBackground,
         }))} />
 
       <div className="container">
