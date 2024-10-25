@@ -1,5 +1,5 @@
 export const API = {
-  trainings: {
-    byAlias: process.env.BACKEND_API + "/trainings/",
+  courses: {
+    byAlias: process.env.BACKEND_API + "/courses/",
   },
 };
