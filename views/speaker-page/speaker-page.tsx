@@ -38,7 +38,7 @@ const navigationLinks = [
 ];
 
 const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
-  const {surname, name, patronymic, specialization, workExperience, promoPhotos} = speaker;
+  const {surname, name, patronymic, specialization, workExperience, promoPhotos, about} = speaker;
 
   return (
     <>
@@ -56,10 +56,7 @@ const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
         <Navigation links={navigationLinks} />
       </div>
 
-      <About id={`about`} content={`<p>Опытный клиницист. С&nbsp;2016 основатель и&nbsp;главный врач стоматологической клиники &laquo;Мегаполис Дент&raquo;, г.&nbsp;Санкт-Петербург.</p>
-        <p>Проводит хирургическую реабилитацию с&nbsp;использованием дентальных имплантатов и&nbsp;аугментации костной ткани пациентам с&nbsp;заболеваниями пародонта.</p>
-        <p>Преподаватель курса пародонтологии кафедры стоматологии общей практики СПбИНСТОМ. Является автором курсов по&nbsp;терапевтической и&nbsp;хирургической пародонтологии с&nbsp;2005&nbsp;г.</p>
-      `} />
+      {about && <About id={`about`} content={about} />}
 
       {speakers[0].edu.length > 0 && <div className="container">
         <Edu id={`education`} edu={speakers[0].edu} />
