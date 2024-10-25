@@ -23,6 +23,7 @@ export interface SpeakerPageModel extends CommonPageModel {
   edu?: Edu[];
   examples?: ExampleItem[];
   courses?: CourseShort[];
+  photos?: GalleryItem[];
 }
 
 export interface ExampleItem {

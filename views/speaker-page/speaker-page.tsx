@@ -4,7 +4,6 @@ import styles from "./speaker-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
 import {similarCourses} from "@/mocs/training";
-import {gallery} from "@/mocs/speaker";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import Promo from "@/views/speaker-page/components/promo/promo";
 import Navigation from "@/views/speaker-page/components/navigation/navigation";
@@ -49,6 +48,7 @@ const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
     edu,
     examples,
     courses,
+    photos,
   } = speaker;
 
   return (
@@ -82,7 +82,7 @@ const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
         courses={courses}
       />}
 
-      <Gallery id={`photos`} speakerName={`Юлией`} photos={gallery} />
+      {photos && <Gallery id={`photos`} speakerName={`Юлией`} photos={photos} />}
 
       <SimilarCourses className={`container`} courses={similarCourses} title={`Рекомендуем`} cardColor={`gray`} />
     </>

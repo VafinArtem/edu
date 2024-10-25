@@ -1209,6 +1209,22 @@
             "Волкова Юлия Валерьевна"
           ]
         }
+      ],
+      "photos": [
+        {
+          "id": "1",
+          "img": "/img/speaker-page/gallery/image-1.png",
+          "description": "Поездка на курс в бернский университет"
+        },
+        {
+          "id": "2",
+          "img": "/img/speaker-page/gallery/image-2.png",
+          "description": "Поездка на курс в бернский университет"
+        },
+        {
+          "id": "3",
+          "img": "/img/speaker-page/gallery/image-3.png"
+        }
       ]
     }
   ]
