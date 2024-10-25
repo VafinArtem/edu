@@ -17,7 +17,7 @@ const CourseShortItem = ({
   background = "gray",
   className,
 }: CourseShortItemProps): ReactElement | null => {
-  const {icon, courseType, name, date, location, price, id, photo, photoMobile, speakers, alias} = course;
+  const {icon, courseType, name, date, location, price, photo, photoMobile, speakers, alias} = course;
 
   const common = {alt: "", quality: 95};
   const {
