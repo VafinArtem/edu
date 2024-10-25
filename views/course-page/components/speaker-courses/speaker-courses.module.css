@@ -8,6 +8,9 @@
 }
 
 .avatar {
+  width: 127px;
+  height: 127px;
+  object-fit: cover;
   flex-shrink: 0;
   border-radius: 50%;
 }

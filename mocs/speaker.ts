@@ -136,8 +136,6 @@ export const courses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/speaker-page/courses/img.png`,
-    photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
     id: 2,
@@ -158,8 +156,6 @@ export const courses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/speaker-page/courses/img.png`,
-    photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
     id: 3,
@@ -180,8 +176,6 @@ export const courses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/speaker-page/courses/img.png`,
-    photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
     id: 4,
@@ -202,8 +196,6 @@ export const courses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/speaker-page/courses/img.png`,
-    photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
 ];
 

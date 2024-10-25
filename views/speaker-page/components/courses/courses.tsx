@@ -9,11 +9,11 @@ import Link from "next/link";
 import {Route} from "@/helpers/route";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 
-const Courses = ({courses, className, ...props}: CoursesProps): ReactElement | null => {
+const Courses = ({courses, speakerName, className, ...props}: CoursesProps): ReactElement | null => {
   return (
     <SectionItem className={className} {...props}>
       <SectionHead>
-        <Heading tag={`h2`}>Курсы Юлии Валерьевны</Heading>
+        <Heading tag={`h2`}>Курсы {speakerName}</Heading>
         <ButtonArrow
           component={Link}
           href={Route.COURSES}
@@ -28,8 +28,7 @@ const Courses = ({courses, className, ...props}: CoursesProps): ReactElement | n
           className={styles.item}
           course={course}
           background={`gray`}
-          withPhoto={true}
-          positionPhoto={"left"}
+          withPhoto={false}
           key={course.id} />)}
       </div>
     </SectionItem>

@@ -1,5 +1,5 @@
 import {CommonPageModel} from "@/interfaces/common";
-import {Edu} from "@/interfaces/course";
+import {CourseShort, Edu} from "@/interfaces/course";
 
 export interface SpeakerPageModel extends CommonPageModel {
   surname: string,
@@ -22,6 +22,7 @@ export interface SpeakerPageModel extends CommonPageModel {
   about?: string;
   edu?: Edu[];
   examples?: ExampleItem[];
+  courses?: CourseShort[];
 }
 
 export interface ExampleItem {

@@ -58,8 +58,8 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
           {speakers.map((item, index) => <Image quality={95} className={clsx(styles.avatar, {
             [styles.oneSpeaker]: speakers.length === 1,
           })} src={item.avatar} alt={``}
-            width={127}
-            height={127}
+            width={330}
+            height={166}
             style={{zIndex: speakers.length - index}}
             key={item.id} />)}
         </div>

@@ -4,7 +4,7 @@ import styles from "./speaker-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
 import {similarCourses} from "@/mocs/training";
-import {courses, gallery} from "@/mocs/speaker";
+import {gallery} from "@/mocs/speaker";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import Promo from "@/views/speaker-page/components/promo/promo";
 import Navigation from "@/views/speaker-page/components/navigation/navigation";
@@ -38,7 +38,18 @@ const navigationLinks = [
 ];
 
 const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
-  const {surname, name, patronymic, specialization, workExperience, promoPhotos, about, edu, examples} = speaker;
+  const {
+    surname,
+    name,
+    patronymic,
+    specialization,
+    workExperience,
+    promoPhotos,
+    about,
+    edu,
+    examples,
+    courses,
+  } = speaker;
 
   return (
     <>
@@ -64,7 +75,12 @@ const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
 
       {examples && <Examples id={`examples`} examples={examples} />}
 
-      <Courses id={`courses`} className={`container`} courses={courses} />
+      {courses && <Courses
+        id={`courses`}
+        speakerName={`${name.genitive} ${patronymic.genitive}`}
+        className={`container`}
+        courses={courses}
+      />}
 
       <Gallery id={`photos`} speakerName={`Юлией`} photos={gallery} />
 
