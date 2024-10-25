@@ -1,17 +1,12 @@
-import Link from "next/link";
+import React, {ReactElement} from "react";
 import {Route} from "@/helpers/route";
+import Link from "next/link";
 
-export default function Home() {
+const ServicePage = async (): Promise<ReactElement | null> => {
   return (
     <ul className={`container`}>
       <li>
-        <Link href={Route.COURSES} style={{textDecoration: `underline`}}>Курсы</Link>
-      </li>
-      <li>
         <Link href={`${Route.COURSES}/preview`} style={{textDecoration: `underline`}}>Один курс - превью</Link>
-      </li>
-      <li>
-        <Link href={Route.SPEAKER} style={{textDecoration: `underline`}}>Один преподаватель</Link>
       </li>
       <li>
         <Link href={`${Route.COURSES}/klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка
@@ -23,4 +18,6 @@ export default function Home() {
       </li>
     </ul>
   );
-}
+};
+
+export default ServicePage;

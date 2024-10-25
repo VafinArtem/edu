@@ -26,7 +26,7 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
         <div className={clsx(styles.wrapper)}>
           <div className={styles.left}>
             <Logo position={"header"} className={styles.logo} />
-            <Catalog className={styles.catalog} href={Route.TRAINING}>Курсы</Catalog>
+            <Catalog className={styles.catalog} href={Route.COURSES}>Курсы</Catalog>
           </div>
           <Navigation className={styles.navigation}>
             <NavigationItem href={Route.NEWS}>Новости</NavigationItem>

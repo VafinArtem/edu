@@ -16,7 +16,7 @@ const Courses = ({courses, className, ...props}: CoursesProps): ReactElement | n
         <Heading tag={`h2`}>Курсы Юлии Валерьевны</Heading>
         <ButtonArrow
           component={Link}
-          href={Route.TRAINING}
+          href={Route.COURSES}
           size={"small"}
           color={"primary"}
           className={styles.button}

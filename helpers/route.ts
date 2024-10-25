@@ -3,7 +3,7 @@ export const Route = {
   LOGIN: "/login",
   RESTORE: "/restore",
   PROFILE: "/profile",
-  TRAINING: "/training",
+  COURSES: "/courses",
   SPEAKER: "/speakers",
   NEWS: "/news",
   REVIEWS: "/reviews",

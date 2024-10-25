@@ -35,24 +35,24 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             <span>№Л035-01271-78/00637355</span></span></Paragraph>
           <Navigation className={styles.navigation}>
             <NavigationItem title={`Amrita`}>
-              <NavigationLink component={Link} href={Route.TRAINING}>О компании</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Новости</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Контакты</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>О компании</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Новости</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Контакты</NavigationLink>
             </NavigationItem>
             <NavigationItem title={`Направления`}>
-              <NavigationLink component={Link} href={Route.TRAINING}>Стоматология</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Косметология</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Ветеринария</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Стоматология</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Косметология</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Ветеринария</NavigationLink>
             </NavigationItem>
             <NavigationItem title={`Программа`}>
-              <NavigationLink component={Link} href={Route.TRAINING}>Лекции</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Вебинары</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Курсы</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Лекции</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Вебинары</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Курсы</NavigationLink>
             </NavigationItem>
             <NavigationItem title={`Дополнительно`}>
-              <NavigationLink component={Link} href={Route.TRAINING}>Стать преподавателем</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Акции и скидки</NavigationLink>
-              <NavigationLink component={Link} href={Route.TRAINING}>Договор оферты</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>
+              <NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>
             </NavigationItem>
           </Navigation>
           <a href="tel:+79312011400" className={styles.phone}>+7 (931) 201-14-00</a>

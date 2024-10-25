@@ -1,7 +1,7 @@
 import React, {ReactElement} from "react";
 import {SimilarCoursesProps} from "./similar-courses.props";
 import styles from "./similar-courses.module.css";
-import SectionItem from "@/components/_training/section-item/section-item";
+import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import IconArrow from "./arrow-mid-right.svg";

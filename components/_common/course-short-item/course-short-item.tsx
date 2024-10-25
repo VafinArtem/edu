@@ -72,7 +72,7 @@ const CourseShortItem = ({
           <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.price}>{formatPrice(price)} ₽</Paragraph>
           <ButtonArrow
             component={Link}
-            href={`${Route.TRAINING}/${alias}`}
+            href={`${Route.COURSES}/${alias}`}
             color={"primary"}
             iconDirection={"mid-right"}
             borderRadius={"small"}
