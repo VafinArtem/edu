@@ -20,7 +20,7 @@ export interface SpeakerPageModel extends CommonPageModel {
   workExperience: number;
   specialization: string;
   about?: string;
-  edu: Edu[];
+  edu?: Edu[];
 }
 
 export interface ExampleItem {
