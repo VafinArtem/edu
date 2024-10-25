@@ -21,14 +21,14 @@ export interface SpeakerPageModel extends CommonPageModel {
   specialization: string;
   about?: string;
   edu?: Edu[];
+  examples?: ExampleItem[];
 }
 
 export interface ExampleItem {
   id: number;
   name: string;
-  image: string;
   description: string;
-  images?: string[];
+  images: string[];
 }
 
 export interface GalleryItem {

@@ -5,7 +5,6 @@ export const examples: ExampleItem[] = [
   {
     id: 1,
     name: `Удаление кисты`,
-    image: `/img/speaker-page/examples/img-1.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -17,12 +16,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
-    images: [`/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
+    images: [`/img/speaker-page/examples/img-1.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 2,
     name: `Стоматологическая реабилитации пациента`,
-    image: `/img/speaker-page/examples/img-2.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -34,11 +32,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-2.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 3,
     name: `Интеграцию пародонтологии и хирургии`,
-    image: `/img/speaker-page/examples/img-3.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -50,11 +48,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-3.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 4,
     name: `Удаление кисты`,
-    image: `/img/speaker-page/examples/img-4.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -66,11 +64,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-4.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 5,
     name: `Поддерживающая пародонтальная терапия`,
-    image: `/img/speaker-page/examples/img-1.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -82,11 +80,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-1.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 6,
     name: `Пластика десны перед ортодонтией`,
-    image: `/img/speaker-page/examples/img-2.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -98,11 +96,11 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-2.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
   {
     id: 7,
     name: `Удаление кисты`,
-    image: `/img/speaker-page/examples/img-3.png`,
     description: `<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все
             выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый
             зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p>
@@ -114,6 +112,7 @@ export const examples: ExampleItem[] = [
           <p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь
             имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить,
             а&nbsp;нужную косточку прикрутить обратно.</p>`,
+    images: [`/img/speaker-page/examples/img-1.png`, `/img/speaker-page/example/image-1.png`, `/img/speaker-page/example/image-2.png`, `/img/speaker-page/example/image-3.png`],
   },
 ];
 
