@@ -1,4 +1,4 @@
-import {CourseShort} from "@/interfaces/training";
+import {CourseShort} from "@/interfaces/course";
 
 export interface SimilarCoursesProps {
   courses: CourseShort[];

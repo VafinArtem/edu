@@ -1,4 +1,4 @@
-import {DailySchedule} from "@/interfaces/training";
+import {DailySchedule} from "@/interfaces/course";
 
 export interface ScheduleProps {
   className?: string;

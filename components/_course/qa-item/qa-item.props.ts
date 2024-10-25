@@ -1,4 +1,4 @@
-import {QAItem} from "@/interfaces/training";
+import {QAItem} from "@/interfaces/course";
 import {MutableRefObject} from "react";
 
 export interface QaItemProps {

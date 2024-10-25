@@ -1,4 +1,4 @@
-import {TariffInfo} from "@/interfaces/training";
+import {TariffInfo} from "@/interfaces/course";
 
 export interface TariffInfoProps {
   tariff: TariffInfo;

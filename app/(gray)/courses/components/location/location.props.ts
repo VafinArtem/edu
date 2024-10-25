@@ -1,4 +1,4 @@
-import {Place} from "@/interfaces/training";
+import {Place} from "@/interfaces/course";
 
 export interface LocationProps {
   className?: string;

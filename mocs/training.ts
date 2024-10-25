@@ -1,4 +1,4 @@
-import {CourseShort, DailySchedule, Place, QAItem, Speaker, SpeakerShort, TariffInfo} from "@/interfaces/training";
+import {CourseShort, DailySchedule, Place, QAItem, Speaker, SpeakerShort, TariffInfo} from "@/interfaces/course";
 
 export const speakers: Speaker[] = [
   {

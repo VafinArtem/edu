@@ -1,4 +1,4 @@
-export interface TrainingPageModel {
+export interface CoursePageModel {
   alias: string;
   name: string;
   promoDescription: string;
@@ -48,7 +48,7 @@ export interface TrainingPageModel {
     aboutSlides: string[];
   }[];
   advantages?: string[];
-  program: TrainingProgram;
+  program: CourseProgram;
   schedule: {
     description: string;
     days: DailySchedule[];
@@ -121,7 +121,7 @@ export interface SpeakerPromo {
   };
 }
 
-export interface TrainingProgram {
+export interface CourseProgram {
   text: string;
   pdfLink?: string;
   theory: {

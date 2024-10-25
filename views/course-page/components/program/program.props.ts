@@ -1,7 +1,7 @@
-import {TrainingProgram} from "@/interfaces/training";
+import {CourseProgram} from "@/interfaces/course";
 
 export interface ProgramProps {
   className?: string;
   courseTypeName: string;
-  program: TrainingProgram;
+  program: CourseProgram;
 }

@@ -1,7 +1,7 @@
 import {API} from "@/api/constants";
-import {TrainingPageModel} from "@/interfaces/training";
+import {CoursePageModel} from "@/interfaces/course";
 
-export async function getTrainingPage(alias: string): Promise<TrainingPageModel | null> {
+export async function getCoursePage(alias: string): Promise<CoursePageModel | null> {
   const res = await fetch(`${API.courses.byAlias}${alias}`, {
     method: "GET",
     next: {

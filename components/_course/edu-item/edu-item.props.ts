@@ -1,4 +1,4 @@
-import {Edu} from "@/interfaces/training";
+import {Edu} from "@/interfaces/course";
 
 export interface EduItemProps extends Edu {
   className?: string;

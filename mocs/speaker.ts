@@ -1,5 +1,5 @@
 import {ExampleItem, GalleryItem} from "@/interfaces/speaker";
-import {CourseShort} from "@/interfaces/training";
+import {CourseShort} from "@/interfaces/course";
 
 export const examples: ExampleItem[] = [
   {

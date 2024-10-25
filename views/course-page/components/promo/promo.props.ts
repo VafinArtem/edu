@@ -1,4 +1,4 @@
-import {SpeakerPromo} from "@/interfaces/training";
+import {SpeakerPromo} from "@/interfaces/course";
 
 export interface PromoProps {
   name: string;

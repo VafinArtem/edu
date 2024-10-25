@@ -1,4 +1,4 @@
-import {Speaker} from "@/interfaces/training";
+import {Speaker} from "@/interfaces/course";
 
 export interface SpeakersProps {
   speakers: Speaker[];

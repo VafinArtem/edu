@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
-import {TariffInfo} from "@/interfaces/training";
+import {TariffInfo} from "@/interfaces/course";
 
 dayjs.locale("ru");
 dayjs.extend(localizedFormat);

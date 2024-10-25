@@ -1,4 +1,4 @@
-import {QAItem} from "@/interfaces/training";
+import {QAItem} from "@/interfaces/course";
 
 export interface FaqProps {
   qa: QAItem[];
