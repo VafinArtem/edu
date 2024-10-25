@@ -2,7 +2,7 @@ import React, {ReactElement} from "react";
 import {getTrainingPage} from "@/api/training-page";
 import {notFound} from "next/navigation";
 import {Metadata} from "next";
-import TrainingPage from "@/views/course-page/training-page";
+import CoursePage from "@/views/course-page/course-page";
 
 export async function generateMetadata({params}: {params: {alias: string}}): Promise<Metadata> {
   const page = await getTrainingPage(params.alias);
@@ -19,7 +19,7 @@ const ServicePage = async ({params}: {params: {alias: string}}): Promise<ReactEl
     notFound();
   }
 
-  return <TrainingPage training={page} />;
+  return <CoursePage training={page} />;
 };
 
 export default ServicePage;

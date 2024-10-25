@@ -1,6 +1,6 @@
 import React, {ReactElement} from "react";
-import {TrainingPageProps} from "./training-page.props";
-import styles from "./training-page.module.css";
+import {CoursePageProps} from "./course-page.props";
+import styles from "./course-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
 import {similarCourses} from "@/mocs/training";
@@ -22,7 +22,7 @@ import SimilarCourses from "@/components/_common/similar-courses/similar-courses
 import {convertCourseDates, getMinTariffPrice} from "@/helpers/helpers";
 import Speakers from "@/views/course-page/components/speakers/speakers";
 
-const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
+const CoursePage = ({training}: CoursePageProps): ReactElement | null => {
   const {
     name,
     colors,
@@ -162,4 +162,4 @@ const TrainingPage = ({training}: TrainingPageProps): ReactElement | null => {
   );
 };
 
-export default TrainingPage;
+export default CoursePage;

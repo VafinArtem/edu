@@ -1,5 +1,5 @@
 import {TrainingPageModel} from "@/interfaces/training";
 
-export interface TrainingPageProps {
+export interface CoursePageProps {
   training: TrainingPageModel;
 }
