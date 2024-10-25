@@ -21,7 +21,7 @@ const CourseLayout = async ({params}: {params: {alias: string}}): Promise<ReactE
     notFound();
   }
 
-  const similarCourses = await getSimilarCourses(page._id);
+  const similarCourses = await getSimilarCourses(page._id, `course`);
 
   return <CoursePage training={page} similarCourses={similarCourses} />;
 };

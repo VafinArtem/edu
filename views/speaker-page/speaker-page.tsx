@@ -3,7 +3,6 @@ import {SpeakerPageProps} from "./speaker-page.props";
 import styles from "./speaker-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {similarCourses} from "@/mocs/training";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import Promo from "@/views/speaker-page/components/promo/promo";
 import Navigation from "@/views/speaker-page/components/navigation/navigation";
@@ -36,7 +35,7 @@ const navigationLinks = [
   },
 ];
 
-const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
+const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement | null => {
   const {
     surname,
     name,
@@ -84,7 +83,8 @@ const SpeakerPage = ({speaker}: SpeakerPageProps): ReactElement | null => {
 
       {photos && <Gallery id={`photos`} speakerName={`Юлией`} photos={photos} />}
 
-      <SimilarCourses className={`container`} courses={similarCourses} title={`Рекомендуем`} cardColor={`gray`} />
+      {similarCourses &&
+        <SimilarCourses className={`container`} courses={similarCourses} title={`Рекомендуем`} cardColor={`gray`} />}
     </>
   );
 };
