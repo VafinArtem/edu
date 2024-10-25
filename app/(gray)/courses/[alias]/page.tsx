@@ -10,10 +10,11 @@ export async function generateMetadata({params}: {params: {alias: string}}): Pro
 
   return {
     title: page?.metaTitle,
+    description: page?.metaDescription,
   };
 }
 
-const ServicePage = async ({params}: {params: {alias: string}}): Promise<ReactElement | null> => {
+const CourseLayout = async ({params}: {params: {alias: string}}): Promise<ReactElement | null> => {
   const page = await getCoursePage(params.alias);
 
   if (!page) {
@@ -25,4 +26,4 @@ const ServicePage = async ({params}: {params: {alias: string}}): Promise<ReactEl
   return <CoursePage training={page} similarCourses={similarCourses} />;
 };
 
-export default ServicePage;
+export default CourseLayout;

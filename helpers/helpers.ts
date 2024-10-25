@@ -73,3 +73,10 @@ export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
     current: 0,
   } as {current: number, old?: number});
 };
+
+export const getWorkExperienceText = (year: number) => {
+  const nowYear = dayjs().year();
+  const shift = nowYear - year;
+
+  return `${nowYear - year} ${getDeclension(shift, [`год`, `года`, `лет`])}`;
+};

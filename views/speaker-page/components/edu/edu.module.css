@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 70px;
+  background-color: var(--primary);
+  background-image: url("/img/speaker-page/about/coat-of-arms.png");
+  background-size: 673px 731px;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 63px) top;
+  border-radius: 40px;
+}
+
+.title {
+  color: var(--white)
+}
+
+.list {
+  display: grid;
+  display: grid;
+  column-gap: 40px;
+  row-gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) and (max-width: 1499px) {
+  .list {
+	grid-template-columns: repeat(2, 1fr);
+  }
+
+  .list .item:nth-child(n + 3) {
+	padding-top: 30px;
+	border-top: 1px solid var(--edu-item-border);
+  }
+}
+
+@media (min-width: 1500px) {
+  .list {
+	grid-template-columns: repeat(3, 1fr);
+  }
+
+  .list .item:nth-child(n + 4) {
+	padding-top: 30px;
+	border-top: 1px solid var(--edu-item-border);
+  }
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	padding: 50px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+	padding: 40px;
+	background-size: 550px 597px;
+	background-position: calc(100% + 52px) calc(100% + 197px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .list .item:not(:first-child) {
+	padding-top: 20px;
+	border-top: 1px solid var(--edu-item-border);
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	gap: 30px;
+	margin-right: calc(0px - var(--container-mobile-padding));
+	margin-left: calc(0px - var(--container-mobile-padding));
+	padding-left: var(--container-mobile-padding);
+	padding-right: var(--container-mobile-padding);
+	background-size: 381px 414px;
+	background-position: calc(100% + 36px) calc(100% + 137px);
+	border-radius: 20px;
+  }
+
+  .list {
+	gap: 20px;
+  }
+
+  .list .item:not(:first-child) {
+	padding-top: 20px;
+	border-top: 1px solid var(--edu-item-border);
+  }
+}

@@ -13,6 +13,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
 import Button from "@/components/_slider/button/button";
 import clsx from "clsx";
+import {getWorkExperienceText} from "@/helpers/helpers";
 
 const SpeakerItem = ({
   name,
@@ -47,7 +48,7 @@ const SpeakerItem = ({
             <Paragraph className={styles.position} fontSize={`small`}>{specialization}. {position}</Paragraph>
           </div>
           <Paragraph className={styles.workExperience} fontWeight={"light"} fontSize={`none`}>Стаж
-            работы {workExperience}</Paragraph>
+            работы {getWorkExperienceText(workExperience)}</Paragraph>
           <Swiper
             className={styles.slider}
             spaceBetween={1}

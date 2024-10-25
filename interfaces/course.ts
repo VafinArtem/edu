@@ -1,10 +1,8 @@
-export interface CoursePageModel {
-  alias: string;
+import {CommonPageModel} from "@/interfaces/common";
+
+export interface CoursePageModel extends CommonPageModel {
   name: string;
   promoDescription: string;
-  id: string;
-  _id: number;
-  metaTitle: string;
   colors: {
     common: string;
     blur: string;
@@ -35,6 +33,7 @@ export interface CoursePageModel {
     },
     patronymic: {
       nominative: string;
+      genitive: string;
     },
     promoPhotos: {
       desktop: string;

@@ -4,9 +4,10 @@
       "id": "klinicheskaya-paradantalogya",
       "_id": "1",
       "alias": "klinicheskaya-paradantalogya",
-      "name": "Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
-      "promoDescription": "Лекция и практика для пародонтологов, стоматологов-терапевтов, стоматологов-хирургов, гигиенистов.",
       "metaTitle": "Макстер-класс: Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
+      "metaDescription": "",
+      "promoDescription": "Лекция и практика для пародонтологов, стоматологов-терапевтов, стоматологов-хирургов, гигиенистов.",
+      "name": "Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
       "colors": {
         "common": "#254885",
         "blur": "#3A68B7",
@@ -493,8 +494,9 @@
       "id": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
       "_id": "2",
       "alias": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
-      "name": "Базовый курс по имплантологии (хирурнический и ортопедический этапы)",
       "metaTitle": "Курс: Базовый курс по имплантологии (хирурнический и ортопедический этапы)",
+      "metaDescription": "",
+      "name": "Базовый курс по имплантологии (хирурнический и ортопедический этапы)",
       "promoDescription": "Лекция и практика для пародонтологов, стоматологов-терапевтов, стоматологов-хирургов, гигиенистов.",
       "colors": {
         "common": "#2DA690",
@@ -1016,6 +1018,31 @@
         "Волкова Юлия Валерьевна"
       ],
       "photo": "/img/components/similar-courses/img-4.png"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "volkova-yulia-valerievna",
+      "_id": "1",
+      "alias": "volkova-yulia-valerievna",
+      "metaTitle": "Преподаватель: Волкова Юлия Валерьевна",
+      "surname": "Волкова",
+      "name": {
+        "nominative": "Юлия",
+        "genitive": "Юлии",
+        "instrumental": "Юлией"
+      },
+      "patronymic": {
+        "nominative": "Валерьевна",
+        "genitive": "Валерьевны"
+      },
+      "position": "Главврач клиники Мегаполис Дент",
+      "specialization": "Стоматолог-хирург, пародонтолог",
+      "workExperience": 1999,
+      "promoPhotos": {
+        "desktop": "/img/course-page/promo/speaker-desktop.png",
+        "mobile": "/img/course-page/promo/speaker-mobile.png"
+      }
     }
   ]
 }
