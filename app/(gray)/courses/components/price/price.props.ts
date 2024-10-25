@@ -1,6 +1,0 @@
-import {TariffInfo} from "@/interfaces/course";
-import {DetailedHTMLProps, HTMLAttributes} from "react";
-
-export interface PriceProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
-  tariffs: TariffInfo[];
-}

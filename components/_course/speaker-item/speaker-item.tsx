@@ -91,7 +91,7 @@ const SpeakerItem = ({
       <div className={styles.edu}>
         <div className={styles.eduHead}>
           <Heading tag={`h4`} fontSize={`mini`}>Образование и&nbsp;награды</Heading>
-          <ExternalBgLink href={`${Route.SPEAKER}/${id}`}>Страница преподавателя</ExternalBgLink>
+          <ExternalBgLink href={`${Route.SPEAKERS}/${id}`}>Страница преподавателя</ExternalBgLink>
         </div>
         {(edu && edu.length > 0) && <ul className={styles.eduList}>
           {edu.map((item, index) => <EduItem className={styles.eduItem} key={index} {...item} />)}

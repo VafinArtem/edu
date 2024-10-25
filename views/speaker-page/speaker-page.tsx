@@ -72,7 +72,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
 
   return (
     <>
-      <Pagination className={`container`} pagination={[{name: `Преподаватели`, link: Route.SPEAKER}, {
+      <Pagination className={`container`} pagination={[{name: `Преподаватели`, link: Route.SPEAKERS}, {
         name: `${surname} ${name.nominative} ${patronymic.nominative}`,
       }]} />
 

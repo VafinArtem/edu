@@ -11,7 +11,7 @@ export default function Home() {
         <Link href={`${Route.COURSES}/preview`} style={{textDecoration: `underline`}}>Один курс - превью</Link>
       </li>
       <li>
-        <Link href={Route.SPEAKER} style={{textDecoration: `underline`}}>Один преподаватель</Link>
+        <Link href={Route.SPEAKERS} style={{textDecoration: `underline`}}>Один преподаватель</Link>
       </li>
       <li>
         <Link href={`${Route.COURSES}/klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка
