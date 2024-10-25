@@ -119,7 +119,8 @@ export const examples: ExampleItem[] = [
 
 export const courses: CourseShort[] = [
   {
-    id: `1`,
+    id: 1,
+    alias: `1`,
     name: `Клиническая пародонтология, глубокое погружение. Междисциплинарный подход в лечении пародонтологи-ческих пациентов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
             fill="none">
@@ -128,15 +129,20 @@ export const courses: CourseShort[] = [
               fill="currentColor" />
           </svg>`,
     price: 40000,
-    date: `2 июня`,
+    date: 1735214093,
     location: `Санкт-Петербург`,
-    courseTypeName: `Вебинар`,
+    courseType: {
+      name: "Мастер-класс",
+      color: "#E57027",
+      background: "#F9E4C5",
+    },
     speakers: [`Волкова Юлия Валерьевна`],
     photo: `/img/speaker-page/courses/img.png`,
     photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
-    id: `2`,
+    id: 2,
+    alias: `1`,
     name: `Основы восстановления фронтальной группы зубов после травмы`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
             fill="none">
@@ -145,15 +151,20 @@ export const courses: CourseShort[] = [
               fill="currentColor" />
           </svg>`,
     price: 40000,
-    date: `2 июня`,
+    date: 1735214093,
     location: `Санкт-Петербург`,
-    courseTypeName: `Вебинар`,
+    courseType: {
+      name: "Мастер-класс",
+      color: "#E57027",
+      background: "#F9E4C5",
+    },
     speakers: [`Волкова Юлия Валерьевна`],
     photo: `/img/speaker-page/courses/img.png`,
     photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
-    id: `3`,
+    id: 3,
+    alias: `1`,
     name: `Идеальный ассистент детского стоматолога`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
             fill="none">
@@ -162,15 +173,20 @@ export const courses: CourseShort[] = [
               fill="currentColor" />
           </svg>`,
     price: 40000,
-    date: `2 июня`,
+    date: 1735214093,
     location: `Санкт-Петербург`,
-    courseTypeName: `Вебинар`,
+    courseType: {
+      name: "Мастер-класс",
+      color: "#E57027",
+      background: "#F9E4C5",
+    },
     speakers: [`Волкова Юлия Валерьевна`],
     photo: `/img/speaker-page/courses/img.png`,
     photoMobile: `/img/speaker-page/courses/img-mobile.png`,
   },
   {
-    id: `4`,
+    id: 4,
+    alias: `1`,
     name: `Синус-лифтинг. Клинические подходы к увеличению объема костной ткани в области боковых отделов верхней челюсти`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
             fill="none">
@@ -179,9 +195,13 @@ export const courses: CourseShort[] = [
               fill="currentColor" />
           </svg>`,
     price: 40000,
-    date: `2 июня`,
+    date: 1735214093,
     location: `Санкт-Петербург`,
-    courseTypeName: `Вебинар`,
+    courseType: {
+      name: "Мастер-класс",
+      color: "#E57027",
+      background: "#F9E4C5",
+    },
     speakers: [`Волкова Юлия Валерьевна`],
     photo: `/img/speaker-page/courses/img.png`,
     photoMobile: `/img/speaker-page/courses/img-mobile.png`,

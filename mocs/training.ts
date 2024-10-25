@@ -309,7 +309,7 @@ export const shortSpeakers: SpeakerShort[] = [
 
 export const courses: CourseShort[] = [
   {
-    id: `1`,
+    id: 1,
     alias: `1`,
     name: `Основы восстановления фронтальной группы зубов после травмы`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.49744 4.38521C9.02976 4.10239 8.48723 3.9231 7.85731 3.9231C5.2986 3.9231 3.64625 5.99696 4.76721 10.3038C5.17799 11.8821 6.48729 16.077 7.85731 16.077C8.22597 16.077 8.35826 15.5856 8.52653 14.9607C8.81226 13.8995 9.2017 12.4532 11.0285 12.3736C11.1351 13.5463 11.5674 16.077 12.335 16.077C13.2945 16.077 15.001 12.5 15.626 8.75003C16.2449 5.03635 13.1862 2.54858 10.3545 4.92879C9.97319 5.33693 9.66735 5.78313 9.51463 6.2413C9.4273 6.50327 9.14414 6.64485 8.88217 6.55753C8.6202 6.4702 8.47862 6.18704 8.56594 5.92507C8.75656 5.35322 9.10116 4.83451 9.49744 4.38521Z" fill="currentColor" /></svg>`,
@@ -323,7 +323,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `2`,
+    id: 2,
     alias: `1`,
     name: `Клиническая пародонтология, глубокое погружение. Междисциплинарный подход в лечении пародонтологи-ческих пациентов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -342,7 +342,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `3`,
+    id: 3,
     alias: `1`,
     name: `Синус-лифтинг. Клинические подходы к увеличению объема костной ткани в области боковых отделов верхней челюсти`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -361,7 +361,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `4`,
+    id: 4,
     alias: `1`,
     name: `Практический курс по апикальной хирургии для эндодонтистов и хирургов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -380,7 +380,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `5`,
+    id: 5,
     alias: `1`,
     name: `Основы восстановления фронтальной группы зубов после травмы`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -399,7 +399,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `6`,
+    id: 6,
     alias: `1`,
     name: `Клиническая пародонтология, глубокое погружение. Междисциплинарный подход в лечении пародонтологи-ческих пациентов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -418,7 +418,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `7`,
+    id: 7,
     alias: `1`,
     name: `Синус-лифтинг. Клинические подходы к увеличению объема костной ткани в области боковых отделов верхней челюсти`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -437,7 +437,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `8`,
+    id: 8,
     alias: `1`,
     name: `Практический курс по апикальной хирургии для эндодонтистов и хирургов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -456,7 +456,7 @@ export const courses: CourseShort[] = [
     },
   },
   {
-    id: `9`,
+    id: 9,
     alias: `1`,
     name: `Практический курс по апикальной хирургии для эндодонтистов и хирургов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -478,7 +478,7 @@ export const courses: CourseShort[] = [
 
 export const similarCourses: CourseShort[] = [
   {
-    id: `1`,
+    id: 1,
     alias: `1`,
     name: `Практический курс по апикальной хирургии для эндодонтистов и хирургов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -499,7 +499,7 @@ export const similarCourses: CourseShort[] = [
     photo: `/img/components/similar-courses/img-1.png`,
   },
   {
-    id: `2`,
+    id: 2,
     alias: `1`,
     name: `Работа с мягкими тканями. Костная пластика. Протоколы тотальных работ. Углубленный практический курс`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -520,7 +520,7 @@ export const similarCourses: CourseShort[] = [
     photo: `/img/components/similar-courses/img-2.png`,
   },
   {
-    id: `3`,
+    id: 3,
     alias: `1`,
     name: `Идеальный ассистент детского стоматолога`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -541,7 +541,7 @@ export const similarCourses: CourseShort[] = [
     photo: `/img/components/similar-courses/img-3.png`,
   },
   {
-    id: `4`,
+    id: 4,
     alias: `1`,
     name: `Клиническая пародонтология, глубокое погружение. Междисциплинарный подход в лечении пародонтологических пациентов`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"

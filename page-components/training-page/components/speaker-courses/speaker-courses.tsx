@@ -1,8 +1,10 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 import clsx from "clsx";
+import useIsResolution from "@/hooks/useIsResolution";
 import {SpeakerCoursesProps} from "./speaker-courses.props";
 import styles from "./speaker-courses.module.css";
 import SectionItem from "@/components/_training/section-item/section-item";
@@ -11,7 +13,6 @@ import Heading from "@/components/_tags/heading/heading";
 import {Route} from "@/helpers/route";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
-import Link from "next/link";
 
 const getTitle = (names: string[]) => {
   return names.map((item, index) => {
@@ -32,7 +33,22 @@ const getTitle = (names: string[]) => {
 };
 
 const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): ReactElement | null => {
+  const isNotDesktop = useIsResolution({min: 0, max: 1499});
+
   const [showItems, setShowItems] = useState<boolean>(false);
+
+  const getCondition = () => {
+    if (isNotDesktop) {
+      return courses.length > 6;
+    }
+
+    return courses.length > 8;
+  };
+
+  useEffect(() => {
+    setShowItems(!getCondition());
+  }, [isNotDesktop]);
+
   return (
     <SectionItem className={className}>
       <SectionCenterHead>
@@ -66,12 +82,13 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
       })}>
         {courses.map((item) => <CourseShortItem className={styles.item} course={item} key={item.id} />)}
       </div>
-      <button
+      {getCondition() && <button
         className={styles.showAll}
+        type={"button"}
         onClick={() => setShowItems(!showItems)}
       >
         {showItems ? "Скрыть" : "Показать всё"}
-      </button>
+      </button>}
     </SectionItem>
   );
 };

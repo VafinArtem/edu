@@ -166,7 +166,7 @@ export interface QAItem {
 }
 
 export interface CourseShort {
-  id: string;
+  id: number;
   alias: string;
   name: string;
   courseType: {

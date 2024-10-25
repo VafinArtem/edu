@@ -52,12 +52,6 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1499px) {
-  .list:not(.show) .item:nth-child(n + 7) {
-	display: none;
-  }
-}
-
 @media (max-width: 1499px) {
   .title {
 	margin-top: 10px;
@@ -69,6 +63,10 @@
 
   .list {
 	grid-template-columns: repeat(3, 1fr);
+  }
+
+  .list:not(.show) .item:nth-child(n + 7) {
+	display: none;
   }
 
   .showAll {
@@ -121,10 +119,6 @@
 
   .list {
 	grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-  }
-
-  .list:not(.show) .item:nth-child(n + 9) {
-	display: none;
   }
 
   .showAll {
