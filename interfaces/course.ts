@@ -3,7 +3,7 @@ export interface CoursePageModel {
   name: string;
   promoDescription: string;
   id: string;
-  _id: string;
+  _id: number;
   metaTitle: string;
   colors: {
     common: string;

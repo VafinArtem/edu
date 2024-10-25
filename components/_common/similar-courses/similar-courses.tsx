@@ -7,6 +7,7 @@ import CourseShortItem from "@/components/_common/course-short-item/course-short
 import IconArrow from "./arrow-mid-right.svg";
 import Button from "@/components/_buttons/button/button";
 import Link from "next/link";
+import {Route} from "@/helpers/route";
 
 const SimilarCourses = ({className, courses, title, cardColor}: SimilarCoursesProps): ReactElement | null => {
   return (
@@ -20,7 +21,7 @@ const SimilarCourses = ({className, courses, title, cardColor}: SimilarCoursesPr
           withPhoto={true}
           key={course.id} />)}
       </div>
-      <Button component={Link} className={styles.link} href={`#`}>Смотреть все 129 курсов в
+      <Button component={Link} className={styles.link} href={Route.COURSES}>Смотреть все курсы в
         каталоге <IconArrow className={styles.icon} width={16} height={16} /></Button>
     </SectionItem>
   );

@@ -3,7 +3,6 @@ import {CoursePageProps} from "./course-page.props";
 import styles from "./course-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {similarCourses} from "@/mocs/training";
 import Promo from "@/views/course-page/components/promo/promo";
 import Advantages from "@/views/course-page/components/advantages/advantages";
 import Program from "@/views/course-page/components/program/program";
@@ -22,7 +21,7 @@ import SimilarCourses from "@/components/_common/similar-courses/similar-courses
 import {convertCourseDates, getMinTariffPrice} from "@/helpers/helpers";
 import Speakers from "@/views/course-page/components/speakers/speakers";
 
-const CoursePage = ({training}: CoursePageProps): ReactElement | null => {
+const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement | null => {
   const {
     name,
     colors,
@@ -156,8 +155,11 @@ const CoursePage = ({training}: CoursePageProps): ReactElement | null => {
         </div>
       </ContainerWhite>
 
-      <SimilarCourses className={`container`} title={`Может заинтересовать`} cardColor={`white`}
-        courses={similarCourses} />
+      {similarCourses && <SimilarCourses
+        className={`container`}
+        title={`Может заинтересовать`}
+        cardColor={`white`}
+        courses={similarCourses} />}
     </>
   );
 };

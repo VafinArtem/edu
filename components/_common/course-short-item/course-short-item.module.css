@@ -47,6 +47,10 @@
   display: flex;
 }
 
+.image {
+  width: 100%;
+}
+
 .wrapper.withPhoto.photoLeft .speakers {
   display: none;
 }

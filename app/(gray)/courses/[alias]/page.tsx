@@ -3,6 +3,7 @@ import {notFound} from "next/navigation";
 import {Metadata} from "next";
 import CoursePage from "@/views/course-page/course-page";
 import {getCoursePage} from "@/api/course-page";
+import {getSimilarCourses} from "@/api/similar-courses";
 
 export async function generateMetadata({params}: {params: {alias: string}}): Promise<Metadata> {
   const page = await getCoursePage(params.alias);
@@ -19,7 +20,9 @@ const ServicePage = async ({params}: {params: {alias: string}}): Promise<ReactEl
     notFound();
   }
 
-  return <CoursePage training={page} />;
+  const similarCourses = await getSimilarCourses(page._id);
+
+  return <CoursePage training={page} similarCourses={similarCourses} />;
 };
 
 export default ServicePage;
