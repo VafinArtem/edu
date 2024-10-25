@@ -19,11 +19,17 @@ export interface SpeakerPageModel extends CommonPageModel {
   position: string;
   workExperience: number;
   specialization: string;
+  specializationFull: string;
   about?: string;
   edu?: Edu[];
   examples?: ExampleItem[];
   courses?: CourseShort[];
   photos?: GalleryItem[];
+}
+
+export interface NavigationLink {
+  name: string;
+  href: string;
 }
 
 export interface ExampleItem {

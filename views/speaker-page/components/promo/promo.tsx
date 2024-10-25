@@ -8,7 +8,14 @@ import Button from "@/components/_buttons/button/button";
 import {getImageProps} from "next/image";
 import {getWorkExperienceText} from "@/helpers/helpers";
 
-const Promo = ({className, name, specialization, workExperience, photos}: PromoProps): ReactElement | null => {
+const Promo = ({
+  className,
+  name,
+  specialization,
+  specializationFull,
+  workExperience,
+  photos,
+}: PromoProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
 
   const {
@@ -55,7 +62,7 @@ const Promo = ({className, name, specialization, workExperience, photos}: PromoP
         <Paragraph>Стаж работы {getWorkExperienceText(workExperience)}</Paragraph>
         <div className={styles.speciality}>
           <Paragraph className={styles.specialityTitle}>Специализация</Paragraph>
-          <Paragraph>{specialization}</Paragraph>
+          <Paragraph>{specializationFull}</Paragraph>
         </div>
         <Button component={`a`} href={`#courses`} className={styles.button}>Посмотреть курсы</Button>
       </div>

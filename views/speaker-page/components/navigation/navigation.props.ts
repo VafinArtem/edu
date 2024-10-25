@@ -1,7 +1,6 @@
+import {NavigationLink} from "@/interfaces/speaker";
+
 export interface NavigationProps {
   className?: string;
-  links: {
-    name: string;
-    href: string;
-  }[];
+  links: NavigationLink[];
 }

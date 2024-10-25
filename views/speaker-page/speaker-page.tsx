@@ -11,29 +11,7 @@ import Edu from "@/views/speaker-page/components/edu/edu";
 import Examples from "@/views/speaker-page/components/examples/examples";
 import Courses from "@/views/speaker-page/components/courses/courses";
 import Gallery from "@/views/speaker-page/components/gallery/gallery";
-
-const navigationLinks = [
-  {
-    name: `О преподавателе`,
-    href: `#about`,
-  },
-  {
-    name: `Образование`,
-    href: `#education`,
-  },
-  {
-    name: `Рабочие кейсы`,
-    href: `#examples`,
-  },
-  {
-    name: `Курсы`,
-    href: `#courses`,
-  },
-  {
-    name: `Фото`,
-    href: `#photos`,
-  },
-];
+import {NavigationLink} from "@/interfaces/speaker";
 
 const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement | null => {
   const {
@@ -41,6 +19,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
     name,
     patronymic,
     specialization,
+    specializationFull,
     workExperience,
     promoPhotos,
     about,
@@ -49,6 +28,47 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
     courses,
     photos,
   } = speaker;
+
+  const getNavigationLinks = () => {
+    const links: NavigationLink[] = [];
+
+    if (about) {
+      links.push({
+        name: `О преподавателе`,
+        href: `#about`,
+      });
+    }
+
+    if (edu && edu.length > 0) {
+      links.push({
+        name: `Образование`,
+        href: `#education`,
+      });
+    }
+
+    if (examples) {
+      links.push({
+        name: `Рабочие кейсы`,
+        href: `#examples`,
+      });
+    }
+
+    if (courses) {
+      links.push({
+        name: `Курсы`,
+        href: `#courses`,
+      });
+    }
+
+    if (photos) {
+      links.push({
+        name: `Фото`,
+        href: `#photos`,
+      });
+    }
+
+    return links;
+  };
 
   return (
     <>
@@ -62,8 +82,9 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
           specialization={specialization}
           workExperience={workExperience}
           photos={promoPhotos}
+          specializationFull={specializationFull}
         />
-        <Navigation links={navigationLinks} />
+        <Navigation links={getNavigationLinks()} />
       </div>
 
       {about && <About id={`about`} content={about} />}
