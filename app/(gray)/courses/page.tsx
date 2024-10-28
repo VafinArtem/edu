@@ -1,23 +1,15 @@
 import React, {ReactElement} from "react";
-import {Route} from "@/helpers/route";
-import Link from "next/link";
+import {Metadata} from "next";
+import CoursesPage from "@/views/courses-page/courses-page";
 
-const ServicePage = async (): Promise<ReactElement | null> => {
-  return (
-    <ul className={`container`}>
-      <li>
-        <Link href={`${Route.COURSES}/preview`} style={{textDecoration: `underline`}}>Один курс - превью</Link>
-      </li>
-      <li>
-        <Link href={`${Route.COURSES}/klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка
-          1</Link>
-      </li>
-      <li>
-        <Link href={`${Route.COURSES}/bazovyi-kurs-po-implantologii-ortopedicheskii-etap`}
-          style={{textDecoration: `underline`}}>Карточка 2</Link>
-      </li>
-    </ul>
-  );
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `Курсы - Учебный центра Амрита`,
+  };
+}
+
+const CoursesLayout = async (): Promise<ReactElement | null> => {
+  return <CoursesPage />;
 };
 
-export default ServicePage;
+export default CoursesLayout;

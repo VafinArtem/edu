@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.common {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 5px;
+}
+
+.advancedTraining {
+  padding: 0 10px 15px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.checkboxList,
+.priceList,
+.date {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.checkboxList {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.priceList {
+  gap: 5px;
+}

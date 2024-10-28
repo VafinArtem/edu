@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 17px 15px;
+}
+
+.label {
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  column-gap: 5px;
+  row-gap: 6px;
+}
+
+.name {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--gray-500);
+}
+
+.value {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.icon {
+  grid-column: 2;
+  grid-row: 1/3;
+  align-self: center;
+  color: var(--gray-700);
+}

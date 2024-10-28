@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  position: absolute;
+  top: calc(100% + 10px);
+  display: flex;
+  box-shadow: 0 4px 14px 0 rgba(117, 119, 122, 0.19);
+}

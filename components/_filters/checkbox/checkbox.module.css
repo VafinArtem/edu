@@ -1,0 +1,38 @@
+.label {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 7px;
+}
+
+.label:hover .input:not(:checked) ~ .square {
+  background-color: var(--gray-100);
+}
+
+.label:hover .input ~ .name {
+  color: var(--primary);
+}
+
+.input {
+  display: none;
+}
+
+.input:checked ~ .square {
+  background-image: url("/img/components/checkbox/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(100% + 2px);
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.square {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--gray-300)
+}
+
+.name {
+  align-self: center;
+  font-size: 1.4rem;
+}

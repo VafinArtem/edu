@@ -1,0 +1,18 @@
+.count {
+  vertical-align: top;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: var(--gray-500);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 277px 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 1499px) {
+  .grid {
+	grid-template-columns: 247px 1fr;
+  }
+}
