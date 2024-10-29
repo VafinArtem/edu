@@ -45,7 +45,8 @@ const CollapseItem = ({
           <IconArrow />
         </button>
       </div>
-      <div className={clsx(styles.content, contentClassName)} ref={ref}>
+      <div className={clsx(styles.content, contentClassName)} ref={ref}
+        style={{overflow: initialIsShow ? "visible" : "hidden"}}>
         {children}
       </div>
     </div>

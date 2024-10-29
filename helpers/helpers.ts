@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
 import {TariffInfo} from "@/interfaces/course";
+import {DateRange} from "react-day-picker";
 
 dayjs.locale("ru");
 dayjs.extend(localizedFormat);
@@ -79,4 +80,15 @@ export const getWorkExperienceText = (year: number) => {
   const shift = nowYear - year;
 
   return `${nowYear - year} ${getDeclension(shift, [`год`, `года`, `лет`])}`;
+};
+
+export const formatDateFromDatePicker = (dates: DateRange | undefined): string => {
+  if (!dates) {
+    return ``;
+  }
+
+  const fromDate = dayjs(dates.from).format(`DD.MM.YYYY`);
+  const toDate = dayjs(dates.to).format(`DD.MM.YYYY`);
+
+  return `${fromDate}${fromDate !== toDate ? ` — ${toDate}` : ``}`;
 };

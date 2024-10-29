@@ -41,7 +41,7 @@ const Filters = ({className}: FiltersProps): ReactElement | null => {
           <PriceItem labelName={`от`} placeholder={`1 000`} />
           <PriceItem labelName={`до`} placeholder={`80 000`} />
         </CollapseItem>
-        <CollapseItem name={`Цена`} contentClassName={styles.date}>
+        <CollapseItem name={`Дата`} contentClassName={styles.date} initialIsShow={true}>
           <Dates />
         </CollapseItem>
       </Wrapper>

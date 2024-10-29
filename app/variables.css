@@ -1,6 +1,9 @@
 :root {
   --max-width: 2100px;
 
+  /* date-picker */
+
+
   /* Paddings */
   --container-desktop-padding: 80px;
   --container-laptop-padding: 50px;

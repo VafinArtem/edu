@@ -1,0 +1,12 @@
+.rdp-root {
+  --rdp-day-height: 3.75rem;
+  --rdp-day-width: 3.75rem;
+  --rdp-font-family: inherit;
+  --rdp-accent-color: var(--primary);
+  --rdp-accent-background-color: var(--gray-100);
+}
+
+.rdp-day:not(.rdp-selected) .rdp-day_button:hover,
+.rdp-day:not(.rdp-selected) .rdp-day_button:focus-within {
+  background-color: var(--gray-100);
+}
