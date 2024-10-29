@@ -2,7 +2,7 @@ import React, {ForwardedRef, forwardRef, ReactElement} from "react";
 import {ModalWrapperProps} from "./modal-wrapper.props";
 import styles from "./modal-wrapper.module.css";
 import clsx from "clsx";
-import IconClose from "./close.svg";
+import CloseButton from "@/components/_buttons/close-button/close-button";
 
 const ModalWrapper = forwardRef(({
   className,
@@ -14,10 +14,7 @@ const ModalWrapper = forwardRef(({
   return (
     <div className={styles.wrapper}>
       <div className={clsx(styles.inner, className)} {...props} ref={ref}>
-        <button className={styles.close} type={`button`} onClick={() => setShowModal(!showModal)}>
-          <IconClose width={24} height={24} />
-          <span className={`visually-hidden`}>Закрыть модальное окно</span>
-        </button>
+        <CloseButton className={styles.close} onClick={() => setShowModal(!showModal)} />
         {children}
       </div>
     </div>

@@ -17,7 +17,6 @@ const Dates = ({}: DatesProps): ReactElement | null => {
 
   const onSelect: OnSelectHandler<DateRange | undefined> = (selected) => {
     setDates(selected);
-    console.log(selected);
   };
 
   return (

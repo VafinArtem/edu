@@ -1,4 +1,6 @@
-import {DetailedHTMLProps, FormHTMLAttributes} from "react";
+import {DetailedHTMLProps, HTMLAttributes} from "react";
 
-export interface FiltersProps extends DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
+export interface FiltersProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  showMobileFilters: boolean;
+  setShowMobileFilters: (status: boolean) => void;
 }

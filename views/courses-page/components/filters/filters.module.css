@@ -1,4 +1,9 @@
 .form {
+  position: relative;
+}
+
+.form,
+.inner {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -8,7 +13,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 20px 5px;
 }
 
 .advancedTraining {
@@ -31,4 +35,119 @@
 
 .priceList {
   gap: 5px;
+}
+
+@media (min-width: 1100px) {
+  .close[class] {
+	display: none;
+  }
+
+  .title {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+  }
+
+  .common {
+	padding: 20px 5px;
+  }
+
+  .buttons {
+	display: none;
+  }
+}
+
+@media (max-width: 1099px) {
+  .wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: none;
+	align-items: flex-end;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(var(--black-rgb), 0.5);
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.1s ease-in;
+  }
+
+  .wrapper.show {
+	display: flex;
+  }
+
+  .form {
+	width: 100%;
+	background-color: var(--gray-50);
+	padding: 40px 10px 40px 40px;
+	border-radius: 20px 20px 0 0;
+  }
+
+  .hiddenWrapper {
+	width: 100%;
+	transform: translateY(100%);
+	transition: transform 0.3s ease-in;
+  }
+
+  .form,
+  .inner {
+	gap: 25px;
+  }
+
+  .inner {
+	padding-right: 40px;
+	max-height: 70vh;
+	overflow-y: auto;
+  }
+
+  .inner::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+  }
+
+  .inner::-webkit-scrollbar-thumb {
+	width: 100%;
+	background-color: var(--gray-400);
+	border-radius: 50px;
+  }
+
+  .close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+  }
+
+  .title {
+	font-size: 2.3rem;
+  }
+
+  .search {
+	order: -1;
+  }
+
+  .advancedTraining {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--gray-200);
+  }
+
+  .checkboxList,
+  .priceList,
+  .date {
+	padding-left: 0;
+	padding-right: 0;
+	border-bottom: 1px solid var(--gray-200);
+  }
+
+  .buttons {
+	display: flex;
+	gap: 14px;
+	align-self: center;
+  }
 }

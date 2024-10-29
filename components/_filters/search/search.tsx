@@ -8,7 +8,7 @@ import Wrapper from "@/components/_filters/wrapper/wrapper";
 
 const Search = ({className, ...props}: SearchProps): ReactElement | null => {
   return (
-    <Wrapper className={clsx(styles.wrapper, className)}>
+    <Wrapper className={clsx(styles.wrapper, className)} removeMobileStyles={false}>
       <label className={styles.label}>
         <input type="text" name={`search`} className={styles.input} {...props}
           placeholder={`Курс или направление...`} />

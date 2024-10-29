@@ -1,3 +1,5 @@
+"use client";
+
 import React, {ReactElement} from "react";
 import {CoursesPageProps} from "./courses-page.props";
 import styles from "./courses-page.module.css";
@@ -7,8 +9,13 @@ import Heading from "@/components/_tags/heading/heading";
 import Link from "next/link";
 import {Route} from "@/helpers/route";
 import Filters from "@/views/courses-page/components/filters/filters";
+import useIsResolution from "@/hooks/useIsResolution";
+import useOpenModal from "@/hooks/useOpenModal";
 
 const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
+  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
+  const isMobile = useIsResolution(1099);
+
   return (
     <>
       <Pagination className={`container`} pagination={[{name: `Курсы`}]} />
@@ -18,10 +25,14 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
           className={styles.count}>&nbsp;40</span></Heading>
 
         <div className={styles.grid}>
-          <div className={styles.filters}>
-            <Filters />
+          <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref} />
+          <div className={styles.content}>
+            <button onClick={() => {
+              if (isMobile) {
+                changeModalActivityStatus(true);
+              }
+            }}></button>
           </div>
-          <div className={styles.content}></div>
         </div>
       </SectionItem>
 

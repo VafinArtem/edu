@@ -3,3 +3,11 @@
   background-color: var(--white);
   border: 1px solid var(--gray-200);
 }
+
+@media (max-width: 1099px) {
+  .wrapper.removeMobileStyles {
+	border-radius: 0;
+	background-color: initial;
+	border: none;
+  }
+}

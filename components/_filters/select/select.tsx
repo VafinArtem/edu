@@ -34,7 +34,9 @@ const Select = ({name, options, labelName, className, ...props}: SelectProps): R
           {!currentValue || (typeof currentValue !== "number" && currentValue.length === 0) ? `Все` : getTextValue(currentValue, options)}
         </span>
       </label>
-      {showModal && <div className={styles.modal} ref={ref}>
+      <div className={clsx(styles.modal, {
+        [styles.show]: showModal,
+      })} ref={ref}>
         <ul className={styles.list}>
           {options.map(({value, name, color}) => <li
             key={value}
@@ -68,7 +70,7 @@ const Select = ({name, options, labelName, className, ...props}: SelectProps): R
             {name}
           </li>)}
         </ul>
-      </div>}
+      </div>
     </Wrapper>
   );
 };
