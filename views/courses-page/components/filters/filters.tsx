@@ -19,6 +19,27 @@ const Filters = ({className}: FiltersProps): ReactElement | null => {
         className={styles.typeSelect}
         labelName={"Тип обучения"}
         name={`courseType`}
+        options={[{
+          name: "Семинар",
+          value: 1,
+          color: "#E567BA",
+        }, {
+          name: "Мастер-класс",
+          value: 2,
+          color: "#E57027",
+        }, {
+          name: "Конференция",
+          value: 3,
+          color: "#559D2D",
+        }, {
+          name: "Вебинар",
+          value: 4,
+          color: "#A47CEB",
+        }, {
+          name: "Курс",
+          value: 5,
+          color: "#2FA4D7",
+        }]}
       />
 
       <Search className={styles.search} />
