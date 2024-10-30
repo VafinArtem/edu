@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--gray-500);
+  background-color: var(--white);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item.back {
+  transform: rotate(-180deg);
+}
+
+.item.active {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.item:not(.active):hover,
+.item:not(.active):focus-visible {
+  background-color: var(--primary-light);
+}

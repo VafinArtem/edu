@@ -12,8 +12,10 @@ import Filters from "@/views/courses-page/components/filters/filters";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
-import {directions} from "@/mocs/courses";
+import {courses, directions} from "@/mocs/courses";
 import Sort from "@/components/_listings/sort/sort";
+import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
+import ListingPagination from "@/components/_listings/pagination/pagination";
 
 const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
@@ -41,6 +43,11 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
               </Directions>
               <Sort />
             </div>
+            <div className={styles.list}>
+              {courses.map((course) => <CourseShortItem course={course} key={course.id} withPhoto />)}
+            </div>
+
+            <ListingPagination className={styles.pagination} />
           </div>
         </div>
       </SectionItem>
