@@ -1,0 +1,106 @@
+.wrapper {
+  position: relative;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  font-size: 1.6rem;
+  color: var(--gray-700);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+.button.open,
+.button.open .arrow {
+  color: var(--gray-950);
+}
+
+.button.open .text {
+  border-color: transparent;
+}
+
+.button.open .arrow {
+  transform: rotate(90deg);
+}
+
+
+.text {
+  margin-right: 5px;
+  border-bottom: 1px dashed var(--gray-300);
+}
+
+.arrow {
+  width: 17px;
+  height: 17px;
+  color: var(--gray-400);
+  object-fit: contain;
+  transition: transform 0.2s ease-in, color 0.2s ease-in;
+}
+
+.modal {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  display: none;
+  width: 100%;
+  height: fit-content;
+  padding: 10px 5px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 15px;
+  box-shadow: 0 4px 14px 0 rgba(117, 119, 122, 0.19);
+}
+
+.modal.show {
+  display: flex;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  font-size: 1.4rem;
+  color: var(--gray-700);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item.active {
+  background-color: var(--gray-100);
+}
+
+@media (min-width: 1099px) {
+  .button {
+	padding: 12px 13px;
+	border-radius: 12px;
+  }
+
+  .button:not(.open):hover,
+  .button:not(.open):focus-visible {
+	background-color: var(--gray-200);
+  }
+
+  .button:not(.open):hover .text,
+  .button:not(.open):focus-visible .text {
+	border-color: var(--gray-200);
+  }
+}
+
+@media (max-width: 1499px) {
+  .button {
+	font-size: 1.4rem;
+  }
+}

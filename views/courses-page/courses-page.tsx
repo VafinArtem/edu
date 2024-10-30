@@ -11,6 +11,9 @@ import {Route} from "@/helpers/route";
 import Filters from "@/views/courses-page/components/filters/filters";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
+import Directions from "@/views/courses-page/components/directions/directions";
+import {directions} from "@/mocs/courses";
+import Sort from "@/components/_listings/sort/sort";
 
 const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
@@ -27,11 +30,17 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
         <div className={styles.grid}>
           <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref} />
           <div className={styles.content}>
-            <button onClick={() => {
-              if (isMobile) {
-                changeModalActivityStatus(true);
-              }
-            }}></button>
+            <div className={styles.head}>
+              <Directions directions={directions}>
+                <button className={styles.showFilters} onClick={() => {
+                  if (isMobile) {
+                    changeModalActivityStatus(true);
+                  }
+                }}>Все фильтры
+                </button>
+              </Directions>
+              <Sort />
+            </div>
           </div>
         </div>
       </SectionItem>
