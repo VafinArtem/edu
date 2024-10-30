@@ -7,11 +7,13 @@ import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_bu
 const Button = <C extends BaseButtonComponent = "button">({
   className,
   size = "default",
+  color = "primary",
   ...props
 }: ButtonProps<C>): ReactElement | null => {
   return (
     <BaseButton<C> className={clsx(styles.button, className, {
       [styles.wide]: size === "wide",
+      [styles.primaryLight]: color === "primary-light",
     })} {...(props as BaseButtonProps<C>)} />
   );
 };

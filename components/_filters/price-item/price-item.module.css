@@ -49,3 +49,10 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 1099px) {
+  .label {
+	font-size: 1.6rem;
+	line-height: 1.3;
+  }
+}

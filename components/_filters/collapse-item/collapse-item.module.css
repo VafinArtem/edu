@@ -55,6 +55,10 @@
 	padding: 20px 0;
   }
 
+  .title {
+	font-size: 1.6rem;
+  }
+
   .wrapper.show .content {
 	padding-bottom: 20px;
   }

@@ -61,3 +61,14 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 1099px) {
+  .label {
+	font-size: 1.6rem;
+  }
+
+  .modal {
+	top: auto;
+	bottom: calc(100% + 10px);
+  }
+}

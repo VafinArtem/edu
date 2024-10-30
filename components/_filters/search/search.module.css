@@ -60,3 +60,9 @@
   color: var(--gray-950);
   background-color: var(--gray-100);
 }
+
+@media (max-width: 1099px) {
+  .input {
+	font-size: 1.6rem;
+  }
+}

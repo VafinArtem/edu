@@ -3,4 +3,5 @@ import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-b
 export type ButtonProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
   size?: "default" | "wide";
+  color?: "primary" | "primary-light";
 }

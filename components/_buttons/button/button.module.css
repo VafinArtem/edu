@@ -6,10 +6,15 @@
   padding: 23px 40px;
   font-size: 1.8rem;
   color: var(--white);
-  background-color: var(--button);
+  background-color: var(--primary);
   border: none;
   border-radius: 15px;
   cursor: pointer;
+}
+
+.button.primaryLight {
+  background-color: var(--primary-light);
+  color: var(--primary);
 }
 
 @media (max-width: 1499px) {

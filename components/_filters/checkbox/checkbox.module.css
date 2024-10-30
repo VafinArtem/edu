@@ -36,3 +36,9 @@
   align-self: center;
   font-size: 1.4rem;
 }
+
+@media (max-width: 1099px) {
+  .name {
+	font-size: 1.6rem;
+  }
+}

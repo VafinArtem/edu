@@ -12,6 +12,7 @@ import PriceItem from "@/components/_filters/price-item/price-item";
 import Dates from "@/components/_filters/dates/dates";
 import CloseButton from "@/components/_buttons/close-button/close-button";
 import Button from "@/components/_buttons/button/button";
+import useIsResolution from "@/hooks/useIsResolution";
 
 const Filters = forwardRef(({
   className,
@@ -21,6 +22,7 @@ const Filters = forwardRef(({
   const [showModal, setShowModal] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const innerRef = useRef<HTMLDivElement>(null!);
+  const isMobile = useIsResolution(1099);
 
   useEffect(() => {
     const onWrapperTransitionend = () => {
@@ -29,7 +31,10 @@ const Filters = forwardRef(({
 
     const onInnerTransitionend = () => {
       setShowModal(false);
+      wrapperRef.current.style.opacity = `0`;
     };
+
+    if (!isMobile) return;
 
     if (showMobileFilters) {
       setShowModal(true);
@@ -37,17 +42,18 @@ const Filters = forwardRef(({
 
       setTimeout(() => {
         wrapperRef.current.style.opacity = `1`;
-      });
+      }, 0);
     } else {
       innerRef.current.addEventListener(`transitionend`, onInnerTransitionend, {once: true});
 
       setTimeout(() => {
         innerRef.current.style.transform = `translateY(100%)`;
-      });
+      }, 0);
     }
 
     return () => {
       wrapperRef.current.removeEventListener(`transitionend`, onWrapperTransitionend);
+      innerRef.current.removeEventListener(`transitionend`, onInnerTransitionend);
     };
   }, [showMobileFilters]);
 
@@ -121,7 +127,7 @@ const Filters = forwardRef(({
             </Wrapper>
 
             <div className={styles.buttons}>
-              <Button type={`reset`}>Очистить</Button>
+              <Button type={`reset`} color={"primary-light"}>Очистить</Button>
               <Button type={`submit`}>Применить</Button>
             </div>
           </div>
