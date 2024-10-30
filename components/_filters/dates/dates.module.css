@@ -72,3 +72,10 @@
 	bottom: calc(100% + 10px);
   }
 }
+
+
+@media (max-width: 767px) {
+  .label {
+	font-size: 1.4rem;
+  }
+}

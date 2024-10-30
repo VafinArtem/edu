@@ -106,7 +106,8 @@
 
   .list {
 	flex-wrap: wrap;
-	gap: 10px;
+	column-gap: 10px;
+	row-gap: 13px;
   }
 
   .item {
@@ -121,5 +122,12 @@
 	color: var(--primary);
 	box-shadow: inset 0 0 0 1px var(--primary);
 	background-color: var(--primary-light);
+  }
+}
+
+@media (max-width: 767px) {
+  .item {
+	padding: 11px 13px;
+	font-size: 1.4rem;
   }
 }

@@ -151,3 +151,23 @@
 	align-self: center;
   }
 }
+
+@media (max-width: 767px) {
+  .form {
+	gap: 15px;
+	padding: 30px 10px 30px 20px;
+  }
+
+  .title {
+	font-size: 2rem;
+  }
+
+  .inner {
+	gap: 20px;
+	padding-right: 5px;
+  }
+
+  .inner::-webkit-scrollbar {
+	width: 5px;
+  }
+}
