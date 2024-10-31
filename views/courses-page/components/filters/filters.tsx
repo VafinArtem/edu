@@ -102,7 +102,8 @@ const Filters = forwardRef(({
               }]}
             />
 
-            <Search className={styles.search} />
+            <Search className={styles.search} placeholder={`Курс или направление...`}
+              labelName={`Поиск по курсам или направлениям`} />
 
             <Wrapper className={styles.common}>
               <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}

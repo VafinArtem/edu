@@ -6,13 +6,12 @@ import IconSearch from "./search.svg";
 import IconReset from "./reset.svg";
 import Wrapper from "@/components/_filters/wrapper/wrapper";
 
-const Search = ({className, ...props}: SearchProps): ReactElement | null => {
+const Search = ({className, labelName, ...props}: SearchProps): ReactElement | null => {
   return (
     <Wrapper className={clsx(styles.wrapper, className)} removeMobileStyles={false}>
       <label className={styles.label}>
-        <input type="text" name={`search`} className={styles.input} {...props}
-          placeholder={`Курс или направление...`} />
-        <span className={`visually-hidden`}>Поиск по курсам или направлениям</span>
+        <input type="text" name={`search`} className={styles.input} {...props} />
+        <span className={`visually-hidden`}>{labelName}</span>
       </label>
       <div className={styles.buttons}>
         <button className={styles.reset} type={"button"}><IconReset /></button>
