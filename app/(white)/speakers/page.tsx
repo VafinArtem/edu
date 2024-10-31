@@ -10,7 +10,7 @@ const ServicePage = async (): Promise<ReactElement | null> => {
       </li>
       <li>
         <Link href={`${Route.SPEAKERS}/volkova-yulia-valerievna`}
-          style={{textDecoration: `underline`}}>Преподаватель</Link>
+          style={{textDecoration: `underline`}}>Преподаватель (Только локально)</Link>
       </li>
     </ul>
   );

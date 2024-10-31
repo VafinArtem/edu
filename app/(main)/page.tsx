@@ -13,11 +13,11 @@ export default function Home() {
       </li>
       <li>
         <Link href={`${Route.COURSES}/klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка
-          курса 1</Link>
+          курса 1 (Только локально)</Link>
       </li>
       <li>
         <Link href={`${Route.COURSES}/bazovyi-kurs-po-implantologii-ortopedicheskii-etap`}
-          style={{textDecoration: `underline`}}>Карточка курса 2</Link>
+          style={{textDecoration: `underline`}}>Карточка курса 2 (Только локально)</Link>
       </li>
       <li>
         <Link href={Route.SPEAKERS} style={{textDecoration: `underline`}}>Преподаватели</Link>
@@ -27,7 +27,7 @@ export default function Home() {
       </li>
       <li>
         <Link href={`${Route.SPEAKERS}/volkova-yulia-valerievna`}
-          style={{textDecoration: `underline`}}>Преподаватель 1</Link>
+          style={{textDecoration: `underline`}}>Преподаватель 1 (Только локально)</Link>
       </li>
     </ul>
   );
