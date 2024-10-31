@@ -16,6 +16,14 @@
   width: 100%;
 }
 
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 @media (max-width: 1499px) {
   .search {
@@ -31,5 +39,15 @@
 
   .search {
 	max-width: none;
+  }
+
+  .list {
+	gap: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .list {
+	grid-template-columns: 100%;
   }
 }

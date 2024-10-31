@@ -1,4 +1,5 @@
 import {CommonPageModel} from "@/interfaces/common";
+import {Direction} from "@/interfaces/courses";
 
 export interface CoursePageModel extends CommonPageModel {
   name: string;
@@ -110,6 +111,16 @@ export interface SpeakerShort {
   id: number;
   name: string;
   avatar: string;
+}
+
+export interface SpeakerShortCard {
+  id: number;
+  name: string;
+  alias: string;
+  photo: string;
+  specialization: string;
+  coursesCount: number;
+  direction: Direction;
 }
 
 export interface SpeakerPromo {

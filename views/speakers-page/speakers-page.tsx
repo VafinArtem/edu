@@ -10,6 +10,8 @@ import Directions from "@/views/courses-page/components/directions/directions";
 import {directions} from "@/mocs/courses";
 import ListingPagination from "@/components/_listings/pagination/pagination";
 import Search from "@/components/_filters/search/search";
+import {speakers} from "@/mocs/speakers";
+import SpeakerShortItem from "@/components/_common/speaker-short-item/speaker-short-item";
 
 const SpeakersPage = ({}: SpeakersPageProps): ReactElement | null => {
   return (
@@ -24,6 +26,7 @@ const SpeakersPage = ({}: SpeakersPageProps): ReactElement | null => {
             <Search className={styles.search} placeholder={`Имя или фамилия`} labelName={`Поиск по преподавателям`} />
           </div>
           <div className={styles.list}>
+            {speakers.map((speaker) => (<SpeakerShortItem key={speaker.id} speaker={speaker} />))}
           </div>
 
           <ListingPagination className={styles.pagination} />

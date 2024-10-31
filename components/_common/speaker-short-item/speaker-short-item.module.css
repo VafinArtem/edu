@@ -1,0 +1,129 @@
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 167px 1fr;
+  gap: 20px;
+  padding: 20px 70px 20px 20px;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+}
+
+.image {
+  display: flex;
+  width: 167px;
+  height: 167px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.name {
+  font-size: 1.8rem;
+}
+
+.specialization {
+  font-size: 1.6rem;
+  color: var(--gray-600);
+}
+
+.link {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.coursesCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--gray-600);
+}
+
+.coursesCount::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/components/speaker-short-item/cap.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.direction {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-100);
+  border-radius: 50%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1023px) {
+  .name {
+	font-size: 1.7rem;
+  }
+
+  .specialization {
+	font-size: 1.4rem;
+  }
+
+  .coursesCount {
+	font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .name {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 0;
+  }
+
+  .image {
+	width: 100%;
+	height: auto;
+	border-radius: 20px 20px 0 0;
+  }
+
+  .content {
+	padding: 0 20px 20px;
+  }
+
+  .link {
+	margin-top: 20px;
+  }
+
+  .direction {
+	top: auto;
+	right: 20px;
+	bottom: 20px;
+	width: 30px;
+	height: 30px;
+  }
+}
