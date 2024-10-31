@@ -17,6 +17,8 @@ import Sort from "@/components/_listings/sort/sort";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import ListingPagination from "@/components/_listings/pagination/pagination";
 import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
+import ContainerWhite from "@/components/_course/container-white/container-white";
+import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
 
 const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
@@ -54,6 +56,10 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
       </SectionItem>
 
       <NotFindCourse />
+
+      <ContainerWhite>
+        <FocusInCourse />
+      </ContainerWhite>
 
       <ul className={`container`}>
         <li>
