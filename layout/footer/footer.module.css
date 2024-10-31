@@ -5,6 +5,7 @@
   background-color: var(--footer-bg);
   border-radius: 50px 50px 0 0;
   color: rgba(var(--white-rgb), 0.7);
+  z-index: 1;
 }
 
 .wrapper {
@@ -241,6 +242,10 @@
 }
 
 @media (max-width: 767px) {
+  .footer {
+	border-radius: 20px 20px 0 0;
+  }
+
   .top {
 	grid-template-columns:  max-content repeat(2, 1fr);
 	gap: 10px;

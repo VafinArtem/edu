@@ -17,5 +17,7 @@
 }
 
 @media (max-width: 768px) {
-
+  .wrapper {
+	gap: 20px;
+  }
 }

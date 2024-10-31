@@ -39,6 +39,7 @@
 .modal {
   position: absolute;
   top: calc(100% + 10px);
+  z-index: 2;
   display: flex;
   padding: 10px;
   background-color: var(--white);

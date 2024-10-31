@@ -6,4 +6,5 @@ export interface CourseShortItemProps {
   positionPhoto?: "top" | "left";
   background?: "white" | "gray";
   className?: string;
+  isPastCourse?: boolean;
 }

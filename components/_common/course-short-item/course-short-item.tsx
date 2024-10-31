@@ -15,6 +15,7 @@ const CourseShortItem = ({
   withPhoto,
   positionPhoto = "top",
   background = "gray",
+  isPastCourse,
   className,
 }: CourseShortItemProps): ReactElement | null => {
   const {icon, courseType, name, date, location, price, photo, photoMobile, speakers, alias} = course;
@@ -44,6 +45,7 @@ const CourseShortItem = ({
       [styles.withPhoto]: withPhoto && photo,
       [styles.photoLeft]: withPhoto && photo && positionPhoto === "left",
       [styles.whiteBg]: background === "white",
+      [styles.past]: isPastCourse,
     })}>
       {(withPhoto && photo) &&
         <div className={styles.head}>
@@ -69,7 +71,10 @@ const CourseShortItem = ({
           {location && <Paragraph fontSize={"none"} className={styles.location}>{location}</Paragraph>}
         </div>
         <div className={styles.footer}>
-          <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.price}>{formatPrice(price)} ₽</Paragraph>
+          {isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
+            className={styles.complete}>Завершён</Paragraph>}
+          {!isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
+            className={styles.price}>{formatPrice(price)} ₽</Paragraph>}
           <ButtonArrow
             component={Link}
             href={`${Route.COURSES}/${alias}`}

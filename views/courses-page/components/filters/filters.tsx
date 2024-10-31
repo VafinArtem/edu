@@ -38,12 +38,15 @@ const Filters = forwardRef(({
 
     if (showMobileFilters) {
       setShowModal(true);
+
+      document.body.style.overflow = "hidden";
       wrapperRef.current.addEventListener(`transitionend`, onWrapperTransitionend, {once: true});
 
       setTimeout(() => {
         wrapperRef.current.style.opacity = `1`;
       }, 0);
     } else {
+      document.body.style.overflow = "initial";
       innerRef.current.addEventListener(`transitionend`, onInnerTransitionend, {once: true});
 
       setTimeout(() => {
