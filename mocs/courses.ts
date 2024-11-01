@@ -1,4 +1,4 @@
-import {Direction} from "@/interfaces/courses";
+import {Direction, FilterItem, Option} from "@/interfaces/courses";
 import {CourseShort} from "@/interfaces/course";
 
 export const directions: Direction[] = [
@@ -337,5 +337,88 @@ export const courses: CourseShort[] = [
     },
     speakers: [`Волкова Юлия Валерьевна`, `Иванова Галина Валентиновна`],
     photo: `/img/components/similar-courses/img-1.png`,
+  },
+];
+
+export const filters: FilterItem[] = [
+  {
+    "id": 1,
+    "name": "Город",
+    "inputName": "city",
+    "values": [
+      {
+        "id": 1,
+        "name": "Санкт-Петербург",
+        "value": "1",
+      },
+      {
+        "id": 2,
+        "name": "Москва",
+        "value": "2",
+      },
+    ],
+  },
+  {
+    "id": 1,
+    "name": "Преподаватель",
+    "inputName": "speaker",
+    "values": [
+      {
+        "id": 1,
+        "name": "Волкова Юлия Валерьевна",
+        "value": "1",
+      },
+      {
+        "id": 2,
+        "name": "Иванова Галина Валентиновна",
+        "value": "2",
+      },
+    ],
+  },
+  {
+    "id": 1,
+    "name": "Продолжительность",
+    "inputName": "duration",
+    "values": [
+      {
+        "id": 1,
+        "name": "1 день",
+        "value": "1",
+      },
+      {
+        "id": 2,
+        "name": "2 дня",
+        "value": "2",
+      },
+      {
+        "id": 3,
+        "name": "2 часа",
+        "value": "3",
+      },
+    ],
+  },
+];
+
+export const courseTypes: Option[] = [
+  {
+    name: "Семинар",
+    value: 1,
+    color: "#E567BA",
+  }, {
+    name: "Мастер-класс",
+    value: 2,
+    color: "#E57027",
+  }, {
+    name: "Конференция",
+    value: 3,
+    color: "#559D2D",
+  }, {
+    name: "Вебинар",
+    value: 4,
+    color: "#A47CEB",
+  }, {
+    name: "Курс",
+    value: 5,
+    color: "#2FA4D7",
   },
 ];

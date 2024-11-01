@@ -10,7 +10,7 @@ import Filters from "@/views/courses-page/components/filters/filters";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
-import {courses, directions} from "@/mocs/courses";
+import {courses} from "@/mocs/courses";
 import Sort from "@/components/_listings/sort/sort";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import ListingPagination from "@/components/_listings/pagination/pagination";
@@ -19,7 +19,7 @@ import ContainerWhite from "@/components/_course/container-white/container-white
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
 import PastCourses from "@/views/courses-page/components/past-courses/past-courses";
 
-const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
+const CoursesPage = ({filters, courseTypes, directions}: CoursesPageProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
   const isMobile = useIsResolution(1099);
 
@@ -32,7 +32,8 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
           className={styles.count}>&nbsp;40</span></Heading>
 
         <div className={styles.grid}>
-          <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref} />
+          <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref}
+            filters={filters} courseTypes={courseTypes} />
           <div className={styles.content}>
             <div className={styles.head}>
               <Directions directions={directions}>
@@ -60,20 +61,6 @@ const CoursesPage = ({}: CoursesPageProps): ReactElement | null => {
         <FocusInCourse />
         <PastCourses />
       </ContainerWhite>
-
-      {/*<ul className={`container`}>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/preview`} style={{textDecoration: `underline`}}>Один курс - превью</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка*/}
-      {/*      1</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/bazovyi-kurs-po-implantologii-ortopedicheskii-etap`}*/}
-      {/*      style={{textDecoration: `underline`}}>Карточка 2</Link>*/}
-      {/*  </li>*/}
-      {/*</ul>*/}
     </>
   );
 };

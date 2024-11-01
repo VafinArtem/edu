@@ -16,6 +16,8 @@ import useIsResolution from "@/hooks/useIsResolution";
 
 const Filters = forwardRef(({
   className,
+  filters,
+  courseTypes,
   showMobileFilters,
   setShowMobileFilters,
 }: FiltersProps, ref: ForwardedRef<HTMLFormElement>): ReactElement | null => {
@@ -75,32 +77,12 @@ const Filters = forwardRef(({
           <Heading tag={`h2`} className={styles.title}>Фильтры</Heading>
 
           <div className={styles.inner}>
-            <Select
+            {courseTypes.length > 0 && <Select
               className={styles.typeSelect}
               labelName={"Тип обучения"}
               name={`courseType`}
-              options={[{
-                name: "Семинар",
-                value: 1,
-                color: "#E567BA",
-              }, {
-                name: "Мастер-класс",
-                value: 2,
-                color: "#E57027",
-              }, {
-                name: "Конференция",
-                value: 3,
-                color: "#559D2D",
-              }, {
-                name: "Вебинар",
-                value: 4,
-                color: "#A47CEB",
-              }, {
-                name: "Курс",
-                value: 5,
-                color: "#2FA4D7",
-              }]}
-            />
+              options={courseTypes}
+            />}
 
             <Search className={styles.search} placeholder={`Курс или направление...`}
               labelName={`Поиск по курсам или направлениям`} />
@@ -109,21 +91,14 @@ const Filters = forwardRef(({
               <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
                 name={`advanced-training`} />
 
-              <CollapseItem name={`Город`} contentClassName={styles.checkboxList}>
-                <Checkbox labelName={`Санкт-Петербург`} name={`city`} />
-                <Checkbox labelName={`Москва`} name={`city`} />
-              </CollapseItem>
-              <CollapseItem name={`Преподаватель`} contentClassName={styles.checkboxList}>
-                <Checkbox labelName={`Санкт-Петербург`} name={`city`} />
-                <Checkbox labelName={`Москва`} name={`city`} />
-              </CollapseItem>
-              <CollapseItem name={`Продолжительность`} contentClassName={styles.checkboxList}>
-                <Checkbox labelName={`Санкт-Петербург`} name={`city`} />
-                <Checkbox labelName={`Москва`} name={`city`} />
-              </CollapseItem>
+              {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
+                <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>
+                  {values.map((value) => <Checkbox key={value.id} labelName={value.name} defaultValue={value.value}
+                    name={inputName} />)}
+                </CollapseItem>))}
               <CollapseItem name={`Цена`} contentClassName={styles.priceList}>
-                <PriceItem labelName={`от`} placeholder={`1 000`} />
-                <PriceItem labelName={`до`} placeholder={`80 000`} />
+                <PriceItem labelName={`от`} name={`price-start`} placeholder={`1 000`} />
+                <PriceItem labelName={`до`} name={`price-end`} placeholder={`80 000`} />
               </CollapseItem>
               <CollapseItem name={`Дата`} contentClassName={styles.date}>
                 <Dates />

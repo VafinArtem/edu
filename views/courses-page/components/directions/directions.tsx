@@ -8,10 +8,11 @@ const Directions = ({directions, children, ...props}: DirectionsProps): ReactEle
     <div className={styles.wrapper} {...props}>
       {children}
       <form className={styles.inner}>
-        {directions.map((direction, index) => <button key={direction.id} type={`button`} className={clsx(styles.item, {
-          [styles.active]: index === 0,
-          [styles.notActive]: index === 1,
-        })}>
+        {directions.length > 0 && directions.map((direction) => <button key={direction.id} type={`button`}
+          className={clsx(styles.item, {
+            // [styles.active]: index === 0,
+            // [styles.notActive]: index === 1,
+          })}>
           <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}
             style={{color: direction.color}} />
           {direction.name}

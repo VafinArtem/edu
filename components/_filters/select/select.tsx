@@ -2,11 +2,12 @@
 
 import React, {ReactElement, useState} from "react";
 import clsx from "clsx";
-import {Option, SelectProps} from "./select.props";
+import {SelectProps} from "./select.props";
 import styles from "./select.module.css";
 import IconArrow from "./arrow.svg";
 import Wrapper from "@/components/_filters/wrapper/wrapper";
 import useOpenModal from "@/hooks/useOpenModal";
+import {Option} from "@/interfaces/courses";
 
 const convertValue = (value: number | number[]): string => {
   return typeof value === "number" ? value.toString() : value.toString();

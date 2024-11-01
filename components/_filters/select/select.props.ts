@@ -1,10 +1,5 @@
 import {DetailedHTMLProps, InputHTMLAttributes} from "react";
-
-export interface Option {
-  name: string;
-  value: number;
-  color?: string;
-}
+import {Option} from "@/interfaces/courses";
 
 export interface SelectProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   labelName: string;
