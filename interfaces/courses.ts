@@ -1,3 +1,11 @@
+import {CourseShort} from "@/interfaces/course";
+
+export interface CoursesPageModel {
+  courses: CourseShort[];
+  pages: number;
+  searchParams?: [string, string][];
+}
+
 export interface Direction {
   name: string;
   icon: string;

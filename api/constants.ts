@@ -1,6 +1,9 @@
 export const API = {
+  course: {
+    byAlias: process.env.BACKEND_API + "/course/",
+  },
   courses: {
-    byAlias: process.env.BACKEND_API + "/courses/",
+    byType: process.env.BACKEND_API + "/courses/",
     similar: process.env.BACKEND_API + "/similar-courses/",
     filters: process.env.BACKEND_API + "/filters",
     courseTypes: process.env.BACKEND_API + "/courseTypes",

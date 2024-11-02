@@ -1,6 +1,7 @@
 "use client";
 
 import React, {ReactElement} from "react";
+import {useSearchParams} from "next/navigation";
 import {CoursesPageProps} from "./courses-page.props";
 import styles from "./courses-page.module.css";
 import Pagination from "@/components/_common/pagination/pagination";
@@ -10,7 +11,6 @@ import Filters from "@/views/courses-page/components/filters/filters";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
-import {courses} from "@/mocs/courses";
 import Sort from "@/components/_listings/sort/sort";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import ListingPagination from "@/components/_listings/pagination/pagination";
@@ -19,7 +19,10 @@ import ContainerWhite from "@/components/_course/container-white/container-white
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
 import PastCourses from "@/views/courses-page/components/past-courses/past-courses";
 
-const CoursesPage = ({filters, courseTypes, directions}: CoursesPageProps): ReactElement | null => {
+const CoursesPage = ({courses, pages, filters, courseTypes, directions}: CoursesPageProps): ReactElement | null => {
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams?.get(`page`)) || 1;
+
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
   const isMobile = useIsResolution(1099);
 
@@ -50,7 +53,11 @@ const CoursesPage = ({filters, courseTypes, directions}: CoursesPageProps): Reac
               {courses.map((course) => <CourseShortItem course={course} key={course.id} withPhoto />)}
             </div>
 
-            <ListingPagination className={styles.pagination} />
+            <ListingPagination
+              currentPage={currentPage}
+              pages={pages}
+              className={styles.pagination}
+            />
           </div>
         </div>
       </SectionItem>
