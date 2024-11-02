@@ -1,8 +1,11 @@
+"use client";
+
 import React, {ForwardedRef, forwardRef, ReactElement, useEffect, useRef, useState} from "react";
+import {useSearchParams} from "next/navigation";
 import {FiltersProps} from "./filters.props";
 import styles from "./filters.module.css";
 import clsx from "clsx";
-import Select from "@/components/_filters/select/select";
+import Select, {getSelectValue} from "@/components/_filters/select/select";
 import Search from "@/components/_filters/search/search";
 import Wrapper from "@/components/_filters/wrapper/wrapper";
 import Checkbox from "@/components/_filters/checkbox/checkbox";
@@ -13,6 +16,7 @@ import Dates from "@/components/_filters/dates/dates";
 import CloseButton from "@/components/_buttons/close-button/close-button";
 import Button from "@/components/_buttons/button/button";
 import useIsResolution from "@/hooks/useIsResolution";
+import {getDatesFromSearchParams} from "@/helpers/dates-helpers";
 
 const Filters = forwardRef(({
   className,
@@ -21,6 +25,8 @@ const Filters = forwardRef(({
   showMobileFilters,
   setShowMobileFilters,
 }: FiltersProps, ref: ForwardedRef<HTMLFormElement>): ReactElement | null => {
+  const searchParams = useSearchParams();
+
   const [showModal, setShowModal] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const innerRef = useRef<HTMLDivElement>(null!);
@@ -82,6 +88,7 @@ const Filters = forwardRef(({
               labelName={"Тип обучения"}
               name={`courseType`}
               options={courseTypes}
+              initialValue={getSelectValue(searchParams, `courseType`)}
             />}
 
             <Search className={styles.search} placeholder={`Курс или направление...`}
@@ -89,19 +96,30 @@ const Filters = forwardRef(({
 
             <Wrapper className={styles.common}>
               <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
-                name={`advanced-training`} />
+                name={`advanced-training`} defaultChecked={Boolean(searchParams.get("advanced-training"))} />
 
               {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
                 <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>
-                  {values.map((value) => <Checkbox key={value.id} labelName={value.name} defaultValue={value.value}
-                    name={inputName} />)}
+                  {values.map((value) => (
+                    <Checkbox
+                      key={value.id}
+                      labelName={value.name}
+                      defaultValue={value.value}
+                      name={inputName}
+                      defaultChecked={Array.from(searchParams.entries()).some(([key, paramValue]) => key === inputName && paramValue === value.value)}
+                    />))}
                 </CollapseItem>))}
               <CollapseItem name={`Цена`} contentClassName={styles.priceList}>
-                <PriceItem labelName={`от`} name={`price-start`} placeholder={`1 000`} />
-                <PriceItem labelName={`до`} name={`price-end`} placeholder={`80 000`} />
+                <PriceItem labelName={`от`} name={`price-start`} defaultValue={searchParams.get(`price-start`) ?? ``}
+                  placeholder={`1 000`} />
+                <PriceItem labelName={`до`} name={`price-end`} defaultValue={searchParams.get(`price-end`) ?? ``}
+                  placeholder={`80 000`} />
               </CollapseItem>
               <CollapseItem name={`Дата`} contentClassName={styles.date}>
-                <Dates />
+                <Dates initialDates={getDatesFromSearchParams({
+                  dateStart: searchParams.get("date-start") ?? undefined,
+                  dateEnd: searchParams.get("date-end") ?? undefined,
+                })} />
               </CollapseItem>
             </Wrapper>
 

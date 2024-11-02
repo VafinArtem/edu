@@ -9,11 +9,11 @@ import "react-day-picker/style.css";
 import "./date-picker.css";
 import IconReset from "./reset.svg";
 import useOpenModal from "@/hooks/useOpenModal";
-import {formatDateFromDatePicker} from "@/helpers/helpers";
+import {formatDateFromDatePicker, formatDateFromDatePickerToHiddenInput} from "@/helpers/dates-helpers";
 
-const Dates = ({}: DatesProps): ReactElement | null => {
+const Dates = ({initialDates}: DatesProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
-  const [dates, setDates] = useState<DateRange | undefined>(undefined);
+  const [dates, setDates] = useState<DateRange | undefined>(initialDates);
 
   const onSelect: OnSelectHandler<DateRange | undefined> = (selected) => {
     setDates(selected);
@@ -21,11 +21,12 @@ const Dates = ({}: DatesProps): ReactElement | null => {
 
   return (
     <div className={styles.wrapper}>
+      <input type="hidden" name="date-start" defaultValue={formatDateFromDatePickerToHiddenInput(dates?.from)} />
+      <input type="hidden" name="date-end" defaultValue={formatDateFromDatePickerToHiddenInput(dates?.to)} />
       <label className={styles.label}>
         <span className={`visually-hidden`}>Выбрать дату</span>
-        <input type="text" className={styles.input} defaultValue={formatDateFromDatePicker(dates)} readOnly={true}
-          placeholder={`Выбрать дату`}
-          onClick={() => changeModalActivityStatus(!showModal)} />
+        <input type="text" className={styles.input} defaultValue={formatDateFromDatePicker(dates)}
+          readOnly={true} placeholder={`Выбрать дату`} onClick={() => changeModalActivityStatus(!showModal)} />
       </label>
       {dates &&
         <button

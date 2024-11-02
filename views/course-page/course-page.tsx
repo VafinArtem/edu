@@ -18,8 +18,9 @@ import SpeakerCourses from "@/views/course-page/components/speaker-courses/speak
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import Location from "@/views/course-page/components/location/location";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import {convertCourseDates, getMinTariffPrice} from "@/helpers/helpers";
+import {getMinTariffPrice} from "@/helpers/helpers";
 import Speakers from "@/views/course-page/components/speakers/speakers";
+import {convertCourseDates} from "@/helpers/dates-helpers";
 
 const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement | null => {
   const {

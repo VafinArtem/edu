@@ -6,7 +6,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import Button from "@/components/_buttons/button/button";
 import {getImageProps} from "next/image";
-import {getWorkExperienceText} from "@/helpers/helpers";
+import {getWorkExperienceText} from "@/helpers/dates-helpers";
 
 const Promo = ({
   className,

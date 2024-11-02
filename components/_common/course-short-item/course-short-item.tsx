@@ -2,13 +2,14 @@ import React, {ReactElement} from "react";
 import {CourseShortItemProps} from "./course-short-item.props";
 import styles from "./course-short-item.module.css";
 import Heading from "@/components/_tags/heading/heading";
-import {convertShortCourseDate, formatPrice} from "@/helpers/helpers";
+import {formatPrice} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
 import {getImageProps} from "next/image";
 import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Link from "next/link";
+import {convertShortCourseDate} from "@/helpers/dates-helpers";
 
 const CourseShortItem = ({
   course,

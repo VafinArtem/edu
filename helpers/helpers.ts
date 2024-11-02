@@ -1,11 +1,5 @@
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
 import {TariffInfo} from "@/interfaces/course";
-import {DateRange} from "react-day-picker";
-
-dayjs.locale("ru");
-dayjs.extend(localizedFormat);
 
 export const formatPrice = (price: number) => new Intl.NumberFormat(`ru-RU`).format(price);
 
@@ -32,27 +26,6 @@ export const getDeclension = (number: number, titles: [string, string, string]) 
     ];
 };
 
-export const convertCourseDates = ({start, end}: {start: number, end?: number}) => {
-  const now = dayjs();
-
-  const startDate = dayjs(start * 1000);
-  const endDate = end ? dayjs(end * 1000) : undefined;
-
-  if (!end || start === end) {
-    return `${startDate.format(`D MMMM${now.year() !== startDate.year() ? " YYYY" : ""}`)}`;
-  }
-
-  return `c ${startDate.format(`D${startDate.month() !== endDate?.month() ? " MMMM" : ""}${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)} по ${endDate!.format(`D MMMM${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)}`;
-};
-
-export const convertShortCourseDate = (date: number) => {
-  const now = dayjs();
-
-  const dayjsDate = dayjs(date * 1000);
-
-  return `${dayjsDate.format(`D MMMM${now.year() !== dayjsDate.year() ? " YYYY" : ""}`)}`;
-};
-
 export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
   return tariffs.reduce((previousValue, tariff, currentIndex) => {
     if (currentIndex === 0) {
@@ -73,22 +46,4 @@ export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
   }, {
     current: 0,
   } as {current: number, old?: number});
-};
-
-export const getWorkExperienceText = (year: number) => {
-  const nowYear = dayjs().year();
-  const shift = nowYear - year;
-
-  return `${nowYear - year} ${getDeclension(shift, [`год`, `года`, `лет`])}`;
-};
-
-export const formatDateFromDatePicker = (dates: DateRange | undefined): string => {
-  if (!dates) {
-    return ``;
-  }
-
-  const fromDate = dayjs(dates.from).format(`DD.MM.YYYY`);
-  const toDate = dayjs(dates.to).format(`DD.MM.YYYY`);
-
-  return `${fromDate}${fromDate !== toDate ? ` — ${toDate}` : ``}`;
 };

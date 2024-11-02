@@ -8,6 +8,7 @@ import IconArrow from "./arrow.svg";
 import Wrapper from "@/components/_filters/wrapper/wrapper";
 import useOpenModal from "@/hooks/useOpenModal";
 import {Option} from "@/interfaces/courses";
+import {ReadonlyURLSearchParams} from "next/navigation";
 
 const convertValue = (value: number | number[]): string => {
   return typeof value === "number" ? value.toString() : value.toString();
@@ -17,10 +18,20 @@ const getTextValue = (value: number | number[], options: Option[]) => {
   return typeof value === "number" ? options.find((option) => option.value === value)?.name : value.map((item) => options.find((option) => option.value === item)?.name).join(`, `);
 };
 
-const Select = ({name, options, labelName, className, ...props}: SelectProps): ReactElement | null => {
+export const getSelectValue = (searchParams: ReadonlyURLSearchParams, paramName: string) => {
+  const value = searchParams.get(paramName) ?? ``;
+
+  if (!value) {
+    return;
+  }
+
+  return value && !value.includes(`,`) ? +value : value.split(`,`).map((el) => +el);
+};
+
+const Select = ({name, options, initialValue, labelName, className, ...props}: SelectProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
 
-  const [currentValue, setCurrentValue] = useState<number | number[]>([]);
+  const [currentValue, setCurrentValue] = useState<number | number[]>(initialValue ?? []);
 
   return (
     <Wrapper className={clsx(styles.wrapper, className)}>

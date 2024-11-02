@@ -13,7 +13,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
 import Button from "@/components/_slider/button/button";
 import clsx from "clsx";
-import {getWorkExperienceText} from "@/helpers/helpers";
+import {getWorkExperienceText} from "@/helpers/dates-helpers";
 
 const SpeakerItem = ({
   name,
