@@ -26,8 +26,6 @@ const CoursesLayout = async (props: {
   const courseTypes = await getCourseTypes();
   const directions = await getDirections();
 
-  console.log(props.searchParams);
-
   return <CoursesPage
     courses={page.courses}
     directions={directions ?? []}

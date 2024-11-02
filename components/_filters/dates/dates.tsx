@@ -11,12 +11,16 @@ import IconReset from "./reset.svg";
 import useOpenModal from "@/hooks/useOpenModal";
 import {formatDateFromDatePicker, formatDateFromDatePickerToHiddenInput} from "@/helpers/dates-helpers";
 
-const Dates = ({initialDates}: DatesProps): ReactElement | null => {
+const Dates = ({initialDates, onSelectCB}: DatesProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
   const [dates, setDates] = useState<DateRange | undefined>(initialDates);
 
   const onSelect: OnSelectHandler<DateRange | undefined> = (selected) => {
     setDates(selected);
+
+    if (onSelectCB) {
+      onSelectCB(selected);
+    }
   };
 
   return (
@@ -30,7 +34,13 @@ const Dates = ({initialDates}: DatesProps): ReactElement | null => {
       </label>
       {dates &&
         <button
-          onClick={() => setDates(undefined)}
+          onClick={() => {
+            setDates(undefined);
+
+            if (onSelectCB) {
+              onSelectCB(undefined);
+            }
+          }}
           className={styles.reset}
           type={"button"}
         ><IconReset /></button>}

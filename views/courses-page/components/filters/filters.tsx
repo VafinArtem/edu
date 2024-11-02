@@ -1,7 +1,7 @@
 "use client";
 
 import React, {ForwardedRef, forwardRef, ReactElement, useEffect, useRef, useState} from "react";
-import {useSearchParams} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {FiltersProps} from "./filters.props";
 import styles from "./filters.module.css";
 import clsx from "clsx";
@@ -16,7 +16,7 @@ import Dates from "@/components/_filters/dates/dates";
 import CloseButton from "@/components/_buttons/close-button/close-button";
 import Button from "@/components/_buttons/button/button";
 import useIsResolution from "@/hooks/useIsResolution";
-import {getDatesFromSearchParams} from "@/helpers/dates-helpers";
+import {formatDateFromDatePickerToHiddenInput, getDatesFromSearchParams} from "@/helpers/dates-helpers";
 
 const Filters = forwardRef(({
   className,
@@ -26,6 +26,8 @@ const Filters = forwardRef(({
   setShowMobileFilters,
 }: FiltersProps, ref: ForwardedRef<HTMLFormElement>): ReactElement | null => {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const {replace} = useRouter();
 
   const [showModal, setShowModal] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null!);
@@ -75,7 +77,56 @@ const Filters = forwardRef(({
       ref={wrapperRef}
     >
       <div className={styles.hiddenWrapper} ref={innerRef}>
-        <form className={styles.form} ref={ref}>
+        <form className={styles.form} ref={ref} onChange={(e) => {
+          if (isMobile) return;
+
+          const target = e.target as HTMLInputElement;
+          const name = target.name;
+
+          if (name === `search`) return;
+
+          const type = target.type;
+          const params = new URLSearchParams(searchParams);
+          const term = target.value;
+
+          if (type === `checkbox`) {
+            const currentValue = params.get(name);
+
+            if (target.checked) {
+              if (!currentValue) {
+                params.set(name, term);
+              } else {
+                params.set(name, `${currentValue},${term}`);
+              }
+            }
+
+            if (!target.checked) {
+              if (currentValue === term) {
+                params.delete(name);
+              } else {
+                const values = currentValue!.split(`,`);
+
+                const index = values.indexOf(term);
+
+                if (index !== -1) {
+                  values.splice(index, 1);
+
+                  params.set(name, values.toString());
+                }
+              }
+            }
+          } else {
+            if (term) {
+              params.set(name, term);
+            } else {
+              params.delete(name);
+            }
+          }
+
+          replace(`${pathname}?${params.toString()}`, {
+            scroll: false,
+          });
+        }}>
           <CloseButton className={styles.close} onClick={() => {
             setShowMobileFilters(false);
           }} />
@@ -91,12 +142,30 @@ const Filters = forwardRef(({
               initialValue={getSelectValue(searchParams, `courseType`)}
             />}
 
-            <Search className={styles.search} placeholder={`Курс или направление...`}
-              labelName={`Поиск по курсам или направлениям`} />
+            <Search
+              className={styles.search}
+              placeholder={`Курс или направление...`}
+              labelName={`Поиск по курсам или направлениям`}
+              onChange={(e) => {
+                const term = e.target.value;
+
+                const params = new URLSearchParams(searchParams);
+
+                if (term) {
+                  params.set("query", term);
+                } else {
+                  params.delete("query");
+                }
+
+                replace(`${pathname}?${params.toString()}`, {
+                  scroll: false,
+                });
+              }}
+            />
 
             <Wrapper className={styles.common}>
               <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
-                name={`advanced-training`} defaultChecked={Boolean(searchParams.get("advanced-training"))} />
+                name={`advanced-training`} value={1} defaultChecked={Boolean(searchParams.get("advanced-training"))} />
 
               {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
                 <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>
@@ -106,7 +175,11 @@ const Filters = forwardRef(({
                       labelName={value.name}
                       defaultValue={value.value}
                       name={inputName}
-                      defaultChecked={Array.from(searchParams.entries()).some(([key, paramValue]) => key === inputName && paramValue === value.value)}
+                      defaultChecked={Array.from(searchParams.entries()).some(([key, paramValue]) => {
+                        const values = paramValue.includes(`,`) ? paramValue.split(`,`) : paramValue;
+
+                        return key === inputName && ((typeof values === "string" && values === value.value) || (typeof values !== "string" && values.includes(value.value)));
+                      })}
                     />))}
                 </CollapseItem>))}
               <CollapseItem name={`Цена`} contentClassName={styles.priceList}>
@@ -116,10 +189,36 @@ const Filters = forwardRef(({
                   placeholder={`80 000`} />
               </CollapseItem>
               <CollapseItem name={`Дата`} contentClassName={styles.date}>
-                <Dates initialDates={getDatesFromSearchParams({
-                  dateStart: searchParams.get("date-start") ?? undefined,
-                  dateEnd: searchParams.get("date-end") ?? undefined,
-                })} />
+                <Dates
+                  initialDates={getDatesFromSearchParams({
+                    dateStart: searchParams.get("date-start") ?? undefined,
+                    dateEnd: searchParams.get("date-end") ?? undefined,
+                  })}
+                  onSelectCB={(dates) => {
+                    const params = new URLSearchParams(searchParams);
+
+                    if (!dates) {
+                      params.delete("date-start");
+                      params.delete("date-end");
+                    }
+
+                    if (dates?.from) {
+                      params.set("date-start", formatDateFromDatePickerToHiddenInput(dates?.from));
+                    } else {
+                      params.delete("date-start");
+                    }
+
+                    if (dates?.to) {
+                      params.set("date-end", formatDateFromDatePickerToHiddenInput(dates?.to));
+                    } else {
+                      params.delete("date-end");
+                    }
+
+                    replace(`${pathname}?${params.toString()}`, {
+                      scroll: false,
+                    });
+                  }}
+                />
               </CollapseItem>
             </Wrapper>
 
