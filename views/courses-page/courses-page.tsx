@@ -39,7 +39,10 @@ const CoursesPage = ({courses, pages, filters, courseTypes, directions}: Courses
             filters={filters} courseTypes={courseTypes} />
           <div className={styles.content}>
             <div className={styles.head}>
-              <Directions directions={directions}>
+              <Directions
+                directions={directions}
+                initialDirections={searchParams.get(`directions`) ?? ``}
+              >
                 <button className={styles.showFilters} onClick={() => {
                   if (isMobile) {
                     changeModalActivityStatus(true);
