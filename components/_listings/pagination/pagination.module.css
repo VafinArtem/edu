@@ -28,9 +28,15 @@
 .item.active {
   color: var(--white);
   background-color: var(--primary);
+  cursor: initial;
 }
 
-.item:not(.active):hover,
-.item:not(.active):focus-visible {
+.item:not(.active, :disabled):hover,
+.item:not(.active, :disabled):focus-visible {
   background-color: var(--primary-light);
+}
+
+.item:disabled {
+  background-color: var(--gray-200);
+  cursor: initial;
 }
