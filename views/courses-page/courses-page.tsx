@@ -50,7 +50,10 @@ const CoursesPage = ({courses, pages, filters, courseTypes, directions}: Courses
                 }}>Все фильтры
                 </button>
               </Directions>
-              <Sort />
+              <Sort
+                defaultName={`Сначала ближайшие`}
+                initialValue={searchParams.get(`sort`) ?? ``}
+              />
             </div>
             <div className={styles.list}>
               {courses.map((course) => <CourseShortItem course={course} key={course.id} withPhoto />)}
