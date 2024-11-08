@@ -17,6 +17,7 @@ import CloseButton from "@/components/_buttons/close-button/close-button";
 import Button from "@/components/_buttons/button/button";
 import useIsResolution from "@/hooks/useIsResolution";
 import {formatDateFromDatePickerToHiddenInput, getDatesFromSearchParams} from "@/helpers/dates-helpers";
+import {useDebouncedCallback} from "use-debounce";
 
 const Filters = forwardRef(({
   className,
@@ -83,7 +84,7 @@ const Filters = forwardRef(({
           const target = e.target as HTMLInputElement;
           const name = target.name;
 
-          if (name === `search`) return;
+          if (name === ``) return;
 
           const type = target.type;
           const params = new URLSearchParams(searchParams);
@@ -146,7 +147,16 @@ const Filters = forwardRef(({
               className={styles.search}
               placeholder={`Курс или направление...`}
               labelName={`Поиск по курсам или направлениям`}
-              onChange={(e) => {
+              resetCB={() => {
+                const params = new URLSearchParams(searchParams);
+
+                params.delete("query");
+
+                replace(`${pathname}?${params.toString()}`, {
+                  scroll: false,
+                });
+              }}
+              onChange={useDebouncedCallback((e) => {
                 const term = e.target.value;
 
                 const params = new URLSearchParams(searchParams);
@@ -160,7 +170,7 @@ const Filters = forwardRef(({
                 replace(`${pathname}?${params.toString()}`, {
                   scroll: false,
                 });
-              }}
+              }, 300)}
             />
 
             <Wrapper className={styles.common}>

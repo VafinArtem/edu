@@ -11,6 +11,7 @@ export interface Direction {
   icon: string;
   color: string;
   id: number;
+  alias: string;
 }
 
 export interface FilterItem {

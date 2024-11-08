@@ -13,18 +13,18 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const CoursesLayout = async (params: Promise<{
-  params: {
+const CoursesLayout = async ({params}: {
+  params: Promise<{
     slug?: string[],
     searchParams?: Record<string, string>;
-  }
-}>): Promise<ReactElement | null> => {
+  }>
+}): Promise<ReactElement | null> => {
   const fetchedParams = await params;
-  const slugs = fetchedParams.params.slug;
+  const slugs = fetchedParams.slug;
 
   const lastSlug = slugs && (slugs.length > 1 ? slugs[slugs.length - 1] : slugs[0]);
 
-  const page = await getCoursesPage(lastSlug, fetchedParams.params.searchParams);
+  const page = await getCoursesPage(lastSlug, fetchedParams.searchParams);
 
   if (!page) {
     notFound();
