@@ -13,8 +13,14 @@
 }
 
 .button.primaryLight {
-  background-color: var(--primary-light);
   color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.button:disabled {
+  color: var(--white);
+  background-color: var(--gray-400);
+  cursor: initial;
 }
 
 @media (max-width: 1499px) {

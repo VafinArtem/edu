@@ -150,7 +150,7 @@ export interface CourseProgram {
 }
 
 export interface TariffInfo {
-  id: string;
+  id: number;
   name: string;
   description: string;
   prices: {

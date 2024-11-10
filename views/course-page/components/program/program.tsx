@@ -27,7 +27,7 @@ const Program = ({className, program, courseTypeName}: ProgramProps): ReactEleme
           duration={`${theory.duration} ${getDeclension(theory.duration, [`час`, `часа`, `часов`])}`}
         />}
 
-        {theory && <ProgramItem
+        {practice && <ProgramItem
           type={ProgramType.PRACTICE}
           learnList={practice.learnList}
           themeList={practice.themeList}
