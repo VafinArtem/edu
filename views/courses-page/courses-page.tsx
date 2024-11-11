@@ -41,7 +41,6 @@ const CoursesPage = ({courses, pages, filters, courseTypes, directions}: Courses
             <div className={styles.head}>
               <Directions
                 directions={directions}
-                initialDirections={searchParams.get(`directions`) ?? ``}
               >
                 <button className={styles.showFilters} onClick={() => {
                   if (isMobile) {

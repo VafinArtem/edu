@@ -41,7 +41,7 @@ export const course: CoursePageModel = {
   },
   "tariffs": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Только лекция",
       "description": "Глубокое погружение в&nbsp;лечение пародонтологических пациентов",
       "prices": {
@@ -54,7 +54,7 @@ export const course: CoursePageModel = {
       ],
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Лекция + практика",
       "description": "Глубокое погружение в&nbsp;теоретическую часть  + отработка методов на&nbsp;практике",
       "prices": {
@@ -69,7 +69,7 @@ export const course: CoursePageModel = {
       ],
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Свободный слушатель",
       "description": "Глубокое погружение в&nbsp;теоретическую и&nbsp;практическую часть",
       "prices": {

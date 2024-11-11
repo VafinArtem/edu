@@ -30,14 +30,14 @@ const SpeakersPage = ({directions, speakers, pages}: SpeakersPageProps): ReactEl
         <Heading tag={`h1`} className={styles.title}>Преподаватели центра</Heading>
         <div className={styles.content}>
           <div className={styles.head}>
-            <Directions directions={directions} initialDirections={searchParams.get(`directions`) ?? ``} />
+            <Directions directions={directions} />
             <Search
               className={styles.search}
               placeholder={`Имя или фамилия`}
               labelName={`Поиск по преподавателям`}
               resetCB={() => {
                 const params = new URLSearchParams(searchParams);
-                
+
                 params.delete("query");
 
                 replace(`${pathname}?${params.toString()}`, {

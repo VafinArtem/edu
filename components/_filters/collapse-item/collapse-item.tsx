@@ -30,7 +30,7 @@ const CollapseItem = ({
       (ref.current as HTMLElement).style.overflow = `hidden`;
     }
 
-    return () => (ref.current as HTMLElement).removeEventListener(`transitionend`, onTransitionend);
+    return () => ref.current && (ref.current as HTMLElement).removeEventListener(`transitionend`, onTransitionend);
   }, [isShow, ref]);
 
   return (
