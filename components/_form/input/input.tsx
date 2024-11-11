@@ -13,7 +13,6 @@ const Input = forwardRef(({
   color = "white",
   ...props
 }: InputProps, ref: ForwardedRef<HTMLInputElement>): ReactElement | null => {
-  console.log(isValid);
   return (
     <label className={clsx(className, styles.inputWrapper)}>
       <span className="visually-hidden">{labelName}</span>

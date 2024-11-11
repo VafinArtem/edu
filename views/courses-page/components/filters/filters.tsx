@@ -29,7 +29,7 @@ const Filters = forwardRef(({
 }: FiltersProps, ref: ForwardedRef<HTMLFormElement>): ReactElement | null => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const {replace} = useRouter();
+  const {push} = useRouter();
 
   const [showModal, setShowModal] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null!);
@@ -128,7 +128,7 @@ const Filters = forwardRef(({
               }
             }
 
-            replace(`${pathname}?${params.toString()}`, {
+            push(`${pathname}?${params.toString()}`, {
               scroll: false,
             });
           }}>
@@ -154,7 +154,9 @@ const Filters = forwardRef(({
 
                   const params = new URLSearchParams(searchParams);
 
-                  replace(`${newPathname.join(`/`)}${params ? `?${params.toString()}` : ``}`);
+                  push(`${newPathname.join(`/`)}${params ? `?${params.toString()}` : ``}`, {
+                    scroll: false,
+                  });
                 }
               }}
             />}
@@ -168,7 +170,7 @@ const Filters = forwardRef(({
 
                 params.delete("query");
 
-                replace(`${pathname}?${params.toString()}`, {
+                push(`${pathname}?${params.toString()}`, {
                   scroll: false,
                 });
               }}
@@ -183,7 +185,7 @@ const Filters = forwardRef(({
                   params.delete("query");
                 }
 
-                replace(`${pathname}?${params.toString()}`, {
+                push(`${pathname}?${params.toString()}`, {
                   scroll: false,
                 });
               }, 300)}
@@ -195,18 +197,44 @@ const Filters = forwardRef(({
 
               {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
                 <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>
-                  {values.map((value) => (
-                    <Checkbox
-                      key={value.id}
-                      labelName={value.name}
-                      defaultValue={value.value}
-                      name={inputName}
-                      defaultChecked={Array.from(searchParams.entries()).some(([key, paramValue]) => {
-                        const values = paramValue.includes(`,`) ? paramValue.split(`,`) : paramValue;
+                  {values.map((value) => {
+                    let path: string | undefined;
 
-                        return key === inputName && ((typeof values === "string" && values === value.value) || (typeof values !== "string" && values.includes(value.value)));
-                      })}
-                    />))}
+                    if (value.alias) {
+                      path = pathname.split(`/`).find((pName) => pName.includes(`${inputName}`));
+                    }
+
+                    return (
+                      <Checkbox
+                        key={value.id}
+                        labelName={value.name}
+                        defaultValue={value.value}
+                        name={inputName}
+                        onChange={(evt) => {
+                          if (!path) return;
+
+                          const newPathname = pathname.split(`/`).filter((pName) => !pName.includes(`${inputName}`));
+                          const filterPathname = pathname.split(`/`).find((pName) => pName.includes(`${inputName}-${value.alias!}`));
+
+                          evt.stopPropagation();
+
+                          const params = new URLSearchParams(searchParams);
+
+                          if (filterPathname !== `${inputName}-${value.alias!}`) {
+                            params.set(inputName, value.value);
+                          }
+
+                          push(`${newPathname.join(`/`)}${params ? `?${params.toString()}` : ``}`, {
+                            scroll: false,
+                          });
+                        }}
+                        defaultChecked={path === `${inputName}-${value.alias!}` ? true : Array.from(searchParams.entries()).some(([key, paramValue]) => {
+                          const values = paramValue.includes(`,`) ? paramValue.split(`,`) : paramValue;
+
+                          return key === inputName && ((typeof values === "string" && values === value.value) || (typeof values !== "string" && values.includes(value.value)));
+                        })}
+                      />);
+                  })}
                 </CollapseItem>))}
               <CollapseItem name={`Цена`} contentClassName={styles.priceList}>
                 <PriceItem labelName={`от`} name={`price-start`} defaultValue={searchParams.get(`price-start`) ?? ``}
@@ -240,7 +268,7 @@ const Filters = forwardRef(({
                       params.delete("date-end");
                     }
 
-                    replace(`${pathname}?${params.toString()}`, {
+                    push(`${pathname}?${params.toString()}`, {
                       scroll: false,
                     });
                   }}

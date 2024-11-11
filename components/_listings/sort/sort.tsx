@@ -33,7 +33,7 @@ const sortValues = [
 const Sort = ({defaultName, initialValue}: SortProps): ReactElement | null => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const {replace} = useRouter();
+  const {push} = useRouter();
 
   const [currentSort, setSort] = useState<string>(initialValue);
 
@@ -48,7 +48,7 @@ const Sort = ({defaultName, initialValue}: SortProps): ReactElement | null => {
       params.delete(`sort`);
     }
 
-    replace(`${pathname}?${params.toString()}`, {
+    push(`${pathname}?${params.toString()}`, {
       scroll: false,
     });
   }, [currentSort]);

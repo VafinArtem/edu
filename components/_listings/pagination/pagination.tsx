@@ -8,7 +8,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 const Pagination = ({pages, currentPage, className}: PaginationProps): ReactElement | null => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const {replace} = useRouter();
+  const {push} = useRouter();
 
   const [page, setPage] = useState(currentPage);
 
@@ -21,7 +21,7 @@ const Pagination = ({pages, currentPage, className}: PaginationProps): ReactElem
       params.delete(`page`);
     }
 
-    replace(`${pathname}?${params.toString()}`, {
+    push(`${pathname}?${params.toString()}`, {
       scroll: false,
     });
   }, [page]);

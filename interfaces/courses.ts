@@ -22,6 +22,7 @@ export interface FilterItem {
     id: number;
     name: string;
     value: string;
+    alias?: string;
   }[];
 }
 

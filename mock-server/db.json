@@ -1272,12 +1272,14 @@
         {
           "id": 1,
           "name": "Санкт-Петербург",
-          "value": "1"
+          "value": "1",
+          "alias": "sankt-peterburg"
         },
         {
           "id": 2,
           "name": "Москва",
-          "value": "2"
+          "value": "2",
+          "alias": "moskva"
         }
       ]
     },

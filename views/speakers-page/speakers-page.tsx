@@ -18,7 +18,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 const SpeakersPage = ({directions, speakers, pages}: SpeakersPageProps): ReactElement | null => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const {replace} = useRouter();
+  const {push} = useRouter();
 
   const currentPage = Number(searchParams?.get(`page`)) || 1;
 
@@ -40,7 +40,7 @@ const SpeakersPage = ({directions, speakers, pages}: SpeakersPageProps): ReactEl
 
                 params.delete("query");
 
-                replace(`${pathname}?${params.toString()}`, {
+                push(`${pathname}?${params.toString()}`, {
                   scroll: false,
                 });
               }}
@@ -55,7 +55,7 @@ const SpeakersPage = ({directions, speakers, pages}: SpeakersPageProps): ReactEl
                   params.delete("query");
                 }
 
-                replace(`${pathname}?${params.toString()}`, {
+                push(`${pathname}?${params.toString()}`, {
                   scroll: false,
                 });
               }}
