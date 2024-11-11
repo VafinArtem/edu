@@ -10,12 +10,9 @@ import useOpenModal from "@/hooks/useOpenModal";
 import {Option} from "@/interfaces/courses";
 import {ReadonlyURLSearchParams} from "next/navigation";
 
-const convertValue = (value: number | number[]): string => {
-  return typeof value === "number" ? value.toString() : value.toString();
-};
-
-const getTextValue = (value: number | number[], options: Option[]) => {
-  return typeof value === "number" ? options.find((option) => option.value === value)?.name : value.map((item) => options.find((option) => option.value === item)?.name).join(`, `);
+const getTextValue = (value: string | string[], options: Option[]) => {
+  console.log(value);
+  return typeof value === "string" ? options.find((option) => option.value === value)?.name : value.map((item) => options.find((option) => option.value === item)?.name).join(`, `);
 };
 
 export const getSelectValue = (searchParams: ReadonlyURLSearchParams, paramName: string) => {
@@ -25,25 +22,34 @@ export const getSelectValue = (searchParams: ReadonlyURLSearchParams, paramName:
     return;
   }
 
-  return value && !value.includes(`,`) ? +value : value.split(`,`).map((el) => +el);
+  return value && !value.includes(`,`) ? value : value.split(`,`).map((el) => el);
 };
 
-const Select = ({name, options, initialValue, labelName, className, ...props}: SelectProps): ReactElement | null => {
+const Select = ({
+  name,
+  options,
+  initialValue,
+  labelName,
+  className,
+  isMultiselect,
+  clickCb,
+  ...props
+}: SelectProps): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
 
-  const [currentValue, setCurrentValue] = useState<number | number[]>(initialValue ?? []);
+  const [currentValue, setCurrentValue] = useState<string | string[]>(initialValue ?? []);
 
   return (
     <Wrapper className={clsx(styles.wrapper, className)}>
       <label className={styles.label} onClick={() => {
         changeModalActivityStatus(true);
       }}>
-        <input type="hidden" name={name} defaultValue={convertValue(currentValue)} {...props} />
+        <input type="hidden" name={name} defaultValue={currentValue} {...props} />
         <span className={styles.name}>{labelName}</span>
         <IconArrow className={styles.icon} />
         <span
           className={styles.value}>
-          {!currentValue || (typeof currentValue !== "number" && currentValue.length === 0) ? `Все` : getTextValue(currentValue, options)}
+          {!currentValue || (typeof currentValue !== "string" && currentValue.length === 0) ? `Все` : getTextValue(currentValue, options)}
         </span>
       </label>
       <div className={clsx(styles.modal, {
@@ -53,8 +59,8 @@ const Select = ({name, options, initialValue, labelName, className, ...props}: S
           {options.map(({value, name, color}) => <li
             key={value}
             onClick={() => {
-              if ((typeof currentValue === "number" && currentValue === value) || (typeof currentValue !== "number" && currentValue?.includes(value))) {
-                if (typeof currentValue === "number") {
+              if ((typeof currentValue === "string" && currentValue === value) || (typeof currentValue !== "string" && currentValue?.includes(value))) {
+                if (typeof currentValue === "string") {
                   setCurrentValue([]);
                 } else {
                   const values = [...currentValue];
@@ -68,13 +74,21 @@ const Select = ({name, options, initialValue, labelName, className, ...props}: S
                   setCurrentValue(values);
                 }
 
+                if (clickCb) {
+                  clickCb(currentValue);
+                }
+
                 return;
               }
 
-              setCurrentValue(typeof currentValue === "number" ? value : [...new Set([...currentValue, value])]);
+              setCurrentValue(!isMultiselect ? value : [...new Set([...currentValue, value])]);
+
+              if (clickCb) {
+                clickCb(currentValue);
+              }
             }}
             className={clsx(styles.item, {
-              [styles.active]: typeof currentValue === "number" ? value === currentValue : currentValue?.includes(value),
+              [styles.active]: typeof currentValue === "string" ? value === currentValue : currentValue?.includes(value),
             })}>
             {color && <span
               className={styles.dot}

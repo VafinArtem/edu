@@ -46,7 +46,8 @@ const CoursesPage = ({courses, pages, filters, courseTypes, directions}: Courses
                   if (isMobile) {
                     changeModalActivityStatus(true);
                   }
-                }}>Все фильтры
+                }}>
+                  Все фильтры
                 </button>
               </Directions>
               <Sort

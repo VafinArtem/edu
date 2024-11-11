@@ -43,7 +43,7 @@ export const RegularExp = {
     /^\+7[0-9]{10}$/g,
 };
 
-export const SlugPart: Record<string, string> = {
+export const SlugPart = {
   CATEGORY: `category`,
   TYPE: `type`,
   FORMAT: `format`,

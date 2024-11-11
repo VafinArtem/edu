@@ -1239,27 +1239,27 @@
   "courseTypes": [
     {
       "name": "Семинар",
-      "value": 1,
+      "value": "seminar",
       "color": "#E567BA"
     },
     {
       "name": "Мастер-класс",
-      "value": 2,
+      "value": "master-klass",
       "color": "#E57027"
     },
     {
       "name": "Конференция",
-      "value": 3,
+      "value": "konferenciya",
       "color": "#559D2D"
     },
     {
       "name": "Вебинар",
-      "value": 4,
+      "value": "webinar",
       "color": "#A47CEB"
     },
     {
       "name": "Курс",
-      "value": 5,
+      "value": "course",
       "color": "#2FA4D7"
     }
   ],

@@ -13,6 +13,7 @@ const Directions = ({directions, children, ...props}: DirectionsProps): ReactEle
       {children}
       <form className={styles.inner}>
         {directions.length > 0 && directions.map((direction) => <Link
+          scroll={false}
           href={pathname.includes(`/courses/category-${direction.alias}`) ? `/courses` : `/courses/category-${direction.alias}`}
           key={direction.id}
           className={clsx(styles.item, {

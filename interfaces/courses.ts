@@ -27,6 +27,6 @@ export interface FilterItem {
 
 export interface Option {
   name: string;
-  value: number;
+  value: string;
   color?: string;
 }

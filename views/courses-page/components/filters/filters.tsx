@@ -18,6 +18,7 @@ import Button from "@/components/_buttons/button/button";
 import useIsResolution from "@/hooks/useIsResolution";
 import {formatDateFromDatePickerToHiddenInput, getDatesFromSearchParams} from "@/helpers/dates-helpers";
 import {useDebouncedCallback} from "use-debounce";
+import {SlugPart} from "@/helpers/contants";
 
 const Filters = forwardRef(({
   className,
@@ -78,56 +79,59 @@ const Filters = forwardRef(({
       ref={wrapperRef}
     >
       <div className={styles.hiddenWrapper} ref={innerRef}>
-        <form className={styles.form} ref={ref} onChange={(e) => {
-          if (isMobile) return;
+        <form
+          className={styles.form}
+          ref={ref}
+          onChange={(e) => {
+            if (isMobile) return;
 
-          const target = e.target as HTMLInputElement;
-          const name = target.name;
+            const target = e.target as HTMLInputElement;
+            const name = target.name;
 
-          if (name === ``) return;
+            if (name === ``) return;
 
-          const type = target.type;
-          const params = new URLSearchParams(searchParams);
-          const term = target.value;
+            const type = target.type;
+            const params = new URLSearchParams(searchParams);
+            const term = target.value;
 
-          if (type === `checkbox`) {
-            const currentValue = params.get(name);
+            if (type === `checkbox`) {
+              const currentValue = params.get(name);
 
-            if (target.checked) {
-              if (!currentValue) {
-                params.set(name, term);
-              } else {
-                params.set(name, `${currentValue},${term}`);
-              }
-            }
-
-            if (!target.checked) {
-              if (currentValue === term) {
-                params.delete(name);
-              } else {
-                const values = currentValue!.split(`,`);
-
-                const index = values.indexOf(term);
-
-                if (index !== -1) {
-                  values.splice(index, 1);
-
-                  params.set(name, values.toString());
+              if (target.checked) {
+                if (!currentValue) {
+                  params.set(name, term);
+                } else {
+                  params.set(name, `${currentValue},${term}`);
                 }
               }
-            }
-          } else {
-            if (term) {
-              params.set(name, term);
-            } else {
-              params.delete(name);
-            }
-          }
 
-          replace(`${pathname}?${params.toString()}`, {
-            scroll: false,
-          });
-        }}>
+              if (!target.checked) {
+                if (currentValue === term) {
+                  params.delete(name);
+                } else {
+                  const values = currentValue!.split(`,`);
+
+                  const index = values.indexOf(term);
+
+                  if (index !== -1) {
+                    values.splice(index, 1);
+
+                    params.set(name, values.toString());
+                  }
+                }
+              }
+            } else {
+              if (term) {
+                params.set(name, term);
+              } else {
+                params.delete(name);
+              }
+            }
+
+            replace(`${pathname}?${params.toString()}`, {
+              scroll: false,
+            });
+          }}>
           <CloseButton className={styles.close} onClick={() => {
             setShowMobileFilters(false);
           }} />
@@ -140,7 +144,19 @@ const Filters = forwardRef(({
               labelName={"Тип обучения"}
               name={`courseType`}
               options={courseTypes}
-              initialValue={getSelectValue(searchParams, `courseType`)}
+              initialValue={pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))
+                ? [pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))!.split(`-`).splice(1).join(`-`)]
+                : getSelectValue(searchParams, `courseType`)}
+              isMultiselect
+              clickCb={() => {
+                if (pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))) {
+                  const newPathname = pathname.split(`/`).filter((name) => !name.includes(SlugPart.TYPE));
+
+                  const params = new URLSearchParams(searchParams);
+
+                  replace(`${newPathname.join(`/`)}${params ? `?${params.toString()}` : ``}`);
+                }
+              }}
             />}
 
             <Search
