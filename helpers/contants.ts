@@ -4,7 +4,7 @@ export const ProgramType: {
 } = {
   THEORY: `THEORY`,
   PRACTICE: `PRACTICE`,
-}
+};
 
 export const ProgramTypeName: {
   THEORY: string,
@@ -12,7 +12,7 @@ export const ProgramTypeName: {
 } = {
   THEORY: `Теоретическая часть`,
   PRACTICE: `Практическая часть`,
-}
+};
 
 export const ProgramThemeName: {
   THEORY: string,
@@ -20,7 +20,7 @@ export const ProgramThemeName: {
 } = {
   THEORY: `Темы лекции`,
   PRACTICE: `Темы практики`,
-}
+};
 
 export const ScheduleType: {
   REGISTRATION: `REGISTRATION`,
@@ -34,4 +34,11 @@ export const ScheduleType: {
   LECTURE: `LECTURE`,
   DINNER: `DINNER`,
   COFFEE: `COFFEE`,
-}
+};
+
+export const RegularExp = {
+  EMAIL: /\S+\@\S+\.[a-z]+/i,
+  PIN: /^([0-9]{4})$/,
+  PHONE_REG:
+    /^\+7[0-9]{10}$/g,
+};

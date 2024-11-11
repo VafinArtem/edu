@@ -60,4 +60,7 @@
   --edu-item-border: #A94660;
 
   --filter-input-focus: #2FA4D7;
+
+  --input-error: #F55858;
+  --input-valid: #5AC96E;
 }

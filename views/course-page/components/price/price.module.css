@@ -119,6 +119,8 @@
 }
 
 .submit {
+  align-self: start;
+  height: 74px;
   width: 274px;
   margin-left: 10px;
 }
@@ -150,6 +152,7 @@
 
   .submit {
 	width: 191px;
+	height: 55px;
   }
 
   .footNote {

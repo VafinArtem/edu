@@ -1,6 +1,7 @@
 "use client";
 
 import React, {ReactElement, useState} from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
 import {PriceProps} from "./price.props";
 import styles from "./price.module.css";
 import Heading from "@/components/_tags/heading/heading";
@@ -12,50 +13,41 @@ import dynamic from "next/dynamic";
 import {Input} from "@/components/_form/input/input";
 import Button from "@/components/_buttons/button/button";
 import useOpenModal from "@/hooks/useOpenModal";
+import {formatPhoneNumber} from "@/helpers/helpers";
+import {RegularExp} from "@/helpers/contants";
 
 const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
 const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): ReactElement | null => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    clearErrors,
+    formState: {errors, isValid, validatingFields},
+  } = useForm<{
+    name: string
+    contact: string
+  }>({
+    defaultValues: {
+      name: ``,
+      contact: ``,
+    },
+  });
+
+  const onSubmit: SubmitHandler<{
+    name: string
+    contact: string
+  }> = (data) => {
+    console.log(currentTariff);
+    console.log(data);
+  };
+
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
   const [currentTariff, setCurrentTariff] = useState<number | null>(null);
-
-  // useEffect(() => {
-  //   const onWrapperTransitionend = () => {
-  //     innerRef.current.style.transform = `translateY(0)`;
-  //   };
-  //
-  //   const onInnerTransitionend = () => {
-  //     setShowModal(false);
-  //     wrapperRef.current.style.opacity = `0`;
-  //   };
-  //
-  //   if (!isMobile) return;
-  //
-  //   if (showMobileFilters) {
-  //     setShowModal(true);
-  //
-  //     document.body.style.overflow = "hidden";
-  //     wrapperRef.current.addEventListener(`transitionend`, onWrapperTransitionend, {once: true});
-  //
-  //     setTimeout(() => {
-  //       wrapperRef.current.style.opacity = `1`;
-  //     }, 0);
-  //   } else {
-  //     document.body.style.overflow = "initial";
-  //     innerRef.current.addEventListener(`transitionend`, onInnerTransitionend, {once: true});
-  //
-  //     setTimeout(() => {
-  //       innerRef.current.style.transform = `translateY(100%)`;
-  //     }, 0);
-  //   }
-  //
-  //   return () => {
-  //     wrapperRef.current.removeEventListener(`transitionend`, onWrapperTransitionend);
-  //     innerRef.current.removeEventListener(`transitionend`, onInnerTransitionend);
-  //   };
-  // }, [showMobileFilters]);
+  const [contactType, setContactType] = useState<"phone" | "email" | null>(null);
 
   return (
     <section className={styles.wrapper} {...props}>
@@ -70,23 +62,67 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): 
           </div>}
         </div>
         {(tariffs && tariffs.length > 0) && <div className={styles.list}>
-          {tariffs.map((tariff) => <TariffInfo setShowFormStatus={changeModalActivityStatus} tariff={tariff}
+          {tariffs.map((tariff) => <TariffInfo setCurrentTariff={setCurrentTariff}
+            setShowFormStatus={changeModalActivityStatus} tariff={tariff}
             key={tariff.id} />)}
         </div>}
       </div>
       <div className={clsx(styles.modal, {
         [styles.show]: showModal,
       })} ref={ref}>
-        <form action="#" className={clsx(styles.form, `container`)}>
+        <form action="#" className={clsx(styles.form, `container`)} onSubmit={handleSubmit(onSubmit)}>
           <Heading tag={`h3`} fontSize={"none"} className={styles.formTitle}>2. Укажите ваши данные для регистрации на
             курс</Heading>
           <div className={styles.inner}>
-            <Input className={styles.input} labelName={`Ваше имя`} placeholder={`Ваше имя*`} name={`name`}
-              color={"gray"} />
-            <Input className={styles.input} labelName={`Номер телефона или email`}
-              placeholder={`Номер телефона или email*`} name={`contact`}
-              color={"gray"} />
-            <Button type={"submit"} className={styles.submit} disabled={true}>Записаться</Button>
+            <Input
+              className={styles.input}
+              labelName={`Ваше имя`}
+              placeholder={`Ваше имя*`}
+              color={"gray"}
+              {...register("name", {required: {value: true, message: "Имя обязательно"}})}
+              error={errors.name}
+              isValid={validatingFields.name}
+            />
+            <Input
+              className={styles.input}
+              labelName={`Номер телефона или email`}
+              placeholder={`Номер телефона или email*`} {...register("contact", {
+                pattern: {
+                  value: contactType === "phone" ? RegularExp.PHONE_REG : RegularExp.EMAIL,
+                  message: `Номер телефона или email обязателен`,
+                },
+                required: true,
+              },
+            )}
+              error={errors.contact}
+              isValid={validatingFields.contact}
+              color={"gray"}
+              onChange={(evt) => {
+                const self = evt.currentTarget;
+
+                if (self.value.match(RegularExp.EMAIL) !== null) {
+                  setContactType("email");
+                  clearErrors("contact");
+                  return;
+                }
+
+                const phone = formatPhoneNumber(self.value);
+
+                if (phone.match(RegularExp.PHONE_REG) !== null) {
+                  self.value = phone;
+                  setContactType("phone");
+                  clearErrors("contact");
+                  return;
+                }
+
+                setContactType(null);
+                setError("contact", {
+                  type: "pattern",
+                  message: "Проверьте правильность ввода контакта",
+                });
+              }}
+            />
+            <Button type={"submit"} className={styles.submit} disabled={!isValid}>Записаться</Button>
             <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
               на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
           </div>
