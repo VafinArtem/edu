@@ -63,4 +63,7 @@
 
   --input-error: #F55858;
   --input-valid: #5AC96E;
+
+  --answer-success-bg: #44AA7A;
+  --answer-error-bg: #44AA7A;
 }

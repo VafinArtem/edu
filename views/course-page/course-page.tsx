@@ -18,7 +18,7 @@ import SpeakerCourses from "@/views/course-page/components/speaker-courses/speak
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import Location from "@/views/course-page/components/location/location";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import {getMinTariffPrice} from "@/helpers/helpers";
+import {getMinTariff} from "@/helpers/helpers";
 import Speakers from "@/views/course-page/components/speakers/speakers";
 import {convertCourseDates} from "@/helpers/dates-helpers";
 
@@ -102,7 +102,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         }))} />
 
       <div className="container">
-        <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
+        <RecordForm
+          tariffInfo={getMinTariff(tariffs)}
+          saleTimestamp={saleTimestamp}
+          courseId={id}
+          courseTypeName={typeName.nominative}
+        />
       </div>
 
       <Schedule
@@ -143,7 +148,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         {qa && qa.length > 0 && <Faq qa={qa} className={`container`} />}
 
         <div className="container">
-          <RecordForm prices={getMinTariffPrice(tariffs)} saleTimestamp={saleTimestamp} />
+          <RecordForm
+            tariffInfo={getMinTariff(tariffs)}
+            saleTimestamp={saleTimestamp}
+            courseId={id}
+            courseTypeName={typeName.nominative}
+          />
         </div>
 
         {speakersCourses && speakersCourses.length > 0 && <SpeakerCourses

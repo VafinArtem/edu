@@ -26,12 +26,13 @@ export const getDeclension = (number: number, titles: [string, string, string]) 
     ];
 };
 
-export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
+export const getMinTariff = (tariffs: TariffInfo[]) => {
   return tariffs.reduce((previousValue, tariff, currentIndex) => {
     if (currentIndex === 0) {
       return {
         current: tariff.prices.current,
         old: tariff.prices.old,
+        id: tariff.id,
       };
     }
 
@@ -39,11 +40,13 @@ export const getMinTariffPrice = (tariffs: TariffInfo[]) => {
       return {
         current: tariff.prices.current,
         old: tariff.prices.old,
+        id: tariff.id,
       };
     }
 
     return previousValue;
   }, {
     current: 0,
-  } as {current: number, old?: number});
+    id: 0,
+  } as {current: number, old?: number, id: number});
 };

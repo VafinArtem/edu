@@ -1,7 +1,10 @@
 export interface RecordFormProps {
-  prices: {
+  tariffInfo: {
     current: number;
     old?: number;
+    id: number;
   };
   saleTimestamp?: number;
+  courseId: string;
+  courseTypeName: string;
 }
