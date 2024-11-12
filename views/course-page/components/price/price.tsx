@@ -23,7 +23,7 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): ReactElement | null => {
+const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: PriceProps): ReactElement | null => {
   const {
     register,
     handleSubmit,
@@ -46,7 +46,7 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): 
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: currentTariff},
+      data: {...data, tariff: currentTariff, courseId},
     });
 
     setAnswerType(res);

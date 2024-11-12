@@ -41,6 +41,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     place,
     qa,
     speakersCourses,
+    id,
   } = training;
 
   return (
@@ -112,6 +113,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       />
 
       <Price
+        courseId={id}
         tariffs={tariffs}
         saleTimestamp={saleTimestamp}
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
