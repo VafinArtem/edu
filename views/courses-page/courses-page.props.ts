@@ -6,5 +6,6 @@ export interface CoursesPageProps {
   filters: FilterItem[];
   directions: Direction[];
   courses: CourseShort[];
+  coursesCount: number;
   pages: number;
 }

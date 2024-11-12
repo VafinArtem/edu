@@ -19,7 +19,14 @@ import ContainerWhite from "@/components/_course/container-white/container-white
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
 import PastCourses from "@/views/courses-page/components/past-courses/past-courses";
 
-const CoursesPage = ({courses, pages, filters, courseTypes, directions}: CoursesPageProps): ReactElement | null => {
+const CoursesPage = ({
+  courses,
+  pages,
+  filters,
+  courseTypes,
+  directions,
+  coursesCount,
+}: CoursesPageProps): ReactElement | null => {
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams?.get(`page`)) || 1;
 
@@ -31,8 +38,8 @@ const CoursesPage = ({courses, pages, filters, courseTypes, directions}: Courses
       <Pagination className={`container`} pagination={[{name: `Курсы`}]} />
 
       <SectionItem className={`container`}>
-        <Heading tag={`h1`} className={styles.title}>Каталог курсов AMRITA<span
-          className={styles.count}>&nbsp;40</span></Heading>
+        <Heading tag={`h1`} className={styles.title}>Каталог курсов AMRITA{coursesCount > 0 && <span
+          className={styles.count}>&nbsp;{coursesCount}</span>}</Heading>
 
         <div className={styles.grid}>
           <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref}

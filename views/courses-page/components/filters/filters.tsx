@@ -142,11 +142,11 @@ const Filters = forwardRef(({
             {courseTypes.length > 0 && <Select
               className={styles.typeSelect}
               labelName={"Тип обучения"}
-              name={`courseType`}
+              name={`type`}
               options={courseTypes}
               initialValue={pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))
                 ? [pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))!.split(`-`).splice(1).join(`-`)]
-                : getSelectValue(searchParams, `courseType`)}
+                : getSelectValue(searchParams, `type`)}
               isMultiselect
               clickCb={() => {
                 if (pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))) {

@@ -3,7 +3,7 @@ import {CourseShort} from "@/interfaces/course";
 export interface CoursesPageModel {
   courses: CourseShort[];
   pages: number;
-  searchParams?: [string, string][];
+  coursesCount: number;
 }
 
 export interface Direction {

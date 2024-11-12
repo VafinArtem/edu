@@ -1921,7 +1921,8 @@
         "photo": "/img/components/similar-courses/img-1.png"
       }
     ],
-    "pages": 2
+    "pages": 2,
+    "coursesCount": 35
   },
   "speakers": {
     "speakers": [
