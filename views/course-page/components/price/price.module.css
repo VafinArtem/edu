@@ -78,6 +78,7 @@
   bottom: 0;
   left: 0;
   z-index: 11;
+  display: grid;
   width: 100%;
   padding-top: 50px;
   padding-bottom: 60px;
@@ -92,13 +93,46 @@
 }
 
 .formTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 2.3rem;
+}
+
+.form,
+.answer {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 100%;
+  max-width: 1420px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-bottom: 1px;
+}
+
+.answer {
+  gap: 10px;
+  background-color: var(--white);
+}
+
+.answerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.8rem;
+  color: var(--gray-700);
+}
+
+.answerContent * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .inner {
@@ -157,6 +191,10 @@
 
   .footNote {
 	font-size: 1.3rem;
+  }
+
+  .answerContent {
+	font-size: 1.7rem;
   }
 }
 
@@ -239,6 +277,15 @@
 	grid-column: 2/-1;
 	align-self: center;
 	max-width: 337px;
+  }
+
+  .icon {
+	width: 36px;
+	height: 36px;
+  }
+
+  .answerContent {
+	font-size: 1.6rem;
   }
 }
 

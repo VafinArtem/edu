@@ -2,19 +2,22 @@
 
 import React, {ReactElement, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
+import dynamic from "next/dynamic";
 import {PriceProps} from "./price.props";
 import styles from "./price.module.css";
 import Heading from "@/components/_tags/heading/heading";
 import clsx from "clsx";
 import TariffInfo from "@/components/_course/tariff-info/tariff-info";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import IconFire from "./fire.svg";
-import dynamic from "next/dynamic";
 import {Input} from "@/components/_form/input/input";
 import Button from "@/components/_buttons/button/button";
 import useOpenModal from "@/hooks/useOpenModal";
 import {formatPhoneNumber} from "@/helpers/helpers";
 import {RegularExp} from "@/helpers/contants";
+import {orderWithTariff} from "@/actions";
+import IconFire from "./fire.svg";
+import IconSuccess from "./success.svg";
+import IconError from "./error.svg";
 
 const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
@@ -26,6 +29,7 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): 
     handleSubmit,
     setError,
     clearErrors,
+    reset,
     formState: {errors, isValid, validatingFields},
   } = useForm<{
     name: string
@@ -40,14 +44,26 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): 
   const onSubmit: SubmitHandler<{
     name: string
     contact: string
-  }> = (data) => {
-    console.log(currentTariff);
-    console.log(data);
+  }> = async (data) => {
+    const res = await orderWithTariff({
+      data: {...data, tariff: currentTariff},
+    });
+
+    setAnswerType(res);
+
+    if (res === "success") {
+      reset();
+    }
   };
 
-  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
+  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>(() => {
+    if (answerType) {
+      setAnswerType(null);
+    }
+  });
   const [currentTariff, setCurrentTariff] = useState<number | null>(null);
   const [contactType, setContactType] = useState<"phone" | "email" | null>(null);
+  const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
 
   return (
     <section className={styles.wrapper} {...props}>
@@ -127,6 +143,22 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, ...props}: PriceProps): 
               на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
           </div>
         </form>
+        {answerType && <div className={clsx(styles.answer, `container`)}>
+          <Heading tag={`h3`} fontSize={"none"} className={clsx(styles.formTitle)}>{answerType === "error" ? <>Заявка не
+            отправлена <IconError className={styles.icon} width="40" height="40" /></> : <>Заявка
+            отправлена <IconSuccess className={styles.icon} width="40" height="40" /></>}</Heading>
+          <div className={styles.answerContent}>
+            {answerType === "error" && <>
+              <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, подождите минут
+                20&nbsp;и&nbsp;попробуйте снова. Возможно, на&nbsp;сайте случилась поломка и&nbsp;прямо сейчас
+                мы&nbsp;её&nbsp;исправляем.</p>
+              <p>Или можете не&nbsp;дожидаться починки и&nbsp;позвонить нам в&nbsp;учебный центр&nbsp;<a
+                href={`tel:+79312011400`}>+7 (931) 201-14-00</a></p>
+            </>}
+            {answerType === "success" &&
+              <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки и&nbsp;оплаты курса.</p>}
+          </div>
+        </div>}
       </div>
     </section>
   );

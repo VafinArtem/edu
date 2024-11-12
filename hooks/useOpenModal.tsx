@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 
-function useOpenModal<T extends HTMLElement>() {
+function useOpenModal<T extends HTMLElement>(closeCallback?: () => void) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const ref = useRef<T>(null!);
 
@@ -9,6 +9,10 @@ function useOpenModal<T extends HTMLElement>() {
       const onClick = (evt: MouseEvent) => {
         if (ref.current && !ref.current.contains(evt.target as HTMLElement)) {
           setShowModal(false);
+
+          if (!closeCallback) return;
+
+          closeCallback();
         }
       };
       document.addEventListener(`click`, onClick);
@@ -21,6 +25,10 @@ function useOpenModal<T extends HTMLElement>() {
       const onKeydown = (evt: KeyboardEvent) => {
         if (evt.key === `Escape`) {
           setShowModal(false);
+
+          if (!closeCallback) return;
+
+          closeCallback();
         }
       };
 
@@ -31,6 +39,10 @@ function useOpenModal<T extends HTMLElement>() {
 
   const changeModalActivityStatus = (status: boolean) => {
     setShowModal(status);
+
+    if (!closeCallback) return;
+
+    closeCallback();
   };
 
   return {ref, showModal, changeModalActivityStatus};

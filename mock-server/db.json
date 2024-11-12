@@ -2040,5 +2040,13 @@
       }
     ],
     "pages": 2
+  },
+  "order-with-tariff": {
+    "code": 200,
+    "answer": {
+      "data": "Успешно",
+      "text": "Успешно",
+      "errors": []
+    }
   }
 }

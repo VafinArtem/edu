@@ -1,6 +1,7 @@
 export const API = {
   course: {
     byAlias: process.env.BACKEND_API + "/course/",
+    orderWithTariff: process.env.BACKEND_API + "/order-with-tariff",
   },
   speaker: {
     byAlias: process.env.BACKEND_API + "/speaker/",
