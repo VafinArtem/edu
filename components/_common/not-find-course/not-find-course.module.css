@@ -7,21 +7,44 @@
   overflow: hidden;
 }
 
+.wrapper.success {
+  background-color: var(--answer-success-bg);
+}
+
+.wrapper.success .inner::before {
+  background-image: url("/img/components/not-find-course/bg-success.svg");
+}
+
+.wrapper.error {
+  background-color: var(--answer-error-bg);
+}
+
+.wrapper.error .inner::before {
+  background-image: url("/img/components/not-find-course/bg-error.svg");
+}
+
 .wrapper + * {
   z-index: 1;
 }
 
 .container {
-  display: flex;
+  display: grid;
   justify-content: center;
 }
 
 .inner {
   position: relative;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
   display: grid;
   grid-template-columns: 1fr 45%;
   gap: 70px;
   max-width: 1205px;
+}
+
+.inner.hidden .content,
+.inner.hidden .form {
+  visibility: hidden;
 }
 
 .inner > * {
@@ -93,6 +116,35 @@
   border-bottom: 1px solid rgba(var(--white-rgb), 0.2);
 }
 
+.answer {
+  z-index: 1;
+  align-self: center;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  color: var(--white);
+}
+
+.answerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.answerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.8rem;
+  color: var(--white);
+  text-align: center;
+}
+
+.answerContent * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: 1499px) {
   .wrapper {
 	padding-bottom: 121px;
@@ -118,9 +170,13 @@
 	max-width: none;
   }
 
-
   .footNote {
 	max-width: 262px;
+  }
+
+  .icon {
+	width: 60px;
+	height: 60px;
   }
 }
 
@@ -148,12 +204,16 @@
 	display: none;
   }
 
-  .title {
-	max-width: none;
-  }
-
   .footNote {
 	max-width: 262px;
+  }
+
+  .answer {
+	gap: 10px;
+  }
+
+  .answerContent {
+	font-size: 1.6rem;
   }
 }
 
@@ -192,5 +252,10 @@
 
   .footNote {
 	text-align: center;
+  }
+
+  .icon {
+	width: 50px;
+	height: 50px;
   }
 }
