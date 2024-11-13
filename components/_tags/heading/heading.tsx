@@ -19,6 +19,7 @@ const Heading = ({
       [styles.fsDefault]: fontSize === "default",
       [styles.fsMini]: fontSize === "mini",
       [styles.fsMid]: fontSize === "mid",
+      [styles.fsLarge]: fontSize === "large",
       [styles.fsAsText]: fontSize === "asText",
       [styles.fwNormal]: fontWeight === "normal",
       [styles.fwMedium]: fontWeight === "medium",

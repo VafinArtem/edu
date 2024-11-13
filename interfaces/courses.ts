@@ -12,6 +12,7 @@ export interface Direction {
   color: string;
   id: number;
   alias: string;
+  count: number;
 }
 
 export interface FilterItem {
