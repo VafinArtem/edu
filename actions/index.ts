@@ -107,7 +107,7 @@ export async function sendBecomeSpeaker({
 
   console.log(query);
 
-  const res = await fetch(API.common.promoRegistration, {
+  const res = await fetch(API.common.becomeSpeaker, {
     method: "GET",
   });
 

@@ -18,5 +18,7 @@ export const API = {
   },
   common: {
     promoRegistration: process.env.BACKEND_API + "/promo-registration/",
+    becomeSpeaker: process.env.BACKEND_API + "/become-speaker/",
+    sendComment: process.env.BACKEND_API + "/send-comment/",
   },
 };

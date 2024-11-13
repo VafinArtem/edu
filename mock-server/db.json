@@ -2056,5 +2056,21 @@
       "text": "Успешно",
       "errors": []
     }
+  },
+  "become-speaker": {
+    "code": 200,
+    "answer": {
+      "data": "Успешно",
+      "text": "Успешно",
+      "errors": []
+    }
+  },
+  "send-comment": {
+    "code": 200,
+    "answer": {
+      "data": "Успешно",
+      "text": "Успешно",
+      "errors": []
+    }
   }
 }
