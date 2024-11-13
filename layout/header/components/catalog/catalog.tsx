@@ -6,14 +6,18 @@ import clsx from "clsx";
 import IconArrow from "./arrow.svg";
 import Link from "next/link";
 
-const Catalog = ({href, className, children}: CatalogProps): ReactElement | null => {
+const Catalog = ({href, className, color = "black", children}: CatalogProps): ReactElement | null => {
   const pathname = usePathname();
 
   return (
     <>
       {pathname === href ?
-        <p className={clsx(styles.link, styles.active, className)}>{children} <IconArrow /></p> :
-        <Link className={clsx(styles.link, className)} href={href}>{children}<IconArrow /></Link>
+        <p className={clsx(styles.link, styles.active, className, {
+          [styles.white]: color === "white",
+        })}>{children} <IconArrow /></p> :
+        <Link className={clsx(styles.link, className, {
+          [styles.white]: color === "white",
+        })} href={href}>{children}<IconArrow /></Link>
       }
     </>
   );

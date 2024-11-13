@@ -18,6 +18,11 @@
   background-color: var(--gray-200);
 }
 
+.button.white {
+  color: var(--white);
+  border: 1px solid rgba(var(--white-rgb), 0.1);
+}
+
 .button.primary {
   background-color: var(--primary);
 }

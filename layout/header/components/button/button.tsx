@@ -12,6 +12,7 @@ function Button<C extends BaseButtonComponent = "button">({
     <BaseButton<C> className={clsx(styles.button, className, {
       [styles.primary]: color === "primary",
       [styles.gray]: color === "gray",
+      [styles.white]: color === "white",
     })} {...(props as BaseButtonProps<C>)} />
   );
 }

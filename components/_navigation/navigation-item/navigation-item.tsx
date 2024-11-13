@@ -7,11 +7,13 @@ import clsx from "clsx";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 
-const NavigationItem = ({href, children}: NavigationItemProps): ReactElement | null => {
+const NavigationItem = ({href, color = "black", children}: NavigationItemProps): ReactElement | null => {
   const pathname = usePathname();
 
   return (
-    <li className={clsx(styles.item)}>
+    <li className={clsx(styles.item, {
+      [styles.white]: color === "white",
+    })}>
       {pathname === href ?
         <span className={clsx(styles.link, styles.active)}>{children}</span> :
         <Link className={clsx(styles.link)} href={href}>{children}</Link>

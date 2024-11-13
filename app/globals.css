@@ -27,6 +27,7 @@ body {
   color: var(--gray-950);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
+  background-color: red;
 }
 
 html *[id] {

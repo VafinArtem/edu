@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.item.white {
+  color: var(--white);
+}
+
 .catalog {
   display: flex;
   align-items: center;
