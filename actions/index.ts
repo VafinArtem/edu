@@ -34,3 +34,32 @@ export async function orderWithTariff({
     return "error";
   }
 }
+
+export async function promoRegistration({
+  data,
+}: {
+  data: {
+    contact: string;
+  },
+}): Promise<"error" | "success"> {
+
+  const query = data;
+
+  console.log(query);
+
+  const res = await fetch(API.common.promoRegistration, {
+    method: "GET",
+  });
+
+  if (!res) {
+    return "error";
+  }
+
+  const result: AnswerData<string> = await res.json();
+
+  if (result.code === 200) {
+    return "success";
+  } else {
+    return "error";
+  }
+}

@@ -16,7 +16,6 @@
   background-color: var(--answer-success-bg);
 }
 
-
 .wrapper.error {
   background-color: var(--answer-error-bg);
 }

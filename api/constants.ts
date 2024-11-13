@@ -16,4 +16,7 @@ export const API = {
   speakers: {
     byAlias: process.env.BACKEND_API + "/speakers/",
   },
+  common: {
+    promoRegistration: process.env.BACKEND_API + "/promo-registration/",
+  },
 };

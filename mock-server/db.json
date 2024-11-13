@@ -2048,5 +2048,13 @@
       "text": "Успешно",
       "errors": []
     }
+  },
+  "promo-registration": {
+    "code": 200,
+    "answer": {
+      "data": "Успешно",
+      "text": "Успешно",
+      "errors": []
+    }
   }
 }
