@@ -74,6 +74,8 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
               placeholder={`Ваш комментарий*`}
               {...register("comment", {required: {value: true, message: "Комментарий обязателен"}})}
               className={styles.textarea}
+              error={errors.comment}
+              isValid={validatingFields.comment}
             />
             <Input
               labelName={`Номер телефона`}
