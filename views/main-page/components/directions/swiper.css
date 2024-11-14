@@ -1,0 +1,7 @@
+@media (max-width: 767px) {
+  .swiper-wrapper[class] {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+  }
+}

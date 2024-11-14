@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+  padding: 60px 75px;
+  border-radius: 60px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: var(--white);
+  background-color: rgba(var(--white-rgb), 0.05);
+  border-radius: 15px;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.title {
+  color: var(--white);
+}
+
+.desc {
+  color: rgba(var(--white-rgb), 0.5);
+}
+
+.specializations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.specialization {
+  padding: 18px 20px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--white);
+  background-color: rgba(var(--white-rgb), 0.05);
+  border-radius: 50px;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
+.specialization:hover,
+.specialization:focus-visible {
+  color: inherit;
+  background-color: var(--white);
+}
+
+@media (max-width: 1499px) {
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+	gap: 30px;
+	padding: 40px 30px;
+	border-radius: 40px;
+  }
+
+  .specialization {
+	padding: 15px 18px;
+	font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	align-items: flex-start;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 97px;
+	border-radius: 20px 20px 0 0;
+	overflow: hidden;
+  }
+
+  .icon {
+	width: 44px;
+	height: 44px;
+  }
+
+  .icon svg {
+	width: 24px;
+	height: 24px;
+  }
+
+  .scrollWrapper {
+	margin-left: calc(0px - var(--container-mobile-padding));
+	margin-right: calc(0px - var(--container-mobile-padding));
+	padding-left: var(--container-mobile-padding);
+	padding-right: var(--container-mobile-padding);
+	width: calc(100% + var(--container-mobile-padding) * 2);
+	overflow-y: auto;
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
+  }
+
+  .scrollWrapper::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: transparent;
+  }
+
+  .specializations {
+	justify-content: flex-start;
+	flex-direction: row;
+	width: 670px;
+  }
+}

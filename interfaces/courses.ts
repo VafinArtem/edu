@@ -12,7 +12,15 @@ export interface Direction {
   color: string;
   id: number;
   alias: string;
-  count: number;
+  count?: number;
+}
+
+export interface DirectionWithSpecializations extends Direction {
+  specializations: {
+    name: string;
+    alias: string;
+    id: string
+  }[];
 }
 
 export interface FilterItem {
