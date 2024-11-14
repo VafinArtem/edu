@@ -192,6 +192,6 @@ export interface CourseShort {
   date?: number;
   location?: string;
   photo?: string;
-  photoMobile?: string;
+  photoBackground?: string;
   speakers?: string[];
 }

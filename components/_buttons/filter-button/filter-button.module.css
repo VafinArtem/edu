@@ -1,0 +1,34 @@
+.button {
+  padding: 13px 15px;
+  font-size: 1.8rem;
+  line-height: 1;
+  background-color: var(--white);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+@media (max-width: 1499px) {
+  .button {
+	font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .button {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+	padding: 15px;
+	font-size: 1.4rem;
+  }
+}

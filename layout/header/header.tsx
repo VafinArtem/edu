@@ -26,19 +26,20 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.wrapper)}>
           <div className={styles.left}>
-            <Logo position={"header"} color={"white"} className={styles.logo} />
-            <Catalog className={styles.catalog} color={"white"} href={Route.COURSES}>Курсы</Catalog>
+            <Logo position={"header"} color={type === "blur" ? "white" : "black"} className={styles.logo} />
+            <Catalog className={styles.catalog} color={type === "blur" ? "white" : "black"}
+              href={Route.COURSES}>Курсы</Catalog>
           </div>
           <Navigation className={styles.navigation}>
-            <NavigationItem color={"white"} href={Route.NEWS}>Новости</NavigationItem>
-            <NavigationItem color={"white"} href={Route.REVIEWS}>Отзывы</NavigationItem>
-            <NavigationItem color={"white"} href={Route.CONTACTS}>Контакты</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.NEWS}>Новости</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}>Контакты</NavigationItem>
           </Navigation>
           <div className={styles.user}>
-            <Button color={"white"} component={`a`} href={`tel:+79312011400`}><IconPhone
+            <Button color={type === "blur" ? "white" : "gray"} component={`a`} href={`tel:+79312011400`}><IconPhone
               className={styles.buttonIcon} /><span
               className={styles.buttonText}>Связаться</span></Button>
-            <Button color={"white"} component={Link} href={Route.PROFILE}><IconMortarboard
+            <Button color={type === "blur" ? "white" : "gray"} component={Link} href={Route.PROFILE}><IconMortarboard
               className={styles.buttonIcon} /><span
               className={styles.buttonText}>Кабинет</span></Button>
             <Button color={"primary"} aria-label={`Показать меню`}><IconBurger /></Button>

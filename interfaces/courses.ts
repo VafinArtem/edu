@@ -30,5 +30,6 @@ export interface FilterItem {
 export interface Option {
   name: string;
   value: string;
+  alias?: string;
   color?: string;
 }

@@ -966,7 +966,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 2,
@@ -984,7 +985,8 @@
       "speakers": [
         "Волкова Юлия Валерьевна"
       ],
-      "photo": "/img/components/similar-courses/img-2.png"
+      "photo": "/img/components/similar-courses/img-2.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 3,
@@ -1002,7 +1004,8 @@
       "speakers": [
         "Волкова Юлия Валерьевна"
       ],
-      "photo": "/img/components/similar-courses/img-3.png"
+      "photo": "/img/components/similar-courses/img-3.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 4,
@@ -1020,7 +1023,8 @@
       "speakers": [
         "Волкова Юлия Валерьевна"
       ],
-      "photo": "/img/components/similar-courses/img-4.png"
+      "photo": "/img/components/similar-courses/img-4.png",
+      "photoBackground": "#DDDAE3"
     }
   ],
   "speaker": [
@@ -1239,27 +1243,32 @@
   "courseTypes": [
     {
       "name": "Семинар",
-      "value": "seminar",
+      "value": "1",
+      "alias": "seminar",
       "color": "#E567BA"
     },
     {
       "name": "Мастер-класс",
-      "value": "master-klass",
+      "value": "2",
+      "alias": "master-klass",
       "color": "#E57027"
     },
     {
       "name": "Конференция",
-      "value": "konferenciya",
+      "value": "3",
+      "alias": "konferenciya",
       "color": "#559D2D"
     },
     {
       "name": "Вебинар",
-      "value": "webinar",
+      "value": "4",
+      "alias": "webinar",
       "color": "#A47CEB"
     },
     {
       "name": "Курс",
-      "value": "course",
+      "value": "5",
+      "alias": "course",
       "color": "#2FA4D7"
     }
   ],
@@ -1364,7 +1373,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 2,
@@ -1383,7 +1393,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 3,
@@ -1402,7 +1413,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 4,
@@ -1421,7 +1433,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 5,
@@ -1440,7 +1453,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 6,
@@ -1459,7 +1473,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 7,
@@ -1478,7 +1493,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 8,
@@ -1497,7 +1513,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 9,
@@ -1516,7 +1533,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 10,
@@ -1535,7 +1553,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 11,
@@ -1554,7 +1573,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 12,
@@ -1573,7 +1593,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 13,
@@ -1592,7 +1613,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 14,
@@ -1611,7 +1633,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     },
     {
       "id": 15,
@@ -1630,7 +1653,8 @@
         "Волкова Юлия Валерьевна",
         "Иванова Галина Валентиновна"
       ],
-      "photo": "/img/components/similar-courses/img-1.png"
+      "photo": "/img/components/similar-courses/img-1.png",
+      "photoBackground": "#DDDAE3"
     }
   ],
   "courses": {
@@ -1652,7 +1676,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 2,
@@ -1671,7 +1696,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 3,
@@ -1690,7 +1716,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 4,
@@ -1709,7 +1736,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 5,
@@ -1728,7 +1756,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 6,
@@ -1747,7 +1776,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 7,
@@ -1766,7 +1796,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 8,
@@ -1785,7 +1816,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 9,
@@ -1804,7 +1836,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 10,
@@ -1823,7 +1856,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 11,
@@ -1842,7 +1876,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 12,
@@ -1861,7 +1896,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 13,
@@ -1880,7 +1916,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 14,
@@ -1899,7 +1936,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       },
       {
         "id": 15,
@@ -1918,7 +1956,8 @@
           "Волкова Юлия Валерьевна",
           "Иванова Галина Валентиновна"
         ],
-        "photo": "/img/components/similar-courses/img-1.png"
+        "photo": "/img/components/similar-courses/img-1.png",
+        "photoBackground": "#DDDAE3"
       }
     ],
     "pages": 2,

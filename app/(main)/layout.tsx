@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "../variables.css";
 import "../globals.css";
+import "./globals.css";
 import {Inter} from "next/font/google";
 import Header from "@/layout/header/header";
 import Footer from "@/layout/footer/footer";
