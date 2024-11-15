@@ -1,24 +1,24 @@
 "use client";
 
+import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
+import SectionItem from "@/components/_section/section-item/section-item";
+import RoundButton from "@/components/_slider/round-button/round-button";
+import Heading from "@/components/_tags/heading/heading";
+import Direction from "@/views/main-page/components/directions/components/direction/direction";
+import clsx from "clsx";
 import React, {ReactElement, useRef} from "react";
-import {DirectionsProps} from "./directions.props";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper as SwiperCore} from "swiper/types";
 import styles from "./directions.module.css";
 import "swiper/css";
 import "./swiper.css";
-import SectionItem from "@/components/_section/section-item/section-item";
-import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
-import Heading from "@/components/_tags/heading/heading";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Swiper as SwiperCore} from "swiper/types";
-import Direction from "@/views/main-page/components/directions/components/direction/direction";
-import RoundButton from "@/components/_slider/round-button/round-button";
-import clsx from "clsx";
+import {DirectionsProps} from "./directions.props";
 
-const Directions = ({directions}: DirectionsProps): ReactElement | null => {
+const Directions = ({directions, className}: DirectionsProps): ReactElement | null => {
   const swiperRef = useRef<SwiperCore>();
 
   return (
-    <SectionItem>
+    <SectionItem className={className}>
       <SectionCenterHead>
         <Heading tag={`h2`}>Выберите своё направление</Heading>
       </SectionCenterHead>

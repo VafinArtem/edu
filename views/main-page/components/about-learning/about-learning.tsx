@@ -10,9 +10,9 @@ import {Route} from "../../../../helpers/route";
 import styles from "./about-learning.module.css";
 import {AboutLearningProps} from "./about-learning.props";
 
-const AboutLearning = ({}: AboutLearningProps): ReactElement | null => {
+const AboutLearning = ({className}: AboutLearningProps): ReactElement | null => {
   return (
-    <ContainerWhite>
+    <ContainerWhite className={className} withoutMobileBorderRadius>
       <section className={clsx(styles.wrapper, `container`)}>
         <div className={styles.content}>
           <Heading tag={`h2`} className={styles.title}>Повышайте квалификацию без отрыва от&nbsp;работы

@@ -33,6 +33,10 @@
   row-gap: 30px;
 }
 
+.notFindCourse {
+  margin-bottom: -145px;
+}
+
 @media (max-width: 1499px) {
   .grid {
 	grid-template-columns: 247px 1fr;
@@ -105,5 +109,9 @@
   .count {
 	font-size: 1.3rem;
 	line-height: 1.2;
+  }
+
+  .notFindCourse {
+	margin-bottom: -80px;
   }
 }

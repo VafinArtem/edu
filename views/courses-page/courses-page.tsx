@@ -1,23 +1,23 @@
 "use client";
 
-import React, {ReactElement} from "react";
-import {useSearchParams} from "next/navigation";
-import {CoursesPageProps} from "./courses-page.props";
-import styles from "./courses-page.module.css";
+import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
+import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
 import Pagination from "@/components/_common/pagination/pagination";
+import ContainerWhite from "@/components/_course/container-white/container-white";
+import ListingPagination from "@/components/_listings/pagination/pagination";
+import Sort from "@/components/_listings/sort/sort";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
-import Filters from "@/views/courses-page/components/filters/filters";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
-import Sort from "@/components/_listings/sort/sort";
-import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
-import ListingPagination from "@/components/_listings/pagination/pagination";
-import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
-import ContainerWhite from "@/components/_course/container-white/container-white";
+import Filters from "@/views/courses-page/components/filters/filters";
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
 import PastCourses from "@/views/courses-page/components/past-courses/past-courses";
+import {useSearchParams} from "next/navigation";
+import React, {ReactElement} from "react";
+import styles from "./courses-page.module.css";
+import {CoursesPageProps} from "./courses-page.props";
 
 const CoursesPage = ({
   courses,
@@ -75,7 +75,7 @@ const CoursesPage = ({
         </div>
       </SectionItem>
 
-      <NotFindCourse />
+      <NotFindCourse className={styles.notFindCourse} />
 
       <ContainerWhite>
         <FocusInCourse />

@@ -1,7 +1,6 @@
 .wrapper {
   background-color: var(--primary-2);
   border-radius: 40px 40px 0 0;
-  margin-bottom: -145px;
   padding-top: 60px;
   padding-bottom: 148px;
   overflow: hidden;
@@ -220,7 +219,6 @@
 @media (max-width: 767px) {
   .wrapper {
 	padding-bottom: 88px;
-	margin-bottom: -80px;
 	border-radius: 20px 20px 0 0;
   }
 
