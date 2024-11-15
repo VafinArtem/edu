@@ -1,12 +1,13 @@
 "use client";
 
-import {InputProps} from "./input.props";
 import clsx from "clsx";
-import styles from "./input.module.css";
 import {ForwardedRef, forwardRef, ReactElement} from "react";
+import styles from "./input.module.css";
+import {InputProps} from "./input.props";
 
 const Input = forwardRef(({
   className,
+  inputClassName,
   error,
   isValid,
   labelName,
@@ -16,7 +17,7 @@ const Input = forwardRef(({
   return (
     <label className={clsx(className, styles.inputWrapper)}>
       <span className="visually-hidden">{labelName}</span>
-      <input className={clsx(styles.input, {
+      <input className={clsx(styles.input, inputClassName, {
         [styles.error]: error,
         [styles.white]: color === "white",
         [styles.gray]: color === "gray",

@@ -189,6 +189,7 @@
   }
 
   .content {
+	justify-self: center;
 	max-width: 60%;
   }
 
@@ -221,7 +222,7 @@
 }
 
 @media (min-width: 768px) {
-  .input,
+  .inputWrapper,
   .submit {
 	grid-column: 1;
 	grid-row: 1;

@@ -1,3 +1,4 @@
+import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import {coursesEight, courseTypes, directions, directionsWithSpecializations} from "@/mocs/courses";
 import {sixSpeakers} from "@/mocs/speakers";
 import Courses from "@/views/main-page/components/courses/courses";
@@ -22,6 +23,9 @@ const MainPage = ({}: MainPageProps): ReactElement | null => {
         Передаем максимум 6 спикеров
       */}
       <Speakers speakers={sixSpeakers} />
+      <div className="container">
+        <PromoRegistration />
+      </div>
     </>
   );
 };

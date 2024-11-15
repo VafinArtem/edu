@@ -1,18 +1,18 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import {PromoRegistrationProps} from "./promo-registration.props";
-import styles from "./promo-registration.module.css";
-import clsx from "clsx";
-import Paragraph from "@/components/_tags/paragraph/paragraph";
-import {Input} from "@/components/_form/input/input";
-import Button from "@/components/_buttons/button/button";
-import {SubmitHandler, useForm} from "react-hook-form";
 import {promoRegistration} from "@/actions";
+import Button from "@/components/_buttons/button/button";
+import {Input} from "@/components/_form/input/input";
+import Heading from "@/components/_tags/heading/heading";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
-import Heading from "@/components/_tags/heading/heading";
+import clsx from "clsx";
+import React, {ReactElement, useState} from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
 import IconError from "./error.svg";
+import styles from "./promo-registration.module.css";
+import {PromoRegistrationProps} from "./promo-registration.props";
 import IconSuccess from "./success.svg";
 
 const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | null => {
@@ -67,7 +67,8 @@ const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | 
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <Input
             labelName={`Телефон`}
-            className={styles.input}
+            className={styles.inputWrapper}
+            inputClassName={styles.input}
             placeholder={`Телефон`}
             {...register("contact", {
                 pattern: {

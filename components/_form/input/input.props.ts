@@ -6,4 +6,5 @@ export interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLIn
   color?: "white" | "gray";
   error?: FieldError;
   isValid?: boolean;
+  inputClassName?: string;
 }
