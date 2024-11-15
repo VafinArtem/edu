@@ -1,6 +1,8 @@
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
+import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
 import {coursesEight, courseTypes, directions, directionsWithSpecializations} from "@/mocs/courses";
 import {sixSpeakers} from "@/mocs/speakers";
+import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
 import Directions from "@/views/main-page/components/directions/directions";
 import Promo from "@/views/main-page/components/promo/promo";
@@ -26,6 +28,9 @@ const MainPage = ({}: MainPageProps): ReactElement | null => {
       <div className="container">
         <PromoRegistration />
       </div>
+      <ContainerPrimaryColor>
+        <About className={`container`} />
+      </ContainerPrimaryColor>
     </>
   );
 };

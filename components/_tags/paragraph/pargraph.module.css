@@ -11,6 +11,10 @@
   font-size: 1.8rem;
 }
 
+.fsAsTitle {
+  font-size: 5.5rem;
+}
+
 .fwMedium {
   font-weight: 500;
 }
@@ -47,6 +51,10 @@
   .fsSmall {
 	font-size: 1.7rem;
   }
+
+  .fsAsTitle {
+	font-size: 4rem;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -57,6 +65,10 @@
   .fsSmall {
 	font-size: 1.6rem;
   }
+
+  .fsAsTitle {
+	font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -66,5 +78,9 @@
 
   .fsSmall {
 	font-size: 1.4rem;
+  }
+
+  .fsAsTitle {
+	font-size: 2.3rem;
   }
 }

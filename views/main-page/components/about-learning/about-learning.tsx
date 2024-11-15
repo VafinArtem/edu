@@ -1,5 +1,5 @@
 import BiggestRoundButton from "@/components/_buttons/biggest-round-button/biggest-round-button";
-import ContainerWhite from "@/components/_course/container-white/container-white";
+import ContainerWhite from "@/components/_section/container-white/container-white";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";

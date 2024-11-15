@@ -1,6 +1,6 @@
-import React, {ReactElement} from "react";
-import clsx from "clsx";
 import {ParagraphProps} from "@/components/_tags/paragraph/paragraph.props";
+import clsx from "clsx";
+import React, {ReactElement} from "react";
 import styles from "./pargraph.module.css";
 
 const Paragraph = ({
@@ -17,6 +17,7 @@ const Paragraph = ({
       className={clsx(className, styles.paragraph, {
         [styles.fsDefault]: fontSize === "default",
         [styles.fsSmall]: fontSize === "small",
+        [styles.fsAsTitle]: fontSize === "asDefaultTitle",
         [styles.fwLight]: fontWeight === "light",
         [styles.fwNormal]: fontWeight === "normal",
         [styles.fwMedium]: fontWeight === "medium",

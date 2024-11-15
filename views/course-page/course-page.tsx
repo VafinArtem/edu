@@ -1,26 +1,26 @@
-import React, {ReactElement} from "react";
-import {CoursePageProps} from "./course-page.props";
-import styles from "./course-page.module.css";
+import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
+import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
+import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
+import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
+import ContainerWhite from "@/components/_section/container-white/container-white";
+import {convertCourseDates} from "@/helpers/dates-helpers";
+import {getMinTariff} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
-import Promo from "@/views/course-page/components/promo/promo";
 import Advantages from "@/views/course-page/components/advantages/advantages";
+import Faq from "@/views/course-page/components/faq/faq";
+import Gallery from "@/views/course-page/components/gallery/gallery";
+import Location from "@/views/course-page/components/location/location";
+import Price from "@/views/course-page/components/price/price";
 import Program from "@/views/course-page/components/program/program";
+import Promo from "@/views/course-page/components/promo/promo";
 import RecordForm from "@/views/course-page/components/record-form/record-form";
 import Schedule from "@/views/course-page/components/schedule/schedule";
-import Price from "@/views/course-page/components/price/price";
-import Certificate from "@/components/_common/certificate/certificate";
-import Gallery from "@/views/course-page/components/gallery/gallery";
-import ContainerWhite from "@/components/_course/container-white/container-white";
-import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
-import Faq from "@/views/course-page/components/faq/faq";
 import SpeakerCourses from "@/views/course-page/components/speaker-courses/speaker-courses";
-import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
-import Location from "@/views/course-page/components/location/location";
-import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import {getMinTariff} from "@/helpers/helpers";
 import Speakers from "@/views/course-page/components/speakers/speakers";
-import {convertCourseDates} from "@/helpers/dates-helpers";
+import React, {ReactElement} from "react";
+import styles from "./course-page.module.css";
+import {CoursePageProps} from "./course-page.props";
 
 const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement | null => {
   const {
