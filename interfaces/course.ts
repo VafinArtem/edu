@@ -118,6 +118,7 @@ export interface SpeakerShortCard {
   name: string;
   alias: string;
   photo: string;
+  photoBackground: string;
   specialization: string;
   coursesCount: number;
   direction: Direction;

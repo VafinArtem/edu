@@ -1,20 +1,21 @@
-import React, {ReactElement} from "react";
-import {SpeakerShortItemProps} from "./speaker-short-item.props";
-import styles from "./speaker-short-item.module.css";
-import Image from "next/image";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {getDeclension} from "@/helpers/helpers";
-import Link from "next/link";
 import {Route} from "@/helpers/route";
-import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
+import Image from "next/image";
+import Link from "next/link";
+import React, {ReactElement} from "react";
+import styles from "./speaker-short-item.module.css";
+import {SpeakerShortItemProps} from "./speaker-short-item.props";
 
 const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null => {
-  const {photo, name, specialization, coursesCount, alias, direction} = speaker;
+  const {photo, name, specialization, coursesCount, alias, direction, photoBackground} = speaker;
 
   return (
     <article className={styles.wrapper}>
-      <Image src={photo} width={330} height={166} alt={``} loading={"lazy"} className={styles.image} quality={95} />
+      <Image src={photo} width={330} height={166} alt={``} loading={"lazy"} className={styles.image} quality={95}
+        style={{backgroundColor: `${photoBackground}`}} />
       <div className={styles.content}>
         <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
         <Paragraph fontSize={"none"} className={styles.specialization}>{specialization}</Paragraph>

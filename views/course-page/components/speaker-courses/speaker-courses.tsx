@@ -1,18 +1,18 @@
 "use client";
 
-import React, {ReactElement, useEffect, useState} from "react";
-import Image from "next/image";
-import Link from "next/link";
-import clsx from "clsx";
-import useIsResolution from "@/hooks/useIsResolution";
-import {SpeakerCoursesProps} from "./speaker-courses.props";
-import styles from "./speaker-courses.module.css";
-import SectionItem from "@/components/_section/section-item/section-item";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
+import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
+import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import {Route} from "@/helpers/route";
-import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
-import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
+import useIsResolution from "@/hooks/useIsResolution";
+import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import React, {ReactElement, useEffect, useState} from "react";
+import styles from "./speaker-courses.module.css";
+import {SpeakerCoursesProps} from "./speaker-courses.props";
 
 const getTitle = (names: string[]) => {
   return names.map((item, index) => {
@@ -75,6 +75,7 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
           color={"primary"}
           className={styles.link}
           borderRadius={"small"}
+          borderColor={"default"}
         >Все курсы учебного центра</ButtonArrow>
       </SectionCenterHead>
       <div className={clsx(styles.list, {

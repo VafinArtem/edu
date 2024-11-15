@@ -1972,6 +1972,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 6,
         "photo": "/img/speakers-page/speaker-1.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 1,
           "name": "Стоматологам",
@@ -1986,6 +1987,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 1,
         "photo": "/img/speakers-page/speaker-2.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 2,
           "name": "Косметологам",
@@ -2000,6 +2002,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 1,
         "photo": "/img/speakers-page/speaker-3.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 3,
           "name": "Ветеринарам",
@@ -2014,6 +2017,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 2,
         "photo": "/img/speakers-page/speaker-4.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 1,
           "name": "Стоматологам",
@@ -2028,6 +2032,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 10,
         "photo": "/img/speakers-page/speaker-5.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 1,
           "name": "Стоматологам",
@@ -2042,6 +2047,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 12,
         "photo": "/img/speakers-page/speaker-6.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 1,
           "name": "Стоматологам",
@@ -2056,6 +2062,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 12,
         "photo": "/img/speakers-page/speaker-7.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 3,
           "name": "Ветеринарам",
@@ -2070,6 +2077,7 @@
         "specialization": "Стоматолог-хирург, пародонтолог",
         "coursesCount": 12,
         "photo": "/img/speakers-page/speaker-8.png",
+        "photoBackground": "#D7E3ED",
         "direction": {
           "id": 3,
           "name": "Ветеринарам",

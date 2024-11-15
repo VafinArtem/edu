@@ -1,11 +1,11 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import {ScheduleItemProps} from "./schedule-item.props";
-import styles from "./schedule-item.module.css";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Heading from "@/components/_tags/heading/heading";
 import clsx from "clsx";
-import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
+import React, {ReactElement, useState} from "react";
+import styles from "./schedule-item.module.css";
+import {ScheduleItemProps} from "./schedule-item.props";
 
 const ButtonColor: Record<"red" | "blue", "primary" | "primary-2"> = {
   red: "primary",
@@ -45,6 +45,7 @@ const ScheduleItem = ({schedule}: ScheduleItemProps): ReactElement | null => {
         onClick={() => {
           setShowAllItems(!showAllItems);
         }}
+        borderColor={"light"}
       >{showAllItems ? `Скрыть` : `Раскрыть`}</ButtonArrow>
     </li>
   );

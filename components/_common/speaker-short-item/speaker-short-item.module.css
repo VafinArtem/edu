@@ -13,9 +13,10 @@
   display: flex;
   width: 167px;
   height: 167px;
-  object-fit: cover;
-  object-position: center;
+  padding-top: 10px;
   border-radius: 15px;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .content {
@@ -107,8 +108,8 @@
 
   .image {
 	width: 100%;
-	height: auto;
 	border-radius: 20px 20px 0 0;
+	aspect-ratio: 1.9;
   }
 
   .content {

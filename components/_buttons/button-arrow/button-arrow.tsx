@@ -1,11 +1,11 @@
-import React, {ReactElement} from "react";
-import {ButtonArrowProps} from "./button-arrow.props";
-import styles from "./button-arrow.module.css";
-import clsx from "clsx";
-import IconMidRight from "./arrow-mid-right.svg";
-import IconBottomRight from "./arrow-bottom-right.svg";
-import IconTopRight from "./arrow-top-right.svg";
 import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
+import clsx from "clsx";
+import React, {ReactElement} from "react";
+import IconBottomRight from "./arrow-bottom-right.svg";
+import IconMidRight from "./arrow-mid-right.svg";
+import IconTopRight from "./arrow-top-right.svg";
+import styles from "./button-arrow.module.css";
+import {ButtonArrowProps} from "./button-arrow.props";
 
 const ButtonArrow = <C extends BaseButtonComponent = "button">({
   className,
@@ -15,6 +15,7 @@ const ButtonArrow = <C extends BaseButtonComponent = "button">({
   withBackground,
   size = "medium",
   borderRadius = "medium",
+  borderColor,
   ...props
 }: ButtonArrowProps<C>): ReactElement | null => {
   return (
@@ -26,6 +27,8 @@ const ButtonArrow = <C extends BaseButtonComponent = "button">({
       [styles.medium]: size === "medium",
       [styles.brSmall]: borderRadius === "small",
       [styles.brMedium]: borderRadius === "medium",
+      [styles.lightBorder]: borderColor === "light",
+      [styles.defaultBorder]: borderColor === "default",
     })} {...(props as BaseButtonProps<C>)}>
       {children}
       {iconDirection === "bottom-right" && <IconBottomRight />}

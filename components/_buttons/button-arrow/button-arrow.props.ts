@@ -6,5 +6,6 @@ export type ButtonArrowProps<C extends BaseButtonComponent = "button"> =
   color: "primary" | "primary-2";
   size?: "small" | "medium" | "large";
   borderRadius?: "small" | "medium" | "large";
+  borderColor?: "light" | "default";
   withBackground?: boolean;
 }
