@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 20px 30px 30px;
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  gap: 5px;
+  grid-template-rows: repeat(2, auto);
+}
+
+.name,
+.position {
+  grid-column: 1;
+  line-height: 1;
+}
+
+.name {
+  font-size: 1.6rem;
+  align-self: end;
+}
+
+.position {
+  font-size: 1.3rem;
+  color: var(--gray-500);
+}
+
+.avatar {
+  grid-column: 2;
+  grid-row: 1/-1;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.text {
+  padding-right: 10px;
+  font-size: 1.5rem;
+  color: var(--gray-500);
+}

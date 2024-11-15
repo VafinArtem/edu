@@ -6,6 +6,7 @@ import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
 import Directions from "@/views/main-page/components/directions/directions";
 import Promo from "@/views/main-page/components/promo/promo";
+import Reviews from "@/views/main-page/components/reviews/reviews";
 import React, {ReactElement} from "react";
 import NotFindCourse from "../../components/_common/not-find-course/not-find-course";
 import AboutLearning from "./components/about-learning/about-learning";
@@ -30,6 +31,7 @@ const MainPage = ({}: MainPageProps): ReactElement | null => {
       </div>
       <ContainerPrimaryColor>
         <About className={`container`} />
+        <Reviews className={`container`} />
       </ContainerPrimaryColor>
     </>
   );
