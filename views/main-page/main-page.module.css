@@ -2,12 +2,14 @@
   margin-top: -134px;
 }
 
-.learning + .notFindCourse {
+.learning + .notFindCourse,
+.purple + .white {
   margin-top: -135px;
 }
 
 @media (max-width: 1199px) {
-  .learning + .notFindCourse {
+  .learning + .notFindCourse,
+  .purple + .white {
 	margin-top: -90px;
   }
 }
@@ -17,7 +19,8 @@
 	margin-bottom: -12px;
   }
 
-  .learning + .notFindCourse {
+  .learning + .notFindCourse,
+  .purple + .white {
 	margin-top: -75px;
   }
 }
