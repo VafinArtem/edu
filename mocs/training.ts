@@ -513,7 +513,7 @@ export const similarCourses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`, `Иванова Галина Валентиновна`],
-    photo: `/img/components/similar-courses/img-1.png`,
+    photo: `/img/components/similar-courses/img-1-1.png`,
   },
   {
     id: 2,
@@ -534,7 +534,7 @@ export const similarCourses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/components/similar-courses/img-2.png`,
+    photo: `/img/components/similar-courses/img-2-1.png`,
   },
   {
     id: 3,
@@ -555,7 +555,7 @@ export const similarCourses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/components/similar-courses/img-3.png`,
+    photo: `/img/components/similar-courses/img-3-1.png`,
   },
   {
     id: 4,
@@ -576,6 +576,6 @@ export const similarCourses: CourseShort[] = [
       background: "#F9E4C5",
     },
     speakers: [`Волкова Юлия Валерьевна`],
-    photo: `/img/components/similar-courses/img-4.png`,
+    photo: `/img/components/similar-courses/img-4-1.png`,
   },
 ];

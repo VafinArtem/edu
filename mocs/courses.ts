@@ -1,5 +1,5 @@
-import {Direction, DirectionWithSpecializations, FilterItem, Option} from "@/interfaces/courses";
 import {CourseShort} from "@/interfaces/course";
+import {Direction, DirectionWithSpecializations, FilterItem, Option} from "@/interfaces/courses";
 
 export const directions: Direction[] = [
   {
@@ -201,7 +201,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -218,7 +218,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -235,7 +235,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -252,7 +252,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -269,7 +269,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -286,7 +286,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -303,7 +303,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -320,7 +320,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -337,7 +337,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -354,7 +354,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -371,7 +371,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -388,7 +388,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -405,7 +405,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -422,7 +422,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -439,7 +439,7 @@ export const courses: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
 ];
@@ -459,7 +459,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -476,7 +476,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -493,7 +493,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -510,7 +510,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -527,7 +527,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -544,7 +544,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -561,7 +561,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
   {
@@ -578,7 +578,7 @@ export const coursesEight: CourseShort[] = [
       "background": "#F9E4C5",
     },
     "speakers": ["Волкова Юлия Валерьевна", "Иванова Галина Валентиновна"],
-    "photo": "/img/components/similar-courses/img-1.png",
+    "photo": "/img/components/similar-courses/img-1-1.png",
     "photoBackground": "#DDDAE3",
   },
 ];
