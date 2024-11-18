@@ -7,7 +7,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Семёнов Олег Евгеньевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 6,
-    "photo": "/img/speakers-page/speaker-1.png",
+    "photo": "/img/speakers-page/speaker-1-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -23,7 +23,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Грибанова Любовь Анатольевна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 1,
-    "photo": "/img/speakers-page/speaker-2.png",
+    "photo": "/img/speakers-page/speaker-2-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 2,
@@ -39,7 +39,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Рыбалка Евгений Николаевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 1,
-    "photo": "/img/speakers-page/speaker-3.png",
+    "photo": "/img/speakers-page/speaker-3-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 3,
@@ -55,7 +55,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Волкова Юлия Валерьевна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 2,
-    "photo": "/img/speakers-page/speaker-4.png",
+    "photo": "/img/speakers-page/speaker-4-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -71,7 +71,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Гузеев Юрий Геннадьевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 10,
-    "photo": "/img/speakers-page/speaker-5.png",
+    "photo": "/img/speakers-page/speaker-5-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -87,7 +87,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Деточкина Виолетта Робертовна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 12,
-    "photo": "/img/speakers-page/speaker-6.png",
+    "photo": "/img/speakers-page/speaker-6-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -103,7 +103,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Зограбян Артавазд Гагикович",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 12,
-    "photo": "/img/speakers-page/speaker-7.png",
+    "photo": "/img/speakers-page/speaker-7-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 3,
@@ -119,7 +119,7 @@ export const speakers: SpeakerShortCard[] = [
     "name": "Липатова Елена Владимировна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 12,
-    "photo": "/img/speakers-page/speaker-8.png",
+    "photo": "/img/speakers-page/speaker-8-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 3,
@@ -138,7 +138,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Семёнов Олег Евгеньевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 6,
-    "photo": "/img/speakers-page/speaker-1.png",
+    "photo": "/img/speakers-page/speaker-1-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -154,7 +154,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Грибанова Любовь Анатольевна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 1,
-    "photo": "/img/speakers-page/speaker-2.png",
+    "photo": "/img/speakers-page/speaker-2-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 2,
@@ -170,7 +170,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Рыбалка Евгений Николаевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 1,
-    "photo": "/img/speakers-page/speaker-3.png",
+    "photo": "/img/speakers-page/speaker-3-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 3,
@@ -186,7 +186,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Волкова Юлия Валерьевна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 2,
-    "photo": "/img/speakers-page/speaker-4.png",
+    "photo": "/img/speakers-page/speaker-4-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -202,7 +202,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Гузеев Юрий Геннадьевич",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 10,
-    "photo": "/img/speakers-page/speaker-5.png",
+    "photo": "/img/speakers-page/speaker-5-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
@@ -218,7 +218,7 @@ export const sixSpeakers: SpeakerShortCard[] = [
     "name": "Деточкина Виолетта Робертовна",
     "specialization": "Стоматолог-хирург, пародонтолог",
     "coursesCount": 12,
-    "photo": "/img/speakers-page/speaker-6.png",
+    "photo": "/img/speakers-page/speaker-6-1.png",
     "photoBackground": "#D7E3ED",
     "direction": {
       "id": 1,
