@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  gap: 10px;
+  padding-left: var(--container-mobile-padding);
+  padding-right: var(--container-mobile-padding);
+  margin-left: calc(0px - var(--container-mobile-padding));
+  margin-right: calc(0px - var(--container-mobile-padding));
+  overflow-y: auto;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.item {
+  flex-shrink: 0;
+  width: calc(100% - 20px);
+}

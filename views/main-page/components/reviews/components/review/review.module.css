@@ -44,3 +44,46 @@
   font-size: 1.5rem;
   color: var(--gray-500);
 }
+
+.button {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  text-align: left;
+  color: var(--primary);
+}
+
+@media (max-width: 1499px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (min-width: 768px) {
+  .button {
+	display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	padding: 10px 10px 20px 20px;
+  }
+
+  .text {
+	max-height: 235px;
+	overflow-y: auto;
+  }
+
+  .text::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+  }
+
+  .text::-webkit-scrollbar-thumb {
+	width: 100%;
+	background-color: var(--gray-400);
+	border-radius: 50px;
+  }
+}

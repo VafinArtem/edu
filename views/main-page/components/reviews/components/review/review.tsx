@@ -1,14 +1,15 @@
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import clsx from "clsx";
 import Image from "next/image";
 import React, {ReactElement} from "react";
 import styles from "./review.module.css";
 import {ReviewProps} from "./review.props";
 
-const Review = ({review}: ReviewProps): ReactElement | null => {
+const Review = ({review, className}: ReviewProps): ReactElement | null => {
   const {name, position, avatar, text} = review;
 
   return (
-    <article className={styles.wrapper}>
+    <article className={clsx(styles.wrapper, className)}>
       <div className={styles.head}>
         <Paragraph className={styles.name} fontWeight={"medium"} fontSize={"none"}>{name}</Paragraph>
         <Paragraph className={styles.position} fontSize={"none"}>{position}</Paragraph>
