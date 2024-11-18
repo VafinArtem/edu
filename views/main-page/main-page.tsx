@@ -7,6 +7,7 @@ import {sixSpeakers} from "@/mocs/speakers";
 import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
 import Directions from "@/views/main-page/components/directions/directions";
+import Footer from "@/views/main-page/components/footer/footer";
 import Promo from "@/views/main-page/components/promo/promo";
 import Reviews from "@/views/main-page/components/reviews/reviews";
 import React, {ReactElement} from "react";
@@ -40,6 +41,7 @@ const MainPage = ({}: MainPageProps): ReactElement | null => {
         <div className="container">
           <Subscribe />
         </div>
+        <Footer />
       </ContainerWhite>
     </>
   );

@@ -7,10 +7,18 @@
   margin-top: -135px;
 }
 
+.purple + .white {
+  padding-bottom: 175px;
+}
+
 @media (max-width: 1199px) {
   .learning + .notFindCourse,
   .purple + .white {
 	margin-top: -90px;
+  }
+
+  .purple + .white {
+	padding-bottom: 130px;
   }
 }
 
@@ -22,5 +30,9 @@
   .learning + .notFindCourse,
   .purple + .white {
 	margin-top: -75px;
+  }
+
+  .purple + .white {
+	padding-bottom: 105px;
   }
 }
