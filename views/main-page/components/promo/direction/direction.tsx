@@ -1,11 +1,11 @@
-import React, {ReactElement} from "react";
-import {DirectionProps} from "./direction.props";
-import styles from "./direction.module.css";
-import Link from "next/link";
-import {Route} from "@/helpers/route";
-import {SlugPart} from "@/helpers/contants";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {SlugPart} from "@/helpers/contants";
 import {getDeclension} from "@/helpers/helpers";
+import {Route} from "@/helpers/route";
+import Link from "next/link";
+import React, {ReactElement} from "react";
+import styles from "./direction.module.css";
+import {DirectionProps} from "./direction.props";
 
 const Direction = ({direction}: DirectionProps): ReactElement | null => {
   return (
@@ -15,8 +15,8 @@ const Direction = ({direction}: DirectionProps): ReactElement | null => {
         <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}></span>
         <div className={styles.content}>
           <Paragraph fontSize={"none"} className={styles.name}>{direction.name}</Paragraph>
-          <Paragraph fontSize={"small"}
-            className={styles.count}>{direction.count} {getDeclension(direction.count, ["курс", "курса", "курсов"])}</Paragraph>
+          {direction.count && <Paragraph fontSize={"small"}
+            className={styles.count}>{direction.count} {getDeclension(direction.count, ["курс", "курса", "курсов"])}</Paragraph>}
         </div>
       </Link>
     </li>
