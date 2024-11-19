@@ -5,6 +5,7 @@ export const Route = {
   PROFILE: "/profile",
   COURSES: "/courses",
   SPEAKERS: "/speakers",
+  SPEAKER: "/speaker",
   NEWS: "/news",
   REVIEWS: "/reviews",
   CONTACTS: "/contacts",

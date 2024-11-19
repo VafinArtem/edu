@@ -1,10 +1,9 @@
+import {AnswerData} from "@/actions/type";
 import {API} from "@/api/constants";
 import {SpeakersPageModel} from "@/interfaces/speakers";
 
-export async function getSpeakersPage(slug?: string, searchParams?: Record<string, string>): Promise<SpeakersPageModel | null> {
-  console.log(searchParams);
-
-  const res = await fetch(`${API.speakers.byAlias}${slug ?? ``}`, {
+export async function getSpeakersPage(): Promise<AnswerData<SpeakersPageModel> | null> {
+  const res = await fetch(`${API.speakers.byAlias}`, {
     method: "GET",
     next: {
       revalidate: 10,
@@ -14,5 +13,6 @@ export async function getSpeakersPage(slug?: string, searchParams?: Record<strin
   if (!res.ok) {
     return null;
   }
+  
   return res.json();
 }

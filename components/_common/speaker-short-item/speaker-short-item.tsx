@@ -28,7 +28,7 @@ const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null
         </Paragraph>
         <ButtonArrow
           component={Link}
-          href={`${Route.SPEAKERS}/${alias}`}
+          href={`${Route.SPEAKER}/${alias}`}
           color={"primary"}
           iconDirection={"mid-right"}
           borderRadius={"small"}

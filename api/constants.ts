@@ -14,7 +14,7 @@ export const API = {
     directions: process.env.BACKEND_API + "/directions",
   },
   speakers: {
-    byAlias: process.env.BACKEND_API + "/speakers/",
+    byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/speakers/" : "/react-api/teachers/index"),
   },
   common: {
     promoRegistration: process.env.BACKEND_API + "/promo-registration/",

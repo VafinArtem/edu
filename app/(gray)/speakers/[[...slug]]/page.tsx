@@ -1,29 +1,16 @@
-import React, {ReactElement} from "react";
+import {getSpeakersPage} from "@/api/speakers-page";
 import SpeakersPage from "@/views/speakers-page/speakers-page";
 import {notFound} from "next/navigation";
-import {getSpeakersPage} from "@/api/speakers-page";
-import {getDirections} from "@/api/directions";
+import React, {ReactElement} from "react";
 
-const SpeakersLayout = async ({params}: {
-  params: Promise<{
-    slug?: string[],
-    searchParams?: Record<string, string>;
-  }>
-}): Promise<ReactElement | null> => {
-  const fetchedParams = await params;
-  const slugs = fetchedParams.slug;
+const SpeakersLayout = async (): Promise<ReactElement | null> => {
+  const page = await getSpeakersPage();
 
-  const lastSlug = slugs && (slugs.length > 1 ? slugs[slugs.length - 1] : slugs[0]);
-
-  const page = await getSpeakersPage(lastSlug, fetchedParams.searchParams);
-
-  if (!page) {
+  if (!page || page.code !== 200) {
     notFound();
   }
 
-  const directions = await getDirections();
-
-  return (<SpeakersPage directions={directions ?? []} pages={page.pages} speakers={page.speakers} />);
+  return (<SpeakersPage speakers={page.answer.data} />);
 };
 
 export default SpeakersLayout;
