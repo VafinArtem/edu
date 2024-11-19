@@ -15,6 +15,7 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
 }: ExampleCardProps<C>): ReactElement | null => {
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>();
   const {name, description, images} = example;
+  const backPath = process.env.BACKEND_API;
 
   useEffect(() => {
     if (showModal) {
@@ -29,7 +30,7 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
       <article className={clsx(styles.item, className)}>
         <BaseButton<C> className={clsx(styles.inner)} {...(props as BaseButtonProps<C>)}
           onClick={() => changeModalActivityStatus(true)}>
-          <Image src={`${process.env.BACKEND_API}${images[0]}`} alt={``} width={417} height={319}
+          <Image src={`${backPath}${images[0]}`} alt={``} width={417} height={319}
             className={styles.image} quality={95}
             priority={true} />
           <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
@@ -42,9 +43,8 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
               <Paragraph className={styles.modalName}>{name}</Paragraph>
               <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
               <div className={styles.images}>
-                {images.map((image, index) => <Image key={index} src={`${process.env.BACKEND_API}${image}`} alt={``}
-                  width={347} height={347}
-                  quality={95} className={styles.modalImage} />)}
+                {images.map((image, index) => <Image key={index} src={`${backPath}${image}`} alt={``}
+                  width={347} height={347} quality={95} className={styles.modalImage} />)}
               </div>
             </div>
           </div>
