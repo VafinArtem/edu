@@ -106,7 +106,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
 
       {photos && <Gallery id={`photos`} speakerName={`Юлией`} photos={photos} />}
 
-      {similarCourses &&
+      {similarCourses && similarCourses.length > 0 &&
         <SimilarCourses className={`container`} courses={similarCourses} title={`Рекомендуем`} cardColor={`gray`} />}
     </>
   );
