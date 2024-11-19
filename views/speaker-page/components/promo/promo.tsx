@@ -16,6 +16,7 @@ const Promo = ({
   workExperience,
   photo,
   photoBackground,
+  showCourses,
 }: PromoProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
 
@@ -65,7 +66,7 @@ const Promo = ({
           <Paragraph className={styles.specialityTitle}>Специализация</Paragraph>
           <Paragraph>{specializationFull}</Paragraph>
         </div>
-        <Button component={`a`} href={`#courses`} className={styles.button}>Посмотреть курсы</Button>
+        {showCourses && <Button component={`a`} href={`#courses`} className={styles.button}>Посмотреть курсы</Button>}
       </div>
       <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
         <source media="(min-width: 1500px)" srcSet={desktop} />

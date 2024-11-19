@@ -6,4 +6,5 @@ export interface PromoProps {
   workExperience: number;
   photo: string;
   photoBackground: string;
+  showCourses: boolean;
 }

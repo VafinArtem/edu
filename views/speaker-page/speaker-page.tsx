@@ -85,6 +85,7 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
           photo={photo}
           specializationFull={specializationFull}
           photoBackground={colors.photoBackground}
+          showCourses={Boolean(courses && courses.length > 0)}
         />
         <Navigation links={getNavigationLinks()} />
       </div>
