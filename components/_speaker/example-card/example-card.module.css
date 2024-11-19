@@ -123,13 +123,8 @@
   font-size: 2.3rem;
 }
 
-.modal[class] {
+.modal {
   max-width: 1206px;
-  display: none;
-}
-
-.modal.show {
-  display: flex;
 }
 
 .modalContent {
