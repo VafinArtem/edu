@@ -1,4 +1,3 @@
-import {getSimilarCourses} from "@/api/similar-courses";
 import {getSpeakerPage} from "@/api/speaker-page";
 import SpeakerPage from "@/views/speaker-page/speaker-page";
 import {Metadata} from "next";
@@ -23,9 +22,9 @@ const SpeakerLayout = async ({params}: {params: {alias: string}}): Promise<React
     notFound();
   }
 
-  const similarCourses = await getSimilarCourses(+page.data.id, `speaker`);
+  // const similarCourses = await getSimilarCourses(+page.data.id, `speaker`);
 
-  return <SpeakerPage similarCourses={similarCourses} speaker={page.data} />;
+  return <SpeakerPage similarCourses={[]} speaker={page.data} />;
 };
 
 export default SpeakerLayout;
