@@ -23,10 +23,7 @@ export const speaker: SpeakerPageModel = {
   "specialization": "Стоматолог-хирург, пародонтолог",
   "specializationFull": "Пародонтальная терапия, пластика рецессий в области зубов и имплантатов \nс использованием микрохирургических техник.",
   "workExperience": 1999,
-  "promoPhotos": {
-    "desktop": "/img/course-page/promo/speaker-desktop.png",
-    "mobile": "/img/course-page/promo/speaker-mobile.png",
-  },
+  "photo": "/img/course-page/promo/speaker-desktop.png",
   "about": "<p>Опытный клиницист. С&nbsp;2016 основатель и&nbsp;главный врач стоматологической клиники &laquo;Мегаполис Дент&raquo;, г.&nbsp;Санкт-Петербург.</p><p>Проводит хирургическую реабилитацию с&nbsp;использованием дентальных имплантатов и&nbsp;аугментации костной ткани пациентам с&nbsp;заболеваниями пародонта.</p><p>Преподаватель курса пародонтологии кафедры стоматологии общей практики СПбИНСТОМ. Является автором курсов по&nbsp;терапевтической и&nbsp;хирургической пародонтологии с&nbsp;2005&nbsp;г.</p>",
   "edu": [
     {
