@@ -14,7 +14,8 @@ const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null
 
   return (
     <article className={styles.wrapper}>
-      <Image src={photo} width={330} height={166} alt={``} loading={"lazy"} className={styles.image} quality={95}
+      <Image src={photo} width={330} height={166} alt={``} loading={"lazy"}
+        className={`${process.env.BACKEND_API}${styles.image}`} quality={95}
         style={{backgroundColor: `${photoBackground}`}} />
       <div className={styles.content}>
         <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
