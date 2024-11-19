@@ -7,6 +7,8 @@ import React, {ReactElement} from "react";
 export async function generateMetadata({params}: {params: {alias: string}}): Promise<Metadata> {
   const page = await getSpeakerPage(params.alias);
 
+  console.log(page);
+
   return {
     title: page?.data.metaTitle,
     description: page?.data.metaDescription,
