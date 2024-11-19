@@ -1,16 +1,16 @@
 "use client";
 
-import React, {ReactElement, useRef} from "react";
-import {GalleryProps} from "./gallery.props";
-import styles from "./gallery.module.css";
-import "swiper/css";
 import SectionItem from "@/components/_section/section-item/section-item";
+import Button from "@/components/_slider/button/button";
 import Heading from "@/components/_tags/heading/heading";
+import Image from "next/image";
+import React, {ReactElement, useRef} from "react";
+import {Navigation} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
-import Button from "@/components/_slider/button/button";
-import {Navigation} from "swiper/modules";
-import Image from "next/image";
+import styles from "./gallery.module.css";
+import "swiper/css";
+import {GalleryProps} from "./gallery.props";
 
 const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): ReactElement | null => {
   const swiperRef = useRef<SwiperCore>();
@@ -36,7 +36,8 @@ const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): Reac
         >
           {photos.map((photo) => (<SwiperSlide className={styles.slide} key={photo.id}>
             <figure className={styles.picture}>
-              <Image src={photo.img} alt={``} width={780} height={435} quality={95} loading={"lazy"}
+              <Image src={`${process.env.BACKEND_API}${photo.img}`} alt={``} width={780} height={435} quality={95}
+                loading={"lazy"}
                 className={styles.image} />
               {photo.description && <figcaption className={styles.description}>{photo.description}</figcaption>}
             </figure>
@@ -44,7 +45,8 @@ const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): Reac
           {photos.length < 4 && photos.map((photo, index) => (
             <SwiperSlide className={styles.slide} key={`${photo.id}-${index}`}>
               <figure className={styles.picture}>
-                <Image src={photo.img} alt={``} width={780} height={435} quality={95} loading={"lazy"}
+                <Image src={`${process.env.BACKEND_API}${photo.img}`} alt={``} width={780} height={435} quality={95}
+                  loading={"lazy"}
                   className={styles.image} />
                 {photo.description && <figcaption className={styles.description}>{photo.description}</figcaption>}
               </figure>

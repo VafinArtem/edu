@@ -1,12 +1,12 @@
-import React, {ReactElement, useEffect} from "react";
-import {ExampleCardProps} from "./example-card.props";
-import Paragraph from "@/components/_tags/paragraph/paragraph";
-import styles from "./example-card.module.css";
-import clsx from "clsx";
 import BaseButton, {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
-import Image from "next/image";
 import ModalWrapper from "@/components/_modal/modal-wrapper/modal-wrapper";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
 import useOpenModal from "@/hooks/useOpenModal";
+import clsx from "clsx";
+import Image from "next/image";
+import React, {ReactElement, useEffect} from "react";
+import styles from "./example-card.module.css";
+import {ExampleCardProps} from "./example-card.props";
 
 const ExampleCard = <C extends BaseButtonComponent = "button">({
   example,
@@ -29,7 +29,8 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
       <article className={clsx(styles.item, className)}>
         <BaseButton<C> className={clsx(styles.inner)} {...(props as BaseButtonProps<C>)}
           onClick={() => changeModalActivityStatus(true)}>
-          <Image src={images[0]} alt={``} width={417} height={319} className={styles.image} quality={95}
+          <Image src={`${process.env.BACKEND_API}${images[0]}`} alt={``} width={417} height={319}
+            className={styles.image} quality={95}
             priority={true} />
           <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
         </BaseButton>
@@ -41,7 +42,8 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
               <Paragraph className={styles.modalName}>{name}</Paragraph>
               <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
               <div className={styles.images}>
-                {images.map((image, index) => <Image key={index} src={image} alt={``} width={347} height={347}
+                {images.map((image, index) => <Image key={index} src={`${process.env.BACKEND_API}${image}`} alt={``}
+                  width={347} height={347}
                   quality={95} className={styles.modalImage} />)}
               </div>
             </div>

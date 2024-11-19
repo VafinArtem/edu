@@ -26,7 +26,7 @@ const Promo = ({
     width: 482,
     height: 480,
     priority: true,
-    src: photo,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: laptop},
@@ -34,7 +34,7 @@ const Promo = ({
     ...common,
     width: 384,
     height: 433,
-    src: photo,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: tablet},
@@ -42,7 +42,7 @@ const Promo = ({
     ...common,
     width: 326,
     height: 200,
-    src: photo,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: mobile},
@@ -50,7 +50,7 @@ const Promo = ({
     ...common,
     width: 234,
     height: 150,
-    src: photo,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
 
   return (
