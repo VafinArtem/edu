@@ -47,21 +47,21 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
       });
     }
 
-    if (examples) {
+    if (examples && examples.length > 0) {
       links.push({
         name: `Рабочие кейсы`,
         href: `#examples`,
       });
     }
 
-    if (courses) {
+    if (courses && courses.length > 0) {
       links.push({
         name: `Курсы`,
         href: `#courses`,
       });
     }
 
-    if (photos) {
+    if (photos && photos.length > 0) {
       links.push({
         name: `Фото`,
         href: `#photos`,
