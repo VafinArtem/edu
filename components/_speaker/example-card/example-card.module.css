@@ -125,6 +125,11 @@
 
 .modal {
   max-width: 1206px;
+  display: none;
+}
+
+.modal.show {
+  display: block;
 }
 
 .modalContent {

@@ -17,8 +17,6 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
   const {name, description, images} = example;
   const backPath = process.env.BACKEND_API;
 
-  console.log(backPath);
-
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
@@ -38,19 +36,20 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
           <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
         </BaseButton>
       </article>
-      {showModal &&
-        <ModalWrapper setShowModal={changeModalActivityStatus} showModal={showModal} className={styles.modal} ref={ref}>
-          <div className={styles.scroll}>
-            <div className={styles.modalInner}>
-              <Paragraph className={styles.modalName}>{name}</Paragraph>
-              <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
-              <div className={styles.images}>
-                {images.map((image, index) => <Image key={index} src={`${backPath}${image}`} alt={``}
-                  width={347} height={347} quality={95} className={styles.modalImage} />)}
-              </div>
+      <ModalWrapper setShowModal={changeModalActivityStatus} showModal={showModal} className={clsx(styles.modal, {
+        [styles.show]: showModal,
+      })} ref={ref}>
+        <div className={styles.scroll}>
+          <div className={styles.modalInner}>
+            <Paragraph className={styles.modalName}>{name}</Paragraph>
+            <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
+            <div className={styles.images}>
+              {images.map((image, index) => <Image key={index} src={`${backPath}${image}`} alt={``}
+                width={347} height={347} quality={95} className={styles.modalImage} />)}
             </div>
           </div>
-        </ModalWrapper>}
+        </div>
+      </ModalWrapper>
     </>
   );
 };
