@@ -17,6 +17,8 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
   const {name, description, images} = example;
   const backPath = process.env.BACKEND_API;
 
+  console.log(backPath);
+
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
