@@ -4,7 +4,7 @@ export const API = {
     orderWithTariff: process.env.BACKEND_API + "/order-with-tariff",
   },
   speaker: {
-    byAlias: process.env.BACKEND_API + "/speaker/",
+    byAlias: process.env.BACKEND_API + process.env.NODE_ENV === "development" ? "/speaker/" : "/teachers/view/",
   },
   courses: {
     byType: process.env.BACKEND_API + "/courses/",
