@@ -11,6 +11,13 @@ const nextConfig = {
   },
   images: {
     minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "dev-test.d-idei.ru",
+        port: "1000",
+      },
+    ],
   },
 };
 
