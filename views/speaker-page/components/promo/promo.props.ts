@@ -4,9 +4,6 @@ export interface PromoProps {
   specialization: string;
   specializationFull: string;
   workExperience: number;
-  photos: {
-    desktop: string;
-    mobile: string;
-  };
+  photo: string;
   photoBackground: string;
 }

@@ -12,10 +12,7 @@ export interface SpeakerPageModel extends CommonPageModel {
     nominative: string;
     genitive: string;
   },
-  promoPhotos: {
-    desktop: string;
-    mobile: string;
-  };
+  photo: string;
   colors: {
     photoBackground: string;
   };

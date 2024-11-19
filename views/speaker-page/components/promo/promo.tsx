@@ -1,12 +1,12 @@
-import React, {ReactElement} from "react";
-import {PromoProps} from "./promo.props";
-import styles from "./promo.module.css";
-import clsx from "clsx";
+import Button from "@/components/_buttons/button/button";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import Button from "@/components/_buttons/button/button";
-import {getImageProps} from "next/image";
 import {getWorkExperienceText} from "@/helpers/dates-helpers";
+import clsx from "clsx";
+import {getImageProps} from "next/image";
+import React, {ReactElement} from "react";
+import styles from "./promo.module.css";
+import {PromoProps} from "./promo.props";
 
 const Promo = ({
   className,
@@ -14,7 +14,7 @@ const Promo = ({
   specialization,
   specializationFull,
   workExperience,
-  photos,
+  photo,
   photoBackground,
 }: PromoProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
@@ -26,7 +26,7 @@ const Promo = ({
     width: 482,
     height: 480,
     priority: true,
-    src: photos.desktop,
+    src: photo,
   });
   const {
     props: {srcSet: laptop},
@@ -34,7 +34,7 @@ const Promo = ({
     ...common,
     width: 384,
     height: 433,
-    src: photos.desktop,
+    src: photo,
   });
   const {
     props: {srcSet: tablet},
@@ -42,7 +42,7 @@ const Promo = ({
     ...common,
     width: 326,
     height: 200,
-    src: photos.mobile,
+    src: photo,
   });
   const {
     props: {srcSet: mobile},
@@ -50,7 +50,7 @@ const Promo = ({
     ...common,
     width: 234,
     height: 150,
-    src: photos.mobile,
+    src: photo,
   });
 
   return (
