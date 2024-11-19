@@ -10,8 +10,8 @@ export async function generateMetadata({params}: {params: {alias: string}}): Pro
   console.log(page);
 
   return {
-    title: page?.data.metaTitle,
-    description: page?.data.metaDescription,
+    title: page?.data.metaTitle ?? ``,
+    description: page?.data.metaDescription ?? ``,
   };
 }
 
