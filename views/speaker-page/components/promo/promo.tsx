@@ -58,14 +58,14 @@ const Promo = ({
     <section className={clsx(className, styles.wrapper)}>
       <div className={styles.textContent}>
         <Heading tag={`h1`} className={styles.title}>{name}</Heading>
-        <ul className={styles.positions}>
+        {specialization && <ul className={styles.positions}>
           {specialization.split(`, `).map((item, index) => <li key={index} className={styles.position}>{item}</li>)}
-        </ul>
+        </ul>}
         <Paragraph>Стаж работы {getWorkExperienceText(workExperience)}</Paragraph>
-        <div className={styles.speciality}>
+        {specializationFull && <div className={styles.speciality}>
           <Paragraph className={styles.specialityTitle}>Специализация</Paragraph>
           <Paragraph>{specializationFull}</Paragraph>
-        </div>
+        </div>}
         {showCourses && <Button component={`a`} href={`#courses`} className={styles.button}>Посмотреть курсы</Button>}
       </div>
       <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
