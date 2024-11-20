@@ -41,7 +41,7 @@ const CoursesLayout = async (props: {
 
   const isCoursePage = fetchedParams.slug && fetchedParams.slug[fetchedParams.slug.length - 1].includes(SlugPart.COURSE);
 
-  let page: null | {data: CoursePageModel, code: number} | CoursesPageModel = null;
+  let page: null | {data: CoursePageModel, code: number} | {data: CoursesPageModel, code: number} = null;
 
   if (isCoursePage) {
     const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
@@ -51,14 +51,11 @@ const CoursesLayout = async (props: {
     page = await getCoursesPage(fetchedParams.slug, search);
   }
 
-  if (!page) {
+  if (!page || page.code !== 200) {
     notFound();
   }
 
   if (isCoursePage) {
-    if ((page as {data: CoursePageModel, code: number}).code !== 200) {
-      notFound();
-    }
     // const similarCourses = await getSimilarCourses((page as CoursePageModel)._id, `course`);
 
     return <CoursePage training={(page as {data: CoursePageModel, code: number}).data} similarCourses={[]} />;
@@ -68,12 +65,12 @@ const CoursesLayout = async (props: {
     const directions = await getDirections();
 
     return <CoursesPage
-      coursesCount={(page as CoursesPageModel).coursesCount}
-      courses={(page as CoursesPageModel).courses}
+      coursesCount={(page as {data: CoursesPageModel, code: number}).data.coursesCount}
+      courses={(page as {data: CoursesPageModel, code: number}).data.courses}
       directions={directions?.answer.data ?? []}
       courseTypes={courseTypes?.answer.data ?? []}
       filters={filters?.answer.data ?? []}
-      pages={(page as CoursesPageModel).pages}
+      pages={(page as {data: CoursesPageModel, code: number}).data.pages}
     />;
   }
 };

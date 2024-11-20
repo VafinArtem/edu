@@ -2,7 +2,10 @@ import {API} from "@/api/constants";
 import {SlugPart} from "@/helpers/contants";
 import {CoursesPageModel} from "@/interfaces/courses";
 
-export async function getCoursesPage(slug?: string[], searchParams?: Record<string, string>): Promise<CoursesPageModel | null> {
+export async function getCoursesPage(slug?: string[], searchParams?: Record<string, string>): Promise<{
+  data: CoursesPageModel,
+  code: number
+} | null> {
   const categories: Record<string, string> = {};
 
   if (slug && slug.length > 0) {
