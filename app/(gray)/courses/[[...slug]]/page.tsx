@@ -1,17 +1,16 @@
-import React, {ReactElement} from "react";
-import {Metadata} from "next";
-import CoursesPage from "@/views/courses-page/courses-page";
-import {getFilters} from "@/api/filters";
-import {getDirections} from "@/api/directions";
+import {getCoursePage} from "@/api/course-page";
 import {getCourseTypes} from "@/api/course-types";
 import {getCoursesPage} from "@/api/courses-page";
-import {notFound} from "next/navigation";
+import {getDirections} from "@/api/directions";
+import {getFilters} from "@/api/filters";
 import {SlugPart} from "@/helpers/contants";
-import {getCoursePage} from "@/api/course-page";
 import {CoursePageModel} from "@/interfaces/course";
 import {CoursesPageModel} from "@/interfaces/courses";
 import CoursePage from "@/views/course-page/course-page";
-import {getSimilarCourses} from "@/api/similar-courses";
+import CoursesPage from "@/views/courses-page/courses-page";
+import {Metadata} from "next";
+import {notFound} from "next/navigation";
+import React, {ReactElement} from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -42,7 +41,7 @@ const CoursesLayout = async (props: {
 
   const isCoursePage = fetchedParams.slug && fetchedParams.slug[fetchedParams.slug.length - 1].includes(SlugPart.COURSE);
 
-  let page: null | CoursePageModel | CoursesPageModel = null;
+  let page: null | {data: CoursePageModel, code: number} | CoursesPageModel = null;
 
   if (isCoursePage) {
     const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
@@ -57,9 +56,12 @@ const CoursesLayout = async (props: {
   }
 
   if (isCoursePage) {
-    const similarCourses = await getSimilarCourses((page as CoursePageModel)._id, `course`);
+    if ((page as {data: CoursePageModel, code: number}).code !== 200) {
+      notFound();
+    }
+    // const similarCourses = await getSimilarCourses((page as CoursePageModel)._id, `course`);
 
-    return <CoursePage training={page as CoursePageModel} similarCourses={similarCourses} />;
+    return <CoursePage training={(page as {data: CoursePageModel, code: number}).data} similarCourses={[]} />;
   } else {
     const filters = await getFilters();
     const courseTypes = await getCourseTypes();
