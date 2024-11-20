@@ -41,10 +41,13 @@ const CoursesLayout = async (props: {
 
   const isCoursePage = fetchedParams.slug && fetchedParams.slug[fetchedParams.slug.length - 1].includes(SlugPart.COURSE);
 
+  console.log(isCoursePage);
+
   let page: null | {data: CoursePageModel, code: number} | CoursesPageModel = null;
 
   if (isCoursePage) {
     const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
+    console.log(alias);
 
     page = await getCoursePage(alias ? alias : "");
   } else {
