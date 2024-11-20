@@ -1,15 +1,15 @@
-import React, {ReactElement} from "react";
-import {CourseShortItemProps} from "./course-short-item.props";
-import styles from "./course-short-item.module.css";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Heading from "@/components/_tags/heading/heading";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {convertShortCourseDate} from "@/helpers/dates-helpers";
 import {formatPrice} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
-import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
-import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
-import Link from "next/link";
-import {convertShortCourseDate} from "@/helpers/dates-helpers";
 import Image from "next/image";
+import Link from "next/link";
+import React, {ReactElement} from "react";
+import styles from "./course-short-item.module.css";
+import {CourseShortItemProps} from "./course-short-item.props";
 
 const CourseShortItem = ({
   course,
@@ -31,7 +31,8 @@ const CourseShortItem = ({
           {(speakers && speakers.length > 0) && <p className={styles.speakers}>
             {speakers.map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
           </p>}
-          <Image src={photo} alt="" width={426} height={204} className={styles.image} quality={95} />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`} alt="" width={426} height={204}
+            className={styles.image} quality={95} />
         </div>
       }
       <div className={styles.inner}>
@@ -51,7 +52,7 @@ const CourseShortItem = ({
             className={styles.price}>{formatPrice(price)} ₽</Paragraph>}
           <ButtonArrow
             component={Link}
-            href={`${Route.COURSES}/${alias}`}
+            href={`${Route.COURSES}/course-${alias}`}
             color={"primary"}
             iconDirection={"mid-right"}
             borderRadius={"small"}
