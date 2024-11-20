@@ -39,7 +39,7 @@ const Location = ({className, place}: LocationProps): ReactElement | null => {
           </div>
         </div>
 
-        {(photos || desc) && <div className={styles.footer}>
+        {((photos && photos.length > 0) || desc) && <div className={styles.footer}>
           {desc && <Paragraph className={styles.desc}>{desc}</Paragraph>}
           {(photos && photos.length > 0) && <div className={styles.photos}>
             {photos.map((photo, index) => (
