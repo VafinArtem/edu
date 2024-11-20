@@ -241,11 +241,7 @@ const Filters = forwardRef(({
                         defaultChecked={path === `${inputName}-${value.alias!}` ? true : Array.from(searchParams.entries()).some(([key, paramValue]) => {
                           const values = paramValue.includes(`,`) ? paramValue.split(`,`) : paramValue;
 
-                          console.log(values);
-                          console.log(key, inputName, values, value.value);
-                          console.log(key === inputName && ((typeof values === "string" && values === value.value) || (typeof values !== "string" && values.includes(value.value))));
-
-                          return key === inputName && ((typeof values === "string" && values === value.value) || (typeof values !== "string" && values.includes(value.value)));
+                          return key === inputName && ((typeof values === "string" && values === `${value.value}`) || (typeof values !== "string" && values.includes(`${value.value}`)));
                         })}
                       />);
                   })}
