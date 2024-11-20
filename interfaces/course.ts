@@ -30,6 +30,7 @@ export interface CoursePageModel extends CommonPageModel {
     id: number;
     alias: string;
     surname: string,
+    cite?: string,
     name: {
       nominative: string;
       genitive: string;
