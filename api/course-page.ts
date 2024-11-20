@@ -2,8 +2,12 @@ import {API} from "@/api/constants";
 import {CoursePageModel} from "@/interfaces/course";
 
 export async function getCoursePage(alias: string): Promise<{data: CoursePageModel, code: number} | null> {
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify({alias});
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
   const res = await fetch(`${API.course.byAlias}${alias}`, {
-    method: "GET",
+    method,
+    body,
     next: {
       revalidate: 10,
     },
