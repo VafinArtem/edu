@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "dev-test.d-idei.ru",
         port: "1000",
       },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "3000",
+      },
     ],
   },
 };

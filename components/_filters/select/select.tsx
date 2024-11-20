@@ -1,14 +1,14 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import clsx from "clsx";
-import {SelectProps} from "./select.props";
-import styles from "./select.module.css";
-import IconArrow from "./arrow.svg";
 import Wrapper from "@/components/_filters/wrapper/wrapper";
 import useOpenModal from "@/hooks/useOpenModal";
 import {Option} from "@/interfaces/courses";
+import clsx from "clsx";
 import {ReadonlyURLSearchParams} from "next/navigation";
+import React, {ReactElement, useState} from "react";
+import IconArrow from "./arrow.svg";
+import styles from "./select.module.css";
+import {SelectProps} from "./select.props";
 
 const getTextValue = (value: string | string[], options: Option[]) => {
   console.log(value);
@@ -62,6 +62,10 @@ const Select = ({
               if ((typeof currentValue === "string" && currentValue === value) || (typeof currentValue !== "string" && currentValue?.includes(value))) {
                 if (typeof currentValue === "string") {
                   setCurrentValue([]);
+
+                  if (clickCb) {
+                    clickCb([]);
+                  }
                 } else {
                   const values = [...currentValue];
 
@@ -72,19 +76,21 @@ const Select = ({
                   }
 
                   setCurrentValue(values);
-                }
 
-                if (clickCb) {
-                  clickCb(currentValue);
+                  if (clickCb) {
+                    clickCb(values);
+                  }
                 }
 
                 return;
               }
 
-              setCurrentValue(!isMultiselect ? value : [...new Set([...currentValue, value])]);
+              const values = !isMultiselect ? value : [...new Set([...currentValue, value])];
+
+              setCurrentValue(values);
 
               if (clickCb) {
-                clickCb(currentValue);
+                clickCb(values);
               }
             }}
             className={clsx(styles.item, {

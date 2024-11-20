@@ -24,10 +24,10 @@ export async function getCoursesPage(slug?: string[], searchParams?: Record<stri
     searchParams,
   };
 
-  console.log(JSON.stringify(query));
-
   const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(query);
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
+  console.log(body, method);
 
   const res = await fetch(`${API.courses.byType}`, {
     method,

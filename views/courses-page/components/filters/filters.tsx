@@ -1,24 +1,24 @@
 "use client";
 
-import React, {ForwardedRef, forwardRef, ReactElement, useEffect, useRef, useState} from "react";
-import {usePathname, useRouter, useSearchParams} from "next/navigation";
-import {FiltersProps} from "./filters.props";
-import styles from "./filters.module.css";
-import clsx from "clsx";
-import Select, {getSelectValue} from "@/components/_filters/select/select";
-import Search from "@/components/_filters/search/search";
-import Wrapper from "@/components/_filters/wrapper/wrapper";
-import Checkbox from "@/components/_filters/checkbox/checkbox";
-import Heading from "@/components/_tags/heading/heading";
-import CollapseItem from "@/components/_filters/collapse-item/collapse-item";
-import PriceItem from "@/components/_filters/price-item/price-item";
-import Dates from "@/components/_filters/dates/dates";
-import CloseButton from "@/components/_buttons/close-button/close-button";
 import Button from "@/components/_buttons/button/button";
-import useIsResolution from "@/hooks/useIsResolution";
-import {formatDateFromDatePickerToHiddenInput, getDatesFromSearchParams} from "@/helpers/dates-helpers";
-import {useDebouncedCallback} from "use-debounce";
+import CloseButton from "@/components/_buttons/close-button/close-button";
+import Checkbox from "@/components/_filters/checkbox/checkbox";
+import CollapseItem from "@/components/_filters/collapse-item/collapse-item";
+import Dates from "@/components/_filters/dates/dates";
+import PriceItem from "@/components/_filters/price-item/price-item";
+import Search from "@/components/_filters/search/search";
+import Select, {getSelectValue} from "@/components/_filters/select/select";
+import Wrapper from "@/components/_filters/wrapper/wrapper";
+import Heading from "@/components/_tags/heading/heading";
 import {SlugPart} from "@/helpers/contants";
+import {formatDateFromDatePickerToHiddenInput, getDatesFromSearchParams} from "@/helpers/dates-helpers";
+import useIsResolution from "@/hooks/useIsResolution";
+import clsx from "clsx";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import React, {ForwardedRef, forwardRef, ReactElement, useEffect, useRef, useState} from "react";
+import {useDebouncedCallback} from "use-debounce";
+import styles from "./filters.module.css";
+import {FiltersProps} from "./filters.props";
 
 const Filters = forwardRef(({
   className,
@@ -145,16 +145,26 @@ const Filters = forwardRef(({
               name={`type`}
               options={courseTypes}
               initialValue={pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))
-                ? [pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))!.split(`-`).splice(1).join(`-`)]
+                ? [courseTypes.find((type) => type.alias === pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))!.split(`-`).splice(1).join(`-`))!.value]
                 : getSelectValue(searchParams, `type`)}
               isMultiselect
-              clickCb={() => {
+              clickCb={(value) => {
+                const params = new URLSearchParams(searchParams);
+
                 if (pathname.split(`/`).find((name) => name.includes(SlugPart.TYPE))) {
                   const newPathname = pathname.split(`/`).filter((name) => !name.includes(SlugPart.TYPE));
 
-                  const params = new URLSearchParams(searchParams);
-
                   push(`${newPathname.join(`/`)}${params ? `?${params.toString()}` : ``}`, {
+                    scroll: false,
+                  });
+                } else {
+                  if ((typeof value === "string" && value) || (typeof value !== "string" && value.length > 0)) {
+                    params.set(SlugPart.TYPE, value.toString());
+                  } else {
+                    params.delete(SlugPart.TYPE);
+                  }
+
+                  push(`${pathname}${params ? `?${params.toString()}` : ``}`, {
                     scroll: false,
                   });
                 }
