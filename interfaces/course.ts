@@ -28,6 +28,7 @@ export interface CoursePageModel extends CommonPageModel {
   tariffs: TariffInfo[];
   speakers: {
     id: number;
+    alias: string;
     surname: string,
     name: {
       nominative: string;

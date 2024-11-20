@@ -86,6 +86,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           specialization,
           edu,
           id,
+          alias,
           workExperience,
           photo,
           aboutSlides,
@@ -97,6 +98,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           id,
           workExperience,
           photo,
+          alias,
           aboutSlides,
           photoBackground: colors.photoBackground,
         }))} />
