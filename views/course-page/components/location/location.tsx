@@ -43,7 +43,8 @@ const Location = ({className, place}: LocationProps): ReactElement | null => {
           {desc && <div className={styles.desc}>{desc}</div>}
           {(photos && photos.length > 0) && <div className={styles.photos}>
             {photos.map((photo, index) => (
-              <Image className={styles.photo} key={index} src={`${process.env.BACKEND_API}${photo}`} alt={``}
+              <Image className={styles.photo} key={index} src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`}
+                alt={``}
                 width={425} height={292} />))}
           </div>}
         </div>}

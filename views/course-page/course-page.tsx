@@ -142,7 +142,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           city: city.name,
           metro: {
             station: place.metro,
-            icon: `${process.env.BACKEND_API}${city.metroIcon}`,
+            icon: `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}`,
           },
           photos: place.photos,
           desc: place.desc,

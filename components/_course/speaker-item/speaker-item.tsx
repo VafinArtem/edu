@@ -36,11 +36,12 @@ const SpeakerItem = ({
     <li className={styles.wrapper}>
       <div className={styles.inner}>
         <div className={styles.preview}>
-          {video && <video className={styles.video} poster={`${process.env.BACKEND_API}${photo}`}>
+          {video && <video className={styles.video} poster={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`}>
             <source srcSet={video} type="video/mp4" />
           </video>}
           {!video && <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
-            <Image src={`${process.env.BACKEND_API}${photo}`} alt={``} width={1330} height={648} className={styles.img}
+            <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`} alt={``} width={1330} height={648}
+              className={styles.img}
               quality={95} />
           </picture>}
         </div>

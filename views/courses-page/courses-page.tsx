@@ -65,11 +65,11 @@ const CoursesPage = ({
               {courses.map((course) => <CourseShortItem course={course} key={course.id} withPhoto />)}
             </div>
 
-            <ListingPagination
+            {pages > 0 && <ListingPagination
               currentPage={currentPage}
               pages={pages}
               className={styles.pagination}
-            />
+            />}
           </div>
         </div>
       </SectionItem>

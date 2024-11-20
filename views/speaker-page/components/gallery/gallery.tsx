@@ -36,7 +36,8 @@ const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): Reac
         >
           {photos.map((photo) => (<SwiperSlide className={styles.slide} key={photo.id}>
             <figure className={styles.picture}>
-              <Image src={`${process.env.BACKEND_API}${photo.img}`} alt={``} width={780} height={435} quality={95}
+              <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo.img}`} alt={``} width={780} height={435}
+                quality={95}
                 loading={"lazy"}
                 className={styles.image} />
               {photo.description && <figcaption className={styles.description}>{photo.description}</figcaption>}
@@ -45,7 +46,8 @@ const Gallery = ({photos, speakerName, className, ...props}: GalleryProps): Reac
           {photos.length < 4 && photos.map((photo, index) => (
             <SwiperSlide className={styles.slide} key={`${photo.id}-${index}`}>
               <figure className={styles.picture}>
-                <Image src={`${process.env.BACKEND_API}${photo.img}`} alt={``} width={780} height={435} quality={95}
+                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo.img}`} alt={``} width={780} height={435}
+                  quality={95}
                   loading={"lazy"}
                   className={styles.image} />
                 {photo.description && <figcaption className={styles.description}>{photo.description}</figcaption>}
