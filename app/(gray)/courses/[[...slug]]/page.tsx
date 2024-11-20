@@ -70,9 +70,9 @@ const CoursesLayout = async (props: {
     return <CoursesPage
       coursesCount={(page as CoursesPageModel).coursesCount}
       courses={(page as CoursesPageModel).courses}
-      directions={directions ?? []}
-      courseTypes={courseTypes ?? []}
-      filters={filters ?? []}
+      directions={directions?.answer.data ?? []}
+      courseTypes={courseTypes?.answer.data ?? []}
+      filters={filters?.answer.data ?? []}
       pages={(page as CoursesPageModel).pages}
     />;
   }

@@ -1,6 +1,6 @@
 import {API} from "@/api/constants";
-import {CoursesPageModel} from "@/interfaces/courses";
 import {SlugPart} from "@/helpers/contants";
+import {CoursesPageModel} from "@/interfaces/courses";
 
 export async function getCoursesPage(slug?: string[], searchParams?: Record<string, string>): Promise<CoursesPageModel | null> {
   const categories: Record<string, string> = {};
@@ -23,8 +23,12 @@ export async function getCoursesPage(slug?: string[], searchParams?: Record<stri
 
   console.log(query);
 
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify({query});
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
   const res = await fetch(`${API.courses.byType}`, {
-    method: "GET",
+    method,
+    body,
     next: {
       revalidate: 10,
     },
