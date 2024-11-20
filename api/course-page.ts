@@ -5,6 +5,8 @@ export async function getCoursePage(alias: string): Promise<{data: CoursePageMod
   const body = process.env.NODE_ENV === "development" ? null : JSON.stringify({alias});
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
+  console.log(body);
+
   const res = await fetch(`${API.course.byAlias}${alias}`, {
     method,
     body,
