@@ -64,6 +64,8 @@ const CoursesLayout = async (props: {
     const courseTypes = await getCourseTypes();
     const directions = await getDirections();
 
+    console.log(page);
+
     return <CoursesPage
       coursesCount={(page as {data: CoursesPageModel, code: number}).data.coursesCount}
       courses={(page as {data: CoursesPageModel, code: number}).data.courses}
