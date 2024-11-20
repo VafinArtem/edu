@@ -63,10 +63,10 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           name={name}
           city={city.name}
           saleTimestamp={saleTimestamp}
-          speakers={speakers.map(({id, name, patronymic, surname, specialization, promoPhotos}) => ({
+          speakers={speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
             name: `${surname} ${name.nominative} ${patronymic.nominative}`,
             specialization,
-            photos: promoPhotos,
+            photo,
             id,
             photoBackground: colors.photoBackground,
           }))}
@@ -87,7 +87,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           edu,
           id,
           workExperience,
-          promoPhotos,
+          photo,
           aboutSlides,
         }) => ({
           name: `${surname} ${name.nominative} ${patronymic.nominative}`,
@@ -96,7 +96,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           edu,
           id,
           workExperience,
-          photo: promoPhotos.desktop,
+          photo,
           aboutSlides,
           photoBackground: colors.photoBackground,
         }))} />
@@ -162,7 +162,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           speakers={speakers.map((speaker) => ({
             id: speaker.id,
             name: speaker.name.genitive,
-            avatar: speaker.avatar,
+            avatar: speaker.photo,
+            photoBackground: colors.photoBackground,
           }))} />}
 
         <div className="container">

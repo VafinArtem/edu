@@ -56,12 +56,14 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
           [styles.oneSpeaker]: speakers.length === 1,
         })}>
           {speakers.map((item, index) => <Image quality={95} className={clsx(styles.avatar, {
-            [styles.oneSpeaker]: speakers.length === 1,
-          })} src={item.avatar} alt={``}
-            width={330}
-            height={166}
-            style={{zIndex: speakers.length - index}}
-            key={item.id} />)}
+              [styles.oneSpeaker]: speakers.length === 1,
+            })} src={item.avatar} alt={``}
+              width={330}
+              height={166}
+              style={{zIndex: speakers.length - index, backgroundColor: item.photoBackground}}
+              key={item.id}
+            />,
+          )}
         </div>
         <Heading
           tag={`h2`}

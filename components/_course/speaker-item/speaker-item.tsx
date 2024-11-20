@@ -1,19 +1,19 @@
 "use client";
 
-import React, {ReactElement, useRef, useState} from "react";
-import {SpeakerItemProps} from "./speaker-item.props";
-import styles from "./speaker-item.module.css";
-import Image from "next/image";
-import Heading from "@/components/_tags/heading/heading";
-import ExternalBgLink from "@/components/_links/external-bg-link/external-bg-link";
 import EduItem from "@/components/_course/edu-item/edu-item";
+import ExternalBgLink from "@/components/_links/external-bg-link/external-bg-link";
+import Button from "@/components/_slider/button/button";
+import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {getWorkExperienceText} from "@/helpers/dates-helpers";
 import {Route} from "@/helpers/route";
+import clsx from "clsx";
+import Image from "next/image";
+import React, {ReactElement, useRef, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperCore} from "swiper/types";
-import Button from "@/components/_slider/button/button";
-import clsx from "clsx";
-import {getWorkExperienceText} from "@/helpers/dates-helpers";
+import styles from "./speaker-item.module.css";
+import {SpeakerItemProps} from "./speaker-item.props";
 
 const SpeakerItem = ({
   name,
@@ -36,11 +36,12 @@ const SpeakerItem = ({
     <li className={styles.wrapper}>
       <div className={styles.inner}>
         <div className={styles.preview}>
-          {video && <video className={styles.video} poster={photo}>
+          {video && <video className={styles.video} poster={`${process.env.BACKEND_API}${photo}`}>
             <source srcSet={video} type="video/mp4" />
           </video>}
           {!video && <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
-            <Image src={photo} alt={``} width={1330} height={648} className={styles.img} quality={95} />
+            <Image src={`${process.env.BACKEND_API}${photo}`} alt={``} width={1330} height={648} className={styles.img}
+              quality={95} />
           </picture>}
         </div>
         <div className={styles.content}>

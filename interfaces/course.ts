@@ -37,10 +37,7 @@ export interface CoursePageModel extends CommonPageModel {
       nominative: string;
       genitive: string;
     },
-    promoPhotos: {
-      desktop: string;
-      mobile: string;
-    };
+    photo: string;
     avatar: string;
     edu: Edu[];
     position: string;
@@ -111,6 +108,7 @@ export interface SpeakerShort {
   id: number;
   name: string;
   avatar: string;
+  photoBackground: string;
 }
 
 export interface SpeakerShortCard {
@@ -129,10 +127,7 @@ export interface SpeakerPromo {
   name: string;
   specialization: string;
   photoBackground: string;
-  photos: {
-    desktop: string;
-    mobile: string;
-  };
+  photo: string;
 }
 
 export interface CourseProgram {

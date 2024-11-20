@@ -1,10 +1,10 @@
-import React, {ReactElement} from "react";
 import {getImageProps} from "next/image";
-import {SlideProps} from "./slide.props";
+import React, {ReactElement} from "react";
 import styles from "./slide.module.css";
+import {SlideProps} from "./slide.props";
 
 const Slide = ({speaker}: SlideProps): ReactElement | null => {
-  const {name, photos, specialization, photoBackground} = speaker;
+  const {name, photo, specialization, photoBackground} = speaker;
 
   const common = {alt: "", quality: 95};
   const {
@@ -14,7 +14,7 @@ const Slide = ({speaker}: SlideProps): ReactElement | null => {
     width: 482,
     height: 480,
     priority: true,
-    src: photos.desktop,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: laptop},
@@ -22,7 +22,7 @@ const Slide = ({speaker}: SlideProps): ReactElement | null => {
     ...common,
     width: 384,
     height: 433,
-    src: photos.desktop,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: tablet},
@@ -30,7 +30,7 @@ const Slide = ({speaker}: SlideProps): ReactElement | null => {
     ...common,
     width: 326,
     height: 200,
-    src: photos.mobile,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
   const {
     props: {srcSet: mobile},
@@ -38,7 +38,7 @@ const Slide = ({speaker}: SlideProps): ReactElement | null => {
     ...common,
     width: 234,
     height: 150,
-    src: photos.mobile,
+    src: `${process.env.BACKEND_API}${photo}`,
   });
 
   return (
