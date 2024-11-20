@@ -103,10 +103,7 @@ export const course: CoursePageModel = {
       "position": "Главврач клиники Мегаполис Дент",
       "specialization": "Стоматолог-хирург, пародонтолог",
       "workExperience": 1999,
-      "promoPhotos": {
-        "desktop": "/img/course-page/promo/speaker-desktop.png",
-        "mobile": "/img/course-page/promo/speaker-mobile.png",
-      },
+      "photo": "/img/course-page/promo/speaker-desktop.png",
       "avatar": "/img/common/test.png",
       "edu": [
         {
