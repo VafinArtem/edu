@@ -44,7 +44,7 @@ export interface CoursePageModel extends CommonPageModel {
     position: string;
     specialization: string;
     workExperience: number;
-    aboutSlides: string[];
+    aboutSlides: string[][];
   }[];
   advantages?: string[];
   program: CourseProgram;
@@ -103,7 +103,7 @@ export interface Speaker {
   photoBackground: string;
   cite?: string;
   edu: Edu[];
-  aboutSlides: string[];
+  aboutSlides: string[][];
 }
 
 export interface SpeakerShort {

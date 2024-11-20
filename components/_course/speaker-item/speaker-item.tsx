@@ -67,8 +67,10 @@ const SpeakerItem = ({
               setIsEnd(swiper.isEnd);
             }}
           >
-            {aboutSlides.map((text, index) => <SwiperSlide key={index} className={styles.slide}>
-              <div className={styles.slideContent} dangerouslySetInnerHTML={{__html: text}}></div>
+            {aboutSlides.map((text, textIndex) => <SwiperSlide key={textIndex} className={styles.slide}>
+              <div className={styles.slideContent}>
+                {text.map((item, index) => (<p key={`${textIndex}-${index}`}>{item}</p>))}
+              </div>
             </SwiperSlide>)}
           </Swiper>
           <div className={styles.buttons}>
