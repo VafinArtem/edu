@@ -91,6 +91,7 @@ export const course: CoursePageModel = {
   "speakers": [
     {
       "id": 1,
+      "alias": "volkova-yulia",
       "surname": "Волкова",
       "name": {
         "nominative": "Юлия",
