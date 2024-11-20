@@ -93,6 +93,25 @@
 
 .desc {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.desc > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.desc a {
+  color: var(--primary);
+}
+
+.desc a:hover,
+.desc a:focus-visible {
+  color: var(--primary-2);
 }
 
 .photos {
@@ -143,6 +162,10 @@
   .contact {
 	font-size: 2.3rem;
   }
+
+  .desc {
+	font-size: 1.7rem;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -192,6 +215,7 @@
 
   .desc {
 	grid-column: initial;
+	font-size: 1.6rem;
   }
 
   .photos {
@@ -268,5 +292,9 @@
 
   .photo:nth-child(n + 4) {
 	display: flex;
+  }
+
+  .desc {
+	font-size: 1.4rem;
   }
 }
