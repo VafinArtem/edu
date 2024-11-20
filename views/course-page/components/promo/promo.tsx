@@ -1,14 +1,15 @@
 "use client";
 
-import React, {ReactElement} from "react";
-import clsx from "clsx";
-import dynamic from "next/dynamic";
-import {PromoProps} from "./promo.props";
-import styles from "./promo.module.css";
+import Button from "@/components/_buttons/button/button";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import Button from "@/components/_buttons/button/button";
 import Slider from "@/views/course-page/components/promo/components/slider/slider";
+import clsx from "clsx";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import React, {ReactElement} from "react";
+import styles from "./promo.module.css";
+import {PromoProps} from "./promo.props";
 
 const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
@@ -41,8 +42,7 @@ const Promo = ({
           <Paragraph className={styles.text}>{description}</Paragraph>
         </div>
         <div className={styles.footer}>
-          <Button onClick={() => {
-          }}>Записаться на {courseTypeName.toLowerCase()}</Button>
+          <Button component={Link} href={`#registration`}>Записаться на {courseTypeName.toLowerCase()}</Button>
           {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`} />}
         </div>
       </div>

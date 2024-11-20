@@ -23,7 +23,7 @@ const SpeakerItem = ({
   video,
   workExperience,
   edu,
-  id,
+  alias,
   cite,
   aboutSlides,
   photoBackground,
@@ -90,15 +90,15 @@ const SpeakerItem = ({
         </div>
       </div>
       {cite && <blockquote className={styles.cite}>{cite}</blockquote>}
-      <div className={styles.edu}>
+      {(edu && edu.length > 0) && <div className={styles.edu}>
         <div className={styles.eduHead}>
           <Heading tag={`h4`} fontSize={`mini`}>Образование и&nbsp;награды</Heading>
-          <ExternalBgLink href={`${Route.SPEAKERS}/${id}`}>Страница преподавателя</ExternalBgLink>
+          <ExternalBgLink href={`${Route.SPEAKER}/${alias}`}>Страница преподавателя</ExternalBgLink>
         </div>
-        {(edu && edu.length > 0) && <ul className={styles.eduList}>
+        <ul className={styles.eduList}>
           {edu.map((item, index) => <EduItem className={styles.eduItem} key={index} {...item} />)}
-        </ul>}
-      </div>
+        </ul>
+      </div>}
     </li>
   );
 };

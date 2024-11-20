@@ -51,8 +51,6 @@ const CoursesLayout = async (props: {
     page = await getCoursesPage(fetchedParams.slug, search);
   }
 
-  console.log(page);
-
   if (!page) {
     notFound();
   }

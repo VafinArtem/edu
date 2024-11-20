@@ -93,6 +93,7 @@ export interface Edu {
 export interface Speaker {
   video?: string;
   id: number;
+  alias: string;
   photo: string;
   name: string;
   position: string;

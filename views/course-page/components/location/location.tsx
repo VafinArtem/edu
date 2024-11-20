@@ -1,13 +1,13 @@
 "use client";
 
-import React, {ReactElement} from "react";
-import {LocationProps} from "./location.props";
-import styles from "./location.module.css";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import Image from "next/image";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import React, {ReactElement} from "react";
+import styles from "./location.module.css";
+import {LocationProps} from "./location.props";
 
 const YaMap = dynamic(async () => await import("./components/ya-map/ya-map"), {
   ssr: false,
@@ -43,7 +43,8 @@ const Location = ({className, place}: LocationProps): ReactElement | null => {
           {desc && <Paragraph className={styles.desc}>{desc}</Paragraph>}
           {(photos && photos.length > 0) && <div className={styles.photos}>
             {photos.map((photo, index) => (
-              <Image className={styles.photo} key={index} src={photo} alt={``} width={425} height={292} />))}
+              <Image className={styles.photo} key={index} src={`${process.env.BACKEND_API}${photo}`} alt={``}
+                width={425} height={292} />))}
           </div>}
         </div>}
 

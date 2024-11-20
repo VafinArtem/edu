@@ -1,20 +1,20 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import {RecordFormProps} from "./record-form.props";
-import styles from "./record-form.module.css";
-import Heading from "@/components/_tags/heading/heading";
-import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {orderWithTariff} from "@/actions";
+import Button from "@/components/_buttons/button/button";
 import Price from "@/components/_common/price/price";
 import {Input} from "@/components/_form/input/input";
-import Button from "@/components/_buttons/button/button";
-import dynamic from "next/dynamic";
-import {SubmitHandler, useForm} from "react-hook-form";
-import {orderWithTariff} from "@/actions";
+import Heading from "@/components/_tags/heading/heading";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
 import clsx from "clsx";
+import dynamic from "next/dynamic";
+import React, {ReactElement, useState} from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
 import IconError from "./error.svg";
+import styles from "./record-form.module.css";
+import {RecordFormProps} from "./record-form.props";
 import IconSuccess from "./success.svg";
 
 const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
@@ -63,7 +63,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     <section className={clsx(styles.wrapper, {
       [styles.success]: answerType === "success",
       [styles.error]: answerType === "error",
-    })}>
+    })} id={`registration`}>
       <div className={clsx(styles.textContent, {
         [styles.hidden]: answerType,
       })}>

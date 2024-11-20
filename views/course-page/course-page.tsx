@@ -138,7 +138,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           city: city.name,
           metro: {
             station: place.metro,
-            icon: city.metroIcon,
+            icon: `${process.env.BACKEND_API}${city.metroIcon}`,
           },
           photos: place.photos,
           desc: place.desc,
@@ -171,7 +171,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         </div>
       </ContainerWhite>
 
-      {similarCourses && <SimilarCourses
+      {similarCourses && similarCourses.length > 0 && <SimilarCourses
         className={`container`}
         title={`Может заинтересовать`}
         cardColor={`white`}
