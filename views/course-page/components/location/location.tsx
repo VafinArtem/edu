@@ -15,7 +15,7 @@ const YaMap = dynamic(async () => await import("./components/ya-map/ya-map"), {
 
 const Location = ({className, place}: LocationProps): ReactElement | null => {
   const {city, address, metro, desc, photos, position} = place;
-  const coordinates: [number, number] = position.toReversed() as [number, number];
+  const coordinates: [number, number] = position ? position.toReversed() as [number, number] : [0, 0];
 
   return (
     <>
