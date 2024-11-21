@@ -76,6 +76,15 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
 
       <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />
 
+      <div className="container">
+        <RecordForm
+          tariffInfo={getMinTariff(tariffs)}
+          saleTimestamp={saleTimestamp}
+          courseId={id}
+          courseTypeName={typeName.nominative}
+        />
+      </div>
+
       <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
         speakers={speakers.map(({
           position,
@@ -103,15 +112,6 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           aboutSlides,
           photoBackground: colors.photoBackground,
         }))} />
-
-      <div className="container">
-        <RecordForm
-          tariffInfo={getMinTariff(tariffs)}
-          saleTimestamp={saleTimestamp}
-          courseId={id}
-          courseTypeName={typeName.nominative}
-        />
-      </div>
 
       <Schedule
         courseTypeName={typeName.genitive.toLowerCase()}
