@@ -48,7 +48,7 @@ const CourseShortItem = ({
         <div className={styles.footer}>
           {isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
             className={styles.complete}>Завершён</Paragraph>}
-          {!isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
+          {(Boolean(price) && !isPastCourse) && <Paragraph fontWeight={"medium"} fontSize={"none"}
             className={styles.price}>{formatPrice(price)} ₽</Paragraph>}
           <ButtonArrow
             component={Link}
