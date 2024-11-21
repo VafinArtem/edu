@@ -1,0 +1,9 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.location {
+  min-height: 591px;
+}

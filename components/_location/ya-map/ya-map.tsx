@@ -12,12 +12,10 @@ const YaMap = ({coordinates}: YaMapProps): ReactElement | null => {
   const location = {center: coordinates, zoom: 17};
 
   return (
-    <>
-      <YMap location={location} mode="vector">
-        <YMapDefaultSchemeLayer />
-        <YMapDefaultFeaturesLayer />
-      </YMap>
-    </>
+    <YMap location={location} mode="vector">
+      <YMapDefaultSchemeLayer />
+      <YMapDefaultFeaturesLayer />
+    </YMap>
   );
 };
 

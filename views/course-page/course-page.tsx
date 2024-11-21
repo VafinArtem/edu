@@ -2,7 +2,7 @@ import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
 import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
+import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import {convertCourseDates} from "@/helpers/dates-helpers";
 import {getMinTariff} from "@/helpers/helpers";
@@ -135,19 +135,22 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       {photos && photos.length > 0 && <Gallery photos={photos} />}
 
       <ContainerWhite>
-        <YaMapLoader />
 
-        {place && <Location className={`container`} place={{
-          position: place.position,
-          city: city.name,
-          metro: {
-            station: place.metro,
-            icon: `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}`,
-          },
-          photos: place.photos,
-          desc: place.desc,
-          address: place.address,
-        }} />}
+
+        {place && <>
+          <YaMapLoader />
+          <Location className={`container`} place={{
+            position: place.position,
+            city: city.name,
+            metro: {
+              station: place.metro,
+              icon: `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}`,
+            },
+            photos: place.photos,
+            desc: place.desc,
+            address: place.address,
+          }} />
+        </>}
 
         {qa && qa.length > 0 && <Faq qa={qa} className={`container`} />}
 
