@@ -23,6 +23,17 @@
   cursor: initial;
 }
 
+.button:not(:disabled):hover,
+.button:not(:disabled):focus-visible {
+  background-color: var(--primary-hover);
+}
+
+.button.primaryLight:not(:disabled):hover,
+.button.primaryLight:not(:disabled):focus-visible {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
 @media (max-width: 1499px) {
   .button {
 	padding: 18px 30px;
