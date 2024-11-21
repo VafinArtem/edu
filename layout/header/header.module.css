@@ -145,7 +145,7 @@
   .navigation {
 	grid-row: 2;
 	grid-column: 1/-1;
-	justify-self: center;
+	padding-left: 26px;
 	max-width: 314px;
 	width: 100%;
   }

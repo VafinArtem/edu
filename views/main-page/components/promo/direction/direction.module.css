@@ -75,7 +75,8 @@
 
 @media (max-width: 767px) {
   .wrapper {
-	width: 310px;
+	width: 200px;
+	padding-left: 20px;
   }
 
   .name {

@@ -20,8 +20,8 @@ const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null
       <div className={styles.content}>
         <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
         <Paragraph fontSize={"none"} className={styles.specialization}>{specialization}</Paragraph>
-        <Paragraph fontSize={"none"}
-          className={styles.coursesCount}>{coursesCount} {getDeclension(coursesCount, [`курс`, `курса`, `курсов`])}</Paragraph>
+        {coursesCount && <Paragraph fontSize={"none"}
+          className={styles.coursesCount}>{coursesCount} {getDeclension(coursesCount, [`курс`, `курса`, `курсов`])}</Paragraph>}
         <Paragraph fontSize={"none"}
           className={styles.direction} style={{color: direction.color}}>
           <span className={`visually-hidden`}>Направление: {direction.name}</span>

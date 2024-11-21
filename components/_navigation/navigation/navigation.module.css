@@ -9,6 +9,6 @@
 
 @media (max-width: 767px) {
   .list {
-	justify-content: space-between;
+	/*justify-content: space-between;*/
   }
 }
