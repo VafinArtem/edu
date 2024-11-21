@@ -12,9 +12,35 @@ import {Metadata} from "next";
 import {notFound} from "next/navigation";
 import React, {ReactElement} from "react";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{
+    slug?: string[],
+  }>,
+  searchParams?: Promise<Record<string, string>>;
+}): Promise<Metadata> {
+  const fetchedParams = await props.params;
+
+  const isCoursePage = fetchedParams.slug && fetchedParams.slug[fetchedParams.slug.length - 1].includes(SlugPart.COURSE);
+
+  if (!isCoursePage) {
+    return {
+      title: `Курсы - Учебный центра Амрита`,
+      description: ``,
+    };
+  }
+  const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
+
+  const page: null | {data: CoursePageModel, code: number} = await getCoursePage(alias ? alias : "");
+
+  if (!page || page.code !== 200) {
+    return {
+      title: `404`,
+    };
+  }
+
   return {
-    title: `Курсы - Учебный центра Амрита`,
+    title: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
+    description: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
   };
 }
 
