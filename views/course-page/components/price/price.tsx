@@ -63,7 +63,6 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
   });
 
   const [currentTariff, setCurrentTariff] = useState<number | null>(null);
-  const [contactType, setContactType] = useState<"phone" | "email" | null>(null);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
 
   return (

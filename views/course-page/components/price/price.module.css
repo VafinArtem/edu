@@ -64,7 +64,7 @@
 
 .hotIcon {
   flex-shrink: 0;
-  height: fit-content;
+  height: 40px;
 }
 
 .list {
