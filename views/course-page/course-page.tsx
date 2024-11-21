@@ -1,6 +1,5 @@
 import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
-import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import YaMapLoader from "@/components/_common/ya-map-loader/ya-map-loader";
 import ContainerWhite from "@/components/_section/container-white/container-white";
@@ -170,9 +169,9 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             photoBackground: colors.photoBackground,
           }))} />}
 
-        <div className="container">
-          <PromoRegistration />
-        </div>
+        {/*<div className="container">*/}
+        {/*  <PromoRegistration />*/}
+        {/*</div>*/}
       </ContainerWhite>
 
       {similarCourses && similarCourses.length > 0 && <SimilarCourses

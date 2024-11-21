@@ -1,10 +1,21 @@
+import {getDirections} from "@/api/directions";
 import MainPage from "@/views/main-page/main-page";
+import {Metadata} from "next";
 import React from "react";
 
-export default function Home() {
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `Учебный центра Амрита`,
+    description: ``,
+  };
+}
+
+const MainLayout = async () => {
+  const directions = await getDirections();
+
   return (
     <>
-      <MainPage />
+      <MainPage directions={directions?.answer.data ?? []} />
 
       {/*<ul className={`container`}>*/}
       {/*  <li>*/}
@@ -34,4 +45,6 @@ export default function Home() {
       {/*</ul>*/}
     </>
   );
-}
+};
+
+export default MainLayout;

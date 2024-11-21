@@ -1,12 +1,9 @@
-import PromoRegistration from "@/components/_common/promo-registration/promo-registration";
-import Subscribe from "@/components/_common/subscribe/subscribe";
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
 import ContainerWhite from "@/components/_section/container-white/container-white";
-import {coursesEight, courseTypes, directions, directionsWithSpecializations} from "@/mocs/courses";
+import {coursesEight, courseTypes, directions} from "@/mocs/courses";
 import {sixSpeakers} from "@/mocs/speakers";
 import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
-import Directions from "@/views/main-page/components/directions/directions";
 import Footer from "@/views/main-page/components/footer/footer";
 import Promo from "@/views/main-page/components/promo/promo";
 import Reviews from "@/views/main-page/components/reviews/reviews";
@@ -22,25 +19,25 @@ const MainPage = ({}: MainPageProps): ReactElement | null => {
     <>
       <Promo className={styles.promo} directions={directions} />
       <Courses courseTypes={courseTypes} courses={coursesEight} />
-      <Directions className={styles.directions} directions={directionsWithSpecializations} />
+      {/*<Directions className={styles.directions} directions={directionsWithSpecializations} />*/}
       <AboutLearning className={styles.learning} />
       <NotFindCourse className={styles.notFindCourse} />
       {/*
         Передаем максимум 6 спикеров
       */}
       <Speakers speakers={sixSpeakers} />
-      <div className="container">
-        <PromoRegistration />
-      </div>
+      {/*<div className="container">*/}
+      {/*  <PromoRegistration />*/}
+      {/*</div>*/}
       <ContainerPrimaryColor className={styles.purple}>
         <About className={`container`} />
         <Reviews className={`container`} />
 
       </ContainerPrimaryColor>
       <ContainerWhite className={styles.white}>
-        <div className="container">
-          <Subscribe />
-        </div>
+        {/*<div className="container">*/}
+        {/*  <Subscribe />*/}
+        {/*</div>*/}
         <Footer />
       </ContainerWhite>
     </>
