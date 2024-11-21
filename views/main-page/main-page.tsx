@@ -1,7 +1,5 @@
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
 import ContainerWhite from "@/components/_section/container-white/container-white";
-import {coursesEight, courseTypes, directions} from "@/mocs/courses";
-import {sixSpeakers} from "@/mocs/speakers";
 import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
 import Footer from "@/views/main-page/components/footer/footer";
@@ -14,21 +12,22 @@ import Speakers from "./components/speakers/speakers";
 import styles from "./main-page.module.css";
 import {MainPageProps} from "./main-page.props";
 
-const MainPage = ({}: MainPageProps): ReactElement | null => {
+const MainPage = ({directions, speakers, courses}: MainPageProps): ReactElement | null => {
   return (
     <>
       <Promo className={styles.promo} directions={directions} />
-      <Courses courseTypes={courseTypes} courses={coursesEight} />
+      {courses.length > 0 && <Courses courses={courses} />}
+
       {/*<Directions className={styles.directions} directions={directionsWithSpecializations} />*/}
+
       <AboutLearning className={styles.learning} />
       <NotFindCourse className={styles.notFindCourse} />
-      {/*
-        Передаем максимум 6 спикеров
-      */}
-      <Speakers speakers={sixSpeakers} />
+      {speakers.length > 0 && <Speakers speakers={speakers} />}
+
       {/*<div className="container">*/}
       {/*  <PromoRegistration />*/}
       {/*</div>*/}
+
       <ContainerPrimaryColor className={styles.purple}>
         <About className={`container`} />
         <Reviews className={`container`} />

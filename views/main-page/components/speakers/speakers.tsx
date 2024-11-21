@@ -19,7 +19,7 @@ const Speakers = ({speakers}: SpeakersProps): ReactElement | null => {
           курсов и&nbsp;мастер-классов.</Paragraph>
         <ButtonArrow
           component={Link}
-          href={Route.COURSES}
+          href={Route.SPEAKERS}
           iconDirection={"mid-right"}
           color={"primary"}
           className={styles.link}

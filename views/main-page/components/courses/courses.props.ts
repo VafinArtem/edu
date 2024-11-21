@@ -1,7 +1,7 @@
-import {Option} from "@/interfaces/courses";
 import {CourseShort} from "@/interfaces/course";
+import {Option} from "@/interfaces/courses";
 
 export interface CoursesProps {
-  courseTypes: Option[];
+  courseTypes?: Option[];
   courses: CourseShort[];
 }

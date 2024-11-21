@@ -1,4 +1,7 @@
+import {getCoursesPage} from "@/api/courses-page";
 import {getDirections} from "@/api/directions";
+import {getSpeakersPage} from "@/api/speakers-page";
+import {CourseShort, SpeakerShortCard} from "@/interfaces/course";
 import MainPage from "@/views/main-page/main-page";
 import {Metadata} from "next";
 import React from "react";
@@ -12,37 +15,32 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const MainLayout = async () => {
   const directions = await getDirections();
+  const speakersData = await getSpeakersPage({
+    limit: 6,
+    searchParams: {
+      sort: "RAND",
+    },
+  });
+  const coursesData = await getCoursesPage(undefined, undefined, 8);
+
+  let courses: CourseShort[] = [];
+  let speakers: SpeakerShortCard[] = [];
+
+  if (coursesData && coursesData.code === 200) {
+    courses = coursesData.data.courses;
+  }
+
+  if (speakersData && speakersData.code === 200) {
+    speakers = speakersData.answer.data;
+  }
 
   return (
     <>
-      <MainPage directions={directions?.answer.data ?? []} />
-
-      {/*<ul className={`container`}>*/}
-      {/*  <li>*/}
-      {/*    <Link href={Route.COURSES} style={{textDecoration: `underline`}}>Курсы</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/preview`} style={{textDecoration: `underline`}}>Один курс - превью</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/course-klinicheskaya-paradantalogya`} style={{textDecoration: `underline`}}>Карточка*/}
-      {/*      курса 1 (Только локально)</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.COURSES}/course-bazovyi-kurs-po-implantologii-ortopedicheskii-etap`}*/}
-      {/*      style={{textDecoration: `underline`}}>Карточка курса 2 (Только локально)</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={Route.SPEAKERS} style={{textDecoration: `underline`}}>Преподаватели</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.SPEAKERS}/preview`} style={{textDecoration: `underline`}}>Преподаватель - превью</Link>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <Link href={`${Route.SPEAKERS}/volkova-yulia-valerievna`}*/}
-      {/*      style={{textDecoration: `underline`}}>Преподаватель 1 (Только локально)</Link>*/}
-      {/*  </li>*/}
-      {/*</ul>*/}
+      <MainPage
+        directions={directions?.answer.data ?? []}
+        speakers={speakers}
+        courses={courses}
+      />
     </>
   );
 };

@@ -2,7 +2,7 @@ import {API} from "@/api/constants";
 import {SlugPart} from "@/helpers/contants";
 import {CoursesPageModel} from "@/interfaces/courses";
 
-export async function getCoursesPage(slug?: string[], searchParams?: Record<string, string>): Promise<{
+export async function getCoursesPage(slug?: string[], searchParams?: Record<string, string>, limit?: number): Promise<{
   data: CoursesPageModel,
   code: number
 } | null> {
@@ -22,6 +22,7 @@ export async function getCoursesPage(slug?: string[], searchParams?: Record<stri
   const query = {
     categories,
     searchParams,
+    limit,
   };
 
   const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(query);
