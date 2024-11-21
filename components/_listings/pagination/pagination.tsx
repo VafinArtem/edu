@@ -1,9 +1,9 @@
-import React, {ReactElement, useEffect, useState} from "react";
-import {PaginationProps} from "./pagination.props";
-import styles from "./pagination.module.css";
 import clsx from "clsx";
-import IconArrows from "./arrows.svg";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import React, {ReactElement, useEffect, useState} from "react";
+import IconArrows from "./arrows.svg";
+import styles from "./pagination.module.css";
+import {PaginationProps} from "./pagination.props";
 
 const Pagination = ({pages, currentPage, className}: PaginationProps): ReactElement | null => {
   const searchParams = useSearchParams();

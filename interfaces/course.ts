@@ -22,7 +22,7 @@ export interface CoursePageModel extends CommonPageModel {
   };
   saleTimestamp?: number;
   city: {
-    name: string;
+    name?: string;
     metroIcon?: string;
   };
   tariffs: TariffInfo[];
@@ -160,7 +160,7 @@ export interface TariffInfo {
 }
 
 export interface Place {
-  city: string;
+  city?: string;
   address: string;
   desc?: string;
   metro: {

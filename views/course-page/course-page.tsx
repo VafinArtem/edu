@@ -136,12 +136,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       <ContainerWhite>
         <YaMapLoader />
 
-        {place && <Location className={`container`} place={{
+        {(place && city) && <Location className={`container`} place={{
           position: place.position,
           city: city.name,
           metro: {
             station: place.metro,
-            icon: `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}`,
+            icon: city.metroIcon ? `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}` : undefined,
           },
           photos: place.photos,
           desc: place.desc,
