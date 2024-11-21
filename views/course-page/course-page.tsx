@@ -120,12 +120,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         className={`container`}
       />
 
-      <Price
+      {(tariffs && tariffs.length > 0) && <Price
         courseId={id}
         tariffs={tariffs}
         saleTimestamp={saleTimestamp}
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
-      />
+      />}
 
       <div className="container">
         <Certificate courseTypeName={typeName.genitive.toLowerCase()} />

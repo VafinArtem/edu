@@ -42,7 +42,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: tariffInfo.id, courseId},
+      data: {...data, tariff: tariffInfo.id ?? null, courseId},
     });
 
     setAnswerType(res);
@@ -70,11 +70,11 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
           стоимости</Heading>
         <Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет
           увеличиваться.</Paragraph>
-        <div className={styles.footer}>
+        {Boolean(tariffInfo.id) && <div className={styles.footer}>
           <Price oldPrice={tariffInfo.old} price={tariffInfo.current} />
           {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`}
             withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />}
-        </div>
+        </div>}
       </div>
       <form className={clsx(styles.form, {
         [styles.hidden]: answerType,
