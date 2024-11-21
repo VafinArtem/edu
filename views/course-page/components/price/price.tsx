@@ -1,23 +1,23 @@
 "use client";
 
+import {orderWithTariff} from "@/actions";
+import Button from "@/components/_buttons/button/button";
+import TariffInfo from "@/components/_course/tariff-info/tariff-info";
+import {Input} from "@/components/_form/input/input";
+import Heading from "@/components/_tags/heading/heading";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {RegularExp} from "@/helpers/contants";
+import {formatPhoneNumber} from "@/helpers/helpers";
+import useOpenModal from "@/hooks/useOpenModal";
+import clsx from "clsx";
+import dynamic from "next/dynamic";
 import React, {ReactElement, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
-import dynamic from "next/dynamic";
-import {PriceProps} from "./price.props";
-import styles from "./price.module.css";
-import Heading from "@/components/_tags/heading/heading";
-import clsx from "clsx";
-import TariffInfo from "@/components/_course/tariff-info/tariff-info";
-import Paragraph from "@/components/_tags/paragraph/paragraph";
-import {Input} from "@/components/_form/input/input";
-import Button from "@/components/_buttons/button/button";
-import useOpenModal from "@/hooks/useOpenModal";
-import {formatPhoneNumber} from "@/helpers/helpers";
-import {RegularExp} from "@/helpers/contants";
-import {orderWithTariff} from "@/actions";
-import IconFire from "./fire.svg";
-import IconSuccess from "./success.svg";
 import IconError from "./error.svg";
+import IconFire from "./fire.svg";
+import styles from "./price.module.css";
+import {PriceProps} from "./price.props";
+import IconSuccess from "./success.svg";
 
 const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
@@ -102,40 +102,33 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
             />
             <Input
               className={styles.input}
-              labelName={`Номер телефона или email`}
-              placeholder={`Номер телефона или email*`} {...register("contact", {
-                pattern: {
-                  value: contactType === "phone" ? RegularExp.PHONE_REG : RegularExp.EMAIL,
-                  message: `Номер телефона или email обязателен`,
+              labelName={`Номер телефона`}
+              placeholder={`Номер телефона*`}
+              {...register("contact", {
+                  pattern: {
+                    value: RegularExp.PHONE_REG,
+                    message: `Номер телефона обязателен`,
+                  },
+                  required: true,
                 },
-                required: true,
-              },
-            )}
+              )}
               error={errors.contact}
               isValid={validatingFields.contact}
               color={"gray"}
               onChange={(evt) => {
                 const self = evt.currentTarget;
 
-                if (self.value.match(RegularExp.EMAIL) !== null) {
-                  setContactType("email");
-                  clearErrors("contact");
-                  return;
-                }
-
                 const phone = formatPhoneNumber(self.value);
 
                 if (phone.match(RegularExp.PHONE_REG) !== null) {
                   self.value = phone;
-                  setContactType("phone");
                   clearErrors("contact");
                   return;
                 }
 
-                setContactType(null);
                 setError("contact", {
                   type: "pattern",
-                  message: "Проверьте правильность ввода контакта",
+                  message: "Проверьте правильность ввода телефона",
                 });
               }}
             />
@@ -150,11 +143,9 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
             отправлена <IconSuccess className={styles.icon} width="40" height="40" /></>}</Heading>
           <div className={styles.answerContent}>
             {answerType === "error" && <>
-              <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, подождите минут
-                20&nbsp;и&nbsp;попробуйте снова. Возможно, на&nbsp;сайте случилась поломка и&nbsp;прямо сейчас
-                мы&nbsp;её&nbsp;исправляем.</p>
-              <p>Или можете не&nbsp;дожидаться починки и&nbsp;позвонить нам в&nbsp;учебный центр&nbsp;<a
-                href={`tel:+79312011400`}>+7 (931) 201-14-00</a></p>
+              <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, отправьте форму ещё
+                раз через 5&nbsp;минут. Или позвоните нам в&nbsp;учебный центр&nbsp;<a href="tel:+79312011400">+7 (931)
+                  201-14-00</a></p>
             </>}
             {answerType === "success" &&
               <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки и&nbsp;оплаты курса.</p>}

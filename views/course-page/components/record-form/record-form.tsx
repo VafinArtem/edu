@@ -22,7 +22,6 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
 });
 
 const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: RecordFormProps): ReactElement | null => {
-  const [contactType, setContactType] = useState<"phone" | "email" | null>(null);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
   const {
     register,
@@ -88,12 +87,13 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
           isValid={validatingFields.name}
         />
         <Input
-          placeholder={`Номер телефона или email*`}
-          labelName={`Номер телефона или email`}
+          labelName={`Номер телефона`}
+          className={styles.input}
+          placeholder={`Номер телефона*`}
           {...register("contact", {
               pattern: {
-                value: contactType === "phone" ? RegularExp.PHONE_REG : RegularExp.EMAIL,
-                message: `Номер телефона или email обязателен`,
+                value: RegularExp.PHONE_REG,
+                message: `Номер телефона обязателен`,
               },
               required: true,
             },
@@ -103,25 +103,17 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
           onChange={(evt) => {
             const self = evt.currentTarget;
 
-            if (self.value.match(RegularExp.EMAIL) !== null) {
-              setContactType("email");
-              clearErrors("contact");
-              return;
-            }
-
             const phone = formatPhoneNumber(self.value);
 
             if (phone.match(RegularExp.PHONE_REG) !== null) {
               self.value = phone;
-              setContactType("phone");
               clearErrors("contact");
               return;
             }
 
-            setContactType(null);
             setError("contact", {
               type: "pattern",
-              message: "Проверьте правильность ввода контакта",
+              message: "Проверьте правильность ввода телефона",
             });
           }}
         />

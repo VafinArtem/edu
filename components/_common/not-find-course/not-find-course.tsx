@@ -1,19 +1,19 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import {NotFindCourseProps} from "./not-find-course.props";
-import styles from "./not-find-course.module.css";
-import clsx from "clsx";
+import {sendComment} from "@/actions";
+import Button from "@/components/_buttons/button/button";
+import {Input} from "@/components/_form/input/input";
+import {Textarea} from "@/components/_form/textarea/textarea";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import {Input} from "@/components/_form/input/input";
-import Button from "@/components/_buttons/button/button";
-import {Textarea} from "@/components/_form/textarea/textarea";
-import {SubmitHandler, useForm} from "react-hook-form";
-import {sendComment} from "@/actions";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import clsx from "clsx";
+import React, {ReactElement, useState} from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
 import IconError from "./error.svg";
+import styles from "./not-find-course.module.css";
+import {NotFindCourseProps} from "./not-find-course.props";
 import IconSuccess from "./success.svg";
 
 const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => {
@@ -70,8 +70,8 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
           </div>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Textarea
-              labelName={`Ваш комментарий`}
-              placeholder={`Ваш комментарий*`}
+              labelName={`Какой курс вы ищите`}
+              placeholder={`Какой курс вы ищите*`}
               {...register("comment", {required: {value: true, message: "Комментарий обязателен"}})}
               className={styles.textarea}
               error={errors.comment}
@@ -122,9 +122,9 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
             className={styles.icon} width="70" height="70" /> Сообщение отправлено </>}</Heading>
           <div className={styles.answerContent}>
             {answerType === "error" && <>
-              <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, подождите минут 20
-                и&nbsp;попробуйте снова. Возможно, на&nbsp;сайте случилась поломка и&nbsp;прямо сейчас
-                мы&nbsp;её&nbsp;исправляем.</p>
+              <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, отправьте форму ещё
+                раз через 5&nbsp;минут. Или позвоните нам в&nbsp;учебный центр&nbsp;<a href="tel:+79312011400">+7 (931)
+                  201-14-00</a></p>
             </>}
           </div>
         </div>}
