@@ -38,7 +38,7 @@ const ScheduleItem = ({schedule}: ScheduleItemProps): ReactElement | null => {
             className={clsx(styles.time, styles.black, styles.right)}>{item.times.start}{item.times.end ? ` — ${item.times.end}` : ``}</span>
         </li>))}
       </ul>
-      <ButtonArrow
+      {schedule.list.length > 6 && <ButtonArrow
         className={styles.button}
         color={ButtonColor[schedule.color]}
         iconDirection={showAllItems ? "top-right" : "bottom-right"}
@@ -46,7 +46,7 @@ const ScheduleItem = ({schedule}: ScheduleItemProps): ReactElement | null => {
           setShowAllItems(!showAllItems);
         }}
         borderColor={"light"}
-      >{showAllItems ? `Скрыть` : `Раскрыть`}</ButtonArrow>
+      >{showAllItems ? `Скрыть` : `Раскрыть`}</ButtonArrow>}
     </li>
   );
 };
