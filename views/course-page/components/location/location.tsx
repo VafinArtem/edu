@@ -3,25 +3,24 @@
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import React, {ReactElement} from "react";
 import styles from "./location.module.css";
 import {LocationProps} from "./location.props";
 
-const YaMap = dynamic(async () => await import("./components/ya-map/ya-map"), {
-  ssr: false,
-});
+// const YaMap = dynamic(async () => await import("./components/ya-map/ya-map"), {
+//   ssr: false,
+// });
 
 const Location = ({className, place}: LocationProps): ReactElement | null => {
   const {city, address, metro, desc, photos, position} = place;
-  const coordinates: [number, number] = position ? position.toReversed() as [number, number] : [0, 0];
+  // const coordinates: [number, number] = position ? position.toReversed() as [number, number] : [0, 0];
 
   return (
     <>
       <section className={clsx(className, styles.wrapper)}>
         <div className={styles.map}>
-          <YaMap coordinates={coordinates} />
+          {/*<YaMap coordinates={coordinates} />*/}
         </div>
         <div className={styles.content}>
           <Heading tag={`h2`} className={styles.title}>Место проведения интенсива <span
