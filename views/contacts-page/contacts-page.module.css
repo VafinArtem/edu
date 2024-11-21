@@ -7,3 +7,9 @@
 .location {
   min-height: 591px;
 }
+
+@media (max-width: 1499px) {
+  .location {
+	min-height: 466px;
+  }
+}

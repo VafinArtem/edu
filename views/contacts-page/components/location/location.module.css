@@ -8,6 +8,8 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   padding-top: 50px;
   padding-left: 40px;
   padding-bottom: 50px;
@@ -32,4 +34,52 @@
 .map {
   border-radius: 30px;
   overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  gap: 40px;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact {
+  font-size: 2.6rem;
+}
+
+.contact:hover,
+.contact:focus-visible {
+  color: var(--primary);
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	grid-template-columns: 1fr 47%;
+	gap: 60px;
+  }
+
+  .content {
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+  }
+
+  .title {
+	margin-bottom: 15px;
+  }
+
+  .address {
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+  }
+
+  .contact {
+	font-size: 2.3rem;
+  }
 }

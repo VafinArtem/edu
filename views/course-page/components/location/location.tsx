@@ -1,5 +1,6 @@
 "use client";
 
+import YaDirectionButton from "@/components/_buttons/ya-direction-button/ya-direction-button";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
@@ -30,8 +31,7 @@ const Location = ({className, place}: LocationProps): ReactElement | null => {
           <Paragraph fontSize={"small"} className={styles.metro}>{metro.icon &&
             <Image src={metro.icon} width={24} height={24}
               alt={`Иконка метро ${city}`} />} {metro.station}</Paragraph>}
-        <a href={`https://yandex.ru/maps/?rtext=~${position[0]}%2C${position[1]}`} target="_blank"
-          rel="noopener noreferrer" className={styles.direction}>Проложить маршрут</a>
+        <YaDirectionButton backgroundColor={"primary"} position={position} className={styles.direction} />
         <div className={styles.contacts}>
           <a href={`mailto:edu@amrita-dent.ru`} className={styles.contact}>edu@amrita-dent.ru</a>
           <a href={`tel:+78005500524`} className={styles.contact}>8-800-550-05-24</a>

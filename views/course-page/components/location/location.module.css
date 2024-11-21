@@ -47,32 +47,7 @@
 }
 
 .direction {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
   margin-top: 20px;
-  padding: 10px;
-  font-size: 1.8rem;
-  color: var(--primary);
-  background-color: var(--primary-light);
-  border-radius: 10px;
-}
-
-.direction::before {
-  content: "";
-  width: 23px;
-  height: 23px;
-  background-image: url("/img/components/location/ya-pin.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.direction:hover,
-.direction:focus-visible {
-  color: var(--primary-light);
-  background-color: var(--primary);
 }
 
 .contacts {
@@ -145,10 +120,6 @@
 
   .map {
 	border-radius: 40px;
-  }
-
-  .direction {
-	font-size: 1.6rem;
   }
 
   .city {
