@@ -76,6 +76,9 @@
 @media (max-width: 767px) {
   .wrapper {
 	width: 200px;
+  }
+
+  .link {
 	padding-left: 20px;
   }
 
