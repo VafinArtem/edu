@@ -57,7 +57,7 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
         })}>
           {speakers.map((item, index) => <Image quality={95} className={clsx(styles.avatar, {
               [styles.oneSpeaker]: speakers.length === 1,
-            })} src={item.avatar} alt={``}
+            })} src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${item.avatar}`} alt={``}
               width={330}
               height={166}
               style={{zIndex: speakers.length - index, backgroundColor: item.photoBackground}}
