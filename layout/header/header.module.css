@@ -124,6 +124,10 @@
 	box-shadow: none;
   }
 
+  .header.white .wrapper {
+	border: none;
+  }
+
   .header.blur .wrapper {
 	background-color: transparent;
 	backdrop-filter: none;
@@ -154,6 +158,19 @@
   .user {
 	padding-top: 10px;
 	padding-bottom: 10px;
+  }
+
+  .header.white .left,
+  .header.white .user {
+	border: 1px solid var(--gray-200);
+  }
+
+  .header.white .left {
+	border-right: none;
+  }
+
+  .header.white .user {
+	border-left: none;
   }
 
   .header:not(.blur) .left,

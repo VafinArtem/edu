@@ -13,3 +13,9 @@
 	min-height: 466px;
   }
 }
+
+@media (max-width: 767px) {
+  .head {
+	gap: 20px;
+  }
+}

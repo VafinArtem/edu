@@ -20,7 +20,7 @@ const Location = ({className}: LocationProps): ReactElement | null => {
   return (
     <section className={clsx(styles.wrapper, className)}>
       <div className={styles.content}>
-        <Paragraph fontSize={"asDefaultTitle"} className={styles.title}>Находимся<br />
+        <Paragraph fontSize={"asDefaultTitle"} className={styles.title}>Находимся <br className={styles.noTablet} />
           в&nbsp;Санкт-Петербурге</Paragraph>
         <address className={styles.address}>Московский проспект, дом 183-185, Учебный центр Амрита, помещение 800-H
         </address>
