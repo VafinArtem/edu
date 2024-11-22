@@ -1,5 +1,6 @@
 import Heading from "@/components/_tags/heading/heading";
 import Gallery from "@/views/contacts-page/components/gallery/gallery";
+import Geography from "@/views/contacts-page/components/geography/geography";
 import Location from "@/views/contacts-page/components/location/location";
 import clsx from "clsx";
 import React, {ReactElement} from "react";
@@ -14,6 +15,7 @@ const ContactsPage = ({}: ContactsPageProps): ReactElement | null => {
         <Location className={styles.location} />
       </div>
       <Gallery />
+      <Geography className={`container`} />
     </>
   );
 };
