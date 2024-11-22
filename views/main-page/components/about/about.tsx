@@ -24,7 +24,7 @@ const About = ({className}: AboutProps): ReactElement | null => {
           </div>
           <Paragraph className={clsx(styles.text, styles.learning)}>
             <span>
-            <span className={styles.medium}>Имеем лицензию комитета по&nbsp;образованию:</span> после прохожденния
+            <span className={styles.medium}>Имеем лицензию комитета по&nbsp;образованию:</span> после прохождения
             курсов, специалисты получат удостоверение государственного образца
             с&nbsp;внесением данных в&nbsp;федеральную информационную систему.
             </span>

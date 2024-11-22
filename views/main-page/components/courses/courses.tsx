@@ -14,7 +14,7 @@ const Courses = ({courseTypes, courses}: CoursesProps): ReactElement | null => {
     <SectionItem className={`container`}>
       <div className={styles.head}>
         <Paragraph fontSize={"none"} className={styles.topText}>Каждый месяц&nbsp;&mdash; разнообразный выбор лекций,
-          мастер-классов и&nbsp;вебинаров. <span className={styles.gray}>Для опытнах и&nbsp;начинающих специалистов разных направлений.</span></Paragraph>
+          мастер-классов и&nbsp;вебинаров. <span className={styles.gray}>Для опытных и&nbsp;начинающих специалистов разных направлений.</span></Paragraph>
         {courseTypes && <div className={styles.filters}>
           {courseTypes.map((type) => <FilterButton key={type.value} option={type} />)}
         </div>}

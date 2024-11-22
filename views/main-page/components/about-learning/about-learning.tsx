@@ -2,11 +2,11 @@ import BiggestRoundButton from "@/components/_buttons/biggest-round-button/bigge
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {Route} from "@/helpers/route";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import React, {ReactElement} from "react";
-import {Route} from "../../../../helpers/route";
 import styles from "./about-learning.module.css";
 import {AboutLearningProps} from "./about-learning.props";
 
@@ -22,7 +22,7 @@ const AboutLearning = ({className}: AboutLearningProps): ReactElement | null => 
             и&nbsp;без отрыва от&nbsp;работы.</Paragraph>
           <Image src={"/img/components/about-learning/img.png"} alt={""} width={380} height={161} quality={95}
             className={styles.img} />
-          <Paragraph>В&nbsp;курсах вы&nbsp;найдёте уникальные видео с&nbsp;проведеним оперативных вмешательств
+          <Paragraph>В&nbsp;курсах вы&nbsp;найдёте уникальные видео с&nbsp;проведением оперативных вмешательств
             от&nbsp;ведущих преподавателей учебного центра &laquo;Амрита&raquo;.</Paragraph>
         </div>
         <div className={styles.videoContent}>
