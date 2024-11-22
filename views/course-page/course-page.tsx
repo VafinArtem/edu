@@ -134,9 +134,11 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       {photos && photos.length > 0 && <Gallery photos={photos} />}
 
       <ContainerWhite>
-        <YaMapLoader />
 
-        {(place && city) && <Location className={`container`} place={{
+
+        {(place && city) && <>
+          <YaMapLoader />
+          <Location className={`container`} place={{
           position: place.position,
           city: city.name,
           metro: {
@@ -146,7 +148,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           photos: place.photos,
           desc: place.desc,
           address: place.address,
-        }} />}
+        }} /></>}
 
         {qa && qa.length > 0 && <Faq qa={qa} className={`container`} />}
 

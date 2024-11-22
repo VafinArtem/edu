@@ -1,0 +1,27 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+@media (max-width: 1499px) {
+  .head {
+	margin-left: 20px;
+	margin-right: 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .head {
+	gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .head {
+	margin-left: 15px;
+	margin-right: 15px;
+  }
+}

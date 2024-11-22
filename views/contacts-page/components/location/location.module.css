@@ -1,0 +1,162 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 53%;
+  gap: 90px;
+  padding: 20px;
+  background-color: var(--gray-100);
+  border-radius: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-left: 40px;
+  padding-bottom: 50px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.address {
+  margin-bottom: 15px;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.workHours {
+  margin-bottom: 20px;
+}
+
+.map {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  gap: 40px;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact {
+  font-size: 2.6rem;
+}
+
+.contact:hover,
+.contact:focus-visible {
+  color: var(--primary);
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	grid-template-columns: 1fr 47%;
+	gap: 60px;
+  }
+
+  .content {
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+  }
+
+  .title {
+	margin-bottom: 15px;
+  }
+
+  .address {
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+  }
+
+  .contact {
+	font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+	grid-template-columns: 100%;
+	gap: 30px;
+  }
+
+  .map {
+	height: 300px;
+  }
+
+  .content {
+	padding-bottom: 0;
+	padding-right: 30px;
+  }
+
+  .title {
+	margin-bottom: 10px;
+  }
+
+  .footer {
+	padding-top: 30px;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+  }
+
+  .contacts {
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	row-gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+	padding: 10px;
+	border-radius: 20px;
+  }
+
+  .content {
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+  }
+
+  .address {
+	margin-bottom: 10px;
+	font-size: 1.6rem;
+  }
+
+  .map {
+	height: 250px;
+	border-radius: 15px;
+  }
+
+  .footer {
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 20px;
+  }
+
+  .contacts {
+	flex-direction: column;
+  }
+
+  .contact {
+	font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .noTablet {
+	display: none;
+  }
+}

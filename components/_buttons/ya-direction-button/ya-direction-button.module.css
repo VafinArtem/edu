@@ -1,0 +1,56 @@
+.direction {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px;
+  font-size: 1.8rem;
+  color: var(--primary);
+
+  border-radius: 10px;
+}
+
+.direction.white {
+  background-color: var(--white);
+}
+
+.direction.primary {
+  background-color: var(--primary-light);
+}
+
+.direction::before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  background-image: url("/img/components/location/ya-pin.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.direction:hover,
+.direction:focus-visible {
+  color: var(--primary-light);
+  background-color: var(--primary);
+}
+
+.direction.primary:hover,
+.direction.primary:focus-visible {
+  color: var(--primary-light);
+}
+
+.direction.primary:hover,
+.direction.primary:focus-visible {
+  color: var(--primary-light);
+}
+
+.direction.white:hover,
+.direction.white:focus-visible {
+  color: var(--white);
+}
+
+@media (max-width: 1499px) {
+  .direction {
+	font-size: 1.6rem;
+  }
+}
