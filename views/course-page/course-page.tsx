@@ -74,7 +74,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
 
-      <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />
+      {(program.theory || program.practice) &&
+        <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />}
 
       <div className="container">
         <RecordForm
@@ -134,21 +135,19 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       {photos && photos.length > 0 && <Gallery photos={photos} />}
 
       <ContainerWhite>
-
-
         {(place && city) && <>
           <YaMapLoader />
           <Location className={`container`} place={{
-          position: place.position,
-          city: city.name,
-          metro: {
-            station: place.metro,
-            icon: city.metroIcon ? `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}` : undefined,
-          },
-          photos: place.photos,
-          desc: place.desc,
-          address: place.address,
-        }} /></>}
+            position: place.position,
+            city: city.name,
+            metro: {
+              station: place.metro,
+              icon: city.metroIcon ? `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${city.metroIcon}` : undefined,
+            },
+            photos: place.photos,
+            desc: place.desc,
+            address: place.address,
+          }} /></>}
 
         {qa && qa.length > 0 && <Faq qa={qa} className={`container`} />}
 

@@ -248,9 +248,25 @@ const Filters = forwardRef(({
                 </CollapseItem>))}
               <CollapseItem name={`Цена`} contentClassName={styles.priceList}>
                 <PriceItem labelName={`от`} name={`price-start`} defaultValue={searchParams.get(`price-start`) ?? ``}
-                  placeholder={`1 000`} />
+                  placeholder={`1 000`} resetCb={() => {
+                  const params = new URLSearchParams(searchParams);
+
+                  params.delete(`price-start`);
+
+                  push(`${pathname}?${params.toString()}`, {
+                    scroll: false,
+                  });
+                }} />
                 <PriceItem labelName={`до`} name={`price-end`} defaultValue={searchParams.get(`price-end`) ?? ``}
-                  placeholder={`80 000`} />
+                  placeholder={`80 000`} resetCb={() => {
+                  const params = new URLSearchParams(searchParams);
+
+                  params.delete(`price-end`);
+
+                  push(`${pathname}?${params.toString()}`, {
+                    scroll: false,
+                  });
+                }} />
               </CollapseItem>
               <CollapseItem name={`Дата`} contentClassName={styles.date}>
                 <Dates

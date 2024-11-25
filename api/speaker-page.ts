@@ -6,6 +6,7 @@ export async function getSpeakerPage(alias: string): Promise<{code: number, data
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(`${API.speaker.byAlias}${process.env.NODE_ENV === "development" ? alias : ``}`, {
+    cache: "no-store",
     method,
     body,
     next: {

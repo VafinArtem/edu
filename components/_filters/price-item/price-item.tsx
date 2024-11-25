@@ -1,17 +1,26 @@
-import React, {ReactElement} from "react";
-import {PriceItemProps} from "./price-item.props";
-import styles from "./price-item.module.css";
+"use client";
+
 import clsx from "clsx";
+import React, {ReactElement, useRef} from "react";
+import styles from "./price-item.module.css";
+import {PriceItemProps} from "./price-item.props";
 import IconReset from "./reset.svg";
 
-const PriceItem = ({labelName, className, ...props}: PriceItemProps): ReactElement | null => {
+const PriceItem = ({labelName, resetCb, className, ...props}: PriceItemProps): ReactElement | null => {
+  const ref = useRef(null!);
+
   return (
     <div className={clsx(className, styles.wrapper)}>
       <label className={styles.label}>
         <span className={styles.name}>{labelName}</span>
-        <input type="text" className={styles.input} {...props} />
+        <input type="text" className={styles.input} {...props} ref={ref} />
       </label>
-      <button className={styles.reset} type={"button"}><IconReset /></button>
+      {(ref.current && (ref.current as HTMLInputElement).value) &&
+        <button className={styles.reset} type={"button"} onClick={() => {
+          if (!resetCb) return;
+
+          resetCb();
+        }}><IconReset /></button>}
     </div>
   );
 };
