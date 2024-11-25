@@ -12,6 +12,7 @@ export async function getSpeakersPage(options?: {
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(`${API.speakers.byAlias}`, {
+    cache: "no-store",
     method,
     body,
     next: {

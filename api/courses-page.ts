@@ -29,6 +29,7 @@ export async function getCoursesPage(slug?: string[], searchParams?: Record<stri
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(`${API.courses.byType}`, {
+    cache: "no-store",
     method,
     body,
     next: {
