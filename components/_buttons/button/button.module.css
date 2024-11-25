@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.button.primary2 {
+  background-color: var(--primary-2);
+}
+
 .button.primaryLight {
   color: var(--primary);
   background-color: var(--primary-light);
@@ -26,6 +30,11 @@
 .button:not(:disabled):hover,
 .button:not(:disabled):focus-visible {
   background-color: var(--primary-hover);
+}
+
+.button.primary2:not(:disabled):hover,
+.button.primary2:not(:disabled):focus-visible {
+  background-color: var(--primary-2-hover);
 }
 
 .button.primaryLight:not(:disabled):hover,

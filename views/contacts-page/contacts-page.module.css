@@ -8,14 +8,32 @@
   min-height: 591px;
 }
 
+.gray + .partnerForm {
+  margin-top: -135px;
+}
+
+.partnerForm:last-child {
+  margin-bottom: -85px;
+}
+
 @media (max-width: 1499px) {
   .location {
 	min-height: 466px;
   }
 }
 
+@media (max-width: 1199px) {
+  .gray + .partnerForm {
+	margin-top: -90px;
+  }
+}
+
 @media (max-width: 767px) {
   .head {
 	gap: 20px;
+  }
+
+  .gray + .partnerForm {
+	margin-top: -75px;
   }
 }

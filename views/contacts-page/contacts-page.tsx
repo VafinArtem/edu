@@ -1,3 +1,4 @@
+import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Heading from "@/components/_tags/heading/heading";
 import Gallery from "@/views/contacts-page/components/gallery/gallery";
@@ -21,6 +22,7 @@ const ContactsPage = ({}: ContactsPageProps): ReactElement | null => {
       <ContainerGray className={styles.gray}>
         <Partnership className={`container`} />
       </ContainerGray>
+      <PartnerForm className={styles.partnerForm} />
     </>
   );
 };
