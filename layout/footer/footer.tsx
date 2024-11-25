@@ -43,8 +43,8 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
               <NavigationLink component={Link}
                 href={`${Route.COURSES}/category-stomatologya`}>Стоматология</NavigationLink>
               {/*<NavigationLink component={Link} href={Route.COURSES}>Косметология</NavigationLink>*/}
-              <NavigationLink component={Link}
-                href={`${Route.COURSES}/category-veterenarya`}>Ветеринария</NavigationLink>
+              {/*<NavigationLink component={Link}*/}
+              {/*  href={`${Route.COURSES}/category-veterenarya`}>Ветеринария</NavigationLink>*/}
             </NavigationItem>
             {/*<NavigationItem title={`Программа`}>*/}
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Лекции</NavigationLink>*/}

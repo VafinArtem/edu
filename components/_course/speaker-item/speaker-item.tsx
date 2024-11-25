@@ -74,7 +74,7 @@ const SpeakerItem = ({
               </div>
             </SwiperSlide>)}
           </Swiper>
-          <div className={styles.buttons}>
+          {aboutSlides.length > 1 && <div className={styles.buttons}>
             <Button disabled={isBeginning} direction={"prev"} background={"primary"} size={"mini"}
               onClick={() => {
                 swiperRef.current?.slidePrev();
@@ -89,7 +89,7 @@ const SpeakerItem = ({
               onClick={() => {
                 swiperRef.current?.slideNext();
               }} />
-          </div>
+          </div>}
         </div>
       </div>
       {cite && <blockquote className={styles.cite}>{cite}</blockquote>}

@@ -15,9 +15,6 @@ export async function getSpeakersPage(options?: {
     cache: "no-store",
     method,
     body,
-    next: {
-      revalidate: 10,
-    },
   });
 
   if (!res.ok) {

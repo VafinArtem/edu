@@ -9,9 +9,6 @@ export async function getCoursePage(alias: string): Promise<{data: CoursePageMod
     cache: "no-store",
     method,
     body,
-    next: {
-      revalidate: 10,
-    },
   });
 
   if (!res.ok) {

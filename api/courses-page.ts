@@ -32,9 +32,6 @@ export async function getCoursesPage(slug?: string[], searchParams?: Record<stri
     cache: "no-store",
     method,
     body,
-    next: {
-      revalidate: 10,
-    },
   });
 
   if (!res.ok) {

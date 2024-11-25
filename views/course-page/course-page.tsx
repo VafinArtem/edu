@@ -114,12 +114,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           photoBackground: colors.photoBackground,
         }))} />
 
-      <Schedule
+      {schedule.days.length > 0 && <Schedule
         courseTypeName={typeName.genitive.toLowerCase()}
         schedule={schedule.days}
         text={schedule.description}
         className={`container`}
-      />
+      />}
 
       {(tariffs && tariffs.length > 0) && <Price
         courseId={id}

@@ -9,9 +9,6 @@ export async function getSpeakerPage(alias: string): Promise<{code: number, data
     cache: "no-store",
     method,
     body,
-    next: {
-      revalidate: 10,
-    },
   });
 
   if (!res.ok) {

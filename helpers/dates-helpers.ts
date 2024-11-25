@@ -1,13 +1,17 @@
+import {getDeclension} from "@/helpers/helpers";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
 import {DateRange} from "react-day-picker";
-import {getDeclension} from "@/helpers/helpers";
 
 dayjs.locale("ru");
 dayjs.extend(localizedFormat);
 
-export const convertCourseDates = ({start, end}: {start: number, end?: number}) => {
+export const convertCourseDates = ({start, end}: {start?: number, end?: number}) => {
+  if (!start) {
+    return `Дата уточняется`;
+  }
+
   const now = dayjs();
 
   const startDate = dayjs(start * 1000);
