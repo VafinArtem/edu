@@ -25,6 +25,10 @@
   list-style: none;
 }
 
+.becomeSpeaker:last-child {
+  margin-bottom: -85px;
+}
+
 @media (max-width: 1499px) {
   .search {
 	max-width: 380px;

@@ -57,7 +57,7 @@ const SpeakersPage = ({speakers}: SpeakersPageProps): ReactElement | null => {
         </div>
       </SectionItem>
 
-      <BecomeSpeaker />
+      <BecomeSpeaker className={styles.becomeSpeaker} />
 
       {/*{similarCourses && <SimilarCourses*/}
       {/*  className={`container`}*/}
