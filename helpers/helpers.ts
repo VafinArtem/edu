@@ -47,6 +47,6 @@ export const getMinTariff = (tariffs: TariffInfo[]) => {
     return previousValue;
   }, {
     current: 0,
-    id: 0,
-  } as {current: number, old?: number, id: number});
+    id: null,
+  } as {current: number, old?: number, id: number | null});
 };
