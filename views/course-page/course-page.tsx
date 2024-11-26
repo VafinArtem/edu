@@ -1,7 +1,6 @@
 import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
-import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import {convertCourseDates} from "@/helpers/dates-helpers";
 import {getMinTariff} from "@/helpers/helpers";
@@ -136,7 +135,6 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
 
       <ContainerWhite>
         {(place && city) && <>
-          <YaMapLoader />
           <Location className={`container`} place={{
             position: place.position,
             city: city.name,
