@@ -84,7 +84,9 @@ const CoursesLayout = async (props: {
   if (isCoursePage) {
     // const similarCourses = await getSimilarCourses((page as CoursePageModel)._id, `course`);
 
-    return <CoursePage training={(page as {data: CoursePageModel, code: number}).data} similarCourses={[]} />;
+    return <>
+      <CoursePage training={(page as {data: CoursePageModel, code: number}).data} similarCourses={[]} />
+    </>;
   } else {
     const filters = await getFilters();
     const courseTypes = await getCourseTypes();
