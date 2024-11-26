@@ -3,7 +3,6 @@ import {getCourseTypes} from "@/api/course-types";
 import {getCoursesPage} from "@/api/courses-page";
 import {getDirections} from "@/api/directions";
 import {getFilters} from "@/api/filters";
-import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
 import {SlugPart} from "@/helpers/contants";
 import {CoursePageModel} from "@/interfaces/course";
 import {CoursesPageModel} from "@/interfaces/courses";
@@ -86,7 +85,6 @@ const CoursesLayout = async (props: {
     // const similarCourses = await getSimilarCourses((page as CoursePageModel)._id, `course`);
 
     return <>
-      <YaMapLoader />
       <CoursePage training={(page as {data: CoursePageModel, code: number}).data} similarCourses={[]} />
     </>;
   } else {

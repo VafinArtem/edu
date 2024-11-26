@@ -1,11 +1,12 @@
+import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
+import Footer from "@/layout/footer/footer";
+import Header from "@/layout/header/header";
+import Main from "@/layout/main/main";
 import type {Metadata} from "next";
 import "../variables.css";
 import "../globals.css";
 import "./globals.css";
 import {Inter} from "next/font/google";
-import Header from "@/layout/header/header";
-import Footer from "@/layout/footer/footer";
-import Main from "@/layout/main/main";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
     <body style={InterFont.style}>
+    <YaMapLoader />
     <Header />
     <Main>
       {children}

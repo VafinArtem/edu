@@ -1,4 +1,3 @@
-import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
 import ContactsPage from "@/views/contacts-page/contacts-page";
 import {Metadata} from "next";
 import React, {ReactElement} from "react";
@@ -13,7 +12,6 @@ export async function generateMetadata(): Promise<Metadata> {
 const ContactsLayout = async (): Promise<ReactElement | null> => {
   return (
     <>
-      <YaMapLoader />
       <ContactsPage />
     </>
   );
