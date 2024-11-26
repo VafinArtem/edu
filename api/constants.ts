@@ -1,7 +1,7 @@
 export const API = {
   course: {
     byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/course/" : "/react-api/educations/view"),
-    orderWithTariff: process.env.BACKEND_API + "/order-with-tariff",
+    orderWithTariff: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/order-with-tariff" : "/react-api/send-form/education"),
   },
   speaker: {
     byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/speaker/" : "/react-api/teachers/view"),
@@ -18,7 +18,8 @@ export const API = {
   },
   common: {
     promoRegistration: process.env.BACKEND_API + "/promo-registration/",
-    becomeSpeaker: process.env.BACKEND_API + "/become-speaker/",
-    sendComment: process.env.BACKEND_API + "/send-comment/",
+    becomeSpeaker: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/become-speaker" : "/react-api/send-form/speakers"),
+    becomePartner: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/become-speaker" : "/react-api/send-form/become-partner"),
+    sendComment: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/send-comment" : "/react-api/send-form/education-not"),
   },
 };

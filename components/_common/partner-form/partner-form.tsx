@@ -1,6 +1,6 @@
 "use client";
 
-import {sendComment} from "@/actions";
+import {sendBecomePartner} from "@/actions";
 import Button from "@/components/_buttons/button/button";
 import CustomSelect from "@/components/_form/custom-select/custom-select";
 import {Input} from "@/components/_form/input/input";
@@ -44,7 +44,7 @@ const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
   }> = async (data) => {
     console.log(data);
 
-    const res = await sendComment({
+    const res = await sendBecomePartner({
       data,
     });
 

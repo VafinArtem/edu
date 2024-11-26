@@ -14,12 +14,13 @@ export async function orderWithTariff({
   },
 }): Promise<"error" | "success"> {
 
-  const query = data;
-
-  console.log(query);
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(API.course.orderWithTariff, {
-    method: "GET",
+    cache: "no-store",
+    method,
+    body,
   });
 
   if (!res) {
@@ -73,12 +74,13 @@ export async function sendComment({
   },
 }): Promise<"error" | "success"> {
 
-  const query = data;
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
-  console.log(query);
-
-  const res = await fetch(API.common.promoRegistration, {
-    method: "GET",
+  const res = await fetch(API.common.sendComment, {
+    cache: "no-store",
+    body,
+    method,
   });
 
   if (!res) {
@@ -103,12 +105,46 @@ export async function sendBecomeSpeaker({
   },
 }): Promise<"error" | "success"> {
 
-  const query = data;
-
-  console.log(query);
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(API.common.becomeSpeaker, {
-    method: "GET",
+    cache: "no-store",
+    method,
+    body,
+  });
+
+  if (!res) {
+    return "error";
+  }
+
+  const result: AnswerData<string> = await res.json();
+
+  if (result.code === 200) {
+    return "success";
+  } else {
+    return "error";
+  }
+}
+
+export async function sendBecomePartner({
+  data,
+}: {
+  data: {
+    contact: string;
+    city: string;
+    comment: string;
+    partnershipType: string;
+  },
+}): Promise<"error" | "success"> {
+
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
+  const res = await fetch(API.common.becomePartner, {
+    cache: "no-store",
+    method,
+    body,
   });
 
   if (!res) {
