@@ -79,7 +79,7 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
         <div className={styles.bottom}>
           <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.copyright}>
             <IconCopyright width={30} height={30} className={styles.copyrightIcon} />
-            <span className={styles.copyrightText}><span>2018 — {new Date().getFullYear()}</span><span>Учебный
+            <span className={styles.copyrightText}><span>2004 — {new Date().getFullYear()}</span><span>Учебный
             центр Амрита</span></span>
           </Paragraph>
 
