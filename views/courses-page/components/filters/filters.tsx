@@ -56,14 +56,14 @@ const Filters = forwardRef(({
 
       setTimeout(() => {
         wrapperRef.current.style.opacity = `1`;
-      }, 0);
+      }, 50);
     } else {
       document.body.style.overflow = "initial";
       innerRef.current.addEventListener(`transitionend`, onInnerTransitionend, {once: true});
 
       setTimeout(() => {
         innerRef.current.style.transform = `translateY(100%)`;
-      }, 0);
+      }, 50);
     }
 
     return () => {
@@ -78,7 +78,7 @@ const Filters = forwardRef(({
     })}
       ref={wrapperRef}
     >
-      <div className={styles.hiddenWrapper} ref={innerRef}>
+      <div className={styles.hiddenWrapper} style={{display: `block`}} ref={innerRef}>
         <form
           className={styles.form}
           ref={ref}
