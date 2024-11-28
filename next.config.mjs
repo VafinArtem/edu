@@ -19,7 +19,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "edu-amrita-2024.d-idei.ru",
+        hostname: "edu.amrita-dent.ru",
       },
       {
         protocol: "http",
