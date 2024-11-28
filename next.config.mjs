@@ -22,10 +22,6 @@ const nextConfig = {
         hostname: "edu.amrita-dent.ru",
       },
       {
-        protocol: "https",
-        hostname: "edu.amrita-dent.ru",
-      },
-      {
         protocol: "http",
         hostname: "localhost",
         port: "3000",
