@@ -18,6 +18,10 @@ const nextConfig = {
         port: "1000",
       },
       {
+        protocol: "https",
+        hostname: "edu-amrita-2024.d-idei.ru",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         port: "3000",
