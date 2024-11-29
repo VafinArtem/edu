@@ -28,6 +28,16 @@ const nextConfig = {
       },
     ],
   },
+  // async redirects() {
+  //   // permanent: true ? 308 (301) : 307 (302)
+  //   return [
+  //     {
+  //       source: "/2-sposoba-narashchivaniya-kostnoj-tkani-tekhnika-kostnykh-plastin-kyuri-i-nkr-2",
+  //       destination: "/courses/category-stomatologya",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;
