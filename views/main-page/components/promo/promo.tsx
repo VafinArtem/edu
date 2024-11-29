@@ -1,9 +1,9 @@
-import React, {ReactElement} from "react";
-import {PromoProps} from "./promo.props";
-import styles from "./promo.module.css";
-import clsx from "clsx";
 import Heading from "@/components/_tags/heading/heading";
 import Direction from "@/views/main-page/components/promo/direction/direction";
+import clsx from "clsx";
+import React, {ReactElement} from "react";
+import styles from "./promo.module.css";
+import {PromoProps} from "./promo.props";
 
 const Promo = ({directions, className}: PromoProps): ReactElement | null => {
   return (
@@ -15,7 +15,7 @@ const Promo = ({directions, className}: PromoProps): ReactElement | null => {
         <div className={clsx(styles.container, "container")}>
           <Heading tag={`h1`} fontSize={"large"} className={styles.title}>Учебный центр AMRITA &mdash;&nbsp;помогаем
             становиться
-            специалистами</Heading>
+            профессионалами</Heading>
           <Heading tag={`h2`} className={"visually-hidden"}>Категории</Heading>
           {directions.length > 0 && <ul className={styles.directionList}>
             {directions.map((direction) => <Direction key={direction.id} direction={direction} />)}

@@ -2,12 +2,13 @@ import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
 import Footer from "@/layout/footer/footer";
 import Header from "@/layout/header/header";
 import Main from "@/layout/main/main";
+import Metrika from "@/layout/metrika/metrika";
 import type {Metadata} from "next";
 import "../variables.css";
 import "../globals.css";
 import "./globals.css";
 import {Inter} from "next/font/google";
-import React from "react";
+import React, {Suspense} from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,6 +35,9 @@ export default function RootLayout({
       {children}
     </Main>
     <Footer />
+    <Suspense>
+      <Metrika />
+    </Suspense>
     </body>
     </html>
   );
