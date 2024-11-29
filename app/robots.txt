@@ -1,0 +1,12 @@
+User-agent: YandexBot
+Allow: /
+Clean-Param: etext
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Host: https://edu.amrita-dent.ru
+Sitemap: https://edu.amrita-dent.ru/sitemap.xml
