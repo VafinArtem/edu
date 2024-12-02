@@ -48,7 +48,7 @@ const Location = ({className}: LocationProps): ReactElement | null => {
         </div>
       </div>
       <div className={styles.map}>
-        <YaMap coordinates={[30.317404, 59.856994]} />
+        <YaMap showMarker markerCoordinates={[30.317270, 59.857463]} coordinates={[30.317404, 59.856994]} />
       </div>
     </section>
   );
