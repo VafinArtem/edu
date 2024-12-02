@@ -2,6 +2,7 @@ import Button from "@/components/_buttons/button/button";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {getWorkExperienceText} from "@/helpers/dates-helpers";
+import {capitalize} from "@/helpers/helpers";
 import clsx from "clsx";
 import {getImageProps} from "next/image";
 import React, {ReactElement} from "react";
@@ -59,9 +60,10 @@ const Promo = ({
       <div className={styles.textContent}>
         <Heading tag={`h1`} className={styles.title}>{name}</Heading>
         {specialization && <ul className={styles.positions}>
-          {specialization.split(`, `).map((item, index) => <li key={index} className={styles.position}>{item}</li>)}
+          {specialization.split(`, `).map((item, index) => <li key={index}
+            className={styles.position}>{capitalize(item)}</li>)}
         </ul>}
-        <Paragraph>Стаж работы {getWorkExperienceText(workExperience)}</Paragraph>
+        {Boolean(workExperience) && <Paragraph>Стаж работы {getWorkExperienceText(workExperience)}</Paragraph>}
         {specializationFull && <div className={styles.speciality}>
           <Paragraph className={styles.specialityTitle}>Специализация</Paragraph>
           <Paragraph>{specializationFull}</Paragraph>

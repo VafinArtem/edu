@@ -1,9 +1,9 @@
-import React, {ReactElement} from "react";
-import {DirectionsProps} from "./directions.props";
-import styles from "./directions.module.css";
 import clsx from "clsx";
-import {usePathname} from "next/navigation";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+import React, {ReactElement} from "react";
+import styles from "./directions.module.css";
+import {DirectionsProps} from "./directions.props";
 
 const Directions = ({directions, children, ...props}: DirectionsProps): ReactElement | null => {
   const pathname = usePathname();
@@ -11,8 +11,8 @@ const Directions = ({directions, children, ...props}: DirectionsProps): ReactEle
   return (
     <div className={styles.wrapper} {...props}>
       {children}
-      <form className={styles.inner}>
-        {directions.length > 0 && directions.map((direction) => <Link
+      <div className={styles.inner}>
+        {directions.length > 1 && directions.map((direction) => <Link
           scroll={false}
           href={pathname.includes(`/category-${direction.alias}`) ? `/courses` : `/courses/category-${direction.alias}`}
           key={direction.id}
@@ -24,7 +24,7 @@ const Directions = ({directions, children, ...props}: DirectionsProps): ReactEle
             style={{color: direction.color}} />
           {direction.name}
         </Link>)}
-      </form>
+      </div>
     </div>
   );
 };

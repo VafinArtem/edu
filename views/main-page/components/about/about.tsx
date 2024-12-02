@@ -12,7 +12,7 @@ const About = ({className}: AboutProps): ReactElement | null => {
     <SectionItem className={className}>
       <Heading tag={"h2"} className={`visually-hidden`}>Об учебном центре</Heading>
       <Paragraph className={styles.title} fontSize={"asDefaultTitle"}>AMRITA&nbsp;&mdash; учебный центр дополнительного
-        профессионального обучения для специалистов в&nbsp;сфере медицины и&nbsp;косметологии</Paragraph>
+        профессионального обучения для специалистов в&nbsp;сфере стоматологии</Paragraph>
       <ul className={styles.advantages}>
         <li className={styles.advantage}>
           <div className={styles.picture}>

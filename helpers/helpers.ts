@@ -50,3 +50,9 @@ export const getMinTariff = (tariffs: TariffInfo[]) => {
     id: null,
   } as {current: number, old?: number, id: number | null});
 };
+
+export const capitalize = (str: string) => {
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+};

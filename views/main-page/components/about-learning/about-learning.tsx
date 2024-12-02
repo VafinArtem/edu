@@ -15,11 +15,10 @@ const AboutLearning = ({className}: AboutLearningProps): ReactElement | null => 
     <ContainerWhite className={className} withoutMobileBorderRadius>
       <section className={clsx(styles.wrapper, `container`)}>
         <div className={styles.content}>
-          <Heading tag={`h2`} className={styles.title}>Повышайте квалификацию без отрыва от&nbsp;работы
-            и&nbsp;жизни</Heading>
-          <Paragraph>У&nbsp;нас вы&nbsp;можете пройти курсы повышения квалификации дистанционно. Обучайтесь независимо
-            от&nbsp;местоположения, по&nbsp;свободному графику, в&nbsp;индивидуальном темпе
-            и&nbsp;без отрыва от&nbsp;работы.</Paragraph>
+          <Heading tag={`h2`} className={styles.title}>Повышайте квалификацию дистанционно из&nbsp;любой точки
+            мира</Heading>
+          <Paragraph>В&nbsp;программах вы&nbsp;найдёте уникальные видео с&nbsp;проведением операций от&nbsp;ведущих
+            преподавателей учебного центра &laquo;Амрита&raquo;</Paragraph>
           <Image src={"/img/components/about-learning/img.png"} alt={""} width={380} height={161} quality={95}
             className={styles.img} />
           <Paragraph>В&nbsp;курсах вы&nbsp;найдёте уникальные видео с&nbsp;проведением оперативных вмешательств

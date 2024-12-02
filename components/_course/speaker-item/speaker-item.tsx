@@ -50,8 +50,9 @@ const SpeakerItem = ({
             <Heading tag={`h3`} fontSize={`mini`} fontWeight={`medium`} className={styles.name}>{name}</Heading>
             <Paragraph className={styles.position} fontSize={`small`}>{specialization}. {position}</Paragraph>
           </div>
-          <Paragraph className={styles.workExperience} fontWeight={"light"} fontSize={`none`}>Стаж
-            работы {getWorkExperienceText(workExperience)}</Paragraph>
+          {Boolean(workExperience) &&
+            <Paragraph className={styles.workExperience} fontWeight={"light"} fontSize={`none`}>Стаж
+              работы {getWorkExperienceText(workExperience)}</Paragraph>}
           <Swiper
             className={styles.slider}
             spaceBetween={1}

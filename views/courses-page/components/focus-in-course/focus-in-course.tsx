@@ -1,15 +1,15 @@
-import React, {ReactElement} from "react";
-import {FocusInCourseProps} from "./focus-in-course.props";
-import styles from "./focus-in-course.module.css";
-import Heading from "@/components/_tags/heading/heading";
 import SectionItem from "@/components/_section/section-item/section-item";
+import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
+import React, {ReactElement} from "react";
+import styles from "./focus-in-course.module.css";
+import {FocusInCourseProps} from "./focus-in-course.props";
 
 const FocusInCourse = ({}: FocusInCourseProps): ReactElement | null => {
   return (
     <SectionItem className={`container`}>
-      <Heading tag={`h1`} className={styles.title}>На&nbsp;что делаем упор в&nbsp;курсах</Heading>
+      <Heading tag={`h2`} className={styles.title}>На&nbsp;что делаем упор в&nbsp;курсах</Heading>
 
       <ul className={styles.list}>
         <li className={clsx(styles.item, styles.practice)}>
