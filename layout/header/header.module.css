@@ -84,18 +84,8 @@
   }
 
   .left {
-	gap: 10px;
-  }
-
-  .catalog {
-	margin-left: -49px;
-  }
-
-  .logo {
-	z-index: 1;
-	width: 25px;
-	height: 25px;
-	margin-left: 15px;
+	gap: 20px;
+	padding-left: 15px;
   }
 
   .buttonText {
@@ -191,12 +181,14 @@
   }
 
   .header.blur .wrapper > *,
-  .header.blur .wrapper .catalog {
+  .header.blur .wrapper .catalog,
+  .header.blur .wrapper .logo {
 	z-index: 1;
   }
 
   .left {
-	padding-left: 10px;
+	gap: 15px;
+	padding-left: 25px;
 	padding-right: 5px;
 	border-radius: 50px 0 0 50px;
   }
@@ -206,6 +198,11 @@
 	gap: 10px;
 	padding-right: 10px;
 	border-radius: 0 50px 50px 0;
+  }
+
+  .logo {
+	width: 105px;
+	height: 31px;
   }
 }
 
@@ -231,10 +228,6 @@
 
   .logo {
 	margin-left: 10px;
-  }
-
-  .catalog {
-	margin-left: -44px;
   }
 
   .buttonIcon {

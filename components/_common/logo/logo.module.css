@@ -11,18 +11,5 @@
   color: var(--white);
 }
 
-.logoMini {
-  display: none;
-}
-
 @media (max-width: 1199px) {
-  .icon.header:not(.logoMini) {
-	display: none;
-  }
-
-  .icon.header.logoMini {
-	display: block;
-	width: 25px;
-	height: 25px;
-  }
 }

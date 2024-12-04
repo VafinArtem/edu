@@ -1,14 +1,13 @@
 "use client";
 
-import React, {ReactElement} from "react";
+import {Route} from "@/helpers/route";
+import clsx from "clsx";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import clsx from "clsx";
-import {LogoProps} from "./logo.props";
+import React, {ReactElement} from "react";
 import styles from "./logo.module.css";
+import {LogoProps} from "./logo.props";
 import IconLogo from "./logo.svg";
-import IconLogoMini from "./logo-tooth.svg";
-import {Route} from "@/helpers/route";
 
 const Logo = ({className, position, iconClassName, color = "black"}: LogoProps): ReactElement | null => {
   const pathname = usePathname();
@@ -25,11 +24,9 @@ const Logo = ({className, position, iconClassName, color = "black"}: LogoProps):
       {pathname === Route.MAIN ?
         <>
           <IconLogo className={clsx(className, classNameOptions)} />
-          <IconLogoMini className={clsx(className, styles.logoMini, classNameOptions)} />
         </> :
         <Link className={clsx(className, styles.link)} href={Route.MAIN}>
           <IconLogo width={142} heigth={42} className={clsx(classNameOptions)} />
-          <IconLogoMini className={clsx(classNameOptions, styles.logoMini)} />
         </Link>}
     </React.Fragment>
   );
