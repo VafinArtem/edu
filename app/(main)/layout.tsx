@@ -1,6 +1,5 @@
-import YaMapLoader from "@/components/_location/ya-map-loader/ya-map-loader";
+import DynamicHeader from "@/app/(main)/_components/dynamic-header/dynamic-header";
 import Footer from "@/layout/footer/footer";
-import Header from "@/layout/header/header";
 import Main from "@/layout/main/main";
 import Metrika from "@/layout/metrika/metrika";
 import type {Metadata} from "next";
@@ -29,8 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
     <body style={InterFont.style}>
-    <YaMapLoader />
-    <Header type={"blur"} />
+    <DynamicHeader />
     <Main>
       {children}
     </Main>
