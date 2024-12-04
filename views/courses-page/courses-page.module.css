@@ -37,6 +37,14 @@
   margin-bottom: -145px;
 }
 
+.notCourses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 2.3rem;
+}
+
 @media (max-width: 1499px) {
   .grid {
 	grid-template-columns: 247px 1fr;
@@ -113,5 +121,9 @@
 
   .notFindCourse {
 	margin-bottom: -80px;
+  }
+
+  .notCourses {
+	font-size: 1.8rem;
   }
 }

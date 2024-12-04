@@ -36,6 +36,8 @@ const Filters = forwardRef(({
   const innerRef = useRef<HTMLDivElement>(null!);
   const isMobile = useIsResolution(1099);
 
+  const [isReset, setIsReset] = useState<boolean>(false);
+
   useEffect(() => {
     const onWrapperTransitionend = () => {
       innerRef.current.style.transform = `translateY(0)`;
@@ -83,6 +85,7 @@ const Filters = forwardRef(({
           className={styles.form}
           ref={ref}
           onChange={(e) => {
+            console.log(e);
             if (isMobile) return;
 
             const target = e.target as HTMLInputElement;
@@ -131,7 +134,17 @@ const Filters = forwardRef(({
             push(`${pathname}?${params.toString()}`, {
               scroll: false,
             });
-          }}>
+          }}
+          onReset={() => {
+            push(pathname, {
+              scroll: false,
+            });
+
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+          }}
+        >
           <CloseButton className={styles.close} onClick={() => {
             setShowMobileFilters(false);
           }} />
@@ -202,8 +215,9 @@ const Filters = forwardRef(({
             />
 
             <Wrapper className={styles.common}>
-              {false && <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
-                name={`advanced-training`} value={1} defaultChecked={Boolean(searchParams.get("advanced-training"))} />}
+              {true && <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
+                name={`advanced-training`} value={1}
+                defaultChecked={Boolean(searchParams.get("advanced-training"))} />}
 
               {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
                 <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>
@@ -221,6 +235,7 @@ const Filters = forwardRef(({
                         defaultValue={value.value}
                         name={inputName}
                         onChange={(evt) => {
+                          console.log(evt);
                           if (!path) return;
 
                           const newPathname = pathname.split(`/`).filter((pName) => !pName.includes(`${inputName}`));

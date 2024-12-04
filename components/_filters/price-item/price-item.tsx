@@ -18,7 +18,7 @@ const PriceItem = ({labelName, resetCb, className, ...props}: PriceItemProps): R
       {(ref.current && (ref.current as HTMLInputElement).value) &&
         <button className={styles.reset} type={"button"} onClick={() => {
           (ref.current as HTMLInputElement).value = ``;
-          
+
           if (!resetCb) return;
 
           resetCb();
