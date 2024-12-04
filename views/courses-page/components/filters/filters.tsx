@@ -215,7 +215,7 @@ const Filters = forwardRef(({
             />
 
             <Wrapper className={styles.common}>
-              {true && <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
+              {false && <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
                 name={`advanced-training`} value={1}
                 defaultChecked={Boolean(searchParams.get("advanced-training"))} />}
 
