@@ -36,8 +36,6 @@ const Filters = forwardRef(({
   const innerRef = useRef<HTMLDivElement>(null!);
   const isMobile = useIsResolution(1099);
 
-  const [isReset, setIsReset] = useState<boolean>(false);
-
   useEffect(() => {
     const onWrapperTransitionend = () => {
       innerRef.current.style.transform = `translateY(0)`;
