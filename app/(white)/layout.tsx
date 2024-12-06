@@ -8,6 +8,7 @@ import "../variables.css";
 import "../globals.css";
 import "./globals.css";
 import {Inter} from "next/font/google";
+import Head from "next/head";
 import React, {Suspense} from "react";
 
 export const metadata: Metadata = {
@@ -28,6 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+    <Head>
+      <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    </Head>
     <body style={InterFont.style}>
     <YaMapLoader />
     <Header />
