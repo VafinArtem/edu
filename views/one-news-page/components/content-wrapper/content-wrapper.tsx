@@ -1,12 +1,12 @@
 import {content} from "@/mocs/one-news";
 import Content from "@/views/one-news-page/components/content/content";
+import ImagesSlider from "@/views/one-news-page/components/images-slider/images-slider";
 import {ElementType} from "domelementtype";
 import {Element, NodeWithChildren} from "domhandler";
 // @ts-expect-error 123
 import {ChildNode, DataNode} from "domhandler/lib/node";
 import * as htmlparser2 from "htmlparser2";
 import {nanoid} from "nanoid";
-import Image from "next/image";
 import React, {createElement, ReactElement} from "react";
 import styles from "./content-wrapper.module.css";
 import {ContentWrapperProps} from "./content-wrapper.props";
@@ -45,16 +45,8 @@ const convertData = (data: string, key: string) => {
   convertedData = JSON.parse(convertedData);
 
   if (Array.isArray(convertedData)) {
-    return ImagesSlider({images: convertedData as string[], key});
+    return <ImagesSlider images={convertedData as string[]} key={key} />;
   }
-};
-
-const ImagesSlider = ({images, key}: {images: string[], key: string}): ReactElement | null => {
-  return (
-    <div key={key}>
-      {images.map((el) => <Image src={el} alt={``} key={nanoid(20)} width={100} height={100} />)}
-    </div>
-  );
 };
 
 const ContentWrapper = ({}: ContentWrapperProps): ReactElement | null => {

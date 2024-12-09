@@ -15,22 +15,24 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
       <Pagination className={`container`} pagination={[{name: `Новости`, link: Route.NEWS}, {
         name: `Практический курс по эндодонтическому лечению`,
       }]} />
-      <div className={clsx(styles.page, `container`)}>
-        <Top
-          title={`Практический курс по эндодонтическому лечению`}
-          date={1733462840}
-          type={`Курсы, лекции, семинары`}
-          description={`19-20 февраля 2023 года в нашем учебном центре «Амрита» прошел авторский практический курс Филипповой Татьяны Владимировны, который был посвящен базовому эндодонтическому лечению.`}
-          promoImage={`/img/one-news-page/promo.png`}
-          titles={[
-            `Как это было`,
-            `О курсе`,
-            `Ближайшие потоки курса по эндодонтическому лечению`,
-            `Преподаватель курса`,
-          ]}
-          course={courses[0]}
-        />
-        <ContentWrapper content={content} />
+      <div style={{overflow: `hidden`}}>
+        <div className={clsx(styles.page, `container`)}>
+          <Top
+            title={`Практический курс по эндодонтическому лечению`}
+            date={1733462840}
+            type={`Курсы, лекции, семинары`}
+            description={`19-20 февраля 2023 года в нашем учебном центре «Амрита» прошел авторский практический курс Филипповой Татьяны Владимировны, который был посвящен базовому эндодонтическому лечению.`}
+            promoImage={`/img/one-news-page/promo.png`}
+            titles={[
+              `Как это было`,
+              `О курсе`,
+              `Ближайшие потоки курса по эндодонтическому лечению`,
+              `Преподаватель курса`,
+            ]}
+            course={courses[0]}
+          />
+          <ContentWrapper content={content} />
+        </div>
       </div>
 
     </React.Fragment>
