@@ -16,7 +16,7 @@ const About = ({className}: AboutProps): ReactElement | null => {
       <ul className={styles.advantages}>
         <li className={styles.advantage}>
           <div className={styles.picture}>
-            <Image src={`/img/components/about/image-1.png`} alt={`Дипломы государственного образца`} width={865}
+            <Image src={`/img/components/about/image-1-1.png`} alt={`Дипломы государственного образца`} width={865}
               height={265} quality={95} className={styles.image} />
             <a href={`#`} target="_blank" rel="noreferrer" className={styles.link}>
               <span className={styles.border}>&#8470;Л035-01271-78/00637355</span>
