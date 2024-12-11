@@ -37,6 +37,10 @@
   list-style: none;
 }
 
+.notFindCourse {
+  margin-bottom: -86px;
+}
+
 @media (max-width: 1499px) {
   .wrapper {
 	gap: 60px;
@@ -72,5 +76,9 @@
   .footer {
 	flex-direction: column;
 	gap: 15px;
+  }
+
+  .notFindCourse {
+	margin-bottom: -80px;
   }
 }

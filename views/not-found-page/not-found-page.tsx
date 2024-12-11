@@ -1,4 +1,5 @@
 import Button from "@/components/_buttons/button/button";
+import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
@@ -30,12 +31,13 @@ const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactEle
           </div>
         </section>
       </div>
-      {directions.length > 0 && <SectionItem className={`container`}>
+      {directions.length > 1 && <SectionItem className={`container`}>
         <Heading tag={`h2`}>Направления</Heading>
         <ul className={styles.directionList}>
           {directions.map((direction) => <Direction key={direction.id} direction={direction} />)}
         </ul>
       </SectionItem>}
+      <NotFindCourse className={styles.notFindCourse} />
     </React.Fragment>
   );
 };

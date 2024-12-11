@@ -51,11 +51,13 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Вебинары</NavigationLink>*/}
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Курсы</NavigationLink>*/}
             {/*</NavigationItem>*/}
-            {/*<NavigationItem title={`Дополнительно`}>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>*/}
-            {/*</NavigationItem>*/}
+            <NavigationItem title={`Дополнительно`}>
+              <NavigationLink component={`a`} href={`/pdf/personal_data_processing_policy.pdf`} target={`_blank`}>Политика
+                конфиденциальности</NavigationLink>
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>*/}
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>*/}
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>*/}
+            </NavigationItem>
           </Navigation>
           <a href="tel:+79312011400" className={styles.phone}>+7 (931) 201-14-00</a>
           <Social className={styles.social}>

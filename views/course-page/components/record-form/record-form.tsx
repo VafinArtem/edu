@@ -122,7 +122,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
             Записаться <span className="only-mobile">на {courseTypeName}</span>
           </Button>
           <p className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <a
-            target={`_blank`} href={`#`}>персональных данных</a></p>
+            target={`_blank`} href={`/pdf/personal_data_processing_policy.pdf`}>персональных данных</a></p>
         </div>
       </form>
       {answerType && <div className={styles.answer}>

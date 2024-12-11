@@ -1,19 +1,19 @@
 "use client";
 
-import React, {ReactElement, useState} from "react";
-import {BecomeSpeakerProps} from "./become-speaker.props";
-import styles from "./become-speaker.module.css";
-import clsx from "clsx";
+import {sendBecomeSpeaker} from "@/actions";
+import Button from "@/components/_buttons/button/button";
+import {Input} from "@/components/_form/input/input";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import {Input} from "@/components/_form/input/input";
-import Button from "@/components/_buttons/button/button";
-import {SubmitHandler, useForm} from "react-hook-form";
-import {sendBecomeSpeaker} from "@/actions";
-import IconError from "./error.svg";
-import IconSuccess from "./success.svg";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import clsx from "clsx";
+import React, {ReactElement, useState} from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
+import styles from "./become-speaker.module.css";
+import {BecomeSpeakerProps} from "./become-speaker.props";
+import IconError from "./error.svg";
+import IconSuccess from "./success.svg";
 
 const BecomeSpeaker = ({className}: BecomeSpeakerProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
@@ -110,7 +110,8 @@ const BecomeSpeaker = ({className}: BecomeSpeakerProps): ReactElement | null => 
             <Button type={"submit"} disabled={!isValid} className={styles.submit}>Отправить</Button>
             <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
               вы&nbsp;соглашаетесь
-              на&nbsp;обработку <a href={``} target={"_blank"}>персональных данных</a></Paragraph>
+              на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
+                данных</a></Paragraph>
           </div>
         </form>
         {answerType && <div className={styles.answer}>

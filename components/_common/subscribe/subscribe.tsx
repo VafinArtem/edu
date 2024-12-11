@@ -76,7 +76,8 @@ const Subscribe = ({className}: SubscribeProps): ReactElement | null => {
           />
           <Button type={"submit"} disabled={!isValid} className={styles.submit}>Подписаться</Button>
           <Paragraph fontSize={"none"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-            на&nbsp;обработку <a href={``} target={"_blank"}>персональных данных</a></Paragraph>
+            на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
+              данных</a></Paragraph>
         </form>
       </div>
       {answerType && <div className={styles.answer}>

@@ -133,7 +133,8 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
             />
             <Button type={"submit"} className={styles.submit} disabled={!isValid}>Записаться</Button>
             <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-              на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
+              на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
+                данных</a></Paragraph>
           </div>
         </form>
         {answerType && <div className={clsx(styles.answer, `container`)}>

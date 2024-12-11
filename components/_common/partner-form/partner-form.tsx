@@ -154,7 +154,8 @@ const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
                 disabled={!isValid}>Оставить заявку</Button>
               <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
                 вы&nbsp;соглашаетесь
-                на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
+                на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
+                  данных</a></Paragraph>
             </div>
           </form>
         </div>
