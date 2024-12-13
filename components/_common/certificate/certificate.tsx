@@ -1,8 +1,8 @@
-import React, {ReactElement} from "react";
-import {CertificateProps} from "./certificate.props";
-import styles from "./certificate.module.css";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {getImageProps} from "next/image";
+import React, {ReactElement} from "react";
+import styles from "./certificate.module.css";
+import {CertificateProps} from "./certificate.props";
 
 const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
@@ -13,7 +13,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     width: 750,
     height: 340,
     priority: true,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: laptop},
@@ -21,7 +21,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 440,
     height: 271,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: tablet},
@@ -29,7 +29,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 648,
     height: 271,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: mobile},
@@ -37,7 +37,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 290,
     height: 179,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma.-1png",
   });
 
   return (
