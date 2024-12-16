@@ -15,6 +15,21 @@
   color: var(--other-prj-purple);
 }
 
+.blue:hover,
+.blue:focus-visible {
+  color: var(--other-prj-blue-hov);
+}
+
+.green:hover,
+.green:focus-visible {
+  color: var(--other-prj-green-hov);
+}
+
+.purple:hover,
+.purple:focus-visible {
+  color: var(--other-prj-purple-hov);
+}
+
 @media (max-width: 1499px) {
   .link {
 	font-size: 1.6rem;

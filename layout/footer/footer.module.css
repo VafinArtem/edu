@@ -75,6 +75,11 @@
   font-size: 1.8rem;
 }
 
+a.license:hover,
+a.license:focus-visible {
+  color: var(--white);
+}
+
 .licenseText {
   display: flex;
   flex-wrap: wrap;

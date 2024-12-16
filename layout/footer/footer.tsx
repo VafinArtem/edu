@@ -64,11 +64,14 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             <SocialItem
               href={`https://www.youtube.com/channel/UCsWR0CGP1OLaQTFA0iEg61Q`}
               aria-label={`YouTube`}
-              icon={(className: string) => <IconYouTube className={className} width={40} height={40} />}
+              className={`youtubeIcon`}
+              icon={(className: string) => <IconYouTube className={className} width={40}
+                height={40} />}
             />
             <SocialItem
               href={`https://vk.com/amritadent`}
               aria-label={`Вконтакте`}
+              className={`vkIcon`}
               icon={(className: string) => <IconVK className={className} width={40} height={40} />}
             />
           </Social>
