@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 18px 1fr;
   gap: 7px;
+  cursor: pointer;
 }
 
 .label:hover .input:not(:checked) ~ .square {

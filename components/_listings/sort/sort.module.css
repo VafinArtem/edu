@@ -80,6 +80,12 @@
   cursor: pointer;
 }
 
+.item:hover,
+.item:focus-within,
+.item:focus-visible {
+  background-color: var(--gray-100);
+}
+
 .item.active {
   background-color: var(--gray-100);
 }

@@ -13,6 +13,7 @@ const Button = <C extends BaseButtonComponent = "button">({
   return (
     <BaseButton<C> className={clsx(styles.button, className, {
       [styles.wide]: size === "wide",
+      [styles.small]: size === "small",
       [styles.primaryLight]: color === "primary-light",
       [styles.primary2]: color === "primary-2",
     })} {...(props as BaseButtonProps<C>)} />

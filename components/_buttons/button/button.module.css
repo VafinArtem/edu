@@ -12,6 +12,13 @@
   cursor: pointer;
 }
 
+.button.small {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+
 .button.primary2 {
   background-color: var(--primary-2);
 }

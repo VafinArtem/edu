@@ -41,7 +41,7 @@ const Select = ({
 
   return (
     <Wrapper className={clsx(styles.wrapper, className)}>
-      <label className={styles.label} onClick={() => {
+      <label className={styles.label} tabIndex={0} onClick={() => {
         changeModalActivityStatus(true);
       }}>
         <input type="hidden" name={name} defaultValue={currentValue} {...props} />

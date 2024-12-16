@@ -83,7 +83,6 @@ const Filters = forwardRef(({
           className={styles.form}
           ref={ref}
           onChange={(e) => {
-            console.log(e);
             if (isMobile) return;
 
             const target = e.target as HTMLInputElement;
@@ -313,6 +312,10 @@ const Filters = forwardRef(({
                   }}
                 />
               </CollapseItem>
+
+              {searchParams.size > 0 &&
+                <Button type={`reset`} size={"small"} color={"primary-light"} className={styles.reset}>Очистить
+                  фильтр</Button>}
             </Wrapper>
 
             <div className={styles.buttons}>
