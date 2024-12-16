@@ -61,12 +61,12 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
         })}>
           <div className={styles.content}>
             <Heading tag={`h2`} className={styles.title}>Не нашли нужный курс?</Heading>
-            <Paragraph fontSize={"small"}>Расскажите, какие&nbsp;бы курсы вы&nbsp;хотели видеть на&nbsp;нашей платформе.
+            <Paragraph fontSize={"small"} fontWeight={"light"}>Расскажите, какие&nbsp;бы курсы вы&nbsp;хотели видеть
+              на&nbsp;нашей платформе.
               Мы&nbsp;учитываем
               все запросы при формировании новых учебных программ.</Paragraph>
-            <Paragraph fontSize={"small"}>Возможно уже в&nbsp;следующем месяце вы&nbsp;найдёте тот курс, о&nbsp;котором
-              нам
-              писали.</Paragraph>
+            <Paragraph fontSize={"small"} fontWeight={"light"}>Возможно уже в&nbsp;следующем месяце вы&nbsp;найдёте тот
+              курс, о&nbsp;котором нам писали.</Paragraph>
           </div>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Textarea
