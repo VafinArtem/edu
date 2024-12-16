@@ -1,17 +1,17 @@
 "use client";
 
-import React, {ReactElement} from "react";
-import {NavigationItemProps} from "./navigation-item.props";
-import styles from "./navigation-item.module.css";
 import clsx from "clsx";
-import {usePathname} from "next/navigation";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+import React, {ReactElement} from "react";
+import styles from "./navigation-item.module.css";
+import {NavigationItemProps} from "./navigation-item.props";
 
-const NavigationItem = ({href, color = "black", children}: NavigationItemProps): ReactElement | null => {
+const NavigationItem = ({href, className, color = "black", children}: NavigationItemProps): ReactElement | null => {
   const pathname = usePathname();
 
   return (
-    <li className={clsx(styles.item, {
+    <li className={clsx(styles.item, className, {
       [styles.white]: color === "white",
     })}>
       {pathname === href ?

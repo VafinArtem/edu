@@ -56,6 +56,14 @@
   height: 16px;
 }
 
+.navigationLink {
+  transition: opacity ease-in 0.2s;
+}
+
+.navigation:has(.navigationLink:hover) .navigationLink:not(:hover) {
+  opacity: 0.5;
+}
+
 @media (max-width: 1499px) {
   .container {
 	margin-left: 20px;
