@@ -4,4 +4,5 @@ export type ButtonProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
   size?: "default" | "wide" | "small";
   color?: "primary" | "primary-light" | "primary-2";
+  isDisabled?: boolean;
 }

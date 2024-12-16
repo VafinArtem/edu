@@ -151,7 +151,7 @@ const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
             />
             <div className={styles.footer}>
               <Button type={"submit"} color={"primary-2"} className={styles.submit}
-                disabled={!isValid}>Оставить заявку</Button>
+                isDisabled={!isValid}>Оставить заявку</Button>
               <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
                 вы&nbsp;соглашаетесь
                 на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных

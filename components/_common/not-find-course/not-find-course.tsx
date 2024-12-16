@@ -109,7 +109,7 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
               }}
             />
             <div className={styles.footer}>
-              <Button type={"submit"} className={styles.submit} disabled={!isValid}>Отправить</Button>
+              <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Отправить</Button>
               <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
                 вы&nbsp;соглашаетесь
                 на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных

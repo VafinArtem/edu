@@ -118,7 +118,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
           }}
         />
         <div className={styles.formFooter}>
-          <Button className={styles.submit} disabled={!isValid}>
+          <Button className={styles.submit} isDisabled={!isValid}>
             Записаться <span className="only-mobile">на {courseTypeName}</span>
           </Button>
           <p className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <a

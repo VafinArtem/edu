@@ -97,7 +97,7 @@ const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | 
               });
             }}
           />
-          <Button type={"submit"} disabled={!isValid} className={styles.submit}>Зарегистрироваться</Button>
+          <Button type={"submit"} isDisabled={!isValid} className={styles.submit}>Зарегистрироваться</Button>
           <Paragraph fontSize={"none"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
             на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
               данных</a></Paragraph>
