@@ -2,7 +2,7 @@
   display: flex;
   /*gap: 10px;*/
   /*justify-content: space-between;*/
-  gap: 30px;
+  gap: 100px;
 }
 
 @media (max-width: 1023px) {
