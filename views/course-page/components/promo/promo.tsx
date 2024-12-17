@@ -3,6 +3,7 @@
 import Button from "@/components/_buttons/button/button";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {sendMetric} from "@/helpers/metricks";
 import Slider from "@/views/course-page/components/promo/components/slider/slider";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
@@ -42,7 +43,9 @@ const Promo = ({
           <Paragraph className={styles.text}>{description}</Paragraph>
         </div>
         <div className={styles.footer}>
-          <Button component={Link} href={`#registration`}>Записаться на {courseTypeName.toLowerCase()}</Button>
+          <Button component={Link} href={`#registration`} onClick={() => {
+            sendMetric(`reachGoal`, {options: `course-promo-record-click`});
+          }}>Записаться на {courseTypeName.toLowerCase()}</Button>
           {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`} />}
         </div>
       </div>
