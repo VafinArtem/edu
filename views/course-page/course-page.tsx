@@ -98,6 +98,11 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             change: `course-min-record-1-change`,
             send: `course-min-record-1-send`,
           }}
+          ecommerce={{
+            id: nanoid(10),
+            name: name,
+            category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
+          }}
         />
       </div>
 
@@ -180,6 +185,11 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             metric={{
               change: `course-min-record-2-change`,
               send: `course-min-record-2-send`,
+            }}
+            ecommerce={{
+              id: nanoid(10),
+              name: name,
+              category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
             }}
           />
         </div>

@@ -8,7 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
-import {sendMetric} from "@/helpers/metricks";
+import {sendEcommerce, sendMetric} from "@/helpers/metricks";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 import React, {ReactElement, useState} from "react";
@@ -28,6 +28,7 @@ const RecordForm = ({
   courseId,
   courseTypeName,
   metric,
+  ecommerce,
 }: RecordFormProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
   const {
@@ -55,7 +56,7 @@ const RecordForm = ({
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: tariffInfo.id ?? null, courseId},
+      data: {...data, tariff: tariffInfo.id ?? null, courseId, orderId: ecommerce.id},
     });
 
     setAnswerType(res);
@@ -64,6 +65,22 @@ const RecordForm = ({
       if (metric) {
         sendMetric(`reachGoal`, {options: metric.send});
       }
+
+      sendEcommerce({
+        actionType: "purchase",
+        actionField: {
+          id: ecommerce.id,
+        },
+        products: [
+          {
+            id: courseId,
+            name: ecommerce.name,
+            category: ecommerce.category,
+            price: tariffInfo.current,
+            variant: tariffInfo.name,
+          },
+        ],
+      });
 
       reset();
     }

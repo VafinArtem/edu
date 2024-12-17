@@ -1,6 +1,7 @@
 export interface RecordFormProps {
   tariffInfo: {
     current: number;
+    name: string;
     old?: number;
     id: number | null;
   };
@@ -10,5 +11,10 @@ export interface RecordFormProps {
   metric?: {
     change: string;
     send: string;
+  };
+  ecommerce: {
+    id: string;
+    name: string;
+    category: string;
   };
 }
