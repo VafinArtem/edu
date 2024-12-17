@@ -34,8 +34,10 @@ const Metrika = (): ReactElement | null => {
 							clickmap:true,
 							trackLinks:true,
 							accurateTrackBounce:true,
-							webvisor:true
+							webvisor:true,
+							ecommerce:"dataLayer"
 				 });    
+				 window.dataLayer = window.dataLayer || [];
       `}
     </Script>
   );
