@@ -37,6 +37,11 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     },
   });
 
+  const onChange = () => {
+
+    // sendMetric(`reachGoal`, {options: `course-record-change`});
+  };
+
   const onSubmit: SubmitHandler<{
     name: string
     contact: string
@@ -48,6 +53,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     setAnswerType(res);
 
     if (res === "success") {
+      // sendMetric(`reachGoal`, {options: `course-record-send`});
       reset();
     }
 
@@ -78,7 +84,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
       </div>
       <form className={clsx(styles.form, {
         [styles.hidden]: answerType,
-      })} onSubmit={handleSubmit(onSubmit)}>
+      })} onSubmit={handleSubmit(onSubmit)} onChange={onChange}>
         <Input
           placeholder={`Ваше имя*`}
           labelName={`Ваше имя`}

@@ -8,6 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import {sendMetric} from "@/helpers/metricks";
 import useOpenModal from "@/hooks/useOpenModal";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
@@ -41,6 +42,10 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
     },
   });
 
+  const onChange = () => {
+    sendMetric(`reachGoal`, {options: `course-record-change`});
+  };
+
   const onSubmit: SubmitHandler<{
     name: string
     contact: string
@@ -52,6 +57,7 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
     setAnswerType(res);
 
     if (res === "success") {
+      sendMetric(`reachGoal`, {options: `course-record-send`});
       reset();
     }
   };
@@ -78,15 +84,20 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
           </div>}
         </div>
         {(tariffs && tariffs.length > 0) && <div className={styles.list}>
-          {tariffs.map((tariff) => <TariffInfo setCurrentTariff={setCurrentTariff}
-            setShowFormStatus={changeModalActivityStatus} tariff={tariff}
-            key={tariff.id} />)}
+          {tariffs.map((tariff) => <TariffInfo
+            className={styles.item}
+            setCurrentTariff={setCurrentTariff}
+            setShowFormStatus={changeModalActivityStatus}
+            tariff={tariff}
+            key={tariff.id}
+          />)}
         </div>}
       </div>
       <div className={clsx(styles.modal, {
         [styles.show]: showModal,
       })} ref={ref}>
-        <form action="#" className={clsx(styles.form, `container`)} onSubmit={handleSubmit(onSubmit)}>
+        <form action="#" className={clsx(styles.form, `container`)} onChange={onChange}
+          onSubmit={handleSubmit(onSubmit)}>
           <Heading tag={`h3`} fontSize={"none"} className={styles.formTitle}>2. Укажите ваши данные для регистрации на
             курс</Heading>
           <div className={styles.inner}>
