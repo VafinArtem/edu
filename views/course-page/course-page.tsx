@@ -94,6 +94,10 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           saleTimestamp={saleTimestamp}
           courseId={id}
           courseTypeName={typeName.nominative}
+          metric={{
+            change: `course-min-record-1-change`,
+            send: `course-min-record-1-send`,
+          }}
         />
       </div>
 
@@ -173,6 +177,10 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             saleTimestamp={saleTimestamp}
             courseId={id}
             courseTypeName={typeName.nominative}
+            metric={{
+              change: `course-min-record-2-change`,
+              send: `course-min-record-2-send`,
+            }}
           />
         </div>
 

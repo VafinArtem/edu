@@ -8,6 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import {sendMetric} from "@/helpers/metricks";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 import React, {ReactElement, useState} from "react";
@@ -21,7 +22,13 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: RecordFormProps): ReactElement | null => {
+const RecordForm = ({
+  tariffInfo,
+  saleTimestamp,
+  courseId,
+  courseTypeName,
+  metric,
+}: RecordFormProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
   const {
     register,
@@ -38,8 +45,9 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
   });
 
   const onChange = () => {
-
-    // sendMetric(`reachGoal`, {options: `course-record-change`});
+    if (metric) {
+      sendMetric(`reachGoal`, {options: metric.change});
+    }
   };
 
   const onSubmit: SubmitHandler<{
@@ -53,7 +61,10 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     setAnswerType(res);
 
     if (res === "success") {
-      // sendMetric(`reachGoal`, {options: `course-record-send`});
+      if (metric) {
+        sendMetric(`reachGoal`, {options: metric.send});
+      }
+
       reset();
     }
 
