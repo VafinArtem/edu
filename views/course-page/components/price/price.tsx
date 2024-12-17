@@ -8,7 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
-import {sendMetric} from "@/helpers/metricks";
+import {sendEcommerce, sendMetric} from "@/helpers/metricks";
 import useOpenModal from "@/hooks/useOpenModal";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
@@ -24,7 +24,14 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: PriceProps): ReactElement | null => {
+const Price = ({
+  tariffs,
+  courseTypeName,
+  saleTimestamp,
+  courseId,
+  ecommerce,
+  ...props
+}: PriceProps): ReactElement | null => {
   const {
     register,
     handleSubmit,
@@ -51,13 +58,28 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: currentTariff, courseId},
+      data: {...data, tariff: currentTariff, courseId, orderId: ecommerce.id},
     });
 
     setAnswerType(res);
 
     if (res === "success") {
       sendMetric(`reachGoal`, {options: `course-record-send`});
+      sendEcommerce({
+        actionType: "purchase",
+        actionField: {
+          id: ecommerce.id,
+        },
+        products: [
+          {
+            id: courseId,
+            name: ecommerce.name,
+            category: ecommerce.category,
+            price: tariffs.find((el) => el.id === currentTariff)?.prices.current,
+            variant: tariffs.find((el) => el.id === currentTariff)?.name,
+          },
+        ],
+      });
       reset();
     }
   };

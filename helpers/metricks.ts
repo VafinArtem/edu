@@ -20,7 +20,7 @@ interface ProductType {
   id: string;
   name: string;
   category?: string;
-  price?: string;
+  price?: number;
   variant?: string;
 }
 
@@ -57,16 +57,20 @@ export const sendEcommerce = ({
   actionField,
   products,
 }: {actionType: ActionType, actionField?: ActionField, products?: ProductType[]}) => {
-  const ecommerceObj: EcommerceType = {
-    ecommerce: {
-      currencyCode: "RUB",
-      [actionType]: {
-        actionField,
-        products,
+  try {
+    const ecommerceObj: EcommerceType = {
+      ecommerce: {
+        currencyCode: "RUB",
+        [actionType]: {
+          actionField,
+          products,
+        },
       },
-    },
-  };
+    };
 
-  // @ts-expect-error 123
-  window.dataLayer.push(ecommerceObj);
+    // @ts-expect-error 123
+    window.dataLayer.push(ecommerceObj);
+  } catch (e) {
+    console.log(e);
+  }
 };

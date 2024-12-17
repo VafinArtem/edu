@@ -19,6 +19,7 @@ import RecordForm from "@/views/course-page/components/record-form/record-form";
 import Schedule from "@/views/course-page/components/schedule/schedule";
 import SpeakerCourses from "@/views/course-page/components/speaker-courses/speaker-courses";
 import Speakers from "@/views/course-page/components/speakers/speakers";
+import {nanoid} from "nanoid";
 import React, {ReactElement, useEffect} from "react";
 import styles from "./course-page.module.css";
 import {CoursePageProps} from "./course-page.props";
@@ -135,6 +136,11 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         courseId={id}
         tariffs={tariffs}
         saleTimestamp={saleTimestamp}
+        ecommerce={{
+          id: nanoid(10),
+          name: name,
+          category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
+        }}
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
       />}
 
