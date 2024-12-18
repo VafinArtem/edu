@@ -31,8 +31,9 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
           <Logo className={styles.logo} position={"footer"} color={"white"} />
           <Paragraph fontSize={"none"} className={styles.license}><Image src={`/img/components/footer/eagle.png`}
             width={56} height={61} quality={100} className={styles.eagle}
-            alt={``} /><span className={styles.licenseText}><span>Лицензия </span>
-            <span>№Л035-01271-78/00637355</span></span></Paragraph>
+            alt={``} /><a href={`/pdf/license.pdf`} target={"_blank"}
+            className={styles.licenseText}><span>Лицензия </span>
+            <span>№Л035-01271-78/00637355</span></a></Paragraph>
           <Navigation className={styles.navigation}>
             {/*<NavigationItem title={`Amrita`}>*/}
             {/*  <NavigationLink component={Link} href={Route.COURSES}>О компании</NavigationLink>*/}

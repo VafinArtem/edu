@@ -18,7 +18,7 @@ const About = ({className}: AboutProps): ReactElement | null => {
           <div className={styles.picture}>
             <Image src={`/img/components/about/image-1-1.png`} alt={`Дипломы государственного образца`} width={865}
               height={265} quality={95} className={styles.image} />
-            <a href={`#`} target="_blank" rel="noreferrer" className={styles.link}>
+            <a href={`/pdf/license.pdf`} target="_blank" rel="noreferrer" className={styles.link}>
               <span className={styles.border}>&#8470;Л035-01271-78/00637355</span>
             </a>
           </div>
