@@ -37,7 +37,7 @@ const Certificate = ({}: CertificateProps): ReactElement | null => {
     ...common,
     width: 290,
     height: 179,
-    src: "/img/components/certificate/diploma.-1png",
+    src: "/img/components/certificate/diploma-1.png",
   });
 
   return (

@@ -78,6 +78,8 @@ const CoursesLayout = async (props: {
     page = await getCoursesPage(fetchedParams.slug, search);
   }
 
+  console.log(page);
+
   if (!page || page.code !== 200) {
     notFound();
   }
@@ -92,6 +94,8 @@ const CoursesLayout = async (props: {
     const filters = await getFilters();
     const courseTypes = await getCourseTypes();
     const directions = await getDirections();
+
+    console.log(filters, courseTypes, directions);
 
     return <CoursesPage
       coursesCount={(page as {data: CoursesPageModel, code: number}).data.coursesCount}
