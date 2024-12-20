@@ -106,7 +106,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         />
       </div>
 
-      <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
+      {speakers.length > 0 && <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
         speakers={speakers.map(({
           position,
           surname,
@@ -132,7 +132,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           cite,
           aboutSlides,
           photoBackground: colors.photoBackground,
-        }))} />
+        }))} />}
 
       {schedule.days.length > 0 && <Schedule
         courseTypeName={typeName.genitive.toLowerCase()}
