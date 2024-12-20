@@ -166,7 +166,7 @@ const Price = ({
             />
             <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Записаться</Button>
             <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-              на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy.pdf`} target={"_blank"}>персональных
+              на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy_1.pdf`} target={"_blank"}>персональных
                 данных</a></Paragraph>
           </div>
         </form>
