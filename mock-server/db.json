@@ -94,7 +94,10 @@
         "speakers": [
           {
             "id": 1,
-            "surname": "Волкова",
+            "surname": {
+              "nominative": "Волкова",
+              "genitive": "Волковой"
+            },
             "name": {
               "nominative": "Юлия",
               "genitive": "Юлии"
@@ -505,7 +508,10 @@
         "speakers": [
           {
             "id": 1,
-            "surname": "Волкова",
+            "surname": {
+              "nominative": "Волкова",
+              "genitive": ""
+            },
             "name": {
               "nominative": "Юлия",
               "genitive": "Юлии"

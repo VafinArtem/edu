@@ -74,7 +74,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           city={city.name}
           saleTimestamp={saleTimestamp}
           speakers={speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
-            name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+            name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
             specialization,
             photo,
             id,
@@ -101,7 +101,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           ecommerce={{
             id: nanoid(10),
             name: name,
-            category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
+            category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
           }}
         />
       </div>
@@ -121,7 +121,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           photo,
           aboutSlides,
         }) => ({
-          name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+          name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
           position,
           specialization,
           edu,
@@ -148,7 +148,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         ecommerce={{
           id: nanoid(10),
           name: name,
-          category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
+          category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
         }}
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
       />}
@@ -189,7 +189,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             ecommerce={{
               id: nanoid(10),
               name: name,
-              category: speakers.map((speaker) => `${speaker.surname} ${speaker.name.nominative}`).join(" / "),
+              category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
             }}
           />
         </div>
@@ -200,6 +200,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           speakers={speakers.map((speaker) => ({
             id: speaker.id,
             name: speaker.name.genitive,
+            surname: speaker.surname.genitive,
             avatar: speaker.photo,
             photoBackground: colors.photoBackground,
           }))} />}

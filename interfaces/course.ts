@@ -29,7 +29,10 @@ export interface CoursePageModel extends CommonPageModel {
   speakers: {
     id: number;
     alias: string;
-    surname: string,
+    surname: {
+      nominative: string;
+      genitive: string;
+    },
     cite?: string,
     name: {
       nominative: string;
@@ -110,6 +113,7 @@ export interface Speaker {
 export interface SpeakerShort {
   id: number;
   name: string;
+  surname: string;
   avatar: string;
   photoBackground: string;
 }

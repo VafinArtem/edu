@@ -92,7 +92,10 @@ export const course: CoursePageModel = {
     {
       "id": 1,
       "alias": "volkova-yulia",
-      "surname": "Волкова",
+      "surname": {
+        "nominative": "Волкова",
+        "genitive": "Волковой",
+      },
       "name": {
         "nominative": "Юлия",
         "genitive": "Юлии",
