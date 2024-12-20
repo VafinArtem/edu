@@ -29,7 +29,7 @@ const Promo = ({
 }: PromoProps): ReactElement | null => {
   return (
     <section className={clsx(className, styles.wrapper, {
-      [styles.oneColumn]: speakers.length > 0,
+      [styles.oneColumn]: speakers.length === 0,
     })}>
       <div className={styles.textContent}>
         <div className={styles.head}>
