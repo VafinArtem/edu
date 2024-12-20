@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
+.wrapper.oneColumn {
+  grid-template-columns: 100%;
+  padding-right: 70px;
+}
+
 .sliderWrapper {
   position: relative;
   width: 100%;
@@ -123,6 +128,10 @@
 	border-radius: 40px;
   }
 
+  .wrapper.oneColumn {
+	padding-right: 50px;
+  }
+
   .textContent {
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -148,6 +157,11 @@
 	grid-template-columns: 100%;
 	grid-template-rows: repeat(2, max-content);
 	gap: 40px;
+	padding: 10px;
+  }
+
+  .wrapper.oneColumn {
+	grid-template-rows: auto;
 	padding: 10px;
   }
 

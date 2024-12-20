@@ -73,13 +73,13 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           name={name}
           city={city.name}
           saleTimestamp={saleTimestamp}
-          speakers={speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
+          speakers={speakers.length > 0 ? speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
             name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
             specialization,
             photo,
             id,
             photoBackground: colors.photoBackground,
-          }))}
+          })) : []}
         />
 
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}

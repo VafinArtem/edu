@@ -28,7 +28,9 @@ const Promo = ({
   speakers,
 }: PromoProps): ReactElement | null => {
   return (
-    <section className={clsx(className, styles.wrapper)}>
+    <section className={clsx(className, styles.wrapper, {
+      [styles.oneColumn]: speakers.length > 0,
+    })}>
       <div className={styles.textContent}>
         <div className={styles.head}>
           <p className={styles.type}>
@@ -49,7 +51,7 @@ const Promo = ({
           {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`} />}
         </div>
       </div>
-      <Slider speakers={speakers} className={styles.sliderWrapper} />
+      {speakers.length > 0 && <Slider speakers={speakers} className={styles.sliderWrapper} />}
     </section>
   );
 };
