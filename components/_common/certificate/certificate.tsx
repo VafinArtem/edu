@@ -4,7 +4,7 @@ import React, {ReactElement} from "react";
 import styles from "./certificate.module.css";
 import {CertificateProps} from "./certificate.props";
 
-const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null => {
+const Certificate = ({}: CertificateProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
   const {
     props: {srcSet: desktop, ...rest},
@@ -51,8 +51,8 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
         <img {...rest} width={290} height={179} alt={``} className={styles.image} />
       </picture>
       <div className={styles.content}>
-        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончанию {courseTypeName} вы&nbsp;получите
-          удостоверение повышения квалификации государственного образца</Paragraph>
+        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончании обучения вы&nbsp;получите удостоверение
+          о&nbsp;повышении квалификации</Paragraph>
         <Paragraph fontSize={"small"} className={styles.text}>С&nbsp;внесением данных в&nbsp;&laquo;Федеральный реестр
           сведений о&nbsp;документах об&nbsp;образовании и&nbsp;квалификации&raquo;.</Paragraph>
         <a href="/pdf/license.pdf" target={"_blank"}

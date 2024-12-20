@@ -24,7 +24,7 @@ const Location = ({className, place}: LocationProps): ReactElement | null => {
         <YaMap coordinates={coordinates} />
       </div>
       <div className={styles.content}>
-        <Heading tag={`h2`} className={styles.title}>Место проведения интенсива <span
+        <Heading tag={`h2`} className={styles.title}>Место проведения <span
           className={styles.city}>{city}</span></Heading>
         <address className={styles.address}>{address}</address>
         {metro.station &&
