@@ -5,7 +5,7 @@ import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import {convertCourseDates} from "@/helpers/dates-helpers";
-import {getMinTariff} from "@/helpers/helpers";
+import {getMinTariff, storePathValues} from "@/helpers/helpers";
 import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Advantages from "@/views/course-page/components/advantages/advantages";
@@ -20,6 +20,7 @@ import Schedule from "@/views/course-page/components/schedule/schedule";
 import SpeakerCourses from "@/views/course-page/components/speaker-courses/speaker-courses";
 import Speakers from "@/views/course-page/components/speakers/speakers";
 import {nanoid} from "nanoid";
+import {usePathname} from "next/navigation";
 import React, {ReactElement, useEffect} from "react";
 import styles from "./course-page.module.css";
 import {CoursePageProps} from "./course-page.props";
@@ -45,6 +46,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     speakersCourses,
     id,
   } = training;
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -1,16 +1,26 @@
+"use client";
+
 import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Heading from "@/components/_tags/heading/heading";
+import {storePathValues} from "@/helpers/helpers";
 import Gallery from "@/views/contacts-page/components/gallery/gallery";
 import Geography from "@/views/contacts-page/components/geography/geography";
 import Location from "@/views/contacts-page/components/location/location";
 import Partnership from "@/views/contacts-page/components/partnership/partnership";
 import clsx from "clsx";
-import React, {ReactElement} from "react";
+import {usePathname} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./contacts-page.module.css";
 import {ContactsPageProps} from "./contacts-page.props";
 
 const ContactsPage = ({}: ContactsPageProps): ReactElement | null => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
+
   return (
     <>
       <div className={clsx(styles.head, `container`)}>

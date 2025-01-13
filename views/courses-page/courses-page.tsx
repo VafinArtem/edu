@@ -10,13 +10,14 @@ import ContainerWhite from "@/components/_section/container-white/container-whit
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {storePathValues} from "@/helpers/helpers";
 import useIsResolution from "@/hooks/useIsResolution";
 import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
 import Filters from "@/views/courses-page/components/filters/filters";
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
-import {useSearchParams} from "next/navigation";
-import React, {ReactElement} from "react";
+import {usePathname, useSearchParams} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./courses-page.module.css";
 import {CoursesPageProps} from "./courses-page.props";
 
@@ -28,11 +29,16 @@ const CoursesPage = ({
   directions,
   coursesCount,
 }: CoursesPageProps): ReactElement | null => {
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams?.get(`page`)) || 1;
 
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
   const isMobile = useIsResolution(1099);
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
 
   return (
     <>
