@@ -141,12 +141,12 @@ export interface CourseProgram {
   text: string;
   pdfLink?: string;
   theory: {
-    duration: number;
+    duration?: number;
     learnList?: string[];
     themeList?: string[];
   };
   practice: {
-    duration: number;
+    duration?: number;
     learnList?: string[];
     themeList?: string[];
   };
