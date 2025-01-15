@@ -2,7 +2,7 @@ import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {convertShortCourseDate} from "@/helpers/dates-helpers";
-import {formatPrice} from "@/helpers/helpers";
+import {formatPrice, getDeclension} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
 import clsx from "clsx";
 import Image from "next/image";
@@ -18,7 +18,7 @@ const CourseShortItem = ({
   isPastCourse,
   className,
 }: CourseShortItemProps): ReactElement | null => {
-  const {icon, courseType, name, date, location, price, photo, photoBackground, speakers, alias} = course;
+  const {icon, courseType, name, date, dates, days, location, price, photo, photoBackground, speakers, alias} = course;
 
   return (
     <article className={clsx(styles.wrapper, className, {
@@ -43,13 +43,24 @@ const CourseShortItem = ({
         <div className={styles.content}>
           <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
           {date && <Paragraph fontSize={"none"} className={styles.date}>{convertShortCourseDate(date)}</Paragraph>}
+          {dates && <Paragraph fontSize={"none"} className={styles.date}>
+            {convertShortCourseDate(dates.start)}
+            {dates.end && ` — ${convertShortCourseDate(dates.end)}`}
+          </Paragraph>}
           {location && <Paragraph fontSize={"none"} className={styles.location}>{location}</Paragraph>}
         </div>
         <div className={styles.footer}>
           {isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
             className={styles.complete}>Завершён</Paragraph>}
-          {(Boolean(price) && !isPastCourse) && <Paragraph fontWeight={"medium"} fontSize={"none"}
-            className={styles.price}>{formatPrice(price)} ₽</Paragraph>}
+
+          {(Boolean(price) && !isPastCourse) && <div className={styles.priceWrapper}>
+            <Paragraph fontWeight={"medium"} fontSize={"none"}
+              className={styles.price}>{formatPrice(price)} ₽
+            </Paragraph>
+            {days && <Paragraph fontSize={"none"}
+              className={styles.duration}>за {days} {getDeclension(days, ["день", "дня", "дней"])}
+            </Paragraph>}
+          </div>}
           <ButtonArrow
             component={Link}
             href={`${Route.COURSES}/course-${alias}`}

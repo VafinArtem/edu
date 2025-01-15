@@ -135,8 +135,25 @@
   padding-top: 5px;
 }
 
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.link {
+  white-space: nowrap;
+}
+
 .price {
   font-size: 1.8rem;
+}
+
+.duration {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gray-400);
 }
 
 .complete {
@@ -196,6 +213,10 @@
 
   .price {
 	font-size: 1.6rem;
+  }
+
+  .duration {
+	font-size: 1.3rem;
   }
 }
 

@@ -191,8 +191,13 @@ export interface CourseShort {
     background: string;
   };
   price: number;
+  days?: number;
   icon?: string;
   date?: number;
+  dates?: {
+    start: number;
+    end?: number;
+  };
   location?: string;
   photo?: string;
   photoBackground?: string;
