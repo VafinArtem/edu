@@ -53,6 +53,7 @@
 .image {
   width: 100%;
   aspect-ratio: 2.1;
+  object-fit: cover;
 }
 
 .wrapper.past .image {
