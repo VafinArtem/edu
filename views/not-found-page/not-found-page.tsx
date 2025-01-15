@@ -16,9 +16,9 @@ import styles from "./not-found-page.module.css";
 import {NotFoundPageProps} from "./not-found-page.props";
 
 const getNotFoundParams = (): Record<string, Record<string, Record<string, string> | string>> | string => {
-  const ref = sessionStorage.getItem("prevPath") ?? ""; //записываем в переменную ref значение реферера
-  const siteUrl = document.location.href; //записываем в переменную siteurl адрес просмотренной страницы
-  const visitParams = {NotFoundURL: {[siteUrl]: {Реферер: ref}}}; //записываем в переменную visitParams иерархию с параметрами
+  const ref = sessionStorage.getItem("prevPath") ?? "";
+  const siteUrl = document.location.href;
+  const visitParams = {NotFoundURL: {[siteUrl]: {Реферер: ref ? ref : document.referrer ?? ``}}};
 
   return visitParams;
 };
