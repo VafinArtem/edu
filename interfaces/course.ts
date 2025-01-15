@@ -193,7 +193,6 @@ export interface CourseShort {
   price: number;
   days?: number;
   icon?: string;
-  date?: number;
   dates?: {
     start: number;
     end?: number;

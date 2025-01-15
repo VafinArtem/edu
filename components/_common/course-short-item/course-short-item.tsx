@@ -18,7 +18,7 @@ const CourseShortItem = ({
   isPastCourse,
   className,
 }: CourseShortItemProps): ReactElement | null => {
-  const {icon, courseType, name, date, dates, days, location, price, photo, photoBackground, speakers, alias} = course;
+  const {icon, courseType, name, dates, days, location, price, photo, photoBackground, speakers, alias} = course;
 
   return (
     <article className={clsx(styles.wrapper, className, {
@@ -42,7 +42,6 @@ const CourseShortItem = ({
         </p>
         <div className={styles.content}>
           <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
-          {date && <Paragraph fontSize={"none"} className={styles.date}>{convertShortCourseDate(date)}</Paragraph>}
           {dates && <Paragraph fontSize={"none"} className={styles.date}>
             {convertShortCourseDate(dates.start)}
             {dates.end && ` — ${convertShortCourseDate(dates.end)}`}
