@@ -5,6 +5,7 @@ import NotFindCourse from "@/components/_common/not-find-course/not-find-course"
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Direction from "@/views/main-page/components/promo/direction/direction";
 import clsx from "clsx";
@@ -14,23 +15,20 @@ import React, {ReactElement, useEffect} from "react";
 import styles from "./not-found-page.module.css";
 import {NotFoundPageProps} from "./not-found-page.props";
 
-const getNotFoundParams = () => {
+const getNotFoundParams = (): Record<string, Record<string, Record<string, string> | string>> | string => {
   const ref = sessionStorage.getItem("prevPath") ?? ""; //записываем в переменную ref значение реферера
   const siteUrl = document.location.href; //записываем в переменную siteurl адрес просмотренной страницы
   const visitParams = {NotFoundURL: {[siteUrl]: {Реферер: ref}}}; //записываем в переменную visitParams иерархию с параметрами
 
-  console.log(visitParams);
-
-  // ym(7777777, 'reachGoal', '404error', visitParams); //достигаем цель на посещение страницы 404 и передаем в параметрах визитов URL-адрес 404 cтраницы и её реферер.
+  return visitParams;
 };
 
 const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactElement | null => {
-  // const headersList = headers();
-  // const referer = headersList.get("referer");
-  // console.log(`ref`, referer);
-
   useEffect(() => {
-    getNotFoundParams();
+    sendMetric("reachGoal", {
+      url: `404error`,
+      options: getNotFoundParams(),
+    });
   }, []);
 
   return (

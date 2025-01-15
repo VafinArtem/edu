@@ -36,16 +36,20 @@ export type EcommerceType = {
 }
 
 export const sendMetric = (eventName: EventNameType,
-  options: {url?: string, options: string | {[key: string]: string}}) => {
+  options: {
+    url?: string,
+    options: string | Record<string, Record<string, Record<string, string> | string>>
+  }) => {
   try {
     if (window.ym) {
-      // @ts-expect-error 123
-      window.ym(79791280, eventName, options.options);
-
       if (options.url) {
         // @ts-expect-error 123
         window.ym(79791280, eventName, options.url, options.options);
+        return;
       }
+
+      // @ts-expect-error 123
+      window.ym(79791280, eventName, options.options);
     }
   } catch (e) {
     console.log(e);
