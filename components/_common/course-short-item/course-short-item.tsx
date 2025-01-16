@@ -52,14 +52,15 @@ const CourseShortItem = ({
           {isPastCourse && <Paragraph fontWeight={"medium"} fontSize={"none"}
             className={styles.complete}>Завершён</Paragraph>}
 
-          {(Boolean(price) && !isPastCourse) && <div className={styles.priceWrapper}>
+          {(false && Boolean(price) && !isPastCourse) && <div className={styles.priceWrapper}>
             <Paragraph fontWeight={"medium"} fontSize={"none"}
               className={styles.price}>от {formatPrice(price)} ₽
             </Paragraph>
             {days && <Paragraph fontSize={"none"}
-              className={styles.duration}>{days} {getDeclension(days, ["день", "дня", "дней"])}
+              className={styles.duration}>{days} {getDeclension(days!, ["день", "дня", "дней"])}
             </Paragraph>}
           </div>}
+          
           <ButtonArrow
             component={Link}
             href={`${Route.COURSES}/course-${alias}`}
