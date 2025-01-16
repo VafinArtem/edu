@@ -54,10 +54,10 @@ const CourseShortItem = ({
 
           {(Boolean(price) && !isPastCourse) && <div className={styles.priceWrapper}>
             <Paragraph fontWeight={"medium"} fontSize={"none"}
-              className={styles.price}>{formatPrice(price)} ₽
+              className={styles.price}>от {formatPrice(price)} ₽
             </Paragraph>
             {days && <Paragraph fontSize={"none"}
-              className={styles.duration}>за {days} {getDeclension(days, ["день", "дня", "дней"])}
+              className={styles.duration}>{days} {getDeclension(days, ["день", "дня", "дней"])}
             </Paragraph>}
           </div>}
           <ButtonArrow
