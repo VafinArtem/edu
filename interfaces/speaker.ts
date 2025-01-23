@@ -35,8 +35,8 @@ export interface NavigationLink {
 export interface ExampleItem {
   id: number;
   name: string;
-  description: string;
-  images: string[];
+  description?: string;
+  images: {image: string, description: string}[];
 }
 
 export interface GalleryItem {

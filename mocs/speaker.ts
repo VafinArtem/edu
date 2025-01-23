@@ -48,10 +48,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Удаление кисты",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-1.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -59,10 +71,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Стоматологическая реабилитации пациента",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-2.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -70,10 +94,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Интеграцию пародонтологии и хирургии",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-3.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -81,10 +117,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Удаление кисты",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-4.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -92,10 +140,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Поддерживающая пародонтальная терапия",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-1.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -103,10 +163,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Пластика десны перед ортодонтией",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-2.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
     {
@@ -114,10 +186,22 @@ export const speaker: SpeakerPageModel = {
       "name": "Удаление кисты",
       "description": "<p>Пациентам обычно не&nbsp;очень нравится, когда врач предлагает удалить зуб, но&nbsp;на&nbsp;этом этапе все выглядит еще вполне оптимистично. Зуб удалим и&nbsp;поставим имплантат, те&nbsp;практически, вырастим новый зуб. Хуже, когда приходится озвучивать предложение по&nbsp;удалению имплантата.</p><p>В&nbsp;этом кейсе четко видно два момента:</p><ol><li>Показание к&nbsp;удалению имплантата&nbsp;&mdash; перелом тела имплантата</li><li>Интеграция, срастание имплантата с&nbsp;костной тканью.</li></ol><p>В&nbsp;данном случае мне пришлось выпилить кусочек кости с&nbsp;помощью пьезоаппарата acteon. Извлечь имплантат с&nbsp;кусочком костной ткани, разделить их&nbsp;вне полости рта. Имплантат выбросить, а&nbsp;нужную косточку прикрутить обратно.</p>",
       "images": [
-        "/img/speaker-page/examples/img-1.png",
-        "/img/speaker-page/example/image-1.png",
-        "/img/speaker-page/example/image-2.png",
-        "/img/speaker-page/example/image-3.png",
+        {
+          "image": "/img/speaker-page/examples/img-1.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-1.png",
+          "description": "Место для длинного названия фото, в две строки",
+        },
+        {
+          "image": "/img/speaker-page/example/image-2.png",
+          "description": "Место для названия фото",
+        },
+        {
+          "image": "/img/speaker-page/example/image-3.png",
+          "description": "Место для названия фото",
+        },
       ],
     },
   ],
