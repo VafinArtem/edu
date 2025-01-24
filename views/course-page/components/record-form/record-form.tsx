@@ -8,6 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import {sendEcommerce, sendMetric} from "@/helpers/metricks";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 import React, {ReactElement, useState} from "react";
@@ -21,7 +22,14 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: RecordFormProps): ReactElement | null => {
+const RecordForm = ({
+  tariffInfo,
+  saleTimestamp,
+  courseId,
+  courseTypeName,
+  metric,
+  ecommerce,
+}: RecordFormProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
   const {
     register,
@@ -37,17 +45,43 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
     },
   });
 
+  const onChange = () => {
+    if (metric) {
+      sendMetric(`reachGoal`, {options: metric.change});
+    }
+  };
+
   const onSubmit: SubmitHandler<{
     name: string
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: tariffInfo.id ?? null, courseId},
+      data: {...data, tariff: tariffInfo.id ?? null, courseId, orderId: ecommerce.id},
     });
 
     setAnswerType(res);
 
     if (res === "success") {
+      if (metric) {
+        sendMetric(`reachGoal`, {options: metric.send});
+      }
+
+      sendEcommerce({
+        actionType: "purchase",
+        actionField: {
+          id: ecommerce.id,
+        },
+        products: [
+          {
+            id: courseId,
+            name: ecommerce.name,
+            category: ecommerce.category,
+            price: tariffInfo.current,
+            variant: tariffInfo.name,
+          },
+        ],
+      });
+
       reset();
     }
 
@@ -78,7 +112,7 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
       </div>
       <form className={clsx(styles.form, {
         [styles.hidden]: answerType,
-      })} onSubmit={handleSubmit(onSubmit)}>
+      })} onSubmit={handleSubmit(onSubmit)} onChange={onChange}>
         <Input
           placeholder={`Ваше имя*`}
           labelName={`Ваше имя`}
@@ -118,11 +152,11 @@ const RecordForm = ({tariffInfo, saleTimestamp, courseId, courseTypeName}: Recor
           }}
         />
         <div className={styles.formFooter}>
-          <Button className={styles.submit} disabled={!isValid}>
+          <Button className={styles.submit} isDisabled={!isValid}>
             Записаться <span className="only-mobile">на {courseTypeName}</span>
           </Button>
           <p className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <a
-            target={`_blank`} href={`#`}>персональных данных</a></p>
+            target={`_blank`} href={`/pdf/personal_data_processing_policy_1.pdf`}>персональных данных</a></p>
         </div>
       </form>
       {answerType && <div className={styles.answer}>

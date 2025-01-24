@@ -1,5 +1,8 @@
+"use client";
+
 import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
+import {storePathValues} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
 import {NavigationLink} from "@/interfaces/speaker";
 import About from "@/views/speaker-page/components/about/about";
@@ -9,11 +12,18 @@ import Examples from "@/views/speaker-page/components/examples/examples";
 import Gallery from "@/views/speaker-page/components/gallery/gallery";
 import Navigation from "@/views/speaker-page/components/navigation/navigation";
 import Promo from "@/views/speaker-page/components/promo/promo";
-import React, {ReactElement} from "react";
+import {usePathname} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./speaker-page.module.css";
 import {SpeakerPageProps} from "./speaker-page.props";
 
 const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement | null => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
+
   const {
     surname,
     name,

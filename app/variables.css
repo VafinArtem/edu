@@ -62,6 +62,9 @@
   --other-prj-blue: #458FD2;
   --other-prj-green: #8AB56C;
   --other-prj-purple: #B375E3;
+  --other-prj-blue-hov: #57AEFF;
+  --other-prj-green-hov: #9AD86F;
+  --other-prj-purple-hov: #BD68FF;
 
   --edu-item-border: #A94660;
 
@@ -72,4 +75,9 @@
 
   --answer-success-bg: #44AA7A;
   --answer-error-bg: var(--gray-400);
+
+  --youtube: #E60000;
+  --vk: #0077FF;
+
+  --card-hover: 0 4px 29px 0 rgba(210, 215, 223, 0.69);
 }

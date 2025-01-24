@@ -9,4 +9,9 @@ export interface PriceProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement
   };
   saleTimestamp?: number;
   courseId: string;
+  ecommerce: {
+    id: string;
+    name: string;
+    category: string;
+  };
 }

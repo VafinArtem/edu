@@ -1,3 +1,15 @@
+## Подготовка данных для отправки метрики 404
+
+На каждую страницу размещаем
+
+```js
+const pathname = usePathname();
+
+useEffect(() => {
+  storePathValues();
+}, [pathname]);
+```
+
 ## BREAKPOINTS
 
 1499px - Брейкпоинт для ноутбука  

@@ -28,7 +28,7 @@ export async function generateMetadata(props: {
       description: `Все курсы учебного центра Амрита, онлайн и оффлайн обучение для стоматологов. Семинары и курсы от лучших лекторов проводим в Санкт-Петербурге и по всей России. Записывайтесь на обучение на сайте или по телефону 8-800-550-05-24`,
     };
   }
-  
+
   const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
 
   const page: null | {data: CoursePageModel, code: number} = await getCoursePage(alias ? alias : "");
@@ -41,7 +41,7 @@ export async function generateMetadata(props: {
 
   return {
     title: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
-    description: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
+    description: (page as {data: CoursePageModel, code: number}).data.metaDescription ?? ``,
   };
 }
 

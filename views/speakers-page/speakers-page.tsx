@@ -5,11 +5,19 @@ import Pagination from "@/components/_common/pagination/pagination";
 import SpeakerShortItem from "@/components/_common/speaker-short-item/speaker-short-item";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
-import React, {ReactElement} from "react";
+import {storePathValues} from "@/helpers/helpers";
+import {usePathname} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./speakers-page.module.css";
 import {SpeakersPageProps} from "./speakers-page.props";
 
 const SpeakersPage = ({speakers}: SpeakersPageProps): ReactElement | null => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
+
   return (
     <>
       <Pagination className={`container`} pagination={[{name: `Преподаватели`}]} />

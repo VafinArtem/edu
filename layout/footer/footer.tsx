@@ -31,8 +31,9 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
           <Logo className={styles.logo} position={"footer"} color={"white"} />
           <Paragraph fontSize={"none"} className={styles.license}><Image src={`/img/components/footer/eagle.png`}
             width={56} height={61} quality={100} className={styles.eagle}
-            alt={``} /><span className={styles.licenseText}><span>Лицензия </span>
-            <span>№Л035-01271-78/00637355</span></span></Paragraph>
+            alt={``} /><a href={`/pdf/license.pdf`} target={"_blank"}
+            className={styles.licenseText}><span>Лицензия </span>
+            <span>№Л035-01271-78/00637355</span></a></Paragraph>
           <Navigation className={styles.navigation}>
             {/*<NavigationItem title={`Amrita`}>*/}
             {/*  <NavigationLink component={Link} href={Route.COURSES}>О компании</NavigationLink>*/}
@@ -51,22 +52,27 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Вебинары</NavigationLink>*/}
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Курсы</NavigationLink>*/}
             {/*</NavigationItem>*/}
-            {/*<NavigationItem title={`Дополнительно`}>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>*/}
-            {/*</NavigationItem>*/}
+            <NavigationItem title={`Дополнительно`}>
+              <NavigationLink component={`a`} href={`/pdf/personal_data_processing_policy_1.pdf`} target={`_blank`}>Политика
+                конфиденциальности</NavigationLink>
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>*/}
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>*/}
+              {/*<NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>*/}
+            </NavigationItem>
           </Navigation>
           <a href="tel:+79312011400" className={styles.phone}>+7 (931) 201-14-00</a>
           <Social className={styles.social}>
             <SocialItem
               href={`https://www.youtube.com/channel/UCsWR0CGP1OLaQTFA0iEg61Q`}
               aria-label={`YouTube`}
-              icon={(className: string) => <IconYouTube className={className} width={40} height={40} />}
+              className={`youtubeIcon`}
+              icon={(className: string) => <IconYouTube className={className} width={40}
+                height={40} />}
             />
             <SocialItem
               href={`https://vk.com/amritadent`}
               aria-label={`Вконтакте`}
+              className={`vkIcon`}
               icon={(className: string) => <IconVK className={className} width={40} height={40} />}
             />
           </Social>

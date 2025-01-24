@@ -29,7 +29,10 @@ export interface CoursePageModel extends CommonPageModel {
   speakers: {
     id: number;
     alias: string;
-    surname: string,
+    surname: {
+      nominative: string;
+      genitive: string;
+    },
     cite?: string,
     name: {
       nominative: string;
@@ -40,6 +43,10 @@ export interface CoursePageModel extends CommonPageModel {
       genitive: string;
     },
     photo: string;
+    video?: {
+      poster: string;
+      url: string;
+    };
     avatar: string;
     edu: Edu[];
     position: string;
@@ -93,7 +100,10 @@ export interface Edu {
 }
 
 export interface Speaker {
-  video?: string;
+  video?: {
+    poster: string;
+    url: string;
+  };
   id: number;
   alias: string;
   photo: string;
@@ -110,6 +120,7 @@ export interface Speaker {
 export interface SpeakerShort {
   id: number;
   name: string;
+  surname: string;
   avatar: string;
   photoBackground: string;
 }
@@ -137,12 +148,12 @@ export interface CourseProgram {
   text: string;
   pdfLink?: string;
   theory: {
-    duration: number;
+    duration?: number;
     learnList?: string[];
     themeList?: string[];
   };
   practice: {
-    duration: number;
+    duration?: number;
     learnList?: string[];
     themeList?: string[];
   };
@@ -187,8 +198,12 @@ export interface CourseShort {
     background: string;
   };
   price: number;
+  days?: number;
   icon?: string;
-  date?: number;
+  dates?: {
+    start: number;
+    end?: number;
+  };
   location?: string;
   photo?: string;
   photoBackground?: string;

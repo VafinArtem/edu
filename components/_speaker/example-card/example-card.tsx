@@ -29,7 +29,7 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
       <article className={clsx(styles.item, className)}>
         <BaseButton<C> className={clsx(styles.inner)} {...(props as BaseButtonProps<C>)}
           onClick={() => changeModalActivityStatus(true)}>
-          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${images[0]}`} alt={``} width={417} height={319}
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${images[0].image}`} alt={``} width={417} height={319}
             className={styles.image} quality={95}
             priority={true} />
           <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
@@ -40,11 +40,20 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
           <div className={styles.scroll}>
             <div className={styles.modalInner}>
               <Paragraph className={styles.modalName}>{name}</Paragraph>
-              <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />
+              {description && <div className={styles.modalContent} dangerouslySetInnerHTML={{__html: description}} />}
               <div className={styles.images}>
-                {images.map((image, index) => <Image key={index}
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${image}`} alt={``}
-                  width={347} height={347} quality={95} className={styles.modalImage} />)}
+                {images.map((image, index) => (
+                  <figure className={styles.imageWrapper} key={index}>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${image.image}`}
+                      alt={``}
+                      width={347}
+                      height={347}
+                      quality={95}
+                      className={styles.modalImage}
+                    />
+                    {image.description && <figcaption className={styles.description}>{image.description}</figcaption>}
+                  </figure>))}
               </div>
             </div>
           </div>

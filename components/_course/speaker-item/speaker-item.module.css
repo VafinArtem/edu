@@ -108,10 +108,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .picture {
@@ -232,20 +228,15 @@
   }
 
   .preview {
-	position: relative;
-	width: 100%;
-	height: 100%;
 	border-radius: 50px;
-	overflow: hidden;
   }
 
   .video,
   .picture {
 	position: static;
-	width: 100%;
-	height: auto;
   }
 
+  .video,
   .picture {
 	aspect-ratio: 2.5;
   }
@@ -286,6 +277,10 @@
 
   .preview {
 	border-radius: 20px;
+  }
+
+  .video {
+	aspect-ratio: 1;
   }
 
   .eduHead {

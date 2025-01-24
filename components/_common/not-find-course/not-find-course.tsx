@@ -61,12 +61,12 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
         })}>
           <div className={styles.content}>
             <Heading tag={`h2`} className={styles.title}>Не нашли нужный курс?</Heading>
-            <Paragraph fontSize={"small"}>Расскажите, какие&nbsp;бы курсы вы&nbsp;хотели видеть на&nbsp;нашей платформе.
+            <Paragraph fontSize={"small"} fontWeight={"light"}>Расскажите, какие&nbsp;бы курсы вы&nbsp;хотели видеть
+              на&nbsp;нашей платформе.
               Мы&nbsp;учитываем
               все запросы при формировании новых учебных программ.</Paragraph>
-            <Paragraph fontSize={"small"}>Возможно уже в&nbsp;следующем месяце вы&nbsp;найдёте тот курс, о&nbsp;котором
-              нам
-              писали.</Paragraph>
+            <Paragraph fontSize={"small"} fontWeight={"light"}>Возможно уже в&nbsp;следующем месяце вы&nbsp;найдёте тот
+              курс, о&nbsp;котором нам писали.</Paragraph>
           </div>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Textarea
@@ -109,10 +109,11 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
               }}
             />
             <div className={styles.footer}>
-              <Button type={"submit"} className={styles.submit} disabled={!isValid}>Отправить</Button>
+              <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Отправить</Button>
               <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
                 вы&nbsp;соглашаетесь
-                на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
+                на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy_1.pdf`} target={"_blank"}>персональных
+                  данных</a></Paragraph>
             </div>
           </form>
         </div>

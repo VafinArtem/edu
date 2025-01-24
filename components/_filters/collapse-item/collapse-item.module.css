@@ -20,6 +20,17 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.head:hover,
+.head:focus-visible {
+  background-color: var(--gray-100);
+}
+
+.head:hover svg,
+.head:focus-visible svg {
+  color: var(--primary);
 }
 
 .title {

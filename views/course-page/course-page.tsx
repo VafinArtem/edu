@@ -1,9 +1,12 @@
+"use client";
+
 import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import {convertCourseDates} from "@/helpers/dates-helpers";
-import {getMinTariff} from "@/helpers/helpers";
+import {getMinTariff, storePathValues} from "@/helpers/helpers";
+import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Advantages from "@/views/course-page/components/advantages/advantages";
 import Faq from "@/views/course-page/components/faq/faq";
@@ -16,7 +19,9 @@ import RecordForm from "@/views/course-page/components/record-form/record-form";
 import Schedule from "@/views/course-page/components/schedule/schedule";
 import SpeakerCourses from "@/views/course-page/components/speaker-courses/speaker-courses";
 import Speakers from "@/views/course-page/components/speakers/speakers";
-import React, {ReactElement} from "react";
+import {nanoid} from "nanoid";
+import {usePathname} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./course-page.module.css";
 import {CoursePageProps} from "./course-page.props";
 
@@ -42,6 +47,20 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     id,
   } = training;
 
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      sendMetric(`reachGoal`, {options: `course-show`});
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Pagination className={`container`} pagination={[{name: `Курсы`, link: Route.COURSES}, {
@@ -61,13 +80,13 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           name={name}
           city={city.name}
           saleTimestamp={saleTimestamp}
-          speakers={speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
-            name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+          speakers={speakers.length > 0 ? speakers.map(({id, name, patronymic, surname, specialization, photo}) => ({
+            name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
             specialization,
             photo,
             id,
             photoBackground: colors.photoBackground,
-          }))}
+          })) : []}
         />
 
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
@@ -82,12 +101,22 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           saleTimestamp={saleTimestamp}
           courseId={id}
           courseTypeName={typeName.nominative}
+          metric={{
+            change: `course-min-record-1-change`,
+            send: `course-min-record-1-send`,
+          }}
+          ecommerce={{
+            id: nanoid(10),
+            name: name,
+            category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
+          }}
         />
       </div>
 
-      <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
+      {speakers.length > 0 && <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
         speakers={speakers.map(({
           position,
+          video,
           surname,
           name,
           patronymic,
@@ -100,18 +129,19 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           photo,
           aboutSlides,
         }) => ({
-          name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+          name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
           position,
           specialization,
           edu,
           id,
+          video,
           workExperience,
           photo,
           alias,
           cite,
           aboutSlides,
           photoBackground: colors.photoBackground,
-        }))} />
+        }))} />}
 
       {schedule.days.length > 0 && <Schedule
         courseTypeName={typeName.genitive.toLowerCase()}
@@ -124,6 +154,11 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         courseId={id}
         tariffs={tariffs}
         saleTimestamp={saleTimestamp}
+        ecommerce={{
+          id: nanoid(10),
+          name: name,
+          category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
+        }}
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
       />}
 
@@ -156,6 +191,15 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             saleTimestamp={saleTimestamp}
             courseId={id}
             courseTypeName={typeName.nominative}
+            metric={{
+              change: `course-min-record-2-change`,
+              send: `course-min-record-2-send`,
+            }}
+            ecommerce={{
+              id: nanoid(10),
+              name: name,
+              category: speakers.map((speaker) => `${speaker.surname.nominative} ${speaker.name.nominative}`).join(" / "),
+            }}
           />
         </div>
 
@@ -165,6 +209,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           speakers={speakers.map((speaker) => ({
             id: speaker.id,
             name: speaker.name.genitive,
+            surname: speaker.surname.genitive,
             avatar: speaker.photo,
             photoBackground: colors.photoBackground,
           }))} />}

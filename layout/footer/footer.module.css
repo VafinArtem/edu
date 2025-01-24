@@ -41,9 +41,13 @@
   margin-top: 4px;
 }
 
-.phone,
+.phone {
+  margin-top: -20px;
+}
+
+
 .social {
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 .license,
@@ -75,10 +79,16 @@
   font-size: 1.8rem;
 }
 
+
 .licenseText {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.licenseText:hover,
+.licenseText:focus-visible {
+  color: var(--white);
 }
 
 .eagle {
@@ -117,7 +127,7 @@
 
   .phone,
   .social {
-	margin-top: -5px;
+	margin-top: 0;
   }
 
   .phone {

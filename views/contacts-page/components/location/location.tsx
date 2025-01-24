@@ -20,15 +20,16 @@ const Location = ({className}: LocationProps): ReactElement | null => {
   return (
     <section className={clsx(styles.wrapper, className)}>
       <div className={styles.content}>
-        <Paragraph fontSize={"asDefaultTitle"} className={styles.title}>Находимся <br className={styles.noTablet} />
-          в&nbsp;Санкт-Петербурге</Paragraph>
-        <address className={styles.address}>Московский проспект, дом 183-185, Учебный центр Амрита, помещение 800-H
+        <Paragraph fontSize={"asDefaultTitle"} className={styles.title}>Адрес учебного центра Amrita</Paragraph>
+        <address className={styles.address}>г. Санкт-Петербург, Московский проспект, дом 183-185, помещение 800-H,
+          корпус&nbsp;8.
         </address>
         <Paragraph className={styles.workHours}>Режим работы: Пн-чт 09:00 — 18:00; Пт 09:00 — 17:00</Paragraph>
         <YaDirectionButton backgroundColor={"white"} position={[59.856994, 30.317404]} className={styles.direction} />
         <div className={styles.footer}>
           <div className={styles.contacts}>
             <a href={`tel:+78005500524`} className={styles.contact}>8-800-550-05-24</a>
+            <a href={`tel:+79312518351`} className={styles.contact}>8-931-251-83-51</a>
             <a href={`mailto:edu@amrita-dent.ru`} className={styles.contact}>edu@amrita-dent.ru</a>
           </div>
           <Social className={styles.social}>

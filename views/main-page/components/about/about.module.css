@@ -37,6 +37,16 @@
   color: var(--primary);
 }
 
+.link:hover,
+.link:focus-visible {
+  color: var(--primary-2);
+}
+
+.link:hover .border,
+.link:focus-visible .border {
+  border-bottom-color: transparent;
+}
+
 .border {
   border-bottom: 1px solid rgba(var(--primary-rgb), 0.2);
 }

@@ -153,11 +153,22 @@
   gap: 20px;
 }
 
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+}
+
 .modalImage {
   width: 100%;
   border-radius: 20px;
   aspect-ratio: 1;
   object-fit: cover;
+}
+
+.description {
+  font-size: 1.8rem;
 }
 
 @media (max-width: 1499px) {
@@ -182,6 +193,7 @@
 	font-size: 2rem;
   }
 
+  .description,
   .modalContent {
 	font-size: 1.6rem;
   }

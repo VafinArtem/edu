@@ -60,6 +60,11 @@
   .buttons {
 	display: none;
   }
+
+  .reset {
+	margin-left: 10px;
+	margin-right: 10px;
+  }
 }
 
 @media (max-width: 1099px) {
@@ -149,6 +154,10 @@
 	display: flex;
 	gap: 14px;
 	align-self: center;
+  }
+
+  .reset {
+	display: none;
   }
 }
 

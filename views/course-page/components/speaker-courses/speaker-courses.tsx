@@ -69,7 +69,7 @@ const SpeakerCourses = ({speakers, courses, className}: SpeakerCoursesProps): Re
           tag={`h2`}
           align={`center`}
           className={styles.title}
-          dangerouslySetInnerHTML={{__html: `Курсы ${getTitle(speakers.map((item) => item.name))}`}} />
+          dangerouslySetInnerHTML={{__html: `Курсы ${getTitle(speakers.map((item) => `${item.surname ? `${item.surname} ` : ``}${item.name}`))}`}} />
         <ButtonArrow
           component={Link}
           href={Route.COURSES}

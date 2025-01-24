@@ -1,15 +1,6 @@
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   width: 75%;
-  font-weight: 300;
-  font-size: 2rem;
-}
-
-.content > * {
-  margin-top: 0;
-  margin-bottom: 0;
+  line-height: 1.4;
 }
 
 @media (max-width: 1499px) {
@@ -20,14 +11,6 @@
 
 @media (max-width: 1099px) {
   .content {
-	gap: 15px;
 	width: 100%;
-	font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .content {
-	font-size: 1.6rem;
   }
 }

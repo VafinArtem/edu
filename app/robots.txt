@@ -1,6 +1,6 @@
 User-agent: YandexBot
 Allow: /
-Clean-Param: etext
+Clean-Param: etext&sort&query&price-start&price-end&date-start&date-end&city&teachers&mango
 
 User-agent: Googlebot
 Allow: /

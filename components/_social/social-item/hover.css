@@ -1,0 +1,19 @@
+.youtubeIcon:hover rect,
+.youtubeIcon:focus-visible rect {
+  fill: var(--youtube);
+}
+
+.youtubeIcon:hover path,
+.youtubeIcon:focus-visible path {
+  fill: var(--white);
+}
+
+.vkIcon:hover rect,
+.vkIcon:focus-visible rect {
+  fill: var(--vk);
+}
+
+.vkIcon:hover path,
+.vkIcon:focus-visible path {
+  fill: var(--white);
+}

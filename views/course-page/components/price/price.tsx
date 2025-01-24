@@ -8,6 +8,7 @@ import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
 import {formatPhoneNumber} from "@/helpers/helpers";
+import {sendEcommerce, sendMetric} from "@/helpers/metricks";
 import useOpenModal from "@/hooks/useOpenModal";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
@@ -23,7 +24,14 @@ const Timer = dynamic(() => import("@/components/_common/timer/timer"), {
   ssr: false,
 });
 
-const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: PriceProps): ReactElement | null => {
+const Price = ({
+  tariffs,
+  courseTypeName,
+  saleTimestamp,
+  courseId,
+  ecommerce,
+  ...props
+}: PriceProps): ReactElement | null => {
   const {
     register,
     handleSubmit,
@@ -41,17 +49,37 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
     },
   });
 
+  const onChange = () => {
+    sendMetric(`reachGoal`, {options: `course-record-change`});
+  };
+
   const onSubmit: SubmitHandler<{
     name: string
     contact: string
   }> = async (data) => {
     const res = await orderWithTariff({
-      data: {...data, tariff: currentTariff, courseId},
+      data: {...data, tariff: currentTariff, courseId, orderId: ecommerce.id},
     });
 
     setAnswerType(res);
 
     if (res === "success") {
+      sendMetric(`reachGoal`, {options: `course-record-send`});
+      sendEcommerce({
+        actionType: "purchase",
+        actionField: {
+          id: ecommerce.id,
+        },
+        products: [
+          {
+            id: courseId,
+            name: ecommerce.name,
+            category: ecommerce.category,
+            price: tariffs.find((el) => el.id === currentTariff)?.prices.current,
+            variant: tariffs.find((el) => el.id === currentTariff)?.name,
+          },
+        ],
+      });
       reset();
     }
   };
@@ -78,15 +106,20 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
           </div>}
         </div>
         {(tariffs && tariffs.length > 0) && <div className={styles.list}>
-          {tariffs.map((tariff) => <TariffInfo setCurrentTariff={setCurrentTariff}
-            setShowFormStatus={changeModalActivityStatus} tariff={tariff}
-            key={tariff.id} />)}
+          {tariffs.map((tariff) => <TariffInfo
+            className={styles.item}
+            setCurrentTariff={setCurrentTariff}
+            setShowFormStatus={changeModalActivityStatus}
+            tariff={tariff}
+            key={tariff.id}
+          />)}
         </div>}
       </div>
       <div className={clsx(styles.modal, {
         [styles.show]: showModal,
       })} ref={ref}>
-        <form action="#" className={clsx(styles.form, `container`)} onSubmit={handleSubmit(onSubmit)}>
+        <form action="#" className={clsx(styles.form, `container`)} onChange={onChange}
+          onSubmit={handleSubmit(onSubmit)}>
           <Heading tag={`h3`} fontSize={"none"} className={styles.formTitle}>2. Укажите ваши данные для регистрации на
             курс</Heading>
           <div className={styles.inner}>
@@ -131,9 +164,10 @@ const Price = ({tariffs, courseTypeName, saleTimestamp, courseId, ...props}: Pri
                 });
               }}
             />
-            <Button type={"submit"} className={styles.submit} disabled={!isValid}>Записаться</Button>
+            <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Записаться</Button>
             <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-              на&nbsp;обработку <a href={`#`} target={"_blank"}>персональных данных</a></Paragraph>
+              на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy_1.pdf`} target={"_blank"}>персональных
+                данных</a></Paragraph>
           </div>
         </form>
         {answerType && <div className={clsx(styles.answer, `container`)}>

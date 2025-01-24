@@ -1,7 +1,15 @@
 .wrapper {
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
+  /*gap: 10px;*/
+  /*justify-content: space-between;*/
+  gap: 100px;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+	gap: 10px;
+	justify-content: space-between;
+  }
 }
 
 @media (max-width: 767px) {

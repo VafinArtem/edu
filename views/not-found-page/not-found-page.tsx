@@ -1,17 +1,36 @@
+"use client";
+
 import Button from "@/components/_buttons/button/button";
+import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
+import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Direction from "@/views/main-page/components/promo/direction/direction";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./not-found-page.module.css";
 import {NotFoundPageProps} from "./not-found-page.props";
 
+const getNotFoundParams = (): Record<string, Record<string, Record<string, string> | string>> | string => {
+  const ref = sessionStorage.getItem("prevPath") ?? "";
+  const siteUrl = document.location.href;
+  const visitParams = {NotFoundURL: {[siteUrl]: {Реферер: ref ? ref : document.referrer ?? ``}}};
+
+  return visitParams;
+};
+
 const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactElement | null => {
+  useEffect(() => {
+    sendMetric("reachGoal", {
+      url: `404error`,
+      options: getNotFoundParams(),
+    });
+  }, []);
+
   return (
     <React.Fragment>
       <div className="container">
@@ -30,12 +49,13 @@ const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactEle
           </div>
         </section>
       </div>
-      {directions.length > 0 && <SectionItem className={`container`}>
+      {directions.length > 1 && <SectionItem className={`container`}>
         <Heading tag={`h2`}>Направления</Heading>
         <ul className={styles.directionList}>
           {directions.map((direction) => <Direction key={direction.id} direction={direction} />)}
         </ul>
       </SectionItem>}
+      <NotFindCourse className={styles.notFindCourse} />
     </React.Fragment>
   );
 };

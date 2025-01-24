@@ -30,6 +30,7 @@ export const getMinTariff = (tariffs: TariffInfo[]) => {
   return tariffs.reduce((previousValue, tariff, currentIndex) => {
     if (currentIndex === 0) {
       return {
+        name: tariff.name,
         current: tariff.prices.current,
         old: tariff.prices.old,
         id: tariff.id,
@@ -38,6 +39,7 @@ export const getMinTariff = (tariffs: TariffInfo[]) => {
 
     if (tariff.prices.current < previousValue.current) {
       return {
+        name: tariff.name,
         current: tariff.prices.current,
         old: tariff.prices.old,
         id: tariff.id,
@@ -46,13 +48,26 @@ export const getMinTariff = (tariffs: TariffInfo[]) => {
 
     return previousValue;
   }, {
+    name: ``,
     current: 0,
     id: null,
-  } as {current: number, old?: number, id: number | null});
+  } as {current: number, old?: number, id: number | null, name: string});
 };
 
 export const capitalize = (str: string) => {
   if (!str) return str;
 
   return str[0].toUpperCase() + str.slice(1);
+};
+
+export const storePathValues = () => {
+  const storage = globalThis?.sessionStorage;
+  if (!storage) return;
+
+  // Set the previous path as the value of the current path.
+  const prevPath = storage.getItem("currentPath");
+
+  storage.setItem("prevPath", prevPath ?? "/");
+  // Set the current path value by looking at the browser's location object.
+  storage.setItem("currentPath", globalThis.location.pathname);
 };

@@ -5,6 +5,12 @@
   border: 1px solid var(--gray-200);
   border-radius: 20px;
   overflow: hidden;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.wrapper:hover,
+.wrapper:focus-within {
+  box-shadow: var(--card-hover);;
 }
 
 .wrapper.whiteBg {
@@ -46,6 +52,8 @@
 
 .image {
   width: 100%;
+  aspect-ratio: 2.1;
+  object-fit: cover;
 }
 
 .wrapper.past .image {
@@ -127,8 +135,25 @@
   padding-top: 5px;
 }
 
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.link {
+  white-space: nowrap;
+}
+
 .price {
   font-size: 1.8rem;
+}
+
+.duration {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gray-400);
 }
 
 .complete {
@@ -188,6 +213,10 @@
 
   .price {
 	font-size: 1.6rem;
+  }
+
+  .duration {
+	font-size: 1.3rem;
   }
 }
 

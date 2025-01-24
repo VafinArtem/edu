@@ -12,6 +12,13 @@
   cursor: pointer;
 }
 
+.button.small {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+
 .button.primary2 {
   background-color: var(--primary-2);
 }
@@ -21,24 +28,25 @@
   background-color: var(--primary-light);
 }
 
-.button:disabled {
+.button:disabled,
+.button.disabled {
   color: var(--white);
   background-color: var(--gray-400);
   cursor: initial;
 }
 
-.button:not(:disabled):hover,
-.button:not(:disabled):focus-visible {
+.button:not(:disabled, .disabled):hover,
+.button:not(:disabled, .disabled):focus-visible {
   background-color: var(--primary-hover);
 }
 
-.button.primary2:not(:disabled):hover,
-.button.primary2:not(:disabled):focus-visible {
+.button.primary2:not(:disabled, .disabled):hover,
+.button.primary2:not(:disabled, .disabled):focus-visible {
   background-color: var(--primary-2-hover);
 }
 
-.button.primaryLight:not(:disabled):hover,
-.button.primaryLight:not(:disabled):focus-visible {
+.button.primaryLight:not(:disabled, .disabled):hover,
+.button.primaryLight:not(:disabled, .disabled):focus-visible {
   color: var(--white);
   background-color: var(--primary);
 }

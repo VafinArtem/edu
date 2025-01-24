@@ -1,10 +1,10 @@
-import React, {ReactElement} from "react";
-import {CertificateProps} from "./certificate.props";
-import styles from "./certificate.module.css";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {getImageProps} from "next/image";
+import React, {ReactElement} from "react";
+import styles from "./certificate.module.css";
+import {CertificateProps} from "./certificate.props";
 
-const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null => {
+const Certificate = ({}: CertificateProps): ReactElement | null => {
   const common = {alt: "", quality: 95};
   const {
     props: {srcSet: desktop, ...rest},
@@ -13,7 +13,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     width: 750,
     height: 340,
     priority: true,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: laptop},
@@ -21,7 +21,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 440,
     height: 271,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: tablet},
@@ -29,7 +29,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 648,
     height: 271,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
   const {
     props: {srcSet: mobile},
@@ -37,7 +37,7 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
     ...common,
     width: 290,
     height: 179,
-    src: "/img/components/certificate/diploma.png",
+    src: "/img/components/certificate/diploma-1.png",
   });
 
   return (
@@ -51,12 +51,12 @@ const Certificate = ({courseTypeName}: CertificateProps): ReactElement | null =>
         <img {...rest} width={290} height={179} alt={``} className={styles.image} />
       </picture>
       <div className={styles.content}>
-        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончанию {courseTypeName} вы&nbsp;получите
-          удостоверение государственного образца</Paragraph>
-        <Paragraph fontSize={"small"} className={styles.text}>Данные в&nbsp;нём будут внесены в&nbsp;&laquo;Федеральный
-          реестр сведений
-          о&nbsp;документах об&nbsp;образовании и&nbsp;квалификации&raquo;</Paragraph>
-        <a href="#" target={"_blank"} className={styles.license}>Лицензия &#8470;Л035-01271-78/00637355</a>
+        <Paragraph fontSize={"none"} className={styles.title}>По&nbsp;окончании обучения вы&nbsp;получите удостоверение
+          о&nbsp;повышении квалификации</Paragraph>
+        <Paragraph fontSize={"small"} className={styles.text}>С&nbsp;внесением данных в&nbsp;&laquo;Федеральный реестр
+          сведений о&nbsp;документах об&nbsp;образовании и&nbsp;квалификации&raquo;.</Paragraph>
+        <a href="/pdf/license.pdf" target={"_blank"}
+          className={styles.license}>Лицензия &#8470;Л035-01271-78/00637355</a>
       </div>
     </section>
   );
