@@ -1,0 +1,189 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.7rem;
+}
+
+.content > h2,
+.content > h3,
+.content > h4,
+.content > h5,
+.content > h6 {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 2.6rem;
+}
+
+.content > ol,
+.content > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > ul,
+.content > ol:not(.round) {
+  gap: 10px;
+}
+
+.content > ol:not(.round) {
+  padding-left: 25px;
+}
+
+.content > ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.content > ul > li {
+  display: flex;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.content > ul > li::before {
+  content: "";
+  position: relative;
+  top: 7px;
+  display: flex;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.content table {
+  display: block;
+  width: 100%;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.content table tbody,
+.content table thead {
+  display: table;
+  width: 100%;
+}
+
+.content tbody > tr:nth-child(odd) {
+  background-color: var(--gray-200);
+}
+
+.content tbody > tr:nth-child(odd) td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.content tbody > tr:nth-child(odd) td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.content thead td {
+  padding: 0 20px 10px;
+}
+
+.content tbody td {
+  padding: 10px 20px;
+}
+
+.content tbody {
+  color: var(--gray-600);
+}
+
+.accent {
+  padding: 10px 20px;
+  color: var(--primary);
+  font-size: 1.6rem;
+  background-color: var(--content-accent);
+  border-left: 2px solid var(--primary);
+  border-radius: 0 15px 15px 0;
+}
+
+ol.round {
+  gap: 15px;
+  padding-left: 0;
+  margin-top: 7px;
+  counter-reset: count 0;
+}
+
+ol.round > li {
+  display: flex;
+  gap: 13px;
+  counter-increment: count 1;
+}
+
+ol.round > li::before {
+  content: counter(count);
+  position: relative;
+  top: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--primary);
+  background-color: var(--content-accent);
+  border-radius: 50%;
+}
+
+@media (min-width: 1200px) {
+  .content > *:not(table) {
+	max-width: calc(100% - 180px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .content > * {
+	font-size: 1.6rem;
+  }
+
+  .content > h2,
+  .content > h3,
+  .content > h4,
+  .content > h5,
+  .content > h6 {
+	font-size: 2.5rem;
+  }
+
+  ol.round > li::before {
+	font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .content > h2,
+  .content > h3,
+  .content > h4,
+  .content > h5,
+  .content > h6 {
+	font-size: 2rem;
+  }
+
+  .content > table,
+  .content > *,
+  ol.round > li::before,
+  .accent {
+	font-size: 1.4rem;
+  }
+
+  .content > ul > li::before {
+	top: 6px;
+  }
+
+  ol.round {
+	margin-top: 9px;
+  }
+
+  ol.round > li::before {
+	top: -9px;
+  }
+}

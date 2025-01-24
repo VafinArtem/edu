@@ -70,6 +70,7 @@ export interface CoursePageModel extends CommonPageModel {
   };
   qa?: QAItem[];
   speakersCourses?: CourseShort[];
+  forWhom?: string;
 }
 
 export interface DailySchedule {
