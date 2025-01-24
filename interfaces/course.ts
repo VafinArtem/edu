@@ -43,6 +43,10 @@ export interface CoursePageModel extends CommonPageModel {
       genitive: string;
     },
     photo: string;
+    video?: {
+      poster: string;
+      url: string;
+    };
     avatar: string;
     edu: Edu[];
     position: string;
@@ -96,7 +100,10 @@ export interface Edu {
 }
 
 export interface Speaker {
-  video?: string;
+  video?: {
+    poster: string;
+    url: string;
+  };
   id: number;
   alias: string;
   photo: string;

@@ -1,6 +1,7 @@
 "use client";
 
 import EduItem from "@/components/_course/edu-item/edu-item";
+import VideoPreview from "@/components/_course/speaker-item/components/video-preview/video-preview";
 import ExternalBgLink from "@/components/_links/external-bg-link/external-bg-link";
 import Button from "@/components/_slider/button/button";
 import Heading from "@/components/_tags/heading/heading";
@@ -36,9 +37,8 @@ const SpeakerItem = ({
     <li className={styles.wrapper}>
       <div className={styles.inner}>
         <div className={styles.preview}>
-          {video && <video className={styles.video} poster={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`}>
-            <source srcSet={video} type="video/mp4" />
-          </video>}
+          {video &&
+            <VideoPreview video={video} className={styles.video} background={photoBackground} />}
           {!video && <picture className={styles.picture} style={{backgroundColor: photoBackground}}>
             <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`} alt={``} width={1330} height={648}
               className={styles.img}

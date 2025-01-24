@@ -116,6 +116,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       {speakers.length > 0 && <Speakers className={`container`} courseTypeName={typeName.nominative.toLowerCase()}
         speakers={speakers.map(({
           position,
+          video,
           surname,
           name,
           patronymic,
@@ -133,6 +134,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           specialization,
           edu,
           id,
+          video,
           workExperience,
           photo,
           alias,

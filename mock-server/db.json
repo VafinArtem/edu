@@ -110,6 +110,10 @@
             "specialization": "Стоматолог-хирург, пародонтолог",
             "workExperience": 1999,
             "photo": "/img/course-page/promo/speaker-desktop.png",
+            "video": {
+              "poster": "/img/course-page/promo/speaker-desktop.png",
+              "url": "/video-preview/1737565715_45646.mov"
+            },
             "avatar": "/img/common/test.png",
             "edu": [
               {
