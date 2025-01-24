@@ -10,6 +10,7 @@ import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Advantages from "@/views/course-page/components/advantages/advantages";
 import Faq from "@/views/course-page/components/faq/faq";
+import ForWhom from "@/views/course-page/components/for-whom/for-whom";
 import Gallery from "@/views/course-page/components/gallery/gallery";
 import Location from "@/views/course-page/components/location/location";
 import Price from "@/views/course-page/components/price/price";
@@ -91,6 +92,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
 
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
+
+      <ForWhom className={`container`} />
 
       {(program.theory || program.practice) &&
         <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />}
