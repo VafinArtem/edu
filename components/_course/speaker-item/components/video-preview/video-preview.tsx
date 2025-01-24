@@ -23,7 +23,7 @@ const VideoPreview = ({video, className, background}: VideoPreviewProps): ReactE
         src={video.url}
         className={clsx(className, styles.video)}
         style={{backgroundColor: background}}
-        poster={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${video.poster}`}>
+        poster={video.poster ? `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${video.poster}` : undefined}>
       </video>
       {showPlay && <button type={"button"} className={styles.button} onClick={() => {
         setShowControls(true);
