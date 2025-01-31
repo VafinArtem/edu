@@ -13,33 +13,35 @@ const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null
   const {photo, name, specialization, coursesCount, alias, direction, photoBackground} = speaker;
 
   return (
-    <article className={styles.wrapper}>
-      <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`} width={330} height={166} alt={``} loading={"lazy"}
-        className={styles.image} quality={95}
-        style={{backgroundColor: `${photoBackground}`}} />
-      <div className={styles.content}>
-        <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
-        <Paragraph fontSize={"none"} className={styles.specialization}>{specialization}</Paragraph>
-        {Boolean(coursesCount) && <Paragraph fontSize={"none"}
-          className={styles.coursesCount}>{coursesCount} {getDeclension(coursesCount, [`курс`, `курса`, `курсов`])}</Paragraph>}
-        <Paragraph fontSize={"none"}
-          className={styles.direction} style={{color: direction.color}}>
-          <span className={`visually-hidden`}>Направление: {direction.name}</span>
-          <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}></span>
-        </Paragraph>
-        <ButtonArrow
-          component={Link}
-          href={`${Route.SPEAKER}/${alias}`}
-          color={"primary"}
-          iconDirection={"mid-right"}
-          borderRadius={"small"}
-          className={styles.link}
-          size={"small"}
-          withBackground
-        >
-          О преподавателе
-        </ButtonArrow>
-      </div>
+    <article>
+      <Link href={`${Route.SPEAKER}/${alias}`} className={styles.wrapper}>
+        <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${photo}`} width={330} height={166} alt={``}
+          loading={"lazy"}
+          className={styles.image} quality={95}
+          style={{backgroundColor: `${photoBackground}`}} />
+        <div className={styles.content}>
+          <Heading tag={`h3`} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Heading>
+          <Paragraph fontSize={"none"} className={styles.specialization}>{specialization}</Paragraph>
+          {Boolean(coursesCount) && <Paragraph fontSize={"none"}
+            className={styles.coursesCount}>{coursesCount} {getDeclension(coursesCount, [`курс`, `курса`, `курсов`])}</Paragraph>}
+          <Paragraph fontSize={"none"}
+            className={styles.direction} style={{color: direction.color}}>
+            <span className={`visually-hidden`}>Направление: {direction.name}</span>
+            <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}></span>
+          </Paragraph>
+          <ButtonArrow
+            component={"p"}
+            color={"primary"}
+            iconDirection={"mid-right"}
+            borderRadius={"small"}
+            className={styles.link}
+            size={"small"}
+            withBackground
+          >
+            О преподавателе
+          </ButtonArrow>
+        </div>
+      </Link>
     </article>
   );
 };
