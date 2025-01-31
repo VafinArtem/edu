@@ -2,7 +2,11 @@ import {CommonPageModel} from "@/interfaces/common";
 import {CourseShort, Edu} from "@/interfaces/course";
 
 export interface SpeakerPageModel extends CommonPageModel {
-  surname: string,
+  surname: {
+    nominative: string;
+    genitive: string;
+    instrumental: string;
+  }
   name: {
     nominative: string;
     genitive: string;

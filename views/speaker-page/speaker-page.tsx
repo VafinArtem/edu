@@ -115,7 +115,9 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
         courses={courses}
       />}
 
-      {photos && photos.length > 0 && <Gallery id={`photos`} speakerName={`Юлией`} photos={photos} />}
+      {photos && photos.length > 0 && <Gallery id={`photos`}
+        speakerName={`${speaker.name.instrumental}${speaker.surname.instrumental ? ` ${speaker.surname.instrumental}` : ``}`}
+        photos={photos} />}
 
       {similarCourses && similarCourses.length > 0 &&
         <SimilarCourses className={`container`} courses={similarCourses} title={`Рекомендуем`} cardColor={`gray`} />}
