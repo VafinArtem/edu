@@ -84,12 +84,12 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
   return (
     <>
       <Pagination className={`container`} pagination={[{name: `Преподаватели`, link: Route.SPEAKERS}, {
-        name: `${surname} ${name.nominative} ${patronymic.nominative}`,
+        name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
       }]} />
 
       <div className={styles.head}>
         <Promo
-          name={`${surname} ${name.nominative} ${patronymic.nominative}`}
+          name={`${surname.nominative} ${name.nominative} ${patronymic.nominative}`}
           specialization={specialization}
           workExperience={workExperience}
           photo={photo}
