@@ -4,6 +4,7 @@ export const course: CoursePageModel = {
   "id": "klinicheskaya-paradantalogya",
   "_id": 1,
   "alias": "klinicheskaya-paradantalogya",
+  "isCertificate": true,
   "metaTitle": "Макстер-класс: Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
   "metaDescription": "",
   "promoDescription": "Лекция и практика для пародонтологов, стоматологов-терапевтов, стоматологов-хирургов, гигиенистов.",

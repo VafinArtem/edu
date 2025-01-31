@@ -47,6 +47,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     speakersCourses,
     id,
     forWhom,
+    isCertificate,
   } = training;
 
   const pathname = usePathname();
@@ -169,9 +170,9 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
       />}
 
-      <div className="container">
+      {isCertificate && <div className="container">
         <Certificate courseTypeName={typeName.genitive.toLowerCase()} />
-      </div>
+      </div>}
 
       {photos && photos.length > 0 && <Gallery photos={photos} />}
 

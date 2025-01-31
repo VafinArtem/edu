@@ -6,6 +6,7 @@
       "data": {
         "id": "klinicheskaya-paradantalogya",
         "_id": "1",
+        "isCertificate": true,
         "alias": "klinicheskaya-paradantalogya",
         "metaTitle": "Макстер-класс: Клиническая парадонтология. Междисциплинарный подход в лечении парадонтологических пациентов",
         "metaDescription": "",
@@ -486,6 +487,7 @@
       "data": {
         "id": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
         "_id": "2",
+        "isCertificate": false,
         "alias": "bazovyi-kurs-po-implantologii-ortopedicheskii-etap",
         "metaTitle": "Курс: Базовый курс по имплантологии (хирурнический и ортопедический этапы)",
         "metaDescription": "",

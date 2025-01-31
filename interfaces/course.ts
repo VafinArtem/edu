@@ -4,6 +4,7 @@ import {Direction} from "@/interfaces/courses";
 export interface CoursePageModel extends CommonPageModel {
   name: string;
   promoDescription: string;
+  isCertificate: boolean;
   colors: {
     common: string;
     blur: string;
