@@ -19,6 +19,10 @@
   height: auto;
 }
 
+.item {
+  height: 100%;
+}
+
 .buttons {
   position: absolute;
   top: 50%;
@@ -56,16 +60,5 @@
 @media (max-width: 767px) {
   .slide[class] {
 	width: calc(100% - var(--container-mobile-padding));
-  }
-
-  .list {
-	grid-template-columns: 290px;
-	grid-auto-columns: 290px;
-	grid-auto-flow: column;
-	gap: 10px;
-	padding-left: var(--container-mobile-padding);
-	padding-right: var(--container-mobile-padding);
-	margin-left: calc(0px - var(--container-mobile-padding));
-	margin-right: calc(0px - var(--container-mobile-padding));
   }
 }
