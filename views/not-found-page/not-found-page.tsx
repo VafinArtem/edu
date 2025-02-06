@@ -57,7 +57,9 @@ const NotFoundPage = ({directions, courses, color = "gray"}: NotFoundPageProps):
         </ul>
       </SectionItem>}
       {(courses && courses.length > 0) &&
-        <SimilarCourses courses={courses} title={`Ближайшие курсы`} cardColor={color === "white" ? "gray" : "white"} />}
+        <SimilarCourses className={`container`} courses={courses} title={`Ближайшие курсы`}
+          cardColor={color === "white" ? "gray" : "white"} />
+      }
       <NotFindCourse className={styles.notFindCourse} />
     </React.Fragment>
   );
