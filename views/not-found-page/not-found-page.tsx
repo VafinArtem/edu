@@ -2,6 +2,7 @@
 
 import Button from "@/components/_buttons/button/button";
 import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
+import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
@@ -23,7 +24,7 @@ const getNotFoundParams = (): Record<string, Record<string, Record<string, strin
   return visitParams;
 };
 
-const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactElement | null => {
+const NotFoundPage = ({directions, courses, color = "gray"}: NotFoundPageProps): ReactElement | null => {
   useEffect(() => {
     sendMetric("reachGoal", {
       url: `404error`,
@@ -55,6 +56,8 @@ const NotFoundPage = ({directions, color = "gray"}: NotFoundPageProps): ReactEle
           {directions.map((direction) => <Direction key={direction.id} direction={direction} />)}
         </ul>
       </SectionItem>}
+      {(courses && courses.length > 0) &&
+        <SimilarCourses courses={courses} title={`Ближайшие курсы`} cardColor={color === "white" ? "gray" : "white"} />}
       <NotFindCourse className={styles.notFindCourse} />
     </React.Fragment>
   );
