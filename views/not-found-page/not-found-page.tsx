@@ -57,7 +57,7 @@ const NotFoundPage = ({directions, courses, color = "gray"}: NotFoundPageProps):
         </ul>
       </SectionItem>}
       {(courses && courses.length > 0) &&
-        <SimilarCourses className={`container`} courses={courses} title={`Ближайшие курсы`}
+        <SimilarCourses courses={courses} title={`Ближайшие курсы`}
           cardColor={color === "white" ? "gray" : "white"} />
       }
       <NotFindCourse className={styles.notFindCourse} />
