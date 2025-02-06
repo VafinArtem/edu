@@ -234,7 +234,6 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       </ContainerWhite>
 
       {similarCourses && similarCourses.length > 0 && <SimilarCourses
-        className={`container`}
         title={`Может заинтересовать`}
         cardColor={`white`}
         courses={similarCourses} />}
