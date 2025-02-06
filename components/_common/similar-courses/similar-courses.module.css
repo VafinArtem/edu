@@ -11,8 +11,12 @@
 }
 
 .slider[class] {
-  height: auto;
+  align-items: stretch;
   overflow: visible;
+}
+
+.slide[class] {
+  height: auto;
 }
 
 .buttons {
