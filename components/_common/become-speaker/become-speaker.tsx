@@ -16,7 +16,9 @@ import IconError from "./error.svg";
 import IconSuccess from "./success.svg";
 
 const BecomeSpeaker = ({className}: BecomeSpeakerProps): ReactElement | null => {
+  const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -32,6 +34,10 @@ const BecomeSpeaker = ({className}: BecomeSpeakerProps): ReactElement | null => 
   });
 
   const onSubmit: SubmitHandler<{name: string; contact: string}> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await sendBecomeSpeaker({
       data,
     });
@@ -47,6 +53,8 @@ const BecomeSpeaker = ({className}: BecomeSpeakerProps): ReactElement | null => 
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (<section className={clsx(className, styles.wrapper, {

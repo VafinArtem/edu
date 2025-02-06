@@ -15,6 +15,7 @@ import {SubscribeProps} from "./subscribe.props";
 import IconSuccess from "./success.svg";
 
 const Subscribe = ({className}: SubscribeProps): ReactElement | null => {
+  const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
   const {
     register,
@@ -30,6 +31,10 @@ const Subscribe = ({className}: SubscribeProps): ReactElement | null => {
   const onSubmit: SubmitHandler<{
     contact: string
   }> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await promoRegistration({
       data,
     });
@@ -45,7 +50,10 @@ const Subscribe = ({className}: SubscribeProps): ReactElement | null => {
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
+
   return (
     <section className={clsx(className, styles.wrapper, {
       [styles.success]: answerType === "success",

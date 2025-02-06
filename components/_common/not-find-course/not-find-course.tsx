@@ -18,6 +18,8 @@ import IconSuccess from "./success.svg";
 
 const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+  const [isSending, setIsSending] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -33,6 +35,10 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
   });
 
   const onSubmit: SubmitHandler<{comment: string; contact: string}> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await sendComment({
       data,
     });
@@ -48,6 +54,8 @@ const NotFindCourse = ({className}: NotFindCourseProps): ReactElement | null => 
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (

@@ -14,7 +14,6 @@ export async function orderWithTariff({
     orderId: string;
   },
 }): Promise<"error" | "success"> {
-
   const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 

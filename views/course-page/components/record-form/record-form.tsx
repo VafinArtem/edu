@@ -30,7 +30,9 @@ const RecordForm = ({
   metric,
   ecommerce,
 }: RecordFormProps): ReactElement | null => {
+  const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -55,6 +57,10 @@ const RecordForm = ({
     name: string
     contact: string
   }> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await orderWithTariff({
       data: {...data, tariff: tariffInfo.id ?? null, courseId, orderId: ecommerce.id},
     });
@@ -90,6 +96,8 @@ const RecordForm = ({
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (

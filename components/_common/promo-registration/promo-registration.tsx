@@ -17,6 +17,8 @@ import IconSuccess from "./success.svg";
 
 const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+  const [isSending, setIsSending] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -34,6 +36,10 @@ const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | 
   const onSubmit: SubmitHandler<{
     contact: string
   }> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await promoRegistration({
       data,
     });
@@ -49,6 +55,8 @@ const PromoRegistration = ({className}: PromoRegistrationProps): ReactElement | 
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (

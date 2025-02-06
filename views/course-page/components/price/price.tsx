@@ -32,6 +32,10 @@ const Price = ({
   ecommerce,
   ...props
 }: PriceProps): ReactElement | null => {
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [currentTariff, setCurrentTariff] = useState<number | null>(null);
+  const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+  
   const {
     register,
     handleSubmit,
@@ -57,6 +61,10 @@ const Price = ({
     name: string
     contact: string
   }> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await orderWithTariff({
       data: {...data, tariff: currentTariff, courseId, orderId: ecommerce.id},
     });
@@ -82,6 +90,8 @@ const Price = ({
       });
       reset();
     }
+
+    setIsSending(true);
   };
 
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>(() => {
@@ -89,9 +99,6 @@ const Price = ({
       setAnswerType(null);
     }
   });
-
-  const [currentTariff, setCurrentTariff] = useState<number | null>(null);
-  const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
 
   return (
     <section className={styles.wrapper} {...props}>
