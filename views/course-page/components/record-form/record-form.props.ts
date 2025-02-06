@@ -1,4 +1,6 @@
 export interface RecordFormProps {
+  formIsSend?: boolean;
+  setFormIsSend?: () => void;
   tariffInfo: {
     current: number;
     name: string;

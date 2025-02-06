@@ -1938,7 +1938,7 @@
     }
   },
   "order-with-tariff": {
-    "code": 400,
+    "code": 200,
     "answer": {
       "data": "Успешно",
       "text": "Успешно",

@@ -22,11 +22,13 @@ import SpeakerCourses from "@/views/course-page/components/speaker-courses/speak
 import Speakers from "@/views/course-page/components/speakers/speakers";
 import {nanoid} from "nanoid";
 import {usePathname} from "next/navigation";
-import React, {ReactElement, useEffect} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import styles from "./course-page.module.css";
 import {CoursePageProps} from "./course-page.props";
 
 const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement | null => {
+  const [formIsSend, setFormIsSend] = useState<boolean>(false);
+
   const {
     name,
     colors,
@@ -107,6 +109,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         <RecordForm
           tariffInfo={getMinTariff(tariffs)}
           saleTimestamp={saleTimestamp}
+          setFormIsSend={() => setFormIsSend(true)}
+          formIsSend={formIsSend}
           courseId={id}
           courseTypeName={typeName.nominative}
           metric={{
@@ -198,6 +202,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             tariffInfo={getMinTariff(tariffs)}
             saleTimestamp={saleTimestamp}
             courseId={id}
+            setFormIsSend={() => setFormIsSend(true)}
+            formIsSend={formIsSend}
             courseTypeName={typeName.nominative}
             metric={{
               change: `course-min-record-2-change`,
