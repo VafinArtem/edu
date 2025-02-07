@@ -98,7 +98,8 @@ const CoursesLayout = async (props: {
       courses={(page as {data: CoursesPageModel, code: number}).data.courses}
       directions={directions?.answer.data ?? []}
       courseTypes={courseTypes?.answer.data ?? []}
-      filters={filters?.answer.data ?? []}
+      filters={filters?.answer.data.filters ?? []}
+      enableAdvancedTraining={filters?.answer.data.enableAdvancedTraining ?? false}
       pages={(page as {data: CoursesPageModel, code: number}).data.pages}
     />;
   }
