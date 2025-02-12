@@ -205,6 +205,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             setFormIsSend={() => setFormIsSend(true)}
             formIsSend={formIsSend}
             courseTypeName={typeName.nominative}
+            showIdAttribute={false}
             metric={{
               change: `course-min-record-2-change`,
               send: `course-min-record-2-send`,

@@ -31,6 +31,7 @@ const RecordForm = ({
   ecommerce,
   formIsSend,
   setFormIsSend,
+  showIdAttribute = true,
 }: RecordFormProps): ReactElement | null => {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
@@ -107,10 +108,13 @@ const RecordForm = ({
   };
 
   return (
-    <section className={clsx(styles.wrapper, {
-      [styles.success]: answerType === "success" || formIsSend,
-      [styles.error]: answerType === "error",
-    })} id={`registration`}>
+    <section
+      className={clsx(styles.wrapper, {
+        [styles.success]: answerType === "success" || formIsSend,
+        [styles.error]: answerType === "error",
+      })}
+      id={showIdAttribute ? `registration` : undefined}
+    >
       <div className={clsx(styles.textContent, {
         [styles.hidden]: answerType || formIsSend,
       })}>

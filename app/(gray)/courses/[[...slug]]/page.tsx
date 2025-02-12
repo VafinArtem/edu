@@ -40,7 +40,10 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
+    title: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? (page as {
+      data: CoursePageModel,
+      code: number
+    }).data.name,
     description: (page as {data: CoursePageModel, code: number}).data.metaDescription ?? ``,
   };
 }

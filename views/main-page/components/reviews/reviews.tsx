@@ -23,15 +23,15 @@ const Reviews = ({className}: ReviewsProps): ReactElement | null => {
         <dl className={styles.options}>
           <div className={styles.optionItem}>
             <dt className={styles.termin}>92%</dt>
-            <dt className={styles.description}>Ценят организацию<br />
+            <dd className={styles.description}>Ценят организацию<br />
               и&nbsp;комфортные условия
-            </dt>
+            </dd>
           </div>
           <div className={styles.optionItem}>
             <dt className={styles.termin}>84%</dt>
-            <dt className={styles.description}>Приходят на&nbsp;лекции<br />
+            <dd className={styles.description}>Приходят на&nbsp;лекции<br />
               повторно
-            </dt>
+            </dd>
           </div>
         </dl>
       </div>

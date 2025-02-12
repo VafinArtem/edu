@@ -19,4 +19,5 @@ export interface RecordFormProps {
     name: string;
     category: string;
   };
+  showIdAttribute?: boolean;
 }
