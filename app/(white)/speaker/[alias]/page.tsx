@@ -14,7 +14,7 @@ export async function generateMetadata({params}: {params: {alias: string}}): Pro
   }
 
   return {
-    title: page.data.metaTitle ?? `${page.data.surname} ${page.data.name} ${page.data.patronymic}`,
+    title: page.data.metaTitle ? page.data.metaTitle : `${page.data.surname} ${page.data.name} ${page.data.patronymic}`,
     description: page.data.metaDescription ?? ``,
   };
 }
