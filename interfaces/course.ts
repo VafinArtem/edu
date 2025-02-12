@@ -66,7 +66,7 @@ export interface CoursePageModel extends CommonPageModel {
     address: string;
     desc?: string;
     metro?: string;
-    position: [number, number];
+    position: [string, string];
     photos?: string[];
   };
   qa?: QAItem[];
@@ -180,7 +180,7 @@ export interface Place {
     station?: string;
     icon?: string;
   };
-  position: [number, number];
+  position: [string, string];
   photos?: string[];
 }
 

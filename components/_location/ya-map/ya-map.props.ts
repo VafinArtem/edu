@@ -1,5 +1,5 @@
 export interface YaMapProps {
-  coordinates: [number, number];
+  coordinates: [string, string];
   showMarker?: boolean;
   markerCoordinates?: [number, number];
 }

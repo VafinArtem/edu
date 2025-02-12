@@ -183,7 +183,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       <ContainerWhite>
         {(place && city) && <>
           <Location className={`container`} place={{
-            position: place.position,
+            position: place.position.map((position) => position.trim()) as [string, string],
             city: city.name,
             metro: {
               station: place.metro,

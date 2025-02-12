@@ -25,7 +25,8 @@ const Location = ({className}: LocationProps): ReactElement | null => {
           корпус&nbsp;8.
         </address>
         <Paragraph className={styles.workHours}>Режим работы: Пн-чт 09:00 — 18:00; Пт 09:00 — 17:00</Paragraph>
-        <YaDirectionButton backgroundColor={"white"} position={[59.856994, 30.317404]} className={styles.direction} />
+        <YaDirectionButton backgroundColor={"white"} position={["59.856994", "30.317404"]}
+          className={styles.direction} />
         <div className={styles.footer}>
           <div className={styles.contacts}>
             <a href={`tel:+78005500524`} className={styles.contact}>8-800-550-05-24</a>
@@ -49,7 +50,7 @@ const Location = ({className}: LocationProps): ReactElement | null => {
         </div>
       </div>
       <div className={styles.map}>
-        <YaMap showMarker markerCoordinates={[30.317270, 59.857463]} coordinates={[30.317404, 59.856994]} />
+        <YaMap showMarker markerCoordinates={[30.317270, 59.857463]} coordinates={["30.317404", "59.856994"]} />
       </div>
     </section>
   );
