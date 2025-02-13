@@ -8,7 +8,7 @@ import {PartnershipProps} from "./partnership.props";
 const Partnership = ({className}: PartnershipProps): ReactElement | null => {
   return (
     <SectionItem className={className}>
-      <Heading tag={`h2`}>По&nbsp;вопросам сотрудничества</Heading>
+      <Heading align={"center"} tag={`h2`}>По&nbsp;вопросам сотрудничества</Heading>
       <ul className={styles.list}>
         <li className={styles.item}>
           <figure className={styles.picture}>
