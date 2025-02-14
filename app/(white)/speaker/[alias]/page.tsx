@@ -1,3 +1,4 @@
+import {getCoursesPage} from "@/api/courses-page";
 import {getSpeakerPage} from "@/api/speaker-page";
 import SpeakerPage from "@/views/speaker-page/speaker-page";
 import {Metadata} from "next";
@@ -21,6 +22,7 @@ export async function generateMetadata({params}: {params: {alias: string}}): Pro
 
 const SpeakerLayout = async ({params}: {params: {alias: string}}): Promise<ReactElement | null> => {
   const page = await getSpeakerPage(params.alias);
+  const courses = await getCoursesPage(undefined, {sort: "DATE_ASC"}, 8);
 
   if (!page || page.code !== 200) {
     notFound();
@@ -28,7 +30,7 @@ const SpeakerLayout = async ({params}: {params: {alias: string}}): Promise<React
 
   // const similarCourses = await getSimilarCourses(+page.data.id, `speaker`);
 
-  return <SpeakerPage similarCourses={[]} speaker={page.data} />;
+  return <SpeakerPage similarCourses={courses?.data.courses ?? []} speaker={page.data} />;
 };
 
 export default SpeakerLayout;
