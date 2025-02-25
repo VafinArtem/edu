@@ -1,4 +1,4 @@
-import {CommonPageModel} from "@/interfaces/common";
+import {CommonPageModel, ExampleItem} from "@/interfaces/common";
 import {CourseShort, Edu} from "@/interfaces/course";
 
 export interface SpeakerPageModel extends CommonPageModel {
@@ -34,13 +34,6 @@ export interface SpeakerPageModel extends CommonPageModel {
 export interface NavigationLink {
   name: string;
   href: string;
-}
-
-export interface ExampleItem {
-  id: number;
-  name: string;
-  description?: string;
-  images: {image: string, description: string}[];
 }
 
 export interface GalleryItem {

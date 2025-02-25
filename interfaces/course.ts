@@ -1,4 +1,4 @@
-import {CommonPageModel} from "@/interfaces/common";
+import {CommonPageModel, ExampleItem} from "@/interfaces/common";
 import {Direction} from "@/interfaces/courses";
 
 export interface CoursePageModel extends CommonPageModel {
@@ -54,6 +54,7 @@ export interface CoursePageModel extends CommonPageModel {
     specialization: string;
     workExperience: number;
     aboutSlides: string[][];
+    examples?: ExampleItem[];
   }[];
   advantages?: string[];
   program: CourseProgram;
@@ -117,6 +118,7 @@ export interface Speaker {
   cite?: string;
   edu: Edu[];
   aboutSlides: string[][];
+  examples?: ExampleItem[];
 }
 
 export interface SpeakerShort {

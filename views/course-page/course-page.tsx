@@ -140,6 +140,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           workExperience,
           photo,
           aboutSlides,
+          examples,
         }) => ({
           name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
           position,
@@ -152,6 +153,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           alias,
           cite,
           aboutSlides,
+          examples,
           photoBackground: colors.photoBackground,
         }))} />}
 

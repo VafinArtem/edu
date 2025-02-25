@@ -1,16 +1,22 @@
 "use client";
 
-import React, {ReactElement, useEffect, useState} from "react";
-import {ExamplesProps} from "./examples.props";
-import styles from "./examples.module.css";
-import SectionItem from "@/components/_section/section-item/section-item";
-import Heading from "@/components/_tags/heading/heading";
-import ExampleItem from "@/components/_speaker/example-card/example-card";
 import Button from "@/components/_buttons/button/button";
-import clsx from "clsx";
+import SectionItem from "@/components/_section/section-item/section-item";
+import ExampleItem from "@/components/_speaker/example-card/example-card";
+import Heading from "@/components/_tags/heading/heading";
 import useIsResolution from "@/hooks/useIsResolution";
+import clsx from "clsx";
+import React, {ReactElement, useEffect, useState} from "react";
+import styles from "./examples.module.css";
+import {ExamplesProps} from "./examples.props";
 
-const Examples = ({examples, ...props}: ExamplesProps): ReactElement | null => {
+const Examples = ({
+  examples,
+  className,
+  headingOptions,
+  withoutWrapperPaddings,
+  ...props
+}: ExamplesProps): ReactElement | null => {
   const isLaptop = useIsResolution({min: 1024, max: 1499});
   const isTablet = useIsResolution({min: 680, max: 1023});
   const isMobile = useIsResolution({min: 0, max: 679});
@@ -36,9 +42,10 @@ const Examples = ({examples, ...props}: ExamplesProps): ReactElement | null => {
   return (
     <div className={clsx(styles.wrapper, {
       [styles.show]: showAll,
+      [styles.withoutWrapperPaddings]: withoutWrapperPaddings,
     })} {...props}>
-      <SectionItem className={clsx(`container`, styles.inner)}>
-        <Heading tag={`h2`}>Рабочие кейсы</Heading>
+      <SectionItem className={clsx(className, styles.inner)}>
+        <Heading tag={headingOptions.tag} fontSize={headingOptions.fontSize}>Рабочие кейсы</Heading>
         <div className={styles.list}>
           {examples.map((example) => <ExampleItem key={example.id} example={example} className={styles.item} />)}
         </div>

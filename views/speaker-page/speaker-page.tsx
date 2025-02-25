@@ -1,5 +1,6 @@
 "use client";
 
+import Examples from "@/components/_common/examples/examples";
 import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import {storePathValues} from "@/helpers/helpers";
@@ -8,7 +9,6 @@ import {NavigationLink} from "@/interfaces/speaker";
 import About from "@/views/speaker-page/components/about/about";
 import Courses from "@/views/speaker-page/components/courses/courses";
 import Edu from "@/views/speaker-page/components/edu/edu";
-import Examples from "@/views/speaker-page/components/examples/examples";
 import Gallery from "@/views/speaker-page/components/gallery/gallery";
 import Navigation from "@/views/speaker-page/components/navigation/navigation";
 import Promo from "@/views/speaker-page/components/promo/promo";
@@ -106,7 +106,14 @@ const SpeakerPage = ({speaker, similarCourses}: SpeakerPageProps): ReactElement 
         <Edu id={`education`} edu={edu} />
       </div>}
 
-      {examples && examples.length > 0 && <Examples id={`examples`} examples={examples} />}
+      {examples && examples.length > 0 && <Examples
+        headingOptions={{
+          tag: `h2`,
+        }}
+        id={`examples`}
+        className={`container`}
+        examples={examples}
+      />}
 
       {courses && courses.length > 0 && <Courses
         id={`courses`}

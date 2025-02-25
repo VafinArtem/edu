@@ -1,12 +1,13 @@
 .wrapper {
-  padding-top: 80px;
   background-color: var(--gray-100);
   border-radius: 40px 40px 0 0;
   transition: padding-bottom 0.2s ease-in;
 }
 
-.wrapper.show {
+.wrapper:not(.withoutWrapperPaddings) {
+  padding-top: 80px;
   padding-bottom: 40px;
+
 }
 
 .list {
@@ -78,7 +79,7 @@
 	padding-bottom: 70px;
   }
 
-  .wrapper {
+  .wrapper:not(.withoutWrapperPaddings) {
 	padding-top: 60px;
   }
 
@@ -101,8 +102,11 @@
 
 @media (max-width: 679px) {
   .wrapper {
-	padding-top: 40px;
 	border-radius: 20px 20px 0 0;
+  }
+
+  .wrapper:not(.withoutWrapperPaddings) {
+	padding-top: 40px;
   }
 
   .bottom {
