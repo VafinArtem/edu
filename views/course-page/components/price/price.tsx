@@ -53,7 +53,7 @@ const Price = ({
 
     setCurrentTariff(tariffs.find((el) => el.id === currentTariffId) ?? null);
 
-  }, [currentTariffId]);
+  }, [currentTariffId, tariffs]);
 
   useEffect(() => {
     if (showModal) {
