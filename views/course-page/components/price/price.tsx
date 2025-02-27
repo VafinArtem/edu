@@ -142,83 +142,86 @@ const Price = ({
           changeModalActivityStatus(false);
         }}>
           <CloseButton className={styles.close} />
-          <form
-            className={clsx(styles.form)}
-            onChange={onChange}
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Heading tag={`h3`} fontSize={"mini"} className={styles.formTitle}>Укажите ваши данные для регистрации на
-              курс</Heading>
-            <div className={styles.inner}>
-              <Input
-                className={styles.input}
-                labelName={`Ваше имя`}
-                placeholder={`Ваше имя*`}
-                color={"gray"}
-                {...register("name", {required: {value: true, message: "Имя обязательно"}})}
-                error={errors.name}
-                isValid={validatingFields.name}
-              />
-              <Input
-                className={styles.input}
-                labelName={`Номер телефона`}
-                placeholder={`Номер телефона*`}
-                {...register("contact", {
-                    pattern: {
-                      value: RegularExp.PHONE_REG,
-                      message: `Номер телефона обязателен`,
+          <div className={styles.scroll}>
+            <form
+              className={clsx(styles.form)}
+              onChange={onChange}
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <Heading tag={`h3`} fontSize={"mini"} className={styles.formTitle}>Укажите ваши данные для регистрации на
+                курс</Heading>
+              <div className={styles.inner}>
+                <Input
+                  className={styles.input}
+                  labelName={`Ваше имя`}
+                  placeholder={`Ваше имя*`}
+                  color={"gray"}
+                  {...register("name", {required: {value: true, message: "Имя обязательно"}})}
+                  error={errors.name}
+                  isValid={validatingFields.name}
+                />
+                <Input
+                  className={styles.input}
+                  labelName={`Номер телефона`}
+                  placeholder={`Номер телефона*`}
+                  {...register("contact", {
+                      pattern: {
+                        value: RegularExp.PHONE_REG,
+                        message: `Номер телефона обязателен`,
+                      },
+                      required: true,
                     },
-                    required: true,
-                  },
-                )}
-                error={errors.contact}
-                isValid={validatingFields.contact}
-                color={"gray"}
-                onChange={(evt) => {
-                  const self = evt.currentTarget;
+                  )}
+                  error={errors.contact}
+                  isValid={validatingFields.contact}
+                  color={"gray"}
+                  onChange={(evt) => {
+                    const self = evt.currentTarget;
 
-                  const phone = formatPhoneNumber(self.value);
+                    const phone = formatPhoneNumber(self.value);
 
-                  if (phone.match(RegularExp.PHONE_REG) !== null) {
-                    self.value = phone;
-                    clearErrors("contact");
-                    return;
-                  }
+                    if (phone.match(RegularExp.PHONE_REG) !== null) {
+                      self.value = phone;
+                      clearErrors("contact");
+                      return;
+                    }
 
-                  setError("contact", {
-                    type: "pattern",
-                    message: "Проверьте правильность ввода телефона",
-                  });
-                }}
-              />
-            </div>
-            {currentTariff && <CurrentTariff tariff={currentTariff} />}
-            <div className={styles.footer}>
-              <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Записаться</Button>
-              <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-                на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy_1.pdf`} target={"_blank"}>персональных
-                  данных</a></Paragraph>
-            </div>
-          </form>
-          {answerType && <div className={clsx(styles.answer)}>
-            <Heading tag={`h3`} fontSize={"mini"} align={"center"}
-              className={clsx(styles.formTitle)}>{answerType === "error" ? <>
-              <IconError className={styles.icon} width="60" height="60" /> Заявка
-              не
-              отправлена</> : <><IconSuccess className={styles.icon} width="60" height="60" /> Заявка
-              отправлена </>}</Heading>
-            <div className={styles.answerContent}>
-              {answerType === "error" && <>
-                <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, отправьте форму
-                  ещё
-                  раз через 5&nbsp;минут. Или позвоните нам в&nbsp;учебный центр&nbsp;<a href="tel:+79312011400">+7
-                    (931)
-                    201-14-00</a></p>
-              </>}
-              {answerType === "success" &&
-                <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки и&nbsp;оплаты курса.</p>}
-            </div>
-          </div>}
+                    setError("contact", {
+                      type: "pattern",
+                      message: "Проверьте правильность ввода телефона",
+                    });
+                  }}
+                />
+              </div>
+              {currentTariff && <CurrentTariff tariff={currentTariff} />}
+              <div className={styles.footer}>
+                <Button type={"submit"} className={styles.submit} isDisabled={!isValid}>Записаться</Button>
+                <Paragraph fontSize={"small"} className={styles.footNote}>Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
+                  на&nbsp;обработку <a href={`/pdf/personal_data_processing_policy_1.pdf`} target={"_blank"}>персональных
+                    данных</a></Paragraph>
+              </div>
+            </form>
+            {answerType && <div className={clsx(styles.answer)}>
+              <Heading tag={`h3`} fontSize={"mini"} align={"center"}
+                className={clsx(styles.formTitle)}>{answerType === "error" ? <>
+                <IconError className={styles.icon} width="60" height="60" /> Заявка
+                не
+                отправлена</> : <><IconSuccess className={styles.icon} width="60" height="60" /> Заявка
+                отправлена </>}</Heading>
+              <div className={styles.answerContent}>
+                {answerType === "error" && <>
+                  <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, отправьте форму
+                    ещё
+                    раз через 5&nbsp;минут. Или позвоните нам в&nbsp;учебный центр&nbsp;<a href="tel:+79312011400">+7
+                      (931)
+                      201-14-00</a></p>
+                </>}
+                {answerType === "success" &&
+                  <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки и&nbsp;оплаты
+                    курса.</p>}
+              </div>
+            </div>}
+          </div>
         </div>
       </div>}
     </section>
