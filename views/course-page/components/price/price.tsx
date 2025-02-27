@@ -40,6 +40,12 @@ const Price = ({
   const [currentTariff, setCurrentTariff] = useState<ITariffInfo | null>(null);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
 
+  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>(() => {
+    if (answerType) {
+      setAnswerType(null);
+    }
+  });
+
   useEffect(() => {
     if (!currentTariffId) {
       setCurrentTariff(null);
@@ -48,6 +54,14 @@ const Price = ({
     setCurrentTariff(tariffs.find((el) => el.id === currentTariffId) ?? null);
 
   }, [currentTariffId]);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "initial";
+    }
+  }, [showModal]);
 
   const {
     register,
@@ -106,12 +120,6 @@ const Price = ({
 
     setIsSending(true);
   };
-
-  const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLDivElement>(() => {
-    if (answerType) {
-      setAnswerType(null);
-    }
-  });
 
   return (
     <section className={styles.wrapper} {...props}>
