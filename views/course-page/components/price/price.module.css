@@ -103,7 +103,7 @@
 }
 
 .scroll {
-  display: flex;
+  display: grid;
   overflow-y: auto;
   padding-right: 10px;
   margin-right: -10px;
