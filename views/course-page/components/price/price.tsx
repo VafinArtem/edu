@@ -146,10 +146,10 @@ const Price = ({
       {showModal && <div className={clsx(styles.modal, {
         [styles.show]: showModal,
       })}>
-        <div className={styles.card} ref={ref} onClick={() => {
-          changeModalActivityStatus(false);
-        }}>
-          <CloseButton className={styles.close} />
+        <div className={styles.card} ref={ref}>
+          <CloseButton className={styles.close} onClick={() => {
+            changeModalActivityStatus(false);
+          }} />
           <div className={styles.scroll}>
             <form
               className={clsx(styles.form)}
