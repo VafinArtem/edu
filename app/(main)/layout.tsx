@@ -1,4 +1,4 @@
-import DynamicHeader from "@/app/(main)/_components/dynamic-header/dynamic-header";
+import DynamicHeader from "@/layout/dynamic-header/dynamic-header";
 import Footer from "@/layout/footer/footer";
 import Jivo from "@/layout/jivo/jivo";
 import Main from "@/layout/main/main";
