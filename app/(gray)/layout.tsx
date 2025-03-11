@@ -46,10 +46,14 @@ export default function RootLayout({
       {children}
     </Main>
     <Footer />
-    <Suspense>
-      <Metrika />
-    </Suspense>
-    <Jivo />
+    {
+      process.env.NODE_ENV === "production" && <>
+        <Suspense>
+          <Metrika />
+        </Suspense>
+        <Jivo />
+      </>
+    }
     </body>
     </html>
   );

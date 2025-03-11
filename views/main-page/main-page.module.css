@@ -11,7 +11,17 @@
   padding-bottom: 175px;
 }
 
+@media (max-width: 1499px) {
+  .promo {
+	margin-top: -112px;
+  }
+}
+
 @media (max-width: 1199px) {
+  .promo {
+	margin-top: -108px;
+  }
+
   .learning + .notFindCourse,
   .purple + .white {
 	margin-top: -90px;
@@ -23,6 +33,10 @@
 }
 
 @media (max-width: 767px) {
+  .promo {
+	margin-top: -140px;
+  }
+
   .directions {
 	margin-bottom: -12px;
   }
@@ -34,5 +48,11 @@
 
   .purple + .white {
 	padding-bottom: 105px;
+  }
+}
+
+@media (max-width: 380px) {
+  .promo {
+	margin-top: -119px;
   }
 }

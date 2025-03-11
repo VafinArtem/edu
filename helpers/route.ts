@@ -9,4 +9,5 @@ export const Route = {
   NEWS: "/news",
   REVIEWS: "/reviews",
   CONTACTS: "/contacts",
+  ABOUT: "/about",
 };
