@@ -1,4 +1,5 @@
 import AboutPage from "@/views/about-page/about-page";
+import Advantages from "@/views/about-page/components/advantages/advantages";
 import {Metadata} from "next";
 import React, {ReactElement} from "react";
 
@@ -13,6 +14,7 @@ const ContactsLayout = async (): Promise<ReactElement | null> => {
   return (
     <>
       <AboutPage />
+      <Advantages className={"container"} />
     </>
   );
 };

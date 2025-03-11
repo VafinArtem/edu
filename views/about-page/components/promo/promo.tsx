@@ -1,3 +1,4 @@
+import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
 import Image from "next/image";
@@ -13,6 +14,7 @@ const Promo = ({className}: PromoProps): ReactElement | null => {
       <div className={styles.inner}>
         <div className={clsx(styles.container, "container")}>
           <div className={styles.content}>
+            <Heading tag={"h1"} className={"visually-hidden"}>О компании</Heading>
             <Paragraph fontSize={"asDefaultTitle"}>
               Amrita&nbsp;&mdash; учебный центр для дополнительного профессионального обучения врачей-стоматологов
             </Paragraph>
