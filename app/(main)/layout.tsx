@@ -1,5 +1,6 @@
 import DynamicHeader from "@/app/(main)/_components/dynamic-header/dynamic-header";
 import Footer from "@/layout/footer/footer";
+import Jivo from "@/layout/jivo/jivo";
 import Main from "@/layout/main/main";
 import Metrika from "@/layout/metrika/metrika";
 import type {Metadata} from "next";
@@ -46,6 +47,7 @@ export default function RootLayout({
     <Suspense>
       <Metrika />
     </Suspense>
+    <Jivo />
     </body>
     </html>
   );
