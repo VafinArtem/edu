@@ -1,3 +1,5 @@
+import Advantages from "@/views/about-page/components/advantages/advantages";
+import Courses from "@/views/about-page/components/courses/courses";
 import Promo from "@/views/about-page/components/promo/promo";
 import React, {ReactElement} from "react";
 import styles from "./about-page.module.css";
@@ -7,7 +9,12 @@ const AboutPage = ({}: AboutPageProps): ReactElement | null => {
   return (
     <React.Fragment>
       <Promo className={styles.promo} />
-
+      <div className="container">
+        <Advantages />
+      </div>
+      <div className="container">
+        <Courses />
+      </div>
     </React.Fragment>
   );
 };
