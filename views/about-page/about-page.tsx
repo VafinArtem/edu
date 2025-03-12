@@ -1,12 +1,14 @@
+import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Advantages from "@/views/about-page/components/advantages/advantages";
 import Certificate from "@/views/about-page/components/certificate/certificate";
 import Courses from "@/views/about-page/components/courses/courses";
 import Promo from "@/views/about-page/components/promo/promo";
+import Speakers from "@/views/about-page/components/speakers/speakers";
 import React, {ReactElement} from "react";
 import styles from "./about-page.module.css";
 import {AboutPageProps} from "./about-page.props";
 
-const AboutPage = ({}: AboutPageProps): ReactElement | null => {
+const AboutPage = ({speakers}: AboutPageProps): ReactElement | null => {
   return (
     <React.Fragment>
       <Promo className={styles.promo} />
@@ -19,6 +21,9 @@ const AboutPage = ({}: AboutPageProps): ReactElement | null => {
       <div className="container">
         <Certificate />
       </div>
+      <ContainerGray className={styles.gray}>
+        <Speakers speakers={speakers} />
+      </ContainerGray>
     </React.Fragment>
   );
 };

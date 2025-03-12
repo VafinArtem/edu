@@ -71,3 +71,35 @@ export const storePathValues = () => {
   // Set the current path value by looking at the browser's location object.
   storage.setItem("currentPath", globalThis.location.pathname);
 };
+
+export function getRandomElements<T>(arr: T[], n: number, allowDuplicates = false) {
+  if (!Array.isArray(arr) || arr.length === 0) {
+    throw new Error("Input must be a non-empty array");
+  }
+
+  if (n < 0 || !Number.isInteger(n)) {
+    throw new Error("n must be a non-negative integer");
+  }
+
+  // Выбор с возможностью повторений
+  if (allowDuplicates) {
+    return Array.from({length: n}, () => {
+      const randomIndex = Math.floor(Math.random() * arr.length);
+      return arr[randomIndex];
+    });
+  }
+
+  // Выбор уникальных элементов
+  if (n > arr.length) {
+    throw new Error("n cannot exceed array length when duplicates are not allowed");
+  }
+
+  // Алгоритм Фишера-Йетса для перемешивания
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled.slice(0, n);
+}

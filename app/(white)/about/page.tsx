@@ -1,3 +1,6 @@
+import {getSpeakersPage} from "@/api/speakers-page";
+import {getRandomElements} from "@/helpers/helpers";
+import {SpeakerShortCard} from "@/interfaces/course";
 import AboutPage from "@/views/about-page/about-page";
 import {Metadata} from "next";
 import React, {ReactElement} from "react";
@@ -10,9 +13,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const ContactsLayout = async (): Promise<ReactElement | null> => {
+  const data = await getSpeakersPage();
+
   return (
     <>
-      <AboutPage />
+      <AboutPage speakers={data?.answer.data ? getRandomElements<SpeakerShortCard>(data.answer.data, 8) : []} />
     </>
   );
 };

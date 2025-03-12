@@ -1,5 +1,5 @@
 import {SpeakerShortCard} from "@/interfaces/course";
 
-export interface AboutPageProps {
+export interface SpeakersProps {
   speakers: SpeakerShortCard[];
 }
