@@ -2,6 +2,7 @@ import Location from "@/components/_common/location/location";
 import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
+import {storePathValues} from "@/helpers/helpers";
 import Advantages from "@/views/about-page/components/advantages/advantages";
 import AmritaLinks from "@/views/about-page/components/amrita-links/amrita-links";
 import Appeal from "@/views/about-page/components/appeal/appeal";
@@ -11,11 +12,18 @@ import Equipment from "@/views/about-page/components/equipment/equipment";
 import Promo from "@/views/about-page/components/promo/promo";
 import Speakers from "@/views/about-page/components/speakers/speakers";
 import Reviews from "@/views/main-page/components/reviews/reviews";
-import React, {ReactElement} from "react";
+import {usePathname} from "next/navigation";
+import React, {ReactElement, useEffect} from "react";
 import styles from "./about-page.module.css";
 import {AboutPageProps} from "./about-page.props";
 
 const AboutPage = ({speakers}: AboutPageProps): ReactElement | null => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    storePathValues();
+  }, [pathname]);
+
   return (
     <React.Fragment>
       <Promo className={styles.promo} />
