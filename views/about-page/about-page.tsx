@@ -1,5 +1,6 @@
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Advantages from "@/views/about-page/components/advantages/advantages";
+import Appeal from "@/views/about-page/components/appeal/appeal";
 import Certificate from "@/views/about-page/components/certificate/certificate";
 import Courses from "@/views/about-page/components/courses/courses";
 import Promo from "@/views/about-page/components/promo/promo";
@@ -23,6 +24,9 @@ const AboutPage = ({speakers}: AboutPageProps): ReactElement | null => {
       </div>
       <ContainerGray className={styles.gray}>
         <Speakers speakers={speakers} />
+        <div className="container">
+          <Appeal />
+        </div>
       </ContainerGray>
     </React.Fragment>
   );
