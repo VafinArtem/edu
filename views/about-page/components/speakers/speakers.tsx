@@ -31,7 +31,8 @@ const Speakers = ({speakers}: SpeakersProps): ReactElement | null => {
         >
           {speakers.map((speaker) => (
             <SwiperSlide className={styles.item} key={speaker.id} style={{backgroundColor: speaker.photoBackground}}>
-              <Image className={styles.image} src={speaker.photo} width={180} height={180}
+              <Image className={styles.image} src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${speaker.photo}`}
+                width={180} height={180}
                 alt={speaker.name} />
             </SwiperSlide>))}
         </Swiper>
