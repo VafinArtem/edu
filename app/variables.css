@@ -82,4 +82,11 @@
   --card-hover: 0 4px 29px 0 rgba(210, 215, 223, 0.69);
 
   --content-accent: #ECE5EA;
+
+  --amrita: var(--primary-2);
+  --amrita-bg: #E9EDF3;
+  --tezis: #715399;
+  --tezis-bg: #F1EEF5;
+  --service-center: #67945E;
+  --service-center-bg: #F0F4EF;
 }

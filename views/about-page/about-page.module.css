@@ -10,6 +10,10 @@
   margin-bottom: 0;
 }
 
+.partnerForm:last-child {
+  margin-bottom: -85px;
+}
+
 @media (max-width: 1499px) {
   .promo {
 	margin-top: -112px;

@@ -1,12 +1,12 @@
 "use client";
 
+import Location from "@/components/_common/location/location";
 import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Heading from "@/components/_tags/heading/heading";
 import {storePathValues} from "@/helpers/helpers";
 import Gallery from "@/views/contacts-page/components/gallery/gallery";
 import Geography from "@/views/contacts-page/components/geography/geography";
-import Location from "@/views/contacts-page/components/location/location";
 import Partnership from "@/views/contacts-page/components/partnership/partnership";
 import clsx from "clsx";
 import {usePathname} from "next/navigation";
