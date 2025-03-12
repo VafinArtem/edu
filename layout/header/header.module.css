@@ -150,6 +150,15 @@
 	padding-left: 26px;
 	max-width: 314px;
 	width: 100%;
+	overflow-y: auto;
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
+  }
+
+  .navigation::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: transparent;
   }
 
   .left,
@@ -241,5 +250,9 @@
   .buttonIcon {
 	width: 25px;
 	height: 25px;
+  }
+
+  .navigation {
+	padding-left: 15px;
   }
 }
