@@ -1,3 +1,5 @@
+"use client";
+
 import Location from "@/components/_common/location/location";
 import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
