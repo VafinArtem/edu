@@ -21,7 +21,7 @@ const Appeal = ({}: AppealProps): ReactElement | null => {
             className={styles.gray}>— руководитель
 						учебного центра</span></Paragraph>
           <Paragraph className={styles.description}>Связаться: <a className={styles.gray}
-            href={"tel:+79312518351"}>+7(931) 251-83-51</a></Paragraph>
+            href={"tel:+79312518351"}>+7 (931) 251-83-51</a></Paragraph>
         </div>
       </div>
     </section>

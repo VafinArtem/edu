@@ -15,7 +15,7 @@ const Courses = ({className}: CoursesProps): ReactElement | null => {
       <div className={styles.left}>
         <Heading tag={`h2`} fontSize={"none"} className={styles.title}>Разнообразный выбор лекций, мастер-классов
           и&nbsp;вебинаров </Heading>
-        <Paragraph>Для опытных и&nbsp;начинающих медицинских специалистов</Paragraph>
+        <Paragraph>Для опытных и&nbsp;начинающих специалистов в&nbsp;сфере стоматологии.</Paragraph>
       </div>
       <div className={styles.right}>
         <Image src={`/img/about-page/courses/image.png`} alt={``} width={227} height={227} loading={"lazy"}

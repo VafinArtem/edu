@@ -17,7 +17,7 @@ const Certificate = ({className}: CertificateProps): ReactElement | null => {
             государственного образца</Heading>
           <Paragraph>После успешного прохождения программы, мы&nbsp;выдаём документы о&nbsp;повышении квалификации
             в&nbsp;соответствии с
-            законом &laquo;Об&nbsp;образовании&raquo;. Данные внвносятся
+            законом &laquo;Об&nbsp;образовании&raquo;. Данные вносятся
             в&nbsp;федеральную информационную систему &laquo;Федеральный реестр сведений
             о&nbsp;документах об&nbsp;образовании&nbsp;и (или) о&nbsp;квалификации&raquo;.</Paragraph>
           <a href="/pdf/license.pdf" target={"_blank"}

@@ -20,15 +20,16 @@ const Advantages = ({className}: AdvantagesProps): ReactElement | null => {
 					</span>
           <Heading tag={"h3"} fontWeight={"medium"} fontSize={"none"} className={styles.title}>Разные форматы
             обучения</Heading>
-          <Paragraph>Очные, дистанционные, с выездом учебного центра в вашу клинику или регион.</Paragraph>
+          <Paragraph>Очные, дистанционные, с&nbsp;выездом учебного центра в&nbsp;вашу клинику или регион.</Paragraph>
         </li>
         <li className={styles.item}>
           <span className={styles.icon}>
           	<IconCheck width={27} heigth={27} />
 					</span>
-          <Heading tag={"h3"} fontWeight={"medium"} fontSize={"none"} className={styles.title}>Разные форматы
-            обучения</Heading>
-          <Paragraph>Очные, дистанционные, с выездом учебного центра в вашу клинику или регион.</Paragraph>
+          <Heading tag={"h3"} fontWeight={"medium"} fontSize={"none"} className={styles.title}>Контроль
+            качества</Heading>
+          <Paragraph>В&nbsp;учебном центре на&nbsp;регулярной основе осуществляется контроль качества образовательных
+            услуг.</Paragraph>
         </li>
       </ul>
     </section>

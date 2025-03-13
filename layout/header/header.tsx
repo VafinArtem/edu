@@ -31,10 +31,10 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
             {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>*/}
             <NavigationItem color={type === "blur" ? "white" : "black"}
               href={Route.SPEAKERS} className={styles.navigationLink}>Преподаватели</NavigationItem>
-            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}
-              className={styles.navigationLink}>Контакты</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.ABOUT}
               className={styles.navigationLink}>О компании</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}
+              className={styles.navigationLink}>Контакты</NavigationItem>
           </Navigation>
           <div className={styles.user}>
             <Button color={type === "blur" ? "white" : "gray"} component={`a`} href={`tel:+79312011400`}><IconPhone

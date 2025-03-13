@@ -55,7 +55,7 @@ const AmritaLinks = ({className}: AmritaLinksProps): ReactElement | null => {
           </div>
           <a href={"https://amrita-dent.ru/service"} target={"_blank"} rel={"noreferrer"}
             className={clsx(styles.link, styles.green)}>Перейти
-            в магазин <IconArrow width={16} height={16} /></a>
+            на сайт <IconArrow width={16} height={16} /></a>
         </li>
       </ul>
     </SectionItem>
