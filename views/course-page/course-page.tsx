@@ -102,7 +102,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         className={`container`}
       />}
 
-      {(program.theory || program.practice) &&
+      {(program.theory.length > 0 || program.practice.length > 0) &&
         <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />}
 
       <div className="container">

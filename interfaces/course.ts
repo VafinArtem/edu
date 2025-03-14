@@ -152,15 +152,17 @@ export interface CourseProgram {
   text: string;
   pdfLink?: string;
   theory: {
+    id: number;
     duration?: number;
     learnList?: string[];
     themeList?: string[];
-  };
+  }[];
   practice: {
+    id: number;
     duration?: number;
     learnList?: string[];
     themeList?: string[];
-  };
+  }[];
 }
 
 export interface TariffInfo {
