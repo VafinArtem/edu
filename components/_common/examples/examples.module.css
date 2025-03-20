@@ -1,0 +1,132 @@
+.wrapper {
+  background-color: var(--gray-100);
+  border-radius: 40px 40px 0 0;
+  transition: padding-bottom 0.2s ease-in;
+}
+
+.wrapper:not(.withoutWrapperPaddings) {
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+}
+
+.inner {
+  position: relative;
+}
+
+.bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 291px;
+  padding-bottom: 89px;
+  background: linear-gradient(180deg, rgba(242, 244, 247, 0) 3%, rgba(242, 244, 247, 0.97) 70%, #F2F4F7 100%);
+  z-index: 2;
+  transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
+}
+
+.wrapper.show .bottom {
+  opacity: 0;
+  touch-action: none;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media (min-width: 1500px) {
+  .item {
+	width: calc(25% - 23px);
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 5) {
+	width: calc(20% - 25px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1499px) {
+  .bottom {
+	height: 278px;
+	padding-bottom: 80px;
+  }
+
+  .list {
+	gap: 20px;
+  }
+
+  .item {
+	width: calc(33% - 11px);
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 4) {
+	width: calc(25% - 15px);
+  }
+}
+
+@media (min-width: 680px) and (max-width: 1023px) {
+  .bottom {
+	height: 235px;
+	padding-bottom: 70px;
+  }
+
+  .wrapper:not(.withoutWrapperPaddings) {
+	padding-top: 60px;
+  }
+
+  .list {
+	gap: 20px;
+  }
+
+  .item {
+	width: calc(50% - 10px);
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 3) {
+	width: calc(33% - 12px);
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 6) {
+	display: none;
+  }
+}
+
+@media (max-width: 679px) {
+  .wrapper {
+	border-radius: 20px 20px 0 0;
+  }
+
+  .wrapper:not(.withoutWrapperPaddings) {
+	padding-top: 40px;
+  }
+
+  .bottom {
+	height: 208px;
+	padding-bottom: 84px;
+  }
+
+  .list {
+	gap: 10px;
+  }
+
+  .item {
+	width: 100%;
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 3) {
+	width: calc(50% - 5px);
+  }
+
+  .wrapper:not(.show) .item:nth-child(n + 5) {
+	display: none;
+  }
+}

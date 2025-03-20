@@ -35,11 +35,10 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             className={styles.licenseText}><span>Лицензия </span>
             <span>№Л035-01271-78/00637355</span></a></Paragraph>
           <Navigation className={styles.navigation}>
-            {/*<NavigationItem title={`Amrita`}>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>О компании</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.COURSES}>Новости</NavigationLink>*/}
-            {/*  <NavigationLink component={Link} href={Route.CONTACTS}>Контакты</NavigationLink>*/}
-            {/*</NavigationItem>*/}
+            <NavigationItem title={`Amrita`}>
+              <NavigationLink component={Link} href={Route.ABOUT}>О компании</NavigationLink>
+              <NavigationLink component={Link} href={Route.CONTACTS}>Контакты</NavigationLink>
+            </NavigationItem>
             <NavigationItem title={`Направления`}>
               <NavigationLink component={Link}
                 href={`${Route.COURSES}/category-stomatologya`}>Стоматология</NavigationLink>

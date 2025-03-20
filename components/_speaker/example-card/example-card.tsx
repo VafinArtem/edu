@@ -32,7 +32,7 @@ const ExampleCard = <C extends BaseButtonComponent = "button">({
           <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${images[0].image}`} alt={``} width={417} height={319}
             className={styles.image} quality={95}
             priority={true} />
-          <Paragraph fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
+          <Paragraph tag={"span"} fontWeight={"medium"} fontSize={"none"} className={styles.name}>{name}</Paragraph>
         </BaseButton>
       </article>
       {showModal &&

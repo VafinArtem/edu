@@ -1,6 +1,11 @@
 .wrapper {
   display: flex;
+}
+
+.mainLink {
+  display: flex;
   flex-direction: column;
+  width: 100%;
   background-color: var(--gray-50);
   border: 1px solid var(--gray-200);
   border-radius: 20px;
@@ -8,17 +13,17 @@
   transition: box-shadow 0.2s ease-in;
 }
 
-.wrapper:hover,
-.wrapper:focus-within {
+.mainLink:hover,
+.mainLink:focus-within {
   box-shadow: var(--card-hover);;
 }
 
-.wrapper.whiteBg {
+.mainLink.whiteBg {
   background-color: var(--white);
   border: none;
 }
 
-.wrapper.withPhoto .type {
+.mainLink.withPhoto .type {
   position: absolute;
   top: -40px;
 }
@@ -143,6 +148,8 @@
 }
 
 .link {
+  margin-top: 0;
+  margin-bottom: 0;
   white-space: nowrap;
 }
 
@@ -183,7 +190,7 @@
 	padding: 10px;
   }
 
-  .wrapper.withPhoto .type {
+  .mainLink.withPhoto .type {
 	top: -30px;
   }
 
@@ -221,7 +228,7 @@
 }
 
 @media (max-width: 767px) {
-  .wrapper {
+  .mainLink {
 	min-height: 176px;
   }
 

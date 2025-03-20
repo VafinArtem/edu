@@ -20,19 +20,21 @@ const Program = ({className, program, courseTypeName}: ProgramProps): ReactEleme
         </DownloadLink>}
       </SectionTextHead>
       <ul className={styles.list}>
-        {theory && <ProgramItem
+        {theory && theory.map((item) => (<ProgramItem
+          key={item.id}
           type={ProgramType.THEORY}
-          learnList={theory.learnList}
-          themeList={theory.themeList}
-          duration={theory.duration ? `${theory.duration} ${getDeclension(theory.duration, [`час`, `часа`, `часов`])}` : undefined}
-        />}
+          learnList={item.learnList}
+          themeList={item.themeList}
+          duration={item.duration ? `${item.duration} ${getDeclension(item.duration, [`час`, `часа`, `часов`])}` : undefined}
+        />))}
 
-        {practice && <ProgramItem
+        {practice && practice.map((item) => (<ProgramItem
+          key={item.id}
           type={ProgramType.PRACTICE}
-          learnList={practice.learnList}
-          themeList={practice.themeList}
-          duration={practice.duration ? `${practice.duration} ${getDeclension(practice.duration, [`час`, `часа`, `часов`])}` : undefined}
-        />}
+          learnList={item.learnList}
+          themeList={item.themeList}
+          duration={item.duration ? `${item.duration} ${getDeclension(item.duration, [`час`, `часа`, `часов`])}` : undefined}
+        />))}
 
       </ul>
     </SectionItem>

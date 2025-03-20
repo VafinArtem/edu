@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  border: 1px solid var(--answer-success-bg);
+  border-radius: 20px;
+}
+
+.icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.title {
+  max-width: calc(100% - 50px);
+  font-size: 2.3rem;
+}
+
+.description {
+  margin-top: 5px;
+  color: var(--gray-700);
+}
+
+@media (max-width: 767px) {
+  .card {
+	padding: 20px;
+  }
+
+  .title {
+	font-size: 2rem;
+  }
+}

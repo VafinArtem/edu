@@ -29,8 +29,13 @@ const RecordForm = ({
   courseTypeName,
   metric,
   ecommerce,
+  formIsSend,
+  setFormIsSend,
+  showIdAttribute = true,
 }: RecordFormProps): ReactElement | null => {
+  const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -55,6 +60,10 @@ const RecordForm = ({
     name: string
     contact: string
   }> = async (data) => {
+    if (isSending) return;
+
+    setIsSending(true);
+
     const res = await orderWithTariff({
       data: {...data, tariff: tariffInfo.id ?? null, courseId, orderId: ecommerce.id},
     });
@@ -82,6 +91,10 @@ const RecordForm = ({
         ],
       });
 
+      if (setFormIsSend) {
+        setFormIsSend();
+      }
+
       reset();
     }
 
@@ -90,15 +103,20 @@ const RecordForm = ({
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (
-    <section className={clsx(styles.wrapper, {
-      [styles.success]: answerType === "success",
-      [styles.error]: answerType === "error",
-    })} id={`registration`}>
+    <section
+      className={clsx(styles.wrapper, {
+        [styles.success]: answerType === "success" || formIsSend,
+        [styles.error]: answerType === "error",
+      })}
+      id={showIdAttribute ? `registration` : undefined}
+    >
       <div className={clsx(styles.textContent, {
-        [styles.hidden]: answerType,
+        [styles.hidden]: answerType || formIsSend,
       })}>
         <Heading tag={`h2`} fontSize={`mid`} className={styles.title}>Успейте записаться по&nbsp;минимальной
           стоимости</Heading>
@@ -111,7 +129,7 @@ const RecordForm = ({
         </div>}
       </div>
       <form className={clsx(styles.form, {
-        [styles.hidden]: answerType,
+        [styles.hidden]: answerType || formIsSend,
       })} onSubmit={handleSubmit(onSubmit)} onChange={onChange}>
         <Input
           placeholder={`Ваше имя*`}
@@ -159,10 +177,13 @@ const RecordForm = ({
             target={`_blank`} href={`/pdf/personal_data_processing_policy_1.pdf`}>персональных данных</a></p>
         </div>
       </form>
-      {answerType && <div className={styles.answer}>
-        <Heading tag={`h3`} fontSize={`mid`} className={styles.answerTitle}>{answerType === "error" ? <>Заявка не
-          отправлена <IconError className={styles.icon} width="50" height="50" /></> : <>Заявка
-          отправлена <IconSuccess className={styles.icon} width="50" height="50" /></>}</Heading>
+      {(answerType || formIsSend) && <div className={styles.answer}>
+        <Heading tag={`h3`} fontSize={`mid`} className={styles.answerTitle}>
+          {answerType === "error" && <>Заявка не
+            отправлена <IconError className={styles.icon} width="50" height="50" /></>}
+          {(answerType === "success" || formIsSend) && <>Заявка
+            отправлена <IconSuccess className={styles.icon} width="50" height="50" /></>}
+        </Heading>
         <div className={styles.answerContent}>
           {answerType === "error" && <>
             <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, подождите минут
@@ -171,8 +192,9 @@ const RecordForm = ({
             <p>Или можете не&nbsp;дожидаться починки и&nbsp;позвонить нам в&nbsp;учебный центр&nbsp;<a
               href={`tel:+79312011400`}>+7 (931) 201-14-00</a></p>
           </>}
-          {answerType === "success" &&
-            <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки и&nbsp;оплаты курса.</p>}
+          {(answerType === "success" || formIsSend) &&
+            <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки{tariffInfo.current ? ` и&nbsp;оплаты
+                  курса` : ``}.</p>}
         </div>
       </div>}
     </section>

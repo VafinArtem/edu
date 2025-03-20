@@ -28,6 +28,7 @@ const CoursesPage = ({
   courseTypes,
   directions,
   coursesCount,
+  enableAdvancedTraining,
 }: CoursesPageProps): ReactElement | null => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -49,7 +50,8 @@ const CoursesPage = ({
           className={styles.count}>&nbsp;{coursesCount}</span>}</Heading>
 
         <div className={styles.grid}>
-          <Filters setShowMobileFilters={changeModalActivityStatus} showMobileFilters={showModal} ref={ref}
+          <Filters enableAdvancedTraining={enableAdvancedTraining} setShowMobileFilters={changeModalActivityStatus}
+            showMobileFilters={showModal} ref={ref}
             filters={filters} courseTypes={courseTypes} />
           <div className={styles.content}>
             <div className={styles.head}>

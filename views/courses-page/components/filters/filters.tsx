@@ -26,6 +26,7 @@ const Filters = forwardRef(({
   courseTypes,
   showMobileFilters,
   setShowMobileFilters,
+  enableAdvancedTraining,
 }: FiltersProps, ref: ForwardedRef<HTMLFormElement>): ReactElement | null => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -149,7 +150,7 @@ const Filters = forwardRef(({
           <Heading tag={`h2`} className={styles.title}>Фильтры</Heading>
 
           <div className={styles.inner}>
-            {false && courseTypes.length > 0 && <Select
+            {courseTypes.length > 0 && <Select
               className={styles.typeSelect}
               labelName={"Тип обучения"}
               name={`type`}
@@ -212,9 +213,10 @@ const Filters = forwardRef(({
             />
 
             <Wrapper className={styles.common}>
-              {false && <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
-                name={`advanced-training`} value={1}
-                defaultChecked={Boolean(searchParams.get("advanced-training"))} />}
+              {enableAdvancedTraining &&
+                <Checkbox className={styles.advancedTraining} labelName={`Повышение квалификации`}
+                  name={`advanced-training`} value={1}
+                  defaultChecked={Boolean(searchParams.get("advanced-training"))} />}
 
               {filters.length > 0 && filters.map(({name, inputName, id, values}) => (
                 <CollapseItem key={id} name={name} contentClassName={styles.checkboxList}>

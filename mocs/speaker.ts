@@ -6,7 +6,11 @@ export const speaker: SpeakerPageModel = {
   "alias": "volkova-yulia-valerievna",
   "metaTitle": "Преподаватель: Волкова Юлия Валерьевна",
   "metaDescription": "",
-  "surname": "Волкова",
+  "surname": {
+    "nominative": "Волкова",
+    "genitive": "Волковой",
+    "instrumental": "Волковой",
+  },
   "name": {
     "nominative": "Юлия",
     "genitive": "Юлии",

@@ -1,9 +1,10 @@
-import {CommonPageModel} from "@/interfaces/common";
+import {CommonPageModel, ExampleItem} from "@/interfaces/common";
 import {Direction} from "@/interfaces/courses";
 
 export interface CoursePageModel extends CommonPageModel {
   name: string;
   promoDescription: string;
+  isCertificate: boolean;
   colors: {
     common: string;
     blur: string;
@@ -53,6 +54,7 @@ export interface CoursePageModel extends CommonPageModel {
     specialization: string;
     workExperience: number;
     aboutSlides: string[][];
+    examples?: ExampleItem[];
   }[];
   advantages?: string[];
   program: CourseProgram;
@@ -65,11 +67,12 @@ export interface CoursePageModel extends CommonPageModel {
     address: string;
     desc?: string;
     metro?: string;
-    position: [number, number];
+    position: [string, string];
     photos?: string[];
   };
   qa?: QAItem[];
   speakersCourses?: CourseShort[];
+  forWhom?: string;
 }
 
 export interface DailySchedule {
@@ -115,6 +118,7 @@ export interface Speaker {
   cite?: string;
   edu: Edu[];
   aboutSlides: string[][];
+  examples?: ExampleItem[];
 }
 
 export interface SpeakerShort {
@@ -148,15 +152,17 @@ export interface CourseProgram {
   text: string;
   pdfLink?: string;
   theory: {
+    id: number;
     duration?: number;
     learnList?: string[];
     themeList?: string[];
-  };
+  }[];
   practice: {
+    id: number;
     duration?: number;
     learnList?: string[];
     themeList?: string[];
-  };
+  }[];
 }
 
 export interface TariffInfo {
@@ -178,7 +184,7 @@ export interface Place {
     station?: string;
     icon?: string;
   };
-  position: [number, number];
+  position: [string, string];
   photos?: string[];
 }
 

@@ -13,3 +13,10 @@ export interface Review {
   position: string;
   text: string;
 }
+
+export interface ExampleItem {
+  id: number;
+  name: string;
+  description?: string;
+  images: {image: string, description: string}[];
+}

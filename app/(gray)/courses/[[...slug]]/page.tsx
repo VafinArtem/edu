@@ -40,7 +40,13 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: (page as {data: CoursePageModel, code: number}).data.metaTitle ?? ``,
+    title: (page as {data: CoursePageModel, code: number}).data.metaTitle ? (page as {
+      data: CoursePageModel,
+      code: number
+    }).data.metaTitle : (page as {
+      data: CoursePageModel,
+      code: number
+    }).data.name,
     description: (page as {data: CoursePageModel, code: number}).data.metaDescription ?? ``,
   };
 }
@@ -98,7 +104,8 @@ const CoursesLayout = async (props: {
       courses={(page as {data: CoursesPageModel, code: number}).data.courses}
       directions={directions?.answer.data ?? []}
       courseTypes={courseTypes?.answer.data ?? []}
-      filters={filters?.answer.data ?? []}
+      filters={filters?.answer.data.filters ?? []}
+      enableAdvancedTraining={filters?.answer.data.enableAdvancedTraining ?? false}
       pages={(page as {data: CoursesPageModel, code: number}).data.pages}
     />;
   }

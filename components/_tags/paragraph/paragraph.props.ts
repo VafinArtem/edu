@@ -5,4 +5,5 @@ export interface ParagraphProps extends DetailedHTMLProps<HTMLAttributes<HTMLPar
   fontWeight?: "normal" | "light" | "medium";
   fontStyle?: "normal" | "italic";
   align?: "left" | "center" | "right";
+  tag?: "p" | "span";
 }

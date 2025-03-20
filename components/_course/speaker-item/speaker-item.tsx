@@ -1,5 +1,6 @@
 "use client";
 
+import Examples from "@/components/_common/examples/examples";
 import EduItem from "@/components/_course/edu-item/edu-item";
 import VideoPreview from "@/components/_course/speaker-item/components/video-preview/video-preview";
 import ExternalBgLink from "@/components/_links/external-bg-link/external-bg-link";
@@ -28,6 +29,7 @@ const SpeakerItem = ({
   cite,
   aboutSlides,
   photoBackground,
+  examples,
 }: SpeakerItemProps): ReactElement | null => {
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const [isBeginning, setIsBeginning] = useState<boolean>(false);
@@ -103,6 +105,14 @@ const SpeakerItem = ({
           {edu.map((item, index) => <EduItem className={styles.eduItem} key={index} {...item} />)}
         </ul>
       </div>}
+      {examples && examples.length > 0 && <Examples
+        headingOptions={{
+          tag: `h3`,
+          fontSize: `mini`,
+        }}
+        withoutWrapperPaddings
+        examples={examples}
+      />}
     </li>
   );
 };

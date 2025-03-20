@@ -8,11 +8,11 @@ import {PartnershipProps} from "./partnership.props";
 const Partnership = ({className}: PartnershipProps): ReactElement | null => {
   return (
     <SectionItem className={className}>
-      <Heading tag={`h2`}>По&nbsp;вопросам сотрудничества</Heading>
+      <Heading align={"center"} tag={`h2`}>По&nbsp;вопросам сотрудничества</Heading>
       <ul className={styles.list}>
         <li className={styles.item}>
           <figure className={styles.picture}>
-            <Image src={`/img/contacts-page/partnership/solovyeva-elena.png`} alt={``} width={304} height={304}
+            <Image src={`/img/contacts-page/partnership/solovyeva-elena.jpg`} alt={``} width={304} height={304}
               quality={95}
               loading={"lazy"}
               className={styles.image} />
@@ -24,7 +24,7 @@ const Partnership = ({className}: PartnershipProps): ReactElement | null => {
         </li>
         <li className={styles.item}>
           <figure className={styles.picture}>
-            <Image src={`/img/contacts-page/partnership/konyaeva-olga.png`} alt={``} width={304} height={304}
+            <Image src={`/img/contacts-page/partnership/konyaeva-olga.jpg`} alt={``} width={304} height={304}
               quality={95}
               loading={"lazy"}
               className={styles.image} />
@@ -66,6 +66,30 @@ const Partnership = ({className}: PartnershipProps): ReactElement | null => {
               className={styles.image} />
             <figcaption className={styles.description}>
               <span className={styles.name}>Черноляхова Алла</span>
+              <span className={styles.position}>Менеджер</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li className={styles.item}>
+          <figure className={styles.picture}>
+            <Image src={`/img/contacts-page/partnership/natalya-talyzina.jpg`} alt={``} width={304} height={304}
+              quality={95}
+              loading={"lazy"}
+              className={styles.image} />
+            <figcaption className={styles.description}>
+              <span className={styles.name}>Наталья Талызина</span>
+              <span className={styles.position}>Менеджер</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li className={styles.item}>
+          <figure className={styles.picture}>
+            <Image src={`/img/contacts-page/partnership/alla-mihaylova.jpg`} alt={``} width={304} height={304}
+              quality={95}
+              loading={"lazy"}
+              className={styles.image} />
+            <figcaption className={styles.description}>
+              <span className={styles.name}>Алла Михайлова</span>
               <span className={styles.position}>Менеджер</span>
             </figcaption>
           </figure>

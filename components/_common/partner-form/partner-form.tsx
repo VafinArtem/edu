@@ -19,6 +19,8 @@ import IconSuccess from "./success.svg";
 
 const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
+  const [isSending, setIsSending] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -42,7 +44,9 @@ const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
     city: string,
     partnershipType: string
   }> = async (data) => {
-    console.log(data);
+    if (isSending) return;
+
+    setIsSending(true);
 
     const res = await sendBecomePartner({
       data,
@@ -59,6 +63,8 @@ const PartnerForm = ({className}: PartnerFormProps): ReactElement | null => {
         setAnswerType(null);
       }, 2000);
     }
+
+    setIsSending(false);
   };
 
   return (

@@ -37,6 +37,7 @@
 }
 
 .description {
+  margin-left: 0;
   font-size: 2rem;
   color: var(--white);
 }

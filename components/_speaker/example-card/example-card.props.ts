@@ -1,5 +1,5 @@
 import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-button/base-button";
-import {ExampleItem} from "@/interfaces/speaker";
+import {ExampleItem} from "@/interfaces/common";
 
 export type ExampleCardProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {

@@ -21,7 +21,7 @@ export const convertCourseDates = ({start, end}: {start?: number, end?: number})
     return `${startDate.format(`D MMMM${now.year() !== startDate.year() ? " YYYY" : ""}`)}`;
   }
 
-  return `c ${startDate.format(`D${startDate.month() !== endDate?.month() ? " MMMM" : ""}${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)} по ${endDate!.format(`D MMMM${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)}`;
+  return `с ${startDate.format(`D${startDate.month() !== endDate?.month() ? " MMMM" : ""}${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)} по ${endDate!.format(`D MMMM${startDate.year() !== endDate?.year() ? " YYYY" : ""}`)}`;
 };
 
 export const convertShortCourseDate = (date: number) => {

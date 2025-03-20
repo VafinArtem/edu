@@ -10,6 +10,7 @@ import {sendMetric} from "@/helpers/metricks";
 import {Route} from "@/helpers/route";
 import Advantages from "@/views/course-page/components/advantages/advantages";
 import Faq from "@/views/course-page/components/faq/faq";
+import ForWhom from "@/views/course-page/components/for-whom/for-whom";
 import Gallery from "@/views/course-page/components/gallery/gallery";
 import Location from "@/views/course-page/components/location/location";
 import Price from "@/views/course-page/components/price/price";
@@ -21,11 +22,13 @@ import SpeakerCourses from "@/views/course-page/components/speaker-courses/speak
 import Speakers from "@/views/course-page/components/speakers/speakers";
 import {nanoid} from "nanoid";
 import {usePathname} from "next/navigation";
-import React, {ReactElement, useEffect} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import styles from "./course-page.module.css";
 import {CoursePageProps} from "./course-page.props";
 
 const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement | null => {
+  const [formIsSend, setFormIsSend] = useState<boolean>(false);
+
   const {
     name,
     colors,
@@ -45,6 +48,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     qa,
     speakersCourses,
     id,
+    forWhom,
+    isCertificate,
   } = training;
 
   const pathname = usePathname();
@@ -92,13 +97,20 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
 
-      {(program.theory || program.practice) &&
+      {forWhom && <ForWhom
+        content={forWhom}
+        className={`container`}
+      />}
+
+      {(program.theory.length > 0 || program.practice.length > 0) &&
         <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />}
 
       <div className="container">
         <RecordForm
           tariffInfo={getMinTariff(tariffs)}
           saleTimestamp={saleTimestamp}
+          setFormIsSend={() => setFormIsSend(true)}
+          formIsSend={formIsSend}
           courseId={id}
           courseTypeName={typeName.nominative}
           metric={{
@@ -128,6 +140,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           workExperience,
           photo,
           aboutSlides,
+          examples,
         }) => ({
           name: `${surname.nominative} ${name.nominative} ${patronymic.nominative}`,
           position,
@@ -140,6 +153,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           alias,
           cite,
           aboutSlides,
+          examples,
           photoBackground: colors.photoBackground,
         }))} />}
 
@@ -162,16 +176,16 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         courseTypeName={{nominative: typeName.nominative.toLowerCase(), genitive: typeName.genitive.toLowerCase()}}
       />}
 
-      <div className="container">
+      {isCertificate && <div className="container">
         <Certificate courseTypeName={typeName.genitive.toLowerCase()} />
-      </div>
+      </div>}
 
       {photos && photos.length > 0 && <Gallery photos={photos} />}
 
       <ContainerWhite>
         {(place && city) && <>
           <Location className={`container`} place={{
-            position: place.position,
+            position: place.position.map((position) => position.trim()) as [string, string],
             city: city.name,
             metro: {
               station: place.metro,
@@ -190,7 +204,10 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             tariffInfo={getMinTariff(tariffs)}
             saleTimestamp={saleTimestamp}
             courseId={id}
+            setFormIsSend={() => setFormIsSend(true)}
+            formIsSend={formIsSend}
             courseTypeName={typeName.nominative}
+            showIdAttribute={false}
             metric={{
               change: `course-min-record-2-change`,
               send: `course-min-record-2-send`,
@@ -220,7 +237,6 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       </ContainerWhite>
 
       {similarCourses && similarCourses.length > 0 && <SimilarCourses
-        className={`container`}
         title={`Может заинтересовать`}
         cardColor={`white`}
         courses={similarCourses} />}

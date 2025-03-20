@@ -28,10 +28,11 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
               href={Route.COURSES}>Курсы</Catalog>
           </div>
           <Navigation className={styles.navigation}>
-            {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.NEWS}>Новости</NavigationItem>*/}
             {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>*/}
             <NavigationItem color={type === "blur" ? "white" : "black"}
               href={Route.SPEAKERS} className={styles.navigationLink}>Преподаватели</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.ABOUT}
+              className={styles.navigationLink}>О компании</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}
               className={styles.navigationLink}>Контакты</NavigationItem>
           </Navigation>

@@ -10,8 +10,8 @@ export const ProgramTypeName: {
   THEORY: string,
   PRACTICE: string,
 } = {
-  THEORY: `Теоретическая часть`,
-  PRACTICE: `Практическая часть`,
+  THEORY: `Теория`,
+  PRACTICE: `Практика`,
 };
 
 export const ProgramThemeName: {

@@ -79,28 +79,61 @@
 
 .modal {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
-  z-index: 11;
-  display: grid;
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 11;
+  transition: opacity 0.2s ease-in;
+  background-color: rgba(var(--black-rgb), 0.5);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  max-width: 640px;
+  max-height: 90vh;
+  padding: 50px;
   background-color: var(--white);
-  border-radius: 40px 40px 0 0;
-  transform: translateY(100%);
-  transition: transform 0.2s ease-in;
+  border-radius: 20px;
+}
+
+.scroll {
+  display: grid;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-button {
+  height: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  width: 100%;
+  background-color: var(--gray-400);
+  border-radius: 50px;
 }
 
 .modal.show {
-  transform: translateY(0);
+  opacity: 1;
 }
 
 .formTitle {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 5px;
-  font-size: 2.3rem;
+  max-width: 450px;
 }
 
 .form,
@@ -111,7 +144,7 @@
   flex-direction: column;
   justify-self: center;
   width: 100%;
-  max-width: 1420px;
+  height: 100%;
 }
 
 .form {
@@ -122,13 +155,17 @@
 }
 
 .answer {
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   background-color: var(--white);
+  z-index: 1;
 }
 
 .answerContent {
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 10px;
   font-size: 1.8rem;
   color: var(--gray-700);
@@ -141,9 +178,13 @@
 
 .inner {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) auto;
-  column-gap: 15px;
-  row-gap: 10px;
+  gap: 15px;
+}
+
+.footer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .footNote {
@@ -157,10 +198,15 @@
 }
 
 .submit {
-  align-self: start;
+  flex-shrink: 0;
   height: 74px;
   width: 274px;
-  margin-left: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 @media (max-width: 1499px) {
@@ -255,36 +301,11 @@
 }
 
 @media (max-width: 1024px) {
-  .modal {
-	padding-top: 40px;
-	padding-bottom: 40px;
-  }
-
   .form {
 	gap: 20px;
   }
 
-  .formTitle {
-	font-size: 2rem;
-  }
-
-  .inner {
-	grid-template-columns: 160px 1fr 160px 1fr;
-	gap: 15px;
-  }
-
-  .input {
-	grid-column: span 2;
-  }
-
-  .submit {
-	width: 100%;
-	margin-left: 0;
-  }
-
   .footNote {
-	grid-column: 2/-1;
-	align-self: center;
 	max-width: 337px;
   }
 
@@ -334,36 +355,44 @@
   .hotText {
 	font-size: 1.6rem;
   }
+
+  .formTitle {
+	max-width: calc(100% - 46px);
+  }
+
+  .card {
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 30px 15px;
+  }
+
+  .close {
+	top: 10px;
+	right: 10px;
+  }
+
+  .footer {
+	flex-direction: column;
+	gap: 15px;
+  }
+
+  .footNote {
+	text-align: center;
+  }
 }
 
 @media (max-width: 530px) {
-  .modal {
-	padding-top: 30px;
-	padding-bottom: 130px;
-  }
-
   .inner {
 	grid-template-columns: 100%;
 	justify-items: center;
 	gap: 15px;
   }
 
-  .formTitle {
-	font-size: 1.8rem;
-  }
-
   .input {
-	grid-column: initial;
 	width: 100%;
   }
 
   .submit {
 	width: 100%;
-	margin-left: 0;
-  }
-
-  .footNote {
-	grid-column: initial;
-	text-align: center;
   }
 }

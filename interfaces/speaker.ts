@@ -1,8 +1,12 @@
-import {CommonPageModel} from "@/interfaces/common";
+import {CommonPageModel, ExampleItem} from "@/interfaces/common";
 import {CourseShort, Edu} from "@/interfaces/course";
 
 export interface SpeakerPageModel extends CommonPageModel {
-  surname: string,
+  surname: {
+    nominative: string;
+    genitive: string;
+    instrumental: string;
+  }
   name: {
     nominative: string;
     genitive: string;
@@ -30,13 +34,6 @@ export interface SpeakerPageModel extends CommonPageModel {
 export interface NavigationLink {
   name: string;
   href: string;
-}
-
-export interface ExampleItem {
-  id: number;
-  name: string;
-  description?: string;
-  images: {image: string, description: string}[];
 }
 
 export interface GalleryItem {

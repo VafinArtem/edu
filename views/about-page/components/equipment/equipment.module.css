@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 980px;
+}
+
+@media (max-width: 1499px) {
+  .wrapper {
+	gap: 40px;
+  }
+
+  .content {
+	max-width: 760px;
+  }
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 767px) {
+}

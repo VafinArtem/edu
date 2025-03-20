@@ -1,12 +1,3 @@
-.list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .link {
   align-self: center;
 }
@@ -15,48 +6,59 @@
   flex-shrink: 0;
 }
 
-@media (min-width: 1200px) and (max-width: 1499px) {
-  .item:nth-child(n + 4) {
-	display: none;
-  }
+.container {
+  position: relative;
+}
+
+.slider[class] {
+  align-items: stretch;
+  overflow: visible;
+}
+
+.slide[class] {
+  height: auto;
+}
+
+.item {
+  height: 100%;
+}
+
+.buttons {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - (var(--container-desktop-padding) * 2) + 44px);
+  margin-left: -22px;
+  transform: translateY(-50%);
+  touch-action: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.buttons > * {
+  touch-action: auto;
+  pointer-events: all;
 }
 
 @media (max-width: 1499px) {
-  .list {
-	grid-template-columns: repeat(3, 1fr);
+  .buttons {
+	width: calc(100% - (var(--container-laptop-padding) * 2) + 44px);
   }
 }
 
 @media (max-width: 1199px) {
-  .list {
-	grid-template-columns: 308px;
-	grid-auto-columns: 308px;
-	grid-auto-flow: column;
-	padding-left: var(--container-tablet-padding);
-	padding-right: var(--container-tablet-padding);
-	margin-left: calc(0px - var(--container-tablet-padding));
-	margin-right: calc(0px - var(--container-tablet-padding));
-	overflow-y: auto;
-	scrollbar-color: transparent transparent;
-	scrollbar-width: none;
+  .slide[class] {
+	width: 350px;
   }
 
-  .list::-webkit-scrollbar {
-	width: 0;
-	height: 0;
-	background-color: transparent;
+  .buttons {
+	display: none;
   }
 }
 
 @media (max-width: 767px) {
-  .list {
-	grid-template-columns: 290px;
-	grid-auto-columns: 290px;
-	grid-auto-flow: column;
-	gap: 10px;
-	padding-left: var(--container-mobile-padding);
-	padding-right: var(--container-mobile-padding);
-	margin-left: calc(0px - var(--container-mobile-padding));
-	margin-right: calc(0px - var(--container-mobile-padding));
+  .slide[class] {
+	width: calc(100% - var(--container-mobile-padding));
   }
 }

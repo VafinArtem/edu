@@ -1,8 +1,8 @@
-import React, {ReactElement} from "react";
 import clsx from "clsx";
+import React, {ReactElement} from "react";
+import IconArrow from "./arrow.svg";
 import styles from "./button.module.css";
 import {ButtonProps} from "./button.props";
-import IconArrow from "./arrow.svg";
 
 const Button = ({direction, background, size, ...props}: ButtonProps): ReactElement | null => {
   return (

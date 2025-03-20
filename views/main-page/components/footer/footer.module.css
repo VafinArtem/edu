@@ -14,7 +14,6 @@
   align-items: center;
 }
 
-
 .left::before {
   content: "";
   position: absolute;
