@@ -1,3 +1,4 @@
+import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
 import {coursesEight} from "@/mocs/courses";
@@ -119,9 +120,21 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
                   "instrumental": "",
                 },
               },
-            ]} />
+            ]}
+          />
         </div>
       </div>
+
+      <div className={clsx(styles.page, styles.white, `container`)} style={{overflow: `hidden`}}>
+        <CoursesSlider
+          title={`Ближайшие курсы`}
+          courses={coursesEight}
+          className={styles.similar}
+          cardColor={"gray"}
+        />
+      </div>
+
+      <NotFindCourse className={styles.notFindCourse} />
 
     </React.Fragment>
   );

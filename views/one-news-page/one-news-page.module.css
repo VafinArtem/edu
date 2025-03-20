@@ -9,6 +9,13 @@
   row-gap: 100px;
 }
 
+.page.white {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  margin-bottom: -120px;
+  background-color: var(--white);
+}
+
 .page > *:not(.similar) {
   grid-column: 3/11;
 }
@@ -17,9 +24,17 @@
   grid-column: 1/-1;
 }
 
+.notFindCourse {
+  margin-bottom: -90px;
+}
+
 @media (max-width: 1499px) {
   .page {
 	row-gap: 80px;
+  }
+
+  .page.white {
+	margin-bottom: -100px;
   }
 
   .page > *:not(.similar) {
@@ -36,6 +51,12 @@
   .page > *:not(.similar) {
 	grid-column: initial;
   }
+
+  .page.white {
+	padding-top: 60px;
+	padding-bottom: 80px;
+	margin-bottom: -80px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -45,5 +66,15 @@
 
   .page {
 	row-gap: 60px;
+  }
+
+  .notFindCourse {
+	margin-bottom: -80px;
+  }
+
+  .page.white {
+	padding-top: 50px;
+	padding-bottom: 70px;
+	margin-bottom: -70px;
   }
 }

@@ -27,7 +27,7 @@ const CoursesSlider = ({title, className, courses, cardColor}: CoursesSliderProp
             onClick={() => {
               swiperRef.current?.slidePrev();
             }}
-            background={"white"}
+            background={cardColor === "white" ? cardColor : "primary"}
             size={"mini"}
           />
           <Button
@@ -36,7 +36,7 @@ const CoursesSlider = ({title, className, courses, cardColor}: CoursesSliderProp
             onClick={() => {
               swiperRef.current?.slideNext();
             }}
-            background={"white"}
+            background={cardColor === "white" ? cardColor : "primary"}
             size={"mini"}
           />
         </div>
