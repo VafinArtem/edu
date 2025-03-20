@@ -7,7 +7,7 @@ import {ThemeListProps} from "./theme-list.props";
 const ThemeList = ({title, themes, dotColor}: ThemeListProps): ReactElement | null => {
   return (
     <div className={styles.wrapper}>
-      <Paragraph fontWeight={"light"}>{title}</Paragraph>
+      <Paragraph fontWeight={"light"} fontSize={"none"} className={styles.title}>{title}</Paragraph>
       <ul className={clsx(styles.list, {
         [styles.practice]: dotColor === "practice",
         [styles.theory]: dotColor === "theory",

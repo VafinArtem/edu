@@ -4,6 +4,10 @@
   gap: 20px;
 }
 
+.title {
+  font-size: 2rem;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -34,7 +38,24 @@
   position: relative;
   top: 7px;
   display: flex;
+  flex-shrink: 0;
   width: 6px;
   height: 6px;
   border-radius: 50%;
+}
+
+@media (max-width: 1023px) {
+  .title {
+	font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+	font-size: 1.6rem;
+  }
+
+  .item {
+	font-size: 1.6rem;
+  }
 }

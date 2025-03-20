@@ -2,6 +2,7 @@ import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
 import AboutCourse from "@/views/one-news-page/components/about-course/about-course";
 import HowItWas from "@/views/one-news-page/components/how-it-was/how-it-was";
+import Speakers from "@/views/one-news-page/components/speakers/speakers";
 import Top from "@/views/one-news-page/components/top/top";
 import clsx from "clsx";
 import React, {ReactElement} from "react";
@@ -84,6 +85,33 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
               ],
             },
           }} />
+          <Speakers
+            courseTypeName={"Мастер-класса"}
+            speakers={[
+              {
+                "id": 1,
+                "alias": "volkova-yulia",
+                "photo": "/img/course-page/promo/speaker-desktop.png",
+                "photoBackground": "#DDDAE3",
+                "position": "Главврач клиники Мегаполис Дент",
+                "specialization": "Стоматолог-хирург, пародонтолог",
+                "surname": {
+                  "nominative": "Волкова",
+                  "genitive": "Волковой",
+                  "instrumental": "",
+                },
+                "name": {
+                  "nominative": "Юлия",
+                  "genitive": "Юлии",
+                  "instrumental": "",
+                },
+                "patronymic": {
+                  "nominative": "Валерьевна",
+                  "genitive": "Валерьевны",
+                  "instrumental": "",
+                },
+              },
+            ]} />
         </div>
       </div>
 
