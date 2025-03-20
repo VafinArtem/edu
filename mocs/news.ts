@@ -1,3 +1,5 @@
+import {NewsShortCard} from "@/interfaces/news";
+
 export const news: NewsShortCard[] = [
   {
     "id": 1,
