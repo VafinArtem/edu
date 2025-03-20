@@ -1,23 +1,42 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.wrapper.gap20 {
+  gap: 20px;
+}
+
+.wrapper.gapDefault {
   gap: 50px;
 }
 
 @media (max-width: 1499px) {
-  .wrapper {
+  .wrapper.gapDefault {
 	gap: 40px;
+  }
+
+  .wrapper.gap20 {
+	gap: 20px;
   }
 }
 
 @media (max-width: 1199px) {
-  .wrapper {
+  .wrapper.gapDefault {
 	gap: 30px;
+  }
+
+  .wrapper.gap20 {
+	gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .wrapper {
+  .wrapper.gapDefault {
 	gap: 20px;
+  }
+
+  .wrapper.gap20 {
+	gap: 15px;
   }
 }

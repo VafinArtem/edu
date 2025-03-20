@@ -1,5 +1,3 @@
-import {CourseShort} from "@/interfaces/course";
-
 export interface TopProps {
   title: string;
   date: number;
@@ -7,5 +5,4 @@ export interface TopProps {
   description?: string;
   promoImage?: string;
   titles: string[];
-  course?: CourseShort;
 }

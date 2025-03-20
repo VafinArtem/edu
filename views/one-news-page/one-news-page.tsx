@@ -1,8 +1,6 @@
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
-import {courses} from "@/mocs/courses";
-import {content} from "@/mocs/one-news";
-import ContentWrapper from "@/views/one-news-page/components/content-wrapper/content-wrapper";
+import HowItWas from "@/views/one-news-page/components/how-it-was/how-it-was";
 import Top from "@/views/one-news-page/components/top/top";
 import clsx from "clsx";
 import React, {ReactElement} from "react";
@@ -29,9 +27,8 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
               `Ближайшие потоки курса по эндодонтическому лечению`,
               `Преподаватель курса`,
             ]}
-            course={courses[0]}
           />
-          <ContentWrapper content={content} />
+          <HowItWas />
         </div>
       </div>
 
