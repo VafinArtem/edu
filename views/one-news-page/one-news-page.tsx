@@ -1,6 +1,8 @@
 import Pagination from "@/components/_common/pagination/pagination";
 import {Route} from "@/helpers/route";
+import {coursesEight} from "@/mocs/courses";
 import AboutCourse from "@/views/one-news-page/components/about-course/about-course";
+import CoursesSlider from "@/views/one-news-page/components/courses-slider/courses-slider";
 import HowItWas from "@/views/one-news-page/components/how-it-was/how-it-was";
 import Speakers from "@/views/one-news-page/components/speakers/speakers";
 import Top from "@/views/one-news-page/components/top/top";
@@ -15,7 +17,7 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
       <Pagination className={`container`} pagination={[{name: `Новости`, link: Route.NEWS}, {
         name: `Практический курс по эндодонтическому лечению`,
       }]} />
-      <div style={{overflow: `hidden`}}>
+      <div className={styles.wrapper} style={{overflow: `hidden`}}>
         <div className={clsx(styles.page, `container`)}>
           <Top
             title={`Практический курс по эндодонтическому лечению`}
@@ -85,6 +87,12 @@ const OneNewsPage = ({}: OneNewsPageProps): ReactElement | null => {
               ],
             },
           }} />
+          <CoursesSlider
+            title={`Другие курсы преподавателей`}
+            courses={coursesEight}
+            className={styles.similar}
+            cardColor={"white"}
+          />
           <Speakers
             courseTypeName={"Мастер-класса"}
             speakers={[

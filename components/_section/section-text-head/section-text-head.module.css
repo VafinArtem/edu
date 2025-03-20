@@ -1,8 +1,11 @@
 .wrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+}
+
+.wrapper:not(.noWrap) {
+  flex-wrap: wrap;
 }
 
 .textContent {
