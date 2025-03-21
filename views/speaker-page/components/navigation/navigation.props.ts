@@ -1,4 +1,4 @@
-import {NavigationLink} from "@/interfaces/speaker";
+import {NavigationLink} from "@/interfaces/common";
 
 export interface NavigationProps {
   className?: string;

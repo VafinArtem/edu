@@ -1,5 +1,7 @@
 export const API = {
   news: {
+    all: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/news/" : "/react-api/news/view"),
+    types: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/types/" : "/react-api/news/view"),
     byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/one-news/" : "/react-api/news/view"),
   },
   course: {

@@ -4,4 +4,5 @@ import {Option} from "@/interfaces/courses";
 export type FilterButtonProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
   option: Option;
+  isActive?: boolean;
 };

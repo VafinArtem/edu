@@ -1,4 +1,4 @@
-import {NavigationLink} from "@/interfaces/speaker";
+import {NavigationLink} from "@/interfaces/common";
 
 export interface TopProps {
   title: string;

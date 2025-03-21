@@ -1,3 +1,8 @@
+export interface NewsModel {
+  cards: NewsShortCard[];
+  pages: number;
+}
+
 export interface NewsShortCard {
   id: number;
   title: string;
