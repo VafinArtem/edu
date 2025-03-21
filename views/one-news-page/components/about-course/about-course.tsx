@@ -12,7 +12,7 @@ import {AboutCourseProps} from "./about-course.props";
 const AboutCourse = ({course}: AboutCourseProps): ReactElement | null => {
   const {typeName, promoDescription, dates, courseCard, themes} = course;
   return (
-    <SectionItem gap={"20"}>
+    <SectionItem gap={"20"} id={"about"}>
       <SectionHead>
         <Heading tag={`h2`}>О {typeName.prepositional}</Heading>
       </SectionHead>

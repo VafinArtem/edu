@@ -31,11 +31,6 @@ export interface SpeakerPageModel extends CommonPageModel {
   photos?: GalleryItem[];
 }
 
-export interface NavigationLink {
-  name: string;
-  href: string;
-}
-
 export interface GalleryItem {
   id: string;
   description?: string;

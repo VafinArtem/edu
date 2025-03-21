@@ -9,7 +9,7 @@ import {HowItWasProps} from "./how-it-was.props";
 
 const HowItWas = ({content, images}: HowItWasProps): ReactElement | null => {
   return (
-    <SectionItem gap={"20"}>
+    <SectionItem gap={"20"} id={"howItWas"}>
       <SectionHead>
         <Heading tag={`h2`}>Как это было</Heading>
       </SectionHead>

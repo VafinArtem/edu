@@ -12,13 +12,13 @@ import styles from "./courses-slider.module.css";
 import {CoursesSliderProps} from "./courses-slider.props";
 import "swiper/css";
 
-const CoursesSlider = ({title, className, courses, cardColor}: CoursesSliderProps): ReactElement | null => {
+const CoursesSlider = ({title, className, courses, cardColor, id}: CoursesSliderProps): ReactElement | null => {
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const [isBeginning, setIsBeginning] = useState<boolean>(false);
   const swiperRef = useRef<SwiperCore>();
 
   return (
-    <SectionItem className={clsx(styles.wrapper, className)}>
+    <SectionItem className={clsx(styles.wrapper, className)} id={id ?? ""}>
       <SectionTextHead className={styles.head} title={title} noWrap>
         <div className={styles.buttons}>
           <Button

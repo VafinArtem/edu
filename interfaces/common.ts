@@ -20,3 +20,8 @@ export interface ExampleItem {
   description?: string;
   images: {image: string, description: string}[];
 }
+
+export interface NavigationLink {
+  name: string;
+  href: string;
+}

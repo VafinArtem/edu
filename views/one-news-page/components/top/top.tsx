@@ -21,8 +21,8 @@ const Top = ({title, titles, description, type, promoImage, date}: TopProps): Re
       {promoImage &&
         <Image src={promoImage} alt={``} width={330} height={265} className={styles.image} quality={95} priority />}
       <ul className={styles.titles}>
-        {titles.map((title, index) => <li key={index} className={styles.titleItem}><a href={`#${index}`}
-          className={styles.link}>{title}</a></li>)}
+        {titles.map((title) => <li key={title.href} className={styles.titleItem}><a href={title.href}
+          className={styles.link}>{title.name}</a></li>)}
       </ul>
     </div>
   );

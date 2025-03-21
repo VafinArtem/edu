@@ -16,7 +16,7 @@ const Speakers = ({speakers, courseTypeName}: SpeakersProps): ReactElement | nul
   const style = styles;
 
   return (
-    <SectionItem>
+    <SectionItem id={"speakers"}>
       <SectionHead>
         <Heading
           tag={"h2"}

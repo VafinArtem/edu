@@ -5,4 +5,5 @@ export interface CoursesSliderProps {
   className?: string;
   courses: CourseShort[];
   cardColor: "white" | "gray";
+  id?: string;
 }

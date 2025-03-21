@@ -1,8 +1,10 @@
+import {NavigationLink} from "@/interfaces/speaker";
+
 export interface TopProps {
   title: string;
   date: number;
   type: string;
   description?: string;
   promoImage?: string;
-  titles: string[];
+  titles: NavigationLink[];
 }
