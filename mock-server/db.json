@@ -1191,66 +1191,81 @@
   "filters": {
     "code": 200,
     "answer": {
-      "data": [
-        {
-          "id": 1,
-          "name": "Город",
-          "inputName": "city",
-          "values": [
-            {
-              "id": 1,
-              "name": "Санкт-Петербург",
-              "value": "1",
-              "alias": "sankt-peterburg"
-            },
-            {
-              "id": 2,
-              "name": "Москва",
-              "value": "2",
-              "alias": "moskva"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Преподаватель",
-          "inputName": "speaker",
-          "values": [
-            {
-              "id": 1,
-              "name": "Волкова Юлия Валерьевна",
-              "value": "1"
-            },
-            {
-              "id": 2,
-              "name": "Иванова Галина Валентиновна",
-              "value": "2"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Продолжительность",
-          "inputName": "duration",
-          "values": [
-            {
-              "id": 1,
-              "name": "1 день",
-              "value": "1"
-            },
-            {
-              "id": 2,
-              "name": "2 дня",
-              "value": "2"
-            },
-            {
-              "id": 3,
-              "name": "2 часа",
-              "value": "3"
-            }
-          ]
-        }
-      ]
+      "data": {
+        "filters": [
+          {
+            "id": 1,
+            "name": "Город",
+            "inputName": "city",
+            "values": [
+              {
+                "id": 1,
+                "name": "Санкт-Петербург",
+                "value": "1",
+                "alias": "sankt-peterburg"
+              },
+              {
+                "id": 2,
+                "name": "Москва",
+                "value": "2",
+                "alias": "moskva"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Преподаватель",
+            "inputName": "speaker",
+            "values": [
+              {
+                "id": 1,
+                "name": "Волкова Юлия Валерьевна",
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "name": "Иванова Галина Валентиновна",
+                "value": "2"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Аудитория",
+            "inputName": "audience",
+            "values": [
+              {
+                "id": 1,
+                "name": "Волкова Юлия Валерьевна",
+                "value": "1",
+                "alias": "1"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Продолжительность",
+            "inputName": "duration",
+            "values": [
+              {
+                "id": 1,
+                "name": "1 день",
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "name": "2 дня",
+                "value": "2"
+              },
+              {
+                "id": 3,
+                "name": "2 часа",
+                "value": "3"
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "directions": {

@@ -50,4 +50,5 @@ export const SlugPart = {
   GROUP: `group`,
   CITY: `city`,
   COURSE: `course`,
+  AUDIENCE: `audience`,
 };
