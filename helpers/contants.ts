@@ -47,7 +47,6 @@ export const SlugPart = {
   CATEGORY: `category`,
   TYPE: `type`,
   FORMAT: `format`,
-  GROUP: `group`,
   CITY: `city`,
   COURSE: `course`,
   AUDIENCE: `audience`,

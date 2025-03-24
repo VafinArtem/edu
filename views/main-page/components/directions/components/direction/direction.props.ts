@@ -1,5 +1,6 @@
-import {DirectionWithSpecializations} from "@/interfaces/courses";
+import {Direction} from "@/interfaces/courses";
 
 export interface DirectionProps {
-  direction: DirectionWithSpecializations;
+  direction: Direction;
+  className?: string;
 }

@@ -54,4 +54,9 @@
   .slide:not(:last-child) {
 	margin-bottom: -47px;
   }
+
+  .direction {
+	margin-left: calc(0px - var(--container-mobile-padding));
+	margin-right: calc(0px - var(--container-mobile-padding));
+  }
 }

@@ -7,20 +7,24 @@ export interface CoursesPageModel {
 }
 
 export interface Direction {
-  name: string;
+  name: {
+    nominative: string;
+    dative: string;
+  };
   icon: string;
   color: string;
   id: number;
   alias: string;
-  count?: number;
-}
-
-export interface DirectionWithSpecializations extends Direction {
   specializations: {
     name: string;
     alias: string;
     id: string
   }[];
+  count?: number;
+}
+
+export interface DirectionWithSpecializations extends Direction {
+
 }
 
 export interface FilterItem {

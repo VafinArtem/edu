@@ -5,6 +5,7 @@ import ContainerWhite from "@/components/_section/container-white/container-whit
 import {storePathValues} from "@/helpers/helpers";
 import About from "@/views/main-page/components/about/about";
 import Courses from "@/views/main-page/components/courses/courses";
+import Directions from "@/views/main-page/components/directions/directions";
 import Footer from "@/views/main-page/components/footer/footer";
 import Promo from "@/views/main-page/components/promo/promo";
 import Reviews from "@/views/main-page/components/reviews/reviews";
@@ -28,7 +29,10 @@ const MainPage = ({directions, speakers, courses}: MainPageProps): ReactElement 
       <Promo className={styles.promo} directions={directions} />
       {courses.length > 0 && <Courses courses={courses} />}
 
-      {/*<Directions className={styles.directions} directions={directionsWithSpecializations} />*/}
+      {directions.length > 0
+        && directions.some((direction) => direction.specializations.length > 0)
+        && <Directions className={styles.directions}
+          directions={directions.filter((direction) => direction.specializations.length > 0)} />}
 
       <AboutLearning className={styles.learning} />
       <NotFindCourse className={styles.notFindCourse} />

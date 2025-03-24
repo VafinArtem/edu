@@ -1,19 +1,20 @@
-import React, {ReactElement} from "react";
-import {DirectionProps} from "./direction.props";
-import styles from "./direction.module.css";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
-import Link from "next/link";
+import {SlugPart} from "@/helpers/contants";
 import {getDeclension} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
-import {SlugPart} from "@/helpers/contants";
+import clsx from "clsx";
+import Link from "next/link";
+import React, {ReactElement} from "react";
+import styles from "./direction.module.css";
+import {DirectionProps} from "./direction.props";
 
-const Direction = ({direction}: DirectionProps): ReactElement | null => {
+const Direction = ({className, direction}: DirectionProps): ReactElement | null => {
   return (
-    <div className={styles.wrapper} style={{backgroundColor: direction.color, color: direction.color}}>
+    <div className={clsx(styles.wrapper, className)} style={{backgroundColor: direction.color, color: direction.color}}>
       <div className={styles.head}>
         <div className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}></div>
-        <Heading tag={`h3`} fontSize={"mini"} className={styles.title}>{direction.name}</Heading>
+        <Heading tag={`h3`} fontSize={"mini"} className={styles.title}>{direction.name.nominative}</Heading>
         <Paragraph className={styles.desc} align={"center"}
           fontSize={"small"}>{direction.count} {getDeclension(direction.count ?? 0, ["курс", "курса", "курсов"])} для
           специалистов разных
@@ -23,7 +24,7 @@ const Direction = ({direction}: DirectionProps): ReactElement | null => {
         <div className={styles.specializations}>
           {direction.specializations.map((specialization) => <Link
             key={specialization.id}
-            href={`${Route.COURSES}/${SlugPart.CATEGORY}-${direction.alias}/${SlugPart.GROUP}-${specialization.alias}`}
+            href={`${Route.COURSES}/${SlugPart.CATEGORY}-${direction.alias}/${SlugPart.AUDIENCE}-${specialization.alias}`}
             className={styles.specialization}>{specialization.name}</Link>)}
         </div>
       </div>

@@ -23,7 +23,12 @@ const Directions = ({directions, className}: DirectionsProps): ReactElement | nu
         <Heading tag={`h2`}>Выберите своё направление</Heading>
       </SectionCenterHead>
 
-      <Swiper
+      {directions.length === 1 &&
+        <div className={"container"}>
+          <Direction className={styles.direction} direction={directions[0]} />
+        </div>}
+
+      {directions.length > 1 && <Swiper
         className={styles.slider}
         enabled={false}
         breakpoints={{
@@ -55,7 +60,7 @@ const Directions = ({directions, className}: DirectionsProps): ReactElement | nu
               swiperRef.current?.slideNext();
             }} />
         </div>
-      </Swiper>
+      </Swiper>}
     </SectionItem>
   );
 };
