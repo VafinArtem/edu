@@ -22,7 +22,7 @@ const Directions = ({directions, children, ...props}: DirectionsProps): ReactEle
           })}>
           <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}
             style={{color: direction.color}} />
-          {direction.name}
+          {direction.name.dative}
         </Link>)}
       </div>
     </div>

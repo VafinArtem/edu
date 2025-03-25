@@ -1,4 +1,4 @@
-import {CommonPageModel, ExampleItem} from "@/interfaces/common";
+import {AudienceWithCategory, CommonPageModel, ExampleItem} from "@/interfaces/common";
 import {Direction} from "@/interfaces/courses";
 
 export interface CoursePageModel extends CommonPageModel {
@@ -73,6 +73,7 @@ export interface CoursePageModel extends CommonPageModel {
   qa?: QAItem[];
   speakersCourses?: CourseShort[];
   forWhom?: string;
+  audience: AudienceWithCategory[];
 }
 
 export interface DailySchedule {

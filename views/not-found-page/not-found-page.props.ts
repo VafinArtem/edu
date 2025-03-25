@@ -1,8 +1,8 @@
 import {CourseShort} from "@/interfaces/course";
-import {Direction} from "@/interfaces/courses";
+import {DirectionWithAudience} from "@/interfaces/courses";
 
 export interface NotFoundPageProps {
-  directions: Direction[];
+  directions: DirectionWithAudience[];
   color?: "white" | "gray";
   courses?: CourseShort[];
 }

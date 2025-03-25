@@ -1,10 +1,11 @@
 import {CourseShort} from "@/interfaces/course";
-import {Direction, FilterItem, Option} from "@/interfaces/courses";
+import {DirectionWithAudience, FilterItem, Option} from "@/interfaces/courses";
 
 export interface CoursesPageProps {
+  title?: string;
   courseTypes: Option[];
   filters: FilterItem[];
-  directions: Direction[];
+  directions: DirectionWithAudience[];
   courses: CourseShort[];
   enableAdvancedTraining: boolean;
   coursesCount: number;

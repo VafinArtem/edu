@@ -488,6 +488,152 @@ export const course: CoursePageModel = {
       },
     },
   ],
+  "audience": [
+    {
+      "id": "1",
+      "alias": "1",
+      "name": "Стоматолог-терапевт",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "2",
+      "alias": "2",
+      "name": "Стоматолог-хирург",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "3",
+      "alias": "3",
+      "name": "Имплантолог",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "4",
+      "alias": "4",
+      "name": "Пародонтолог",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "5",
+      "alias": "5",
+      "name": "Стоматолог-ортопед",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "6",
+      "alias": "6",
+      "name": "Зубной техник",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "7",
+      "alias": "7",
+      "name": "Ортодонт",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "8",
+      "alias": "8",
+      "name": "Руководитель клиники",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "9",
+      "alias": "9",
+      "name": "Главный врач",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "10",
+      "alias": "10",
+      "name": "Старшая медсестра",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "11",
+      "alias": "11",
+      "name": "Врач-стоматолог",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "12",
+      "alias": "12",
+      "name": "Детский стоматолог",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "13",
+      "alias": "13",
+      "name": "Рентгенолаборант",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "14",
+      "alias": "14",
+      "name": "Гигиенист",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "15",
+      "alias": "15",
+      "name": "Ординатор",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+    {
+      "id": "16",
+      "alias": "16",
+      "name": "Ассистент",
+      "category": {
+        "alias": "1",
+        "background": "#254885",
+      },
+    },
+  ],
 };
 
 export const similarCourses: CourseShort[] = [

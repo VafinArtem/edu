@@ -26,7 +26,7 @@ const SpeakerShortItem = ({speaker}: SpeakerShortItemProps): ReactElement | null
             className={styles.coursesCount}>{coursesCount} {getDeclension(coursesCount, [`курс`, `курса`, `курсов`])}</Paragraph>}
           <Paragraph fontSize={"none"}
             className={styles.direction} style={{color: direction.color}}>
-            <span className={`visually-hidden`}>Направление: {direction.name}</span>
+            <span className={`visually-hidden`}>Направление: {direction.name.nominative}</span>
             <span className={styles.icon} dangerouslySetInnerHTML={{__html: direction.icon}}></span>
           </Paragraph>
           <ButtonArrow

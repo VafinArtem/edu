@@ -30,9 +30,9 @@ const MainPage = ({directions, speakers, courses}: MainPageProps): ReactElement 
       {courses.length > 0 && <Courses courses={courses} />}
 
       {directions.length > 0
-        && directions.some((direction) => direction.specializations.length > 0)
+        && directions.some((direction) => direction.audience.length > 0)
         && <Directions className={styles.directions}
-          directions={directions.filter((direction) => direction.specializations.length > 0)} />}
+          directions={directions.filter((direction) => direction.audience.length > 0)} />}
 
       <AboutLearning className={styles.learning} />
       <NotFindCourse className={styles.notFindCourse} />

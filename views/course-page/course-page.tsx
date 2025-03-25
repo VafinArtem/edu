@@ -50,6 +50,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
     id,
     forWhom,
     isCertificate,
+    audience,
   } = training;
 
   const pathname = usePathname();
@@ -97,7 +98,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         {advantages && advantages.length > 0 && <Advantages color={colors.common} advantages={advantages} />}
       </div>
 
-      {forWhom && <ForWhom
+      {(forWhom || audience.length > 0) && <ForWhom
+        audience={audience}
         content={forWhom}
         className={`container`}
       />}

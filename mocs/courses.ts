@@ -1,7 +1,7 @@
 import {CourseShort} from "@/interfaces/course";
-import {Direction, FilterItem, Option} from "@/interfaces/courses";
+import {DirectionWithAudience, FilterItem, Option} from "@/interfaces/courses";
 
-export const directions: Direction[] = [
+export const directions: DirectionWithAudience[] = [
   {
     "id": 1,
     "name": {
@@ -12,7 +12,7 @@ export const directions: Direction[] = [
     "color": "#254885",
     "alias": "stomatologam",
     "count": 10,
-    "specializations": [
+    "audience": [
       {
         "id": "1",
         "name": "Стоматолог-терапевт",
@@ -105,7 +105,7 @@ export const directions: Direction[] = [
     "color": "#D082EA",
     "alias": "kosmetologam",
     "count": 20,
-    "specializations": [
+    "audience": [
       {
         "id": "1",
         "name": "Косметолог-эстетист",
@@ -138,7 +138,7 @@ export const directions: Direction[] = [
     "color": "#2DA690",
     "alias": "veterinaram",
     "count": 30,
-    "specializations": [
+    "audience": [
       {
         "id": "1",
         "name": "Ветеринарный врач-хирург",

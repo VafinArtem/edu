@@ -22,10 +22,10 @@ const Direction = ({className, direction}: DirectionProps): ReactElement | null 
       </div>
       <div className={styles.scrollWrapper}>
         <div className={styles.specializations}>
-          {direction.specializations.map((specialization) => <Link
-            key={specialization.id}
-            href={`${Route.COURSES}/${SlugPart.CATEGORY}-${direction.alias}/${SlugPart.AUDIENCE}-${specialization.alias}`}
-            className={styles.specialization}>{specialization.name}</Link>)}
+          {direction.audience.map((item) => <Link
+            key={item.id}
+            href={`/${Route.COURSES}/${SlugPart.AUDIENCE}-${item.alias}`}
+            className={styles.specialization}>{item.name}</Link>)}
         </div>
       </div>
     </div>

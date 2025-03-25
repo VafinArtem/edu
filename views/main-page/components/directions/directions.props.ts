@@ -1,6 +1,6 @@
-import {Direction} from "@/interfaces/courses";
+import {DirectionWithAudience} from "@/interfaces/courses";
 
 export interface DirectionsProps {
   className?: string;
-  directions: Direction[];
+  directions: DirectionWithAudience[];
 }

@@ -1,8 +1,8 @@
 import {AnswerData} from "@/actions/type";
 import {API} from "@/api/constants";
-import {Direction} from "@/interfaces/courses";
+import {DirectionWithAudience} from "@/interfaces/courses";
 
-export async function getDirections(): Promise<AnswerData<Direction[]> | null> {
+export async function getDirections(): Promise<AnswerData<DirectionWithAudience[]> | null> {
   const res = await fetch(`${API.courses.directions}`, {
     method: "GET",
     next: {

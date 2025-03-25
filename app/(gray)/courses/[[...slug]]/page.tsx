@@ -23,9 +23,19 @@ export async function generateMetadata(props: {
   const isCoursePage = fetchedParams.slug && fetchedParams.slug[fetchedParams.slug.length - 1].includes(SlugPart.COURSE);
 
   if (!isCoursePage) {
+    const search = await props.searchParams;
+
+    const page = await getCoursesPage(fetchedParams.slug, search);
+
+    if (!page || page.code !== 200) {
+      return {
+        title: `404`,
+      };
+    }
+
     return {
-      title: `Каталог курсов в учебном центре Amrita`,
-      description: `Все курсы учебного центра Амрита, онлайн и оффлайн обучение для стоматологов. Семинары и курсы от лучших лекторов проводим в Санкт-Петербурге и по всей России. Записывайтесь на обучение на сайте или по телефону 8-800-550-05-24`,
+      title: page.data.metaTitle ?? `Каталог курсов в учебном центре Amrita`,
+      description: page.data.metaDescription ?? `Все курсы учебного центра Амрита, онлайн и оффлайн обучение для стоматологов. Семинары и курсы от лучших лекторов проводим в Санкт-Петербурге и по всей России. Записывайтесь на обучение на сайте или по телефону 8-800-550-05-24`,
     };
   }
 
@@ -100,6 +110,7 @@ const CoursesLayout = async (props: {
     const directions = await getDirections();
 
     return <CoursesPage
+      title={(page as {data: CoursesPageModel, code: number}).data.metaH1}
       coursesCount={(page as {data: CoursesPageModel, code: number}).data.coursesCount}
       courses={(page as {data: CoursesPageModel, code: number}).data.courses}
       directions={directions?.answer.data ?? []}

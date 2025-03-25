@@ -20,3 +20,16 @@ export interface ExampleItem {
   description?: string;
   images: {image: string, description: string}[];
 }
+
+export interface Audience {
+  name: string;
+  alias: string;
+  id: string;
+}
+
+export interface AudienceWithCategory extends Audience {
+  category: {
+    alias: string;
+    background: string;
+  };
+}

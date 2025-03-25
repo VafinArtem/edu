@@ -1,5 +1,4 @@
-// @ts-ignore
-import {contentParse} from "@/helpers/content.tsx";
+import {contentParse} from "@/helpers/content";
 import React, {ReactElement} from "react";
 import styles from "./content.module.css";
 import {ContentProps} from "./content.props";

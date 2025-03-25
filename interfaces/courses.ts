@@ -1,9 +1,13 @@
+import {Audience} from "@/interfaces/common";
 import {CourseShort} from "@/interfaces/course";
 
 export interface CoursesPageModel {
   courses: CourseShort[];
   pages: number;
   coursesCount: number;
+  metaTitle?: string;
+  metaH1?: string;
+  metaDescription?: string;
 }
 
 export interface Direction {
@@ -15,16 +19,11 @@ export interface Direction {
   color: string;
   id: number;
   alias: string;
-  specializations: {
-    name: string;
-    alias: string;
-    id: string
-  }[];
   count?: number;
 }
 
-export interface DirectionWithSpecializations extends Direction {
-
+export interface DirectionWithAudience extends Direction {
+  audience: Audience[];
 }
 
 export interface FilterItem {

@@ -1,8 +1,8 @@
 import {CourseShort, SpeakerShortCard} from "@/interfaces/course";
-import {Direction} from "@/interfaces/courses";
+import {DirectionWithAudience} from "@/interfaces/courses";
 
 export interface MainPageProps {
-  directions: Direction[];
+  directions: DirectionWithAudience[];
   courses: CourseShort[];
   speakers: SpeakerShortCard[];
 }

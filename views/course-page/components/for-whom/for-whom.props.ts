@@ -1,4 +1,7 @@
+import {AudienceWithCategory} from "@/interfaces/common";
+
 export interface ForWhomProps {
   className?: string;
-  content: string;
+  audience: AudienceWithCategory[];
+  content?: string;
 }
