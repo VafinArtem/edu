@@ -22,6 +22,9 @@ const createElements = (el: NodeWithChildren | ChildNode, key: string, convertDa
 
   return el.type === ElementType.Tag ? createElement((el as Element).name, {
     key,
+    controls: el.attribs.controls ? true : undefined,
+    src: el.attribs.src ? el.attribs.src : undefined,
+    type: el.attribs.type ? el.attribs.type : undefined,
     className: el.attribs.class ? styles[el.attribs.class] : undefined,
   }, ...el.children.map((elChild: ChildNode) => {
     return createElements(elChild, nanoid(20), convertDataCb);

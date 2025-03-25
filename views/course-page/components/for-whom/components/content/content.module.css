@@ -97,6 +97,11 @@
   color: var(--gray-600);
 }
 
+.content video {
+  aspect-ratio: 16/9;
+  background-color: var(--black);
+}
+
 .accent {
   padding: 10px 20px;
   color: var(--primary);
