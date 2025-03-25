@@ -15,8 +15,8 @@ export async function generateMetadata({params}: {params: {slug: string}}): Prom
   }
 
   return {
-    title: page.data.metaTitle ? page.data.metaTitle : page.data.name,
-    description: page.data.metaDescription ?? ``,
+    title: page.answer.data.metaTitle ? page.answer.data.metaTitle : page.answer.data.name,
+    description: page.answer.data.metaDescription ?? ``,
   };
 }
 
@@ -29,7 +29,7 @@ const OneNewsLayout = async ({params}: {params: {slug: string}}): Promise<ReactE
   }
 
   return (
-    <OneNewsPage news={page.data} courses={courses?.data.courses ?? []} />
+    <OneNewsPage news={page.answer.data} courses={courses?.data.courses ?? []} />
   );
 };
 
