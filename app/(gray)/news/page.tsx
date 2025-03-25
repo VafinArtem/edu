@@ -9,6 +9,9 @@ const NewsLayout = async (props: {searchParams?: Promise<Record<string, string>>
   const page = await getNewsPage(search);
   const types = await getTypes();
 
+  console.log(page);
+  console.log(types);
+
   if (!page || page.code !== 200) {
     notFound();
   }
