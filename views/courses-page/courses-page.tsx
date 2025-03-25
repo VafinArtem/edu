@@ -4,7 +4,6 @@ import Button from "@/components/_buttons/button/button";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import NotFindCourse from "@/components/_common/not-find-course/not-find-course";
 import Pagination from "@/components/_common/pagination/pagination";
-import ListingPagination from "@/components/_listings/pagination/pagination";
 import Sort from "@/components/_listings/sort/sort";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import SectionItem from "@/components/_section/section-item/section-item";
@@ -23,7 +22,7 @@ import {CoursesPageProps} from "./courses-page.props";
 
 const CoursesPage = ({
   courses,
-  pages,
+  // pages,
   filters,
   courseTypes,
   directions,
@@ -32,7 +31,7 @@ const CoursesPage = ({
 }: CoursesPageProps): ReactElement | null => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentPage = Number(searchParams?.get(`page`)) || 1;
+  // const currentPage = Number(searchParams?.get(`page`)) || 1;
 
   const {ref, showModal, changeModalActivityStatus} = useOpenModal<HTMLFormElement>();
   const isMobile = useIsResolution(1099);
@@ -84,11 +83,10 @@ const CoursesPage = ({
               {courses.map((course) => <CourseShortItem course={course} key={course.id} withPhoto />)}
             </div>}
 
-            {pages > 0 && <ListingPagination
-              currentPage={currentPage}
-              pages={pages}
-              className={styles.pagination}
-            />}
+            {/*{pages > 0 && <ListingPagination*/}
+            {/*  pages={pages}*/}
+            {/*  className={styles.pagination}*/}
+            {/*/>}*/}
           </div>
         </div>
       </SectionItem>

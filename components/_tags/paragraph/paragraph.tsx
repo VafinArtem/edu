@@ -16,6 +16,7 @@ const Paragraph = ({
   const classNameOptions: ClassValue[] = [className, styles.paragraph, {
     [styles.fsDefault]: fontSize === "default",
     [styles.fsSmall]: fontSize === "small",
+    [styles.fsLarge]: fontSize === "large",
     [styles.fsAsTitle]: fontSize === "asDefaultTitle",
     [styles.fwLight]: fontWeight === "light",
     [styles.fwNormal]: fontWeight === "normal",
