@@ -36,6 +36,7 @@
   background-color: var(--primary-light);
 }
 
+.item.disabled,
 .item:disabled {
   background-color: var(--gray-200);
   cursor: initial;

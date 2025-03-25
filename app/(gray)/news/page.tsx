@@ -15,8 +15,8 @@ const NewsLayout = async (props: {searchParams?: Promise<Record<string, string>>
 
   return (
     <NewsPage
-      cards={page.data.cards ?? []}
-      pages={page.data.pages}
+      cards={page.answer.data.cards ?? []}
+      pages={page.answer.data.pages}
       types={types?.answer.data ?? []}
     />
   );

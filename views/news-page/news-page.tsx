@@ -3,7 +3,6 @@
 import FilterButton from "@/components/_buttons/filter-button/filter-button";
 import NewsCard from "@/components/_common/news-card/news-card";
 import Pagination from "@/components/_common/pagination/pagination";
-import Subscribe from "@/components/_common/subscribe/subscribe";
 import ListingPagination from "@/components/_listings/pagination/pagination";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
@@ -67,15 +66,14 @@ const NewsPage = ({cards, pages, types}: NewsPageProps): ReactElement | null => 
             {cards.map((item) => <NewsCard news={item} key={item.id} />)}
           </div>
           <ListingPagination
-            currentPage={1}
             pages={pages}
             className={styles.pagination}
           />
         </div>
       </SectionItem>
-      <div className="container">
-        <Subscribe />
-      </div>
+      {/*<div className="container">*/}
+      {/*  <Subscribe />*/}
+      {/*</div>*/}
     </React.Fragment>
   );
 };
