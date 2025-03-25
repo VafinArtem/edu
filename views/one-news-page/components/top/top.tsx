@@ -19,7 +19,8 @@ const Top = ({title, titles, description, type, promoImage, date}: TopProps): Re
         {description && <Paragraph>{description}</Paragraph>}
       </div>
       {promoImage &&
-        <Image src={promoImage} alt={``} width={330} height={265} className={styles.image} quality={95} priority />}
+        <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${promoImage}`} alt={``} width={330} height={265}
+          className={styles.image} quality={95} priority />}
       <ul className={styles.titles}>
         {titles.map((title) => <li key={title.href} className={styles.titleItem}><a href={title.href}
           className={styles.link}>{title.name}</a></li>)}

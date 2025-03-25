@@ -33,13 +33,13 @@ const ImagesSlider = ({className, images}: ImagesSliderProps): ReactElement | nu
         }}
       >
         {images.map((image) => (<SwiperSlide className={styles.slide} key={nanoid(20)}>
-          <Image src={image} alt={``} width={780} height={435}
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${image}`} alt={``} width={780} height={435}
             quality={95}
             loading={"lazy"}
             className={styles.image} />
         </SwiperSlide>))}
         {images.length < 4 && images.map((image) => (<SwiperSlide className={styles.slide} key={nanoid(20)}>
-          <Image src={image} alt={``} width={780} height={435}
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${image}`} alt={``} width={780} height={435}
             quality={95}
             loading={"lazy"}
             className={styles.image} />
