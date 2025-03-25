@@ -12,7 +12,8 @@ const NewsCard = ({news}: NewsCardProps): ReactElement | null => {
     <article className={styles.wrapper}>
       <Link href={`${Route.NEWS}/${alias}`} className={styles.link}>
         <picture className={styles.picture}>
-          <Image src={image} alt={``} width={553} height={287} className={styles.image} />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_SERVER}${image}`} alt={``} width={553} height={287}
+            className={styles.image} />
         </picture>
         <div className={styles.content}>
           <Paragraph fontSize={"none"} fontWeight={"medium"} className={styles.tag}>{tag}</Paragraph>

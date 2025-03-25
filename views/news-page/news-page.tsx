@@ -65,10 +65,10 @@ const NewsPage = ({cards, pages, types}: NewsPageProps): ReactElement | null => 
           <div className={styles.list}>
             {cards.map((item) => <NewsCard news={item} key={item.id} />)}
           </div>
-          <ListingPagination
+          {pages && <ListingPagination
             pages={pages}
             className={styles.pagination}
-          />
+          />}
         </div>
       </SectionItem>
       {/*<div className="container">*/}
