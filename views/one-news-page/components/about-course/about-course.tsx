@@ -19,7 +19,8 @@ const AboutCourse = ({course}: AboutCourseProps): ReactElement | null => {
       <div className={styles.inner}>
         <div className={styles.textContent}>
           <Paragraph fontWeight={"light"}>{promoDescription}</Paragraph>
-          <Paragraph fontWeight={"light"}>Длительность {typeName.genitive} — {getCourseDurationText(dates)}</Paragraph>
+          <Paragraph
+            fontWeight={"light"}>Длительность {typeName.genitive.toLowerCase()} — {getCourseDurationText(dates)}</Paragraph>
         </div>
         {courseCard && <CourseShortItem
           className={styles.item}

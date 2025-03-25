@@ -28,6 +28,8 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
               href={Route.COURSES}>Курсы</Catalog>
           </div>
           <Navigation className={styles.navigation}>
+            {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.NEWS}*/}
+            {/*  className={styles.navigationLink}>Новости</NavigationItem>*/}
             {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>*/}
             <NavigationItem color={type === "blur" ? "white" : "black"}
               href={Route.SPEAKERS} className={styles.navigationLink}>Преподаватели</NavigationItem>
