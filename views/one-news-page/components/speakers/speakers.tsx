@@ -34,7 +34,7 @@ const Speakers = ({speakers, courseTypeName}: SpeakersProps): ReactElement | nul
               style={{backgroundColor: speaker.photoBackground}}
             >
               <Image
-                src={speaker.video ? speaker.video.poster : speaker.photo}
+                src={speaker.video ? `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${speaker.video.poster}` : `${process.env.NEXT_PUBLIC_IMAGE_SERVER}${speaker.photo}`}
                 alt={""}
                 width={200}
                 height={200}

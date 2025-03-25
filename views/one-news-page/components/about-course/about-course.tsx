@@ -14,7 +14,7 @@ const AboutCourse = ({course}: AboutCourseProps): ReactElement | null => {
   return (
     <SectionItem gap={"20"} id={"about"}>
       <SectionHead>
-        <Heading tag={`h2`}>О {typeName.prepositional}</Heading>
+        <Heading tag={`h2`}>О {typeName.prepositional.toLowerCase()}</Heading>
       </SectionHead>
       <div className={styles.inner}>
         <div className={styles.textContent}>

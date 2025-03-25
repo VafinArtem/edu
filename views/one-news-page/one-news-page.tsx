@@ -37,7 +37,7 @@ const OneNewsPage = ({news, courses}: OneNewsPageProps): ReactElement | null => 
     }
 
     links.push({
-      name: `О ${courseInfo.typeName.prepositional}`,
+      name: `О ${courseInfo.typeName.prepositional.toLowerCase()}`,
       href: `#about`,
     });
 
@@ -51,19 +51,9 @@ const OneNewsPage = ({news, courses}: OneNewsPageProps): ReactElement | null => 
       });
     }
 
-    if (courseInfo.speakerCourses && courseInfo.speakerCourses.length > 0) {
-      links.push({
-        name: `Другие курсы ${courseInfo.speakers.length > 0 ?
-          `преподавателей` :
-          `${courseInfo.speakers[0].surname.instrumental} ${courseInfo.speakers[0].name.instrumental} ${courseInfo.speakers[0].patronymic.instrumental}`
-        }`,
-        href: `#about`,
-      });
-    }
-
     if (courseInfo.speakers && courseInfo.speakers.length > 0) {
       links.push({
-        name: `${courseInfo.speakers.length > 1 ? "Преподаватели" : "Преподаватель"} ${courseInfo.typeName.genitive}`,
+        name: `${courseInfo.speakers.length > 1 ? "Преподаватели" : "Преподаватель"} ${courseInfo.typeName.genitive.toLowerCase()}`,
         href: `#speakers`,
       });
     }
@@ -107,7 +97,7 @@ const OneNewsPage = ({news, courses}: OneNewsPageProps): ReactElement | null => 
               id={"speakerCourses"}
             />}
             {(courseInfo.speakers && courseInfo.speakers.length > 0) && <Speakers
-              courseTypeName={courseInfo.typeName.genitive}
+              courseTypeName={courseInfo.typeName.genitive.toLowerCase()}
               speakers={courseInfo.speakers}
             />}
           </>}
