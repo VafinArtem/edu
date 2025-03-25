@@ -102,6 +102,10 @@
   background-color: var(--black);
 }
 
+.content p:has(video) {
+  width: 100%;
+}
+
 .accent {
   padding: 10px 20px;
   color: var(--primary);
