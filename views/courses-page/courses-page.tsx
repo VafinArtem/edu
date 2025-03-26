@@ -46,7 +46,7 @@ const CoursesPage = ({
       <Pagination className={`container`} pagination={[{name: `Курсы`}]} />
 
       <SectionItem className={`container`}>
-        <Heading tag={`h1`} className={styles.title}>{title ?? "Каталог курсов AMRITA"}{coursesCount > 0 && <span
+        <Heading tag={`h1`} className={styles.title}>{title || "Каталог курсов AMRITA"}{coursesCount > 0 && <span
           className={styles.count}>&nbsp;{coursesCount}</span>}</Heading>
 
         <div className={styles.grid}>
