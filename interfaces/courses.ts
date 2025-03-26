@@ -8,6 +8,7 @@ export interface CoursesPageModel {
   metaTitle?: string;
   metaH1?: string;
   metaDescription?: string;
+  metaRobots?: string;
 }
 
 export interface Direction {
