@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/_buttons/button/button";
 import CourseShortItem from "@/components/_common/course-short-item/course-short-item";
 import SectionItem from "@/components/_section/section-item/section-item";

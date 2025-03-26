@@ -1,0 +1,51 @@
+.wrapper[class] {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+}
+
+.head {
+  grid-column: 3/11;
+}
+
+.container {
+  grid-column: 3/-1;
+}
+
+.slider[class] {
+  width: 100%;
+  overflow: visible;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1499px) {
+  .head {
+	grid-column: 2/12;
+  }
+
+  .container {
+	grid-column: 2/-1;
+  }
+}
+
+@media (max-width: 1099px) {
+  .wrapper[class] {
+	grid-template-columns: 100%;
+  }
+
+  .head,
+  .container {
+	grid-column: initial;
+  }
+}
+
+@media (max-width: 1023px) {
+  .buttons {
+	display: none;
+  }
+}

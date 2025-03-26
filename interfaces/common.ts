@@ -33,3 +33,8 @@ export interface AudienceWithCategory extends Audience {
     background: string;
   };
 }
+
+export interface NavigationLink {
+  name: string;
+  href: string;
+}

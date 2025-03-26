@@ -1,0 +1,61 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list.practice .item::before {
+  background-color: var(--primary-2);
+}
+
+.list.theory .item::before {
+  background-color: var(--primary);
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.item::before {
+  content: "";
+  position: relative;
+  top: 7px;
+  display: flex;
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1023px) {
+  .title {
+	font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+	font-size: 1.6rem;
+  }
+
+  .item {
+	font-size: 1.6rem;
+  }
+}

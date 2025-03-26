@@ -39,6 +39,17 @@ export const getWorkExperienceText = (year: number) => {
   return `${nowYear - year} ${getDeclension(shift, [`год`, `года`, `лет`])}`;
 };
 
+export const getCourseDurationText = (dates: {
+  start: number,
+  end?: number,
+}) => {
+  if (!dates.end) return `1 день`;
+
+  const shift = Math.floor((dates.end * 1000 - dates.start * 1000) / 86400000) + 1;
+
+  return `${shift} ${getDeclension(shift, ["день", "дня", "дней"])}`;
+};
+
 export const formatDateFromDatePicker = (dates: DateRange | undefined): string => {
   if (!dates) {
     return ``;

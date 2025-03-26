@@ -1,0 +1,23 @@
+.inner,
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner {
+  gap: 40px;
+}
+
+.textContent {
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .inner {
+	gap: 20px;
+  }
+
+  .textContent {
+	gap: 10px;
+  }
+}

@@ -1,4 +1,9 @@
 export const API = {
+  news: {
+    all: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/news/" : "/react-api/news/index"),
+    types: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/types/" : "/react-api/news/type"),
+    byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/one-news/" : "/react-api/news/view"),
+  },
   course: {
     byAlias: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/course/" : "/react-api/educations/view"),
     orderWithTariff: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/order-with-tariff" : "/react-api/send-form/education"),

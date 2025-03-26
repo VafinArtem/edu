@@ -5,7 +5,7 @@ import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import {storePathValues} from "@/helpers/helpers";
 import {Route} from "@/helpers/route";
-import {NavigationLink} from "@/interfaces/speaker";
+import {NavigationLink} from "@/interfaces/common";
 import About from "@/views/speaker-page/components/about/about";
 import Courses from "@/views/speaker-page/components/courses/courses";
 import Edu from "@/views/speaker-page/components/edu/edu";

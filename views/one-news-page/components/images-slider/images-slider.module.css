@@ -1,0 +1,41 @@
+.slider[class] {
+  width: 100%;
+  overflow: visible;
+}
+
+.slide[class] {
+  width: 780px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 30px;
+  left: 630px;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  border-radius: 40px;
+}
+
+@media (max-width: 1199px) {
+  .slide[class] {
+	width: 540px;
+  }
+
+  .image {
+	border-radius: 20px;
+  }
+
+  .buttons {
+	display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide[class] {
+	width: calc(100% - 20px);
+  }
+}

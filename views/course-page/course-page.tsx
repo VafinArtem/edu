@@ -241,7 +241,8 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       {similarCourses && similarCourses.length > 0 && <SimilarCourses
         title={`Может заинтересовать`}
         cardColor={`white`}
-        courses={similarCourses} />}
+        courses={similarCourses}
+      />}
     </>
   );
 };
