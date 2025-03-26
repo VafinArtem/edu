@@ -24,7 +24,7 @@ const Direction = ({className, direction}: DirectionProps): ReactElement | null 
         <div className={styles.specializations}>
           {direction.audience.map((item) => <Link
             key={item.id}
-            href={`/${Route.COURSES}/${SlugPart.AUDIENCE}-${item.alias}`}
+            href={`${Route.COURSES}/${SlugPart.AUDIENCE}-${item.alias}`}
             className={styles.specialization}>{item.name}</Link>)}
         </div>
       </div>
