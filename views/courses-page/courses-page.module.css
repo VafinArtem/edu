@@ -45,6 +45,10 @@
   font-size: 2.3rem;
 }
 
+.seo {
+  margin-top: 70px;
+}
+
 @media (max-width: 1499px) {
   .grid {
 	grid-template-columns: 247px 1fr;
@@ -110,6 +114,10 @@
 
   .pagination {
 	align-self: center;
+  }
+
+  .seo {
+	margin-top: 30px;
   }
 }
 

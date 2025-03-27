@@ -15,6 +15,7 @@ import useOpenModal from "@/hooks/useOpenModal";
 import Directions from "@/views/courses-page/components/directions/directions";
 import Filters from "@/views/courses-page/components/filters/filters";
 import FocusInCourse from "@/views/courses-page/components/focus-in-course/focus-in-course";
+import SeoContent from "@/views/courses-page/components/seo-content/seo-content";
 import {usePathname, useSearchParams} from "next/navigation";
 import React, {ReactElement, useEffect} from "react";
 import styles from "./courses-page.module.css";
@@ -22,6 +23,7 @@ import {CoursesPageProps} from "./courses-page.props";
 
 const CoursesPage = ({
   title,
+  seoText,
   courses,
   // pages,
   filters,
@@ -88,6 +90,8 @@ const CoursesPage = ({
             {/*  pages={pages}*/}
             {/*  className={styles.pagination}*/}
             {/*/>}*/}
+
+            {seoText && <SeoContent className={styles.seo} content={seoText} />}
           </div>
         </div>
       </SectionItem>

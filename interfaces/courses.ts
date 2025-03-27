@@ -9,6 +9,7 @@ export interface CoursesPageModel {
   metaH1?: string;
   metaDescription?: string;
   metaRobots?: string;
+  seoText?: string;
 }
 
 export interface Direction {

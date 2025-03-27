@@ -119,6 +119,7 @@ const CoursesLayout = async (props: {
       filters={filters?.answer.data.filters ?? []}
       enableAdvancedTraining={filters?.answer.data.enableAdvancedTraining ?? false}
       pages={(page as {data: CoursesPageModel, code: number}).data.pages}
+      seoText={(page as {data: CoursesPageModel, code: number}).data.seoText}
     />;
   }
 };
