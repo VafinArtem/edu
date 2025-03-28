@@ -2,6 +2,7 @@
 
 import {AnswerData} from "@/actions/type";
 import {API} from "@/api/constants";
+import {CertificateItem} from "@/interfaces/payment";
 
 export async function orderWithTariff({
   data,
@@ -142,6 +143,41 @@ export async function sendBecomePartner({
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
   const res = await fetch(API.common.becomePartner, {
+    cache: "no-store",
+    method,
+    body,
+  });
+
+  if (!res) {
+    return "error";
+  }
+
+  const result: AnswerData<string> = await res.json();
+
+  if (result.code === 200) {
+    return "success";
+  } else {
+    return "error";
+  }
+}
+
+export async function orderPromoCertificate({
+  data,
+}: {
+  data: {
+    name: string;
+    phone: string;
+    email: string;
+    promoCode: string;
+    certificate: CertificateItem | null;
+  },
+}): Promise<"error" | "success"> {
+  const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
+  console.log(data);
+
+  const res = await fetch(API.common.orderCertificate, {
     cache: "no-store",
     method,
     body,

@@ -12,6 +12,7 @@ const Input = forwardRef(({
   isValid,
   labelName,
   color = "white",
+  inputSize = "default",
   ...props
 }: InputProps, ref: ForwardedRef<HTMLInputElement>): ReactElement | null => {
   return (
@@ -21,6 +22,8 @@ const Input = forwardRef(({
         [styles.error]: error,
         [styles.white]: color === "white",
         [styles.gray]: color === "gray",
+        [styles.default]: inputSize === "default",
+        [styles.small]: inputSize === "small",
         [styles.valid]: isValid,
       })} ref={ref} {...props} />
       {error && <span className={styles.errorMessage}>{error.message}</span>}

@@ -8,14 +8,18 @@ const FilterButton = <C extends BaseButtonComponent = "button">({
   className,
   option,
   isActive,
+  enableHover,
+  children,
   ...props
-}: FilterButtonProps): ReactElement | null => {
+}: FilterButtonProps<C>): ReactElement | null => {
 
   return (
     <BaseButton<C> className={clsx(styles.button, className, {
       [styles.active]: isActive,
+      [styles.enableHover]: enableHover,
     })} {...(props as BaseButtonProps<C>)} >
-      {option.name}
+      {option && option.name}
+      {!option && children}
     </BaseButton>
   );
 };

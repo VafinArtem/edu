@@ -14,6 +14,13 @@
   box-shadow: inset 0 0 0 1px var(--primary);
 }
 
+.button.enableHover:hover,
+.button.enableHover:focus-visible {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
 @media (max-width: 1499px) {
   .button {
 	font-size: 1.7rem;

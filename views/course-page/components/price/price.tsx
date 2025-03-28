@@ -118,7 +118,7 @@ const Price = ({
       reset();
     }
 
-    setIsSending(true);
+    setIsSending(false);
   };
 
   return (

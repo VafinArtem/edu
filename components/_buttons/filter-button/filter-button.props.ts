@@ -3,6 +3,7 @@ import {Option} from "@/interfaces/courses";
 
 export type FilterButtonProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
-  option: Option;
+  option?: Option;
   isActive?: boolean;
+  enableHover?: boolean;
 };

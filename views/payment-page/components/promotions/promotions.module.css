@@ -1,0 +1,98 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px var(--gray-400);
+}
+
+.title {
+  font-size: 3.2rem;
+}
+
+.bulletList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 1.8rem;
+}
+
+.bulletList > li::marker {
+  font-size: 2rem;
+}
+
+@media (min-width: 1060px) {
+  .list > *:nth-child(n + 1) {
+	width: calc(50% - 10px);
+  }
+
+  .list > *:nth-child(n + 3) {
+	width: calc(33% - 10px);
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1059px) {
+  .list > *:nth-child(n + 4),
+  .list > *:nth-child(n + 1) {
+	width: calc(50% - 10px);
+  }
+
+  .list > *:nth-child(3) {
+	width: 100%;
+  }
+}
+
+@media (max-width: 1499px) {
+  .item {
+	padding: 40px;
+	gap: 20px;
+	border-radius: 40px;
+  }
+
+  .title {
+	font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .item {
+	padding: 30px;
+  }
+
+  .bulletList {
+	font-size: 1.6rem;
+  }
+
+  .title {
+	font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .item {
+	gap: 15px;
+	padding: 20px;
+	border-radius: 20px;
+  }
+
+  .bulletList {
+	font-size: 1.4rem;
+  }
+
+  .title {
+	font-size: 1.8rem;
+  }
+}
