@@ -1,7 +1,6 @@
 "use client";
 
 import InfoButton from "@/components/_buttons/info-button/info-button";
-import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
@@ -30,9 +29,9 @@ const Certificates = ({}: CertificatesProps): ReactElement | null => {
   return (
     <>
       <SectionItem className={"container"} id={`certificates`}>
-        <SectionCenterHead>
-          <Heading tag={"h2"}>Подарите обучение близким</Heading>
-          <Paragraph fontSize={"small"} className={styles.text} align={"center"}>У&nbsp;нас вы можете приобрести
+        <div className={styles.inner}>
+          <Heading tag={"h2"} className={styles.title}>Подарите обучение близким</Heading>
+          <Paragraph fontSize={"small"} className={styles.text}>У&nbsp;нас вы можете приобрести
             подарочные сертификаты
             номиналом
             5&nbsp;000&nbsp;₽,
@@ -40,7 +39,7 @@ const Certificates = ({}: CertificatesProps): ReactElement | null => {
             можно оплатить любое обучение в&nbsp;нашем Учебном центре.</Paragraph>
           <InfoButton className={styles.info} type={"button"} onClick={() => changeModalActivityStatus(true)}>Условия
             использования</InfoButton>
-        </SectionCenterHead>
+        </div>
         <div className={styles.list}>
           {certificates.map((certificate) => (<Certificate
             onClick={() => {

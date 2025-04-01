@@ -1,5 +1,22 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .text {
+  align-self: center;
+  text-align: center;
   max-width: 1007px;
+}
+
+.title {
+  text-align: center;
+}
+
+.info {
+  justify-self: center;
+  width: fit-content;
 }
 
 .list {
@@ -28,6 +45,20 @@
 }
 
 @media (max-width: 767px) {
+  .text {
+	align-self: flex-start;
+	text-align: left;
+  }
+
+  .title {
+	text-align: left;
+  }
+
+  .info {
+	justify-self: flex-start;
+	margin-top: -5px;
+  }
+
   .list {
 	gap: 15px;
 	padding-left: var(--container-mobile-padding);
@@ -36,9 +67,6 @@
 	margin-right: calc(0px - var(--container-mobile-padding));
   }
 
-  .info {
-	margin-top: -5px;
-  }
 }
 
 @media (max-width: 530px) {

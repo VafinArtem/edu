@@ -1,4 +1,3 @@
-import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Item from "@/views/payment-page/components/item/item";
@@ -11,9 +10,7 @@ import IconUser from "./user.svg";
 const Payment = ({}: PaymentProps): ReactElement | null => {
   return (
     <SectionItem className={"container"} id={`payment`}>
-      <SectionCenterHead>
-        <Heading tag={"h2"}>Способы оплаты</Heading>
-      </SectionCenterHead>
+      <Heading tag={"h2"} className={styles.title}>Способы оплаты</Heading>
 
       <div className={styles.inner}>
         <Item title={"Для физических лиц"} icon={<IconUser />}>

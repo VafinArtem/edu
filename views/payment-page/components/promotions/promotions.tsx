@@ -1,4 +1,3 @@
-import SectionCenterHead from "@/components/_section/section-center-head/section-center-head";
 import SectionItem from "@/components/_section/section-item/section-item";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
@@ -15,9 +14,7 @@ const Promotions = ({}: PromotionsProps): ReactElement | null => {
 
   return (
     <SectionItem className={"container"} id={`promotions`}>
-      <SectionCenterHead>
-        <Heading tag={"h2"}>Акции и скидки</Heading>
-      </SectionCenterHead>
+      <Heading tag={"h2"} className={styles.title}>Акции и скидки</Heading>
 
       <div className={styles.list}>
         <div className={styles.item}>

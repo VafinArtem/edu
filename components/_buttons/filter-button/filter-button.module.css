@@ -2,6 +2,7 @@
   padding: 13px 15px;
   font-size: 1.8rem;
   line-height: 1;
+  white-space: nowrap;
   background-color: var(--white);
   border: none;
   border-radius: 15px;

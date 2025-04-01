@@ -52,10 +52,11 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
             {/*  <NavigationLink component={Link} href={Route.COURSES}>Курсы</NavigationLink>*/}
             {/*</NavigationItem>*/}
             <NavigationItem title={`Дополнительно`}>
+              <NavigationLink component={Link} href={Route.PAYMENT}>Оплата</NavigationLink>
+              <NavigationLink component={Link} href={`${Route.PAYMENT}#promotions`}>Акции и скидки</NavigationLink>
               <NavigationLink component={`a`} href={`/pdf/personal_data_processing_policy_1.pdf`} target={`_blank`}>Политика
                 конфиденциальности</NavigationLink>
               {/*<NavigationLink component={Link} href={Route.COURSES}>Стать преподавателем</NavigationLink>*/}
-              {/*<NavigationLink component={Link} href={Route.COURSES}>Акции и скидки</NavigationLink>*/}
               {/*<NavigationLink component={Link} href={Route.COURSES}>Договор оферты</NavigationLink>*/}
             </NavigationItem>
           </Navigation>

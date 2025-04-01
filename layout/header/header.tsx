@@ -35,6 +35,8 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
               href={Route.SPEAKERS} className={styles.navigationLink}>Преподаватели</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.ABOUT}
               className={styles.navigationLink}>О компании</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.PAYMENT}
+              className={styles.navigationLink}>Оплата</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}
               className={styles.navigationLink}>Контакты</NavigationItem>
           </Navigation>

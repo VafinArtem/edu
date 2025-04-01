@@ -3,6 +3,7 @@ export const Route = {
   LOGIN: "/login",
   RESTORE: "/restore",
   PROFILE: "/profile",
+  PAYMENT: "/payment",
   COURSES: "/courses",
   SPEAKERS: "/speakers",
   SPEAKER: "/speaker",

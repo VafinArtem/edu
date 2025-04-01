@@ -4,6 +4,10 @@
   gap: 20px;
 }
 
+.title {
+  text-align: center;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,10 @@
   .inner {
 	grid-template-columns: 100%;
 	gap: 10px;
+  }
+
+  .title {
+	text-align: left;
   }
 
   .list {
