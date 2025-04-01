@@ -175,8 +175,6 @@ export async function orderPromoCertificate({
   const body = process.env.NODE_ENV === "development" ? null : JSON.stringify(data);
   const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
 
-  console.log(data);
-
   const res = await fetch(API.common.orderCertificate, {
     cache: "no-store",
     method,

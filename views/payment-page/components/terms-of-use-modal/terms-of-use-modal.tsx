@@ -36,7 +36,8 @@ const TermsOfUseModal = forwardRef(({
             подарочного сертификата.
           </li>
         </ol>
-        <p>Информацию об изменениях можно получить по телефону 8 (800) 550-05-24 или на сайте amrita-dent.ru.</p>
+        <p>Информацию об изменениях можно получить по телефону <a href={`tel:+78005500524`}>8 (800) 550-05-24</a> или на
+          сайте <a href={`https://edu.amrita-dent.ru`}>edu.amrita-dent.ru</a>.</p>
       </div>
     </ModalWrapper>
   );
