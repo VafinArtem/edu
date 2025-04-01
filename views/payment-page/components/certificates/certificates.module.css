@@ -15,7 +15,7 @@
 }
 
 .info {
-  justify-self: center;
+  align-self: center;
   width: fit-content;
 }
 
@@ -55,7 +55,7 @@
   }
 
   .info {
-	justify-self: flex-start;
+	align-self: flex-start;
 	margin-top: -5px;
   }
 

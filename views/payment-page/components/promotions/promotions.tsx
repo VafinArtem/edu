@@ -14,51 +14,56 @@ const Promotions = ({}: PromotionsProps): ReactElement | null => {
 
   return (
     <SectionItem className={"container"} id={`promotions`}>
-      <Heading tag={"h2"} className={styles.title}>Акции и скидки</Heading>
+      <Heading tag={"h2"} className={styles.mainTitle}>Акции и скидки</Heading>
 
       <div className={styles.list}>
         <div className={styles.item}>
           <Heading tag={"h3"} fontSize={"none"} className={styles.title}>Система скидок</Heading>
           <ul className={styles.bulletList}>
             <li>Чем ближе мероприятие, тем скидка меньше, соответственно, цена вырастает.</li>
-            <li>Акции не суммируются, при наличии у одного человека нескольких оснований для скидки применяется
-              наибольшая из них.
+            <li>Акции не&nbsp;суммируются, при наличии у&nbsp;одного человека нескольких оснований для скидки
+              применяется
+              наибольшая из&nbsp;них.
             </li>
-            <li>Скидки применяются к цене, действующей на момент оплаты.</li>
-            <li>Все скидки применяются к стоимости лекций, указанных на момент записи.</li>
+            <li>Скидки применяются к&nbsp;цене, действующей на&nbsp;момент оплаты.</li>
+            <li>Все скидки применяются к&nbsp;стоимости лекций, указанных на&nbsp;момент записи.</li>
           </ul>
         </div>
         <Item title={"Скидки для групп"} icon={<IconUsers />}>
           <div className={styles.content}>
             <Paragraph fontSize={"small"}>При условии посещения только лекции (без практики) 2-х человек предоставляется
-              скидка в размере
-              20%, от 3-х человек — 30 %. Заявка на мероприятие подаётся с указанием имён всех участников из этой
+              скидка в&nbsp;размере
+              20%, от&nbsp;3-х человек&nbsp;&mdash; 30&nbsp;%. Заявка на&nbsp;мероприятие подаётся с&nbsp;указанием имён
+              всех участников из&nbsp;этой
               группы.</Paragraph>
-            <Paragraph fontSize={"small"}>При отказе от участия одного или нескольких членов такой группы скидки
+            <Paragraph fontSize={"small"}>При отказе от&nbsp;участия одного или нескольких членов такой группы скидки
               пересчитываются, и
               оставшимся участникам необходимо произвести доплату.</Paragraph>
           </div>
         </Item>
-        <Item title={"Скидки для студентов и ординаторов"} icon={<IconCap />}>
+        <Item title={"Скидки для студентов и&nbsp;ординаторов"} icon={<IconCap />}>
           <div className={styles.content}>
-            <Paragraph fontSize={"small"}>Для студентов и ординаторов действует 30% скидка на лекции (при условии
+            <Paragraph fontSize={"small"}>Для студентов и&nbsp;ординаторов действует&nbsp;30% скидка на&nbsp;лекции (при
+              условии
               посещения только лекции
-              без практики). Чтобы получить скидку, необходимо предоставить документ, подтверждающий обучение в учебном
+              без практики). Чтобы получить скидку, необходимо предоставить документ, подтверждающий обучение
+              в&nbsp;учебном
               заведении.</Paragraph>
           </div>
         </Item>
         <Item title={"Скидки для ассистентов"} icon={<IconAssistant />}>
           <div className={styles.content}>
-            <Paragraph fontSize={"small"}>Скидка в размере 50% предоставляется ассистенту при посещении семинаров вместе
-              с
-              доктором.</Paragraph>
+            <Paragraph fontSize={"small"}>Скидка в&nbsp;размере&nbsp;50% предоставляется ассистенту при посещении
+              семинаров вместе
+              с&nbsp;доктором.</Paragraph>
           </div>
         </Item>
-        <Item title={"Скидки за email подписку"} icon={<IconMail />}>
+        <Item title={"Скидки за&nbsp;email подписку"} icon={<IconMail />}>
           <div className={styles.content}>
-            <Paragraph fontSize={"small"}>За подписку на email рассылку предоставляется разовая скидка в размере 20%,
+            <Paragraph fontSize={"small"}>За&nbsp;подписку на&nbsp;email рассылку предоставляется разовая скидка
+              в&nbsp;размере&nbsp;20%,
               которая
-              распространяется только на лекции.</Paragraph>
+              распространяется только на&nbsp;лекции.</Paragraph>
           </div>
         </Item>
       </div>

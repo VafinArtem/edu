@@ -10,7 +10,8 @@ const Item = ({title, icon, children}: ItemProps): ReactElement | null => {
         <div className={styles.icon}>
           {icon}
         </div>
-        <Heading tag={"h3"} fontSize={"none"} className={styles.title}>{title}</Heading>
+        <Heading tag={"h3"} fontSize={"none"} className={styles.title}
+          dangerouslySetInnerHTML={{__html: title}} />
       </div>
       {children}
     </article>
