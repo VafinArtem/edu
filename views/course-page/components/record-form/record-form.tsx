@@ -1,6 +1,7 @@
 "use client";
 
 import {orderWithTariff} from "@/actions";
+import ButtonArrow from "@/components/_buttons/button-arrow/button-arrow";
 import Button from "@/components/_buttons/button/button";
 import Price from "@/components/_common/price/price";
 import {Input} from "@/components/_form/input/input";
@@ -32,6 +33,7 @@ const RecordForm = ({
   formIsSend,
   setFormIsSend,
   showIdAttribute = true,
+  showAllTariffsLink,
 }: RecordFormProps): ReactElement | null => {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [answerType, setAnswerType] = useState<"success" | "error" | null>(null);
@@ -118,14 +120,26 @@ const RecordForm = ({
       <div className={clsx(styles.textContent, {
         [styles.hidden]: answerType || formIsSend,
       })}>
-        <Heading tag={`h2`} fontSize={`mid`} className={styles.title}>Успейте записаться по&nbsp;минимальной
-          стоимости</Heading>
-        <Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет
-          увеличиваться.</Paragraph>
+        <div className={styles.head}>
+          <Heading tag={`h2`} fontSize={`mid`} className={styles.title}>Успейте записаться по&nbsp;минимальной
+            стоимости</Heading>
+          <Paragraph className={styles.text} fontWeight={`light`}>По&nbsp;мере приближения обучения, стоимость будет
+            увеличиваться.</Paragraph>
+        </div>
         {Boolean(tariffInfo.id) && <div className={styles.footer}>
-          <Price oldPrice={tariffInfo.old} price={tariffInfo.current} />
+          <div className={styles.inner}>
+            <Paragraph fontWeight={"medium"} className={styles.tariffName}
+              fontSize={"none"}>{tariffInfo.name}</Paragraph>
+            <Price oldPrice={tariffInfo.old} price={tariffInfo.current} />
+          </div>
+          {showAllTariffsLink && <ButtonArrow
+            color={"white-transparent"}
+            component={"a"}
+            size={"small"}
+            href={"#price"}
+            iconDirection={"mid-right"}>Посмотреть все тарифы</ButtonArrow>}
           {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`}
-            withoutTextOptions={{laptop: true, tablet: true, mobile: true}} />}
+            withoutTextOptions={{laptop: true, tablet: true}} />}
         </div>}
       </div>
       <form className={clsx(styles.form, {
@@ -193,8 +207,10 @@ const RecordForm = ({
               href={`tel:+79312011400`}>+7 (931) 201-14-00</a></p>
           </>}
           {(answerType === "success" || formIsSend) &&
-            <p>В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения заявки{tariffInfo.current ? ` и&nbsp;оплаты
-                  курса` : ``}.</p>}
+            <p dangerouslySetInnerHTML={{
+              __html: `В&nbsp;течении часа с&nbsp;вами свяжется менеджер для подтверждения
+              заявки${tariffInfo.current ? ` и&nbsp;оплаты курса` : ``}.`,
+            }}></p>}
         </div>
       </div>}
     </section>

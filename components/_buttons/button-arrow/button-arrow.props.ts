@@ -3,7 +3,7 @@ import {BaseButtonComponent, BaseButtonProps} from "@/components/_buttons/base-b
 export type ButtonArrowProps<C extends BaseButtonComponent = "button"> =
   BaseButtonProps<C> & {
   iconDirection: "bottom-right" | "mid-right" | "top-right";
-  color: "primary" | "primary-2";
+  color: "primary" | "primary-2" | "white-transparent";
   size?: "small" | "medium" | "large";
   borderRadius?: "small" | "medium" | "large";
   borderColor?: "light" | "default";

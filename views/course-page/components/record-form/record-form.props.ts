@@ -20,4 +20,5 @@ export interface RecordFormProps {
     category: string;
   };
   showIdAttribute?: boolean;
+  showAllTariffsLink?: boolean;
 }

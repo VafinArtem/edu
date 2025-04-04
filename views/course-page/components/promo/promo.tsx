@@ -48,7 +48,8 @@ const Promo = ({
           <Button component={Link} href={`#registration`} onClick={() => {
             sendMetric(`reachGoal`, {options: `course-promo-record-click`});
           }}>Записаться на {courseTypeName.toLowerCase()}</Button>
-          {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`} />}
+          {saleTimestamp && <Timer timestampToEnd={saleTimestamp} text={`До повышения стоимости`}
+            withoutTextOptions={{mobile: true}} />}
         </div>
       </div>
       {speakers.length > 0 && <Slider speakers={speakers} className={styles.sliderWrapper} />}

@@ -62,69 +62,65 @@
 
 @media (min-width: 1500px) {
   .desc.hiddenDesktop {
-    display: none;
+	display: none;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
   .desc.hiddenLaptop {
-    display: none;
+	display: none;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .desc.hiddenTablet {
-    display: none;
+	display: none;
   }
 }
 
 @media (max-width: 767px) {
   .desc.hiddenMobile {
-    display: none;
+	display: none;
   }
 }
 
 @media (max-width: 1499px) {
   .count {
-    min-height: 42px;
-    font-size: 2rem;
+	min-height: 42px;
+	font-size: 2rem;
   }
 
   .text {
-    font-size: 1.3rem;
+	font-size: 1.3rem;
   }
 }
 
 @media (max-width: 1199px) {
   .desc {
-    max-width: 11rem;
-    font-size: 1.4rem;
-  }
-
-  .desc.hiddenTablet {
-    display: none;
+	max-width: 11rem;
+	font-size: 1.4rem;
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 767px) {
   .wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .count {
-    min-height: 37px;
-    font-size: 1.5rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
   }
 
   .desc {
-    order: -1;
-    max-width: none;
-    font-size: 1.2rem;
+	order: -1;
+	max-width: none;
+	font-size: 1.2rem;
+  }
+
+  .count {
+	min-height: 37px;
+	font-size: 1.5rem;
   }
 
   .text {
-    font-size: 1.2rem;
+	font-size: 1.2rem;
   }
 }

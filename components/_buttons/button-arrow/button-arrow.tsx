@@ -23,6 +23,7 @@ const ButtonArrow = <C extends BaseButtonComponent = "button">({
       [styles.bg]: withBackground,
       [styles.primary]: color === "primary",
       [styles.primary2]: color === "primary-2",
+      [styles.white]: color === "white-transparent",
       [styles.small]: size === "small",
       [styles.medium]: size === "medium",
       [styles.brSmall]: borderRadius === "small",

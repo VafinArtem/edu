@@ -115,6 +115,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
           formIsSend={formIsSend}
           courseId={id}
           courseTypeName={typeName.nominative}
+          showAllTariffsLink={tariffs.length > 1}
           metric={{
             change: `course-min-record-1-change`,
             send: `course-min-record-1-send`,
@@ -167,6 +168,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       />}
 
       {(tariffs && tariffs.length > 0) && <Price
+        id={"price"}
         courseId={id}
         tariffs={tariffs}
         saleTimestamp={saleTimestamp}
@@ -209,6 +211,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
             setFormIsSend={() => setFormIsSend(true)}
             formIsSend={formIsSend}
             courseTypeName={typeName.nominative}
+            showAllTariffsLink={tariffs.length > 1}
             showIdAttribute={false}
             metric={{
               change: `course-min-record-2-change`,
