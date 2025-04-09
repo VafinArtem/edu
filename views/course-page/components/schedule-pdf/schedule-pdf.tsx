@@ -1,8 +1,9 @@
 "use client";
 
 import Header from "@/components/_pdf/header/header";
+import Program from "@/components/_pdf/program/program";
 import Top from "@/components/_pdf/top/top";
-import {Document, Font, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Document, Font, Page, StyleSheet} from "@react-pdf/renderer";
 import React, {ReactElement} from "react";
 import {SchedulePdfProps} from "./schedule-pdf.props";
 
@@ -42,12 +43,11 @@ const SchedulePdf = ({course}: SchedulePdfProps): ReactElement | null => {
           speakers={course.speakers}
           colors={course.colors}
         />
-        <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
-        </View>
+        <Program
+          courseType={course.typeName.prepositional}
+          theory={course.program.theory}
+          practice={course.program.practice}
+        />
       </Page>
     </Document>
   );

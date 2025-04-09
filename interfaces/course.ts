@@ -237,4 +237,18 @@ export interface CourseForPdf {
     name: string;
     position: string;
   }[];
+  program: {
+    theory: {
+      id: number;
+      duration?: number;
+      learnList?: string[];
+      themeList?: string[];
+    }[];
+    practice: {
+      id: number;
+      duration?: number;
+      learnList?: string[];
+      themeList?: string[];
+    }[];
+  };
 }
