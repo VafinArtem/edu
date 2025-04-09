@@ -1,4 +1,4 @@
-import {DailySchedule} from "@/interfaces/course";
+import {CourseForPdf, DailySchedule} from "@/interfaces/course";
 
 export interface ScheduleProps {
   className?: string;
@@ -6,4 +6,5 @@ export interface ScheduleProps {
   courseTypeName: string;
   pdfLink?: string;
   schedule: DailySchedule[];
+  courseForPdf: CourseForPdf;
 }

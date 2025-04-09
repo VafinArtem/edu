@@ -216,3 +216,25 @@ export interface CourseShort {
   photoBackground?: string;
   speakers?: string[];
 }
+
+export interface CourseForPdf {
+  id: number;
+  name: string;
+  description: string;
+  colors: {
+    background: string;
+    text: string;
+  };
+  typeName: {
+    nominative: string;
+    genitive: string;
+    prepositional: string;
+  };
+  date: string;
+  location: string;
+  speakers: {
+    id: number;
+    name: string;
+    position: string;
+  }[];
+}

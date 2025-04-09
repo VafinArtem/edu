@@ -8,7 +8,7 @@ export interface RecordFormProps {
     id: number | null;
   };
   saleTimestamp?: number;
-  courseId: string;
+  courseId: number;
   courseTypeName: string;
   metric?: {
     change: string;

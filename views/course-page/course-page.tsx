@@ -4,6 +4,7 @@ import Certificate from "@/components/_common/certificate/certificate";
 import Pagination from "@/components/_common/pagination/pagination";
 import SimilarCourses from "@/components/_common/similar-courses/similar-courses";
 import ContainerWhite from "@/components/_section/container-white/container-white";
+import {convertCourseForPdf} from "@/helpers/converters";
 import {convertCourseDates} from "@/helpers/dates-helpers";
 import {getMinTariff, storePathValues} from "@/helpers/helpers";
 import {sendMetric} from "@/helpers/metricks";
@@ -165,6 +166,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         schedule={schedule.days}
         text={schedule.description}
         className={`container`}
+        courseForPdf={convertCourseForPdf(training)}
       />}
 
       {(tariffs && tariffs.length > 0) && <Price

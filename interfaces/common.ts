@@ -1,6 +1,6 @@
 export interface CommonPageModel {
   alias: string;
-  id: string;
+  id: number;
   _id: number;
   metaTitle: string;
   metaDescription: string;
