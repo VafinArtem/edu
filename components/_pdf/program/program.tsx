@@ -8,6 +8,7 @@ import {ProgramProps} from "./program.props";
 const Program = ({courseType, theory, practice}: ProgramProps): ReactElement | null => {
   const styles = StyleSheet.create({
     wrapper: {
+      flexShrink: 0,
       flexDirection: "column",
       gap: 15,
     },

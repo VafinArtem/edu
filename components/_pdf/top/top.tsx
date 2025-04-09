@@ -14,6 +14,7 @@ const Top = ({
 }: TopProps): ReactElement | null => {
   const styles = StyleSheet.create({
     wrapper: {
+      flexShrink: 0,
       flexDirection: "column",
       gap: 12,
       backgroundColor: colors.background,
@@ -26,8 +27,9 @@ const Top = ({
       gap: 3,
     },
     content: {
+      flexShrink: 0,
       flexDirection: "column",
-      gap: 7,
+      gap: 17,
     },
     name: {
       fontSize: 18,

@@ -7,6 +7,7 @@ import {ScheduleProps} from "./schedule.props";
 const Schedule = ({schedule, courseType, location}: ScheduleProps): ReactElement | null => {
   const styles = StyleSheet.create({
     wrapper: {
+      flexShrink: 0,
       flexDirection: "column",
       gap: 15,
     },

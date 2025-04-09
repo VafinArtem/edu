@@ -16,7 +16,6 @@ const Header = ({}: HeaderProps): ReactElement | null => {
       borderRadius: 50,
     },
     link: {
-      fontFamily: "Inter",
       fontSize: 12,
       textDecoration: "none",
       color: "#0C111D",
