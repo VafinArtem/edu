@@ -89,18 +89,26 @@ const ProgramItem = ({program}: ProgramItemProps): ReactElement | null => {
       height: 3,
       marginTop: 3,
       borderRadius: 3,
-      backgroundColor: "black",
+    },
+    blueDot: {
+      backgroundColor: "#254885",
+    },
+    redDot: {
+      backgroundColor: "#A13652",
     },
   });
 
   const nameStyles: Style[] = [styles.name];
+  const dotStyles: Style[] = [styles.dot];
 
   if (program.type === ProgramType.THEORY) {
     nameStyles.push(styles.theory);
+    dotStyles.push(styles.redDot);
   }
 
   if (program.type === ProgramType.PRACTICE) {
     nameStyles.push(styles.practice);
+    dotStyles.push(styles.blueDot);
   }
 
   return (
@@ -132,7 +140,7 @@ const ProgramItem = ({program}: ProgramItemProps): ReactElement | null => {
         <Text style={styles.title}>{ProgramThemeName[program.type]}</Text>
         <View style={styles.themeList}>
           {program.themeList.map((el, index) => <View style={styles.themeListItem} key={index}>
-            <View style={styles.dot}></View>
+            <View style={dotStyles}></View>
             <Text>{el}</Text>
           </View>)}
         </View>

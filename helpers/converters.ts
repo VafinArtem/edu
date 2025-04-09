@@ -2,7 +2,7 @@ import {convertCourseDates} from "@/helpers/dates-helpers";
 import {CourseForPdf, CoursePageModel} from "@/interfaces/course";
 
 export const convertCourseForPdf = (courseForPdf: CoursePageModel): CourseForPdf => {
-  const {name, id, colors, typeName, dates, promoDescription, city, speakers, program} = courseForPdf;
+  const {name, id, colors, typeName, dates, promoDescription, city, speakers, program, schedule, place} = courseForPdf;
 
   return {
     id,
@@ -14,7 +14,11 @@ export const convertCourseForPdf = (courseForPdf: CoursePageModel): CourseForPdf
     typeName,
     date: convertCourseDates(dates),
     description: promoDescription,
-    location: city.name ?? "",
+    location: {
+      city: city.name ?? "",
+      metro: place?.metro ?? "",
+      address: place?.address ?? "",
+    },
     speakers: speakers.map((speaker) => ({
       id: speaker.id,
       name: `${speaker.surname.nominative} ${speaker.name.nominative} ${speaker.patronymic.nominative}`,
@@ -24,5 +28,6 @@ export const convertCourseForPdf = (courseForPdf: CoursePageModel): CourseForPdf
       theory: program.theory,
       practice: program.practice,
     },
+    schedule: schedule.days,
   };
 };

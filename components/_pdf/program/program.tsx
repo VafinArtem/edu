@@ -1,6 +1,7 @@
 import ProgramItem from "@/components/_pdf/program-item/program-item";
+import Title from "@/components/_pdf/title/title";
 import {ProgramType} from "@/helpers/contants";
-import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {StyleSheet, View} from "@react-pdf/renderer";
 import React, {ReactElement} from "react";
 import {ProgramProps} from "./program.props";
 
@@ -10,14 +11,11 @@ const Program = ({courseType, theory, practice}: ProgramProps): ReactElement | n
       flexDirection: "column",
       gap: 15,
     },
-    title: {
-      fontSize: 18,
-    },
   });
 
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.title}>Что будет на {courseType}</Text>
+      <Title>Что будет на {courseType}</Title>
       {theory.length > 0 && theory.map((item) => (
         <ProgramItem key={item.id} program={{...item, type: ProgramType.THEORY}} />))}
       {practice.length > 0 && theory.map((item) => (

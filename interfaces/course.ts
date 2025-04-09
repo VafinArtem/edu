@@ -231,7 +231,11 @@ export interface CourseForPdf {
     prepositional: string;
   };
   date: string;
-  location: string;
+  location: {
+    city: string;
+    metro: string;
+    address: string;
+  };
   speakers: {
     id: number;
     name: string;
@@ -251,4 +255,5 @@ export interface CourseForPdf {
       themeList?: string[];
     }[];
   };
+  schedule: DailySchedule[];
 }
