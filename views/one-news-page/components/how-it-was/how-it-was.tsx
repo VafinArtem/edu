@@ -1,8 +1,8 @@
 import SectionHead from "@/components/_section/section-head/section-head";
 import SectionItem from "@/components/_section/section-item/section-item";
+import ImagesSlider from "@/components/_sliders/images-slider/images-slider";
 import Heading from "@/components/_tags/heading/heading";
 import Content from "@/views/course-page/components/for-whom/components/content/content";
-import ImagesSlider from "@/views/one-news-page/components/images-slider/images-slider";
 import React, {ReactElement} from "react";
 import styles from "./how-it-was.module.css";
 import {HowItWasProps} from "./how-it-was.props";

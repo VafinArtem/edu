@@ -2,6 +2,7 @@
 
 import Location from "@/components/_common/location/location";
 import PartnerForm from "@/components/_common/partner-form/partner-form";
+import Reviews from "@/components/_reviews/reviews/reviews";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
 import {storePathValues} from "@/helpers/helpers";
@@ -13,7 +14,6 @@ import Courses from "@/views/about-page/components/courses/courses";
 import Equipment from "@/views/about-page/components/equipment/equipment";
 import Promo from "@/views/about-page/components/promo/promo";
 import Speakers from "@/views/about-page/components/speakers/speakers";
-import Reviews from "@/views/main-page/components/reviews/reviews";
 import {usePathname} from "next/navigation";
 import React, {ReactElement, useEffect} from "react";
 import styles from "./about-page.module.css";
