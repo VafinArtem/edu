@@ -11,7 +11,7 @@ export async function orderWithTariff({
     name: string;
     contact: string;
     tariff: number | null;
-    courseId: string;
+    courseId: number;
     orderId: string;
   },
 }): Promise<"error" | "success"> {

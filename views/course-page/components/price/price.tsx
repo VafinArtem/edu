@@ -107,7 +107,7 @@ const Price = ({
         },
         products: [
           {
-            id: courseId,
+            id: `${courseId}`,
             name: ecommerce.name,
             category: ecommerce.category,
             price: tariffs.find((el) => el.id === currentTariffId)?.prices.current,

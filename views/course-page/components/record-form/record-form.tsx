@@ -84,7 +84,7 @@ const RecordForm = ({
         },
         products: [
           {
-            id: courseId,
+            id: `${courseId}`,
             name: ecommerce.name,
             category: ecommerce.category,
             price: tariffInfo.current,
