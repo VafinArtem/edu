@@ -55,6 +55,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
   } = training;
 
   const pathname = usePathname();
+  const courseForPdf = convertCourseForPdf(training);
 
   useEffect(() => {
     storePathValues();
@@ -106,7 +107,12 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
       />}
 
       {(program.theory.length > 0 || program.practice.length > 0) &&
-        <Program program={program} className={`container`} courseTypeName={typeName.prepositional.toLowerCase()} />}
+        <Program
+          program={program}
+          className={`container`}
+          courseTypeName={typeName.prepositional.toLowerCase()}
+          courseForPdf={courseForPdf}
+        />}
 
       <div className="container">
         <RecordForm
@@ -166,7 +172,7 @@ const CoursePage = ({training, similarCourses}: CoursePageProps): ReactElement |
         schedule={schedule.days}
         text={schedule.description}
         className={`container`}
-        courseForPdf={convertCourseForPdf(training)}
+        courseForPdf={courseForPdf}
       />}
 
       {(tariffs && tariffs.length > 0) && <Price

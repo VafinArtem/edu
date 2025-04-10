@@ -1,7 +1,8 @@
 import {CoursePageModel, CourseShort} from "@/interfaces/course";
 
 export const course: CoursePageModel = {
-  "id": "klinicheskaya-paradantalogya",
+  "id": 1,
+  // "id": "klinicheskaya-paradantalogya",
   "_id": 1,
   "alias": "klinicheskaya-paradantalogya",
   "isCertificate": true,

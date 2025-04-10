@@ -1,7 +1,8 @@
 import {SpeakerPageModel} from "@/interfaces/speaker";
 
 export const speaker: SpeakerPageModel = {
-  "id": "volkova-yulia-valerievna",
+  "id": 1,
+  // "id": "volkova-yulia-valerievna",
   "_id": 1,
   "alias": "volkova-yulia-valerievna",
   "metaTitle": "Преподаватель: Волкова Юлия Валерьевна",
