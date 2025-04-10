@@ -24,8 +24,8 @@ const Schedule = ({
         <PdfLink
           className={styles.downloadLink}
           course={courseForPdf}
-          prepareText={"Подготовить расписание в PDF"}
-          downloadText={"Скачать расписание в PDF"}
+          prepareText={"Скачать расписание в PDF"}
+          downloadText={"Ссылка для скачивания готова"}
         />
       </SectionTextHead>
       <ul className={styles.list}>

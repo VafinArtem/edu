@@ -1,12 +1,12 @@
 "use client";
 
 import DownloadButton from "@/components/_buttons/download-button/download-button";
-import styles from "@/components/_links/download-link/download-link.module.css";
 import SchedulePdf from "@/views/course-page/components/schedule-pdf/schedule-pdf";
 import {PDFDownloadLink} from "@react-pdf/renderer";
 import clsx from "clsx";
 import React, {ReactElement, useState} from "react";
 import DownloadIcon from "./download.svg";
+import styles from "./pdf-link.module.css";
 import {PdfLinkProps} from "./pdf-link.props";
 
 const PdfLink = ({course, className, downloadText, prepareText}: PdfLinkProps): ReactElement | null => {
@@ -15,7 +15,7 @@ const PdfLink = ({course, className, downloadText, prepareText}: PdfLinkProps): 
   return (
     <>
       {!generatePdf && (
-        <DownloadButton className={clsx(styles.link, className)} type={"button"}
+        <DownloadButton className={className} type={"button"}
           onClick={() => setGeneratePdf(true)}>{prepareText}</DownloadButton>)}
       {generatePdf &&
         <PDFDownloadLink

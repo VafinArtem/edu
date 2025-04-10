@@ -22,8 +22,8 @@ const Program = ({className, program, courseTypeName, courseForPdf}: ProgramProp
         <PdfLink
           className={styles.downloadLink}
           course={courseForPdf}
-          prepareText={"Подготовить программу в PDF"}
-          downloadText={"Скачать программу в PDF"}
+          prepareText={"Скачать программу в PDF"}
+          downloadText={"Ссылка для скачивания готова"}
         />
       </SectionTextHead>
       <ul className={styles.list}>
