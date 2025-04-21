@@ -37,6 +37,7 @@ const Footer = ({...props}: FooterProps): ReactElement | null => {
           <Navigation className={styles.navigation}>
             <NavigationItem title={`Amrita`}>
               <NavigationLink component={Link} href={Route.ABOUT}>О компании</NavigationLink>
+              <NavigationLink component={Link} href={Route.REVIEWS}>Отзывы</NavigationLink>
               <NavigationLink component={Link} href={Route.CONTACTS}>Контакты</NavigationLink>
             </NavigationItem>
             <NavigationItem title={`Направления`}>

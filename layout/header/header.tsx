@@ -30,13 +30,13 @@ const Header = ({type = "white", ...props}: HeaderProps): ReactElement | null =>
           <Navigation className={styles.navigation}>
             {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.NEWS}*/}
             {/*  className={styles.navigationLink}>Новости</NavigationItem>*/}
-            {/*<NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>*/}
             <NavigationItem color={type === "blur" ? "white" : "black"}
               href={Route.SPEAKERS} className={styles.navigationLink}>Преподаватели</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.ABOUT}
               className={styles.navigationLink}>О компании</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.PAYMENT}
               className={styles.navigationLink}>Оплата</NavigationItem>
+            <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.REVIEWS}>Отзывы</NavigationItem>
             <NavigationItem color={type === "blur" ? "white" : "black"} href={Route.CONTACTS}
               className={styles.navigationLink}>Контакты</NavigationItem>
           </Navigation>
