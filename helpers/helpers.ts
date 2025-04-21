@@ -104,14 +104,23 @@ export function getRandomElements<T>(arr: T[], n: number, allowDuplicates = fals
   return shuffled.slice(0, n);
 }
 
-export function toFormData(obj: Record<string, string | Blob | null>): FormData {
+export function toFormData(obj: Record<string, string | FileList | null>): FormData {
   const formData = new FormData();
 
   for (const key in obj) {
-    if (obj.hasOwnProperty(key) && obj[key]) {
-      formData.append(key, obj[key]);
+    if (obj.hasOwnProperty(key) && obj[key] !== null) {
+      const value = obj[key];
+
+      if (value instanceof FileList) {
+        Array.from(value).forEach((file) => {
+          formData.append(key, file, file.name);
+        });
+      } else {
+        formData.append(key, value as string);
+      }
     }
   }
 
   return formData;
+
 }

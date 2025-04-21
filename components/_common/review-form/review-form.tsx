@@ -33,7 +33,7 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
     contact: string;
     name: string;
     specialization: string;
-    avatar: File | null;
+    avatar: FileList | null;
   }>({
     defaultValues: {
       review: ``,
@@ -49,7 +49,7 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
     contact: string,
     name: string;
     specialization: string;
-    avatar: File | null;
+    avatar: FileList | null;
   }> = async (data) => {
     if (isSending) return;
 
