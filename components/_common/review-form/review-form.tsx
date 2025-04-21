@@ -26,7 +26,6 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
     handleSubmit,
     setError,
     clearErrors,
-    setValue,
     reset,
     formState: {errors, isValid, validatingFields},
   } = useForm<{
@@ -52,7 +51,6 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
     specialization: string;
     avatar: File | null;
   }> = async (data) => {
-    console.log(data);
     if (isSending) return;
 
     setIsSending(true);

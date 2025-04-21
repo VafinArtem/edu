@@ -1,7 +1,7 @@
 "use client";
 
 import Location from "@/components/_common/location/location";
-import ReviewForm from "@/components/_common/partner-form/review-form";
+import PartnerForm from "@/components/_common/partner-form/partner-form";
 import Reviews from "@/components/_reviews/reviews/reviews";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
@@ -52,7 +52,7 @@ const AboutPage = ({speakers}: AboutPageProps): ReactElement | null => {
         <Location />
       </div>
       <AmritaLinks className="container" />
-      <ReviewForm className={styles.partnerForm} />
+      <PartnerForm className={styles.partnerForm} />
     </React.Fragment>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import Location from "@/components/_common/location/location";
-import ReviewForm from "@/components/_common/partner-form/review-form";
+import PartnerForm from "@/components/_common/partner-form/partner-form";
 import ContainerGray from "@/components/_section/container-gray/container-gray";
 import Heading from "@/components/_tags/heading/heading";
 import {storePathValues} from "@/helpers/helpers";
@@ -32,7 +32,7 @@ const ContactsPage = ({}: ContactsPageProps): ReactElement | null => {
       <ContainerGray className={styles.gray}>
         <Partnership className={`container`} />
       </ContainerGray>
-      <ReviewForm className={styles.partnerForm} />
+      <PartnerForm className={styles.partnerForm} />
     </>
   );
 };
