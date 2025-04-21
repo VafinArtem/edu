@@ -25,6 +25,14 @@ export async function generateMetadata(props: {
   if (!isCoursePage) {
     const search = await props.searchParams;
 
+    if (fetchedParams.slug && fetchedParams.slug?.length > 0) {
+      if (!Object.values(SlugPart).some((value) => fetchedParams.slug![0].includes(value))) {
+        return {
+          title: `404`,
+        };
+      }
+    }
+
     const page = await getCoursesPage(fetchedParams.slug, search);
 
     if (!page || page.code !== 200) {
@@ -91,7 +99,14 @@ const CoursesLayout = async (props: {
     const alias = fetchedParams.slug![fetchedParams.slug!.length - 1].split(`-`).splice(1).join(`-`);
 
     page = await getCoursePage(alias ? alias : "");
+
   } else {
+    if (fetchedParams.slug && fetchedParams.slug?.length > 0) {
+      if (!Object.values(SlugPart).some((value) => fetchedParams.slug![0].includes(value))) {
+        notFound();
+      }
+    }
+
     page = await getCoursesPage(fetchedParams.slug, search);
   }
 
