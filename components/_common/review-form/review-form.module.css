@@ -138,6 +138,10 @@
   margin-bottom: 0;
 }
 
+.submit {
+  white-space: nowrap;
+}
+
 @media (max-width: 1499px) {
   .wrapper {
 	padding-top: 60px;

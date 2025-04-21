@@ -1,14 +1,17 @@
 "use client";
 
+import File from "@/components/_form/file-input/components/file/file";
+import Paragraph from "@/components/_tags/paragraph/paragraph";
 import clsx from "clsx";
 import {ChangeEvent, ForwardedRef, forwardRef, ReactElement, useState} from "react";
+import DownloadIcon from "./download.svg";
 import styles from "./file-input.module.css";
 import {FileInputProps} from "./file-input.props";
 
 const FileInput = forwardRef(({
+  description,
   className,
   error,
-  isValid,
   labelName,
   onChange,
   ...props
@@ -24,6 +27,7 @@ const FileInput = forwardRef(({
     const file = event.target.files?.[0];
 
     if (!file) return;
+
     setFileError(``);
 
     const fileExtension = file.name.split(".").pop()?.toLowerCase() ?? "";
@@ -49,24 +53,37 @@ const FileInput = forwardRef(({
 
   return (
     <div className={clsx(className, styles.wrapper)}>
-      <label className={styles.inputWrapper}>
-        <span>{labelName}</span>
-        <input
-          className={styles.input}
-          accept=".jpg,.jpeg,.png,"
-          type={"file"}
-          ref={ref}
-          onChange={(evt) => {
-            handleChange(evt);
-          }}
-          {...props}
-        />
-        {fileError && <span className={styles.errorMessage}>{fileError}</span>}
-        {error && <span className={styles.errorMessage}>{error.message}</span>}
-      </label>
-      <div className={styles.files}>
-        {fileName}
-      </div>
+      <Paragraph className={styles.title}>{description}</Paragraph>
+      {!fileName && <>
+        <label className={styles.inputWrapper}>
+          <span className={styles.button}>{labelName} <DownloadIcon /></span>
+          <input
+            className={styles.input}
+            accept=".jpg,.jpeg,.png,"
+            type={"file"}
+            ref={ref}
+            onChange={(evt) => {
+              handleChange(evt);
+            }}
+            {...props}
+          />
+        </label>
+        <div className={styles.messages}>
+          {fileError && <Paragraph className={clsx(styles.message, styles.error)}>{fileError}</Paragraph>}
+          {error && <Paragraph className={clsx(styles.message, styles.error)}>{error.message}</Paragraph>}
+          {(!fileError && !error) && <Paragraph className={styles.message}>
+            Допустимые форматы: {acceptedFormats.join(", ")}.<br /> Максимальный размер — {maxSizeMb} МБ.
+          </Paragraph>}
+        </div>
+      </>}
+      {fileName && <div className={styles.files}>
+        <File name={fileName} onRemove={() => {
+          setFileName("");
+          handleChange({
+            target: {files: null},
+          } as ChangeEvent<HTMLInputElement>);
+        }} />
+      </div>}
     </div>
   );
 });

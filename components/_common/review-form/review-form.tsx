@@ -144,8 +144,9 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
               isValid={validatingFields.review}
             />
             <FileInput
+              description={`Вы можете прикрепить к отзыву свою фотографию`}
               className={styles.input}
-              labelName={`Вы можете прикрепить к отзыву свою фотографию`}
+              labelName={`Загрузить фотографию`}
               {...register("avatar")}
             />
             <div className={styles.footer}>
