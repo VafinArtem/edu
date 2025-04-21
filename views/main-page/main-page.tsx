@@ -1,5 +1,6 @@
 "use client";
 
+import Reviews from "@/components/_reviews/reviews/reviews";
 import ContainerPrimaryColor from "@/components/_section/container-primary-color/container-primary-color";
 import ContainerWhite from "@/components/_section/container-white/container-white";
 import {storePathValues} from "@/helpers/helpers";
@@ -8,7 +9,6 @@ import Courses from "@/views/main-page/components/courses/courses";
 import Directions from "@/views/main-page/components/directions/directions";
 import Footer from "@/views/main-page/components/footer/footer";
 import Promo from "@/views/main-page/components/promo/promo";
-import Reviews from "@/views/main-page/components/reviews/reviews";
 import {usePathname} from "next/navigation";
 import React, {ReactElement, useEffect} from "react";
 import NotFindCourse from "../../components/_common/not-find-course/not-find-course";

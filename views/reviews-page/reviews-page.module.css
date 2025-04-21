@@ -1,0 +1,19 @@
+.gray + .reviewForm {
+  margin-top: -135px;
+}
+
+.reviewForm:last-child {
+  margin-bottom: -85px;
+}
+
+@media (max-width: 1199px) {
+  .gray + .reviewForm {
+	margin-top: -90px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gray + .reviewForm {
+	margin-top: -75px;
+  }
+}

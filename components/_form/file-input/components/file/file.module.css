@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--white);
+}
+
+.name svg {
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.remove {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

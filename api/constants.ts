@@ -27,5 +27,6 @@ export const API = {
     becomePartner: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/become-speaker" : "/react-api/send-form/become-partner"),
     sendComment: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/send-comment" : "/react-api/send-form/education-not"),
     orderCertificate: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/certificate" : "/react-api/send-form/certificate"),
+    review: process.env.BACKEND_API + (process.env.NODE_ENV === "development" ? "/review" : "/react-api/send-form/review"),
   },
 };

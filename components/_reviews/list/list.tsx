@@ -1,6 +1,6 @@
+import Review from "@/components/_reviews/review/review";
 import useIsResolution from "@/hooks/useIsResolution";
 import {reviews} from "@/mocs/common";
-import Review from "@/views/main-page/components/reviews/components/review/review";
 import React, {ReactElement} from "react";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
 import styles from "./list.module.css";
