@@ -103,3 +103,15 @@ export function getRandomElements<T>(arr: T[], n: number, allowDuplicates = fals
 
   return shuffled.slice(0, n);
 }
+
+export function toFormData(obj: Record<string, string | Blob | null>): FormData {
+  const formData = new FormData();
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key) && obj[key]) {
+      formData.append(key, obj[key]);
+    }
+  }
+
+  return formData;
+}

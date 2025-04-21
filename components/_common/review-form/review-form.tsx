@@ -1,5 +1,6 @@
 "use client";
 
+import {sendReview} from "@/actions";
 import Button from "@/components/_buttons/button/button";
 import {FileInput} from "@/components/_form/file-input/file-input";
 import {Input} from "@/components/_form/input/input";
@@ -7,7 +8,7 @@ import {Textarea} from "@/components/_form/textarea/textarea";
 import Heading from "@/components/_tags/heading/heading";
 import Paragraph from "@/components/_tags/paragraph/paragraph";
 import {RegularExp} from "@/helpers/contants";
-import {formatPhoneNumber} from "@/helpers/helpers";
+import {formatPhoneNumber, toFormData} from "@/helpers/helpers";
 import clsx from "clsx";
 import React, {ReactElement, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
@@ -52,27 +53,27 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
     avatar: File | null;
   }> = async (data) => {
     console.log(data);
-    // if (isSending) return;
-    //
-    // setIsSending(true);
-    //
-    // const res = await sendBecomePartner({
-    //   data,
-    // });
-    //
-    // setAnswerType(res);
-    //
-    // if (res === "success") {
-    //   reset();
-    // }
-    //
-    // if (res === "error") {
-    //   setTimeout(() => {
-    //     setAnswerType(null);
-    //   }, 2000);
-    // }
-    //
-    // setIsSending(false);
+    if (isSending) return;
+
+    setIsSending(true);
+
+    const res = await sendReview({
+      data: toFormData(data),
+    });
+
+    setAnswerType(res);
+
+    if (res === "success") {
+      reset();
+    }
+
+    if (res === "error") {
+      setTimeout(() => {
+        setAnswerType(null);
+      }, 2000);
+    }
+
+    setIsSending(false);
   };
 
   return (
@@ -162,10 +163,10 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
         {answerType && <div className={styles.answer}>
           <Heading tag={`h3`} className={styles.answerTitle}>{answerType === "error" ? <><IconError
             className={styles.icon} width="70" height="70" /> Что-то пошло не так </> : <><IconSuccess
-            className={styles.icon} width="70" height="70" /> Сообщение отправлено </>}</Heading>
+            className={styles.icon} width="70" height="70" /> Отзыв отправлен </>}</Heading>
           <div className={styles.answerContent}>
             {answerType === "success" && <>
-              <p>В&nbsp;ближайшее время, наш менеджер свяжется с&nbsp;вами по&nbsp;указанному телефону.</p>
+              <p>Спасибо! Ваше мнение важно для нас. Отзыв будет опубликован после модерации.</p>
             </>}
             {answerType === "error" && <>
               <p>Проверьте, подключены&nbsp;ли вы&nbsp;к&nbsp;интернету. Если всё работает исправно, отправьте форму ещё

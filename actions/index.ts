@@ -193,3 +193,30 @@ export async function orderPromoCertificate({
     return "error";
   }
 }
+
+export async function sendReview({
+  data,
+}: {
+  data: FormData,
+}): Promise<"error" | "success"> {
+  const body = process.env.NODE_ENV === "development" ? null : data;
+  const method = process.env.NODE_ENV === "development" ? "GET" : "POST";
+
+  const res = await fetch(API.common.review, {
+    cache: "no-store",
+    method,
+    body,
+  });
+
+  if (!res) {
+    return "error";
+  }
+
+  const result: AnswerData<string> = await res.json();
+
+  if (result.code === 200) {
+    return "success";
+  } else {
+    return "error";
+  }
+}
