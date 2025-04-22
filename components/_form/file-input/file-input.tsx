@@ -14,6 +14,7 @@ const FileInput = forwardRef(({
   error,
   labelName,
   onChange,
+  color,
   ...props
 }: FileInputProps, ref: ForwardedRef<HTMLInputElement>): ReactElement | null => {
   const acceptedFormats = ["jpg", "jpeg", "png"];
@@ -56,7 +57,10 @@ const FileInput = forwardRef(({
       <Paragraph className={styles.title}>{description}</Paragraph>
       {!fileName && <>
         <label className={styles.inputWrapper}>
-          <span className={styles.button}>{labelName} <DownloadIcon /></span>
+          <span className={clsx(styles.button, {
+            [styles.primary]: color === "primary",
+            [styles.primary2]: color === "primary-2",
+          })}>{labelName} <DownloadIcon /></span>
           <input
             className={styles.input}
             accept=".jpg,.jpeg,.png,"

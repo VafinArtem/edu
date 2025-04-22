@@ -143,13 +143,14 @@ const ReviewForm = ({className}: ReviewFormProps): ReactElement | null => {
               isValid={validatingFields.review}
             />
             <FileInput
+              color={"primary-2"}
               description={`Вы можете прикрепить к отзыву свою фотографию`}
               className={styles.input}
               labelName={`Загрузить фотографию`}
               {...register("avatar")}
             />
             <div className={styles.footer}>
-              <Button type={"submit"} color={"primary"} className={styles.submit}
+              <Button type={"submit"} color={"primary-2"} className={styles.submit}
                 isDisabled={!isValid}>Оставить отзыв</Button>
               <Paragraph fontSize={"none"} fontWeight={"light"} className={styles.footNote}>Нажимая на&nbsp;кнопку,
                 вы&nbsp;соглашаетесь
