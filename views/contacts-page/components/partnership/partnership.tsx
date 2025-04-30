@@ -60,18 +60,6 @@ const Partnership = ({className}: PartnershipProps): ReactElement | null => {
         </li>
         <li className={styles.item}>
           <figure className={styles.picture}>
-            <Image src={`/img/contacts-page/partnership/chernolyahova-alla.png`} alt={``} width={304} height={304}
-              quality={95}
-              loading={"lazy"}
-              className={styles.image} />
-            <figcaption className={styles.description}>
-              <span className={styles.name}>Черноляхова Алла</span>
-              <span className={styles.position}>Менеджер</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li className={styles.item}>
-          <figure className={styles.picture}>
             <Image src={`/img/contacts-page/partnership/natalya-talyzina.jpg`} alt={``} width={304} height={304}
               quality={95}
               loading={"lazy"}
